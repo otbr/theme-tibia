@@ -185,7 +185,7 @@
 
 				<div class="inner-box-border">
 					<div class="inner-box">
-						<strong>BREAKING NEWS!</strong> Justin is a confirmed racist.
+						Lorem ipsum.
 					</div>
 				</div>
 
