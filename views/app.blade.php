@@ -5,7 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="{{ asset('pandaac/theme-tibia/css/tibia.css') }}" rel="stylesheet" media="all">
+	<link href="{{ asset('/pandaac/theme-tibia/css/tibia.css') }}" rel="stylesheet" media="all">
 
 	<!--[if lt IE 9]>
 		<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -21,7 +21,7 @@
 			<div id="login-box" class="box">
 				<div class="inner-box">
 					<a href="#" class="medium-button">
-						<img src="{{ asset('pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
+						<img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
 					</a>
 
 					<a href="#" class="create-account"></a>
@@ -36,6 +36,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-news.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-news.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -50,6 +53,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-abouttibia.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-abouttibia.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -67,6 +73,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-gameguides.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-gameguides.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -82,6 +91,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-library.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-library.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -101,6 +113,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-community.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-community.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -124,6 +139,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-forum.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-forum.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -142,6 +160,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-account.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-account.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -158,6 +179,9 @@
 							<span class="light top-right"></span>
 							<span class="light bottom-left"></span>
 							<span class="light bottom-right"></span>
+
+							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-support.gif') }}">
+							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-support.gif') }}">
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -179,7 +203,7 @@
 	</section>
 
 
-	<script src="{{ asset('pandaac/theme-tibia/js/app.min.js') }}"></script>
+	<script src="{{ asset('/pandaac/theme-tibia/js/app.min.js') }}"></script>
 
 </body>
 </html>

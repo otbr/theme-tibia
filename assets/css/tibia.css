@@ -149,8 +149,25 @@ body {
   padding: 0;
   z-index: 2;
 }
+#left-column .box#navigation .inner-box .navigation-item .navigation-button:before,
+#left-column .box#navigation .inner-box .navigation-item .navigation-button:after {
+  content: " ";
+  display: table;
+}
+#left-column .box#navigation .inner-box .navigation-item .navigation-button:after {
+  clear: both;
+}
 #left-column .box#navigation .inner-box .navigation-item .navigation-button:hover {
   background-position-y: -32px;
+}
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .icon {
+  margin-left: 8px;
+  float: left;
+}
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .label {
+  margin-left: 2px;
+  margin-top: 6px;
+  float: left;
 }
 #left-column .box#navigation .inner-box .navigation-item .navigation-button .light {
   background: url('../img/green-light.gif') no-repeat;
