@@ -1,0 +1,19 @@
+{
+	"name": "pandaac/theme-tibia",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Christopher Eklund",
+			"email": "eklundchristopher@gmail.com"
+		}
+	],
+	"require": {
+		"pandaac/apolune": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"pandaac\\ThemeTibia\\": ""
+		}
+	},
+	"minimum-stability": "dev"
+}

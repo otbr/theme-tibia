@@ -1,0 +1,179 @@
+body {
+  background: url('../img/background-artwork.jpg') no-repeat top center #051122;
+  font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  font-size: 13px;
+}
+#skeleton {
+  margin: 160px auto 20px;
+  max-width: 1200px;
+  min-width: 1000px;
+  display: block;
+  clear: both;
+}
+#skeleton .column {
+  position: relative;
+  display: block;
+  height: 500px;
+}
+#skeleton .column#left-column {
+  margin: 0 15px;
+  width: 180px;
+  float: left;
+}
+#skeleton .column#middle-column {
+  margin: 0 210px;
+}
+#skeleton .column#right-column {
+  margin: 0 15px;
+  width: 180px;
+  float: right;
+}
+#left-column #logo-artwork {
+  background: url('../img/tibia-logo-artwork-top.gif');
+  position: absolute;
+  display: block;
+  height: 158px;
+  width: 196px;
+  top: -158px;
+  left: -10px;
+  z-index: 3;
+}
+#left-column .box {
+  margin: 7px 8px 32px;
+  position: relative;
+  width: 164px;
+}
+#left-column .box:before {
+  content: url('../img/box-top.gif');
+  position: absolute;
+  height: 12px;
+  width: 180px;
+  top: -13px;
+  left: -8px;
+  z-index: 2;
+}
+#left-column .box:after {
+  content: url('../img/box-bottom.gif');
+  position: absolute;
+  bottom: -9px;
+  height: 12px;
+  width: 180px;
+  right: -8px;
+  z-index: 2;
+}
+#left-column .box .inner-box {
+  background: url('../img/loginbox-textfield-background.gif') repeat top left;
+  position: relative;
+}
+#left-column .box .inner-box:before {
+  background: url('../img/chain.gif') repeat;
+  position: absolute;
+  content: '';
+  width: 7px;
+  left: -4px;
+  top: -4px;
+  bottom: 0;
+}
+#left-column .box .inner-box:after {
+  background: url('../img/chain.gif') repeat;
+  position: absolute;
+  content: '';
+  right: -4px;
+  width: 7px;
+  top: -4px;
+  bottom: 0;
+}
+#left-column .box .inner-box#navigation {
+  background: #0d2e2b;
+  margin: 0 0 0 1px;
+  list-style: none;
+  width: 162px;
+  color: #fff;
+  padding: 0;
+}
+#left-column .box .inner-box#navigation .navigation-item {
+  margin: 0 0 0 -1px;
+  padding: 0;
+}
+#left-column .box .inner-box#navigation .navigation-item.open .navigation-content {
+  display: block;
+}
+#left-column .box .inner-box#navigation .navigation-item.open .navigation-button .light {
+  display: none;
+}
+#left-column .box .inner-box#navigation .navigation-item.open .navigation-button .light.bottom-right {
+  background-image: url('../img/minus.gif');
+  display: block;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-button {
+  background: url('../img/button-background.gif') no-repeat top left;
+  position: relative;
+  cursor: pointer;
+  margin: 0 -3px;
+  outline: none;
+  border: none;
+  height: 32px;
+  width: 170px;
+  padding: 0;
+  z-index: 2;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-button:hover {
+  background-position-y: -32px;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-button .light {
+  background: url('../img/green-light.gif') no-repeat;
+  position: absolute;
+  display: block;
+  height: 2px;
+  width: 2px;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.top-left {
+  left: 3px;
+  top: 2px;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.top-right {
+  right: 3px;
+  top: 2px;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.bottom-left {
+  bottom: 2px;
+  left: 3px;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.bottom-right {
+  background-image: url('../img/plus.gif');
+  height: 12px;
+  width: 12px;
+  right: -2px;
+  bottom: 0;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-content {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul > li {
+  padding: 0;
+  margin: 0;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul > li > a {
+  border-bottom: 1px solid #4b7874;
+  font-family: Arial, sans-serif;
+  padding: 2px 0 2px 15px;
+  text-decoration: none;
+  font-weight: bold;
+  line-height: 16px;
+  font-size: 13px;
+  display: block;
+  color: #d7d7d7;
+}
+#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul > li > a:hover {
+  background-color: #14433f;
+  color: #fff;
+}
+
+/*# sourceMappingURL=tibia.css.map */

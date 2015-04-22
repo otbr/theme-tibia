@@ -1,0 +1,38 @@
+body {
+	background: url('../img/background-artwork.jpg') no-repeat top center #051122;
+	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+	font-size: 13px;
+}
+
+#skeleton {
+	margin: 160px auto 20px;
+	max-width: 1200px;
+	min-width: 1000px;
+	display: block;
+	clear: both;
+
+	.column {
+		position: relative;
+		display: block;
+		height: 500px;
+
+		&#left-column {
+			//background-color: rgba(255, 255, 255, .3);
+			margin: 0 15px;
+			width: 180px;
+			float: left;
+		}
+
+		&#middle-column {
+			//background-color: rgba(255, 255, 255, .3);
+			margin: 0 210px;
+		}
+
+		&#right-column {
+			//background-color: rgba(255, 255, 255, .3);
+			margin: 0 15px;
+			width: 180px;
+			float: right;
+		}
+	}
+}
