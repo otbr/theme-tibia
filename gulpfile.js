@@ -1,10 +1,9 @@
 var elixir = require('laravel-elixir');
-var config = require('laravel-elixir').config;
 
-config.assetsDir = 'resources/';
-config.publicDir = 'assets';
-config.cssOutput = 'assets/css';
-config.jsOutput = 'assets/js';
+elixir.config.assetsDir = 'resources/';
+elixir.config.publicDir = 'assets';
+elixir.config.cssOutput = 'assets/css';
+elixir.config.jsOutput = 'assets/js';
 
 /*
  |--------------------------------------------------------------------------
@@ -24,4 +23,7 @@ elixir(function(mix) {
 			'app.js', 
 			'assets/js/app.min.js'
 		);
+	
+	mix.copy('assets', '../../../public/pandaac/theme-tibia');
+	mix.registerWatcher('copy', elixir.config.publicDir + '/**/*');
 });
