@@ -130,12 +130,14 @@ body {
 #left-column .box#navigation .inner-box .navigation-item.open .navigation-content {
   display: block;
 }
-#left-column .box#navigation .inner-box .navigation-item.open .navigation-button .light {
+#left-column .box#navigation .inner-box .navigation-item.open .navigation-button .light.top {
   display: none;
 }
-#left-column .box#navigation .inner-box .navigation-item.open .navigation-button .light.bottom-right {
-  background-image: url('../img/minus.gif');
-  display: block;
+#left-column .box#navigation .inner-box .navigation-item.open .navigation-button .light.bottom:before {
+  display: none;
+}
+#left-column .box#navigation .inner-box .navigation-item.open .navigation-button .light.bottom:after {
+  content: url('../img/minus.gif');
 }
 #left-column .box#navigation .inner-box .navigation-item .navigation-button {
   background: url('../img/button-background.gif') no-repeat top left;
@@ -148,6 +150,14 @@ body {
   width: 170px;
   padding: 0;
   z-index: 2;
+  -webkit-user-select: none;
+  /* webkit (safari, chrome) browsers */
+  -moz-user-select: none;
+  /* mozilla browsers */
+  -khtml-user-select: none;
+  /* webkit (konqueror) browsers */
+  -ms-user-select: none;
+  /* IE10+ */
 }
 #left-column .box#navigation .inner-box .navigation-item .navigation-button:before,
 #left-column .box#navigation .inner-box .navigation-item .navigation-button:after {
@@ -162,38 +172,44 @@ body {
 }
 #left-column .box#navigation .inner-box .navigation-item .navigation-button .icon {
   margin-left: 8px;
+  display: block;
   float: left;
 }
 #left-column .box#navigation .inner-box .navigation-item .navigation-button .label {
   margin-left: 2px;
   margin-top: 6px;
+  display: block;
   float: left;
 }
 #left-column .box#navigation .inner-box .navigation-item .navigation-button .light {
-  background: url('../img/green-light.gif') no-repeat;
   position: absolute;
   display: block;
-  height: 2px;
-  width: 2px;
+  height: 100%;
+  width: 100%;
 }
-#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.top-left {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.top:before {
+  content: url('../img/green-light.gif');
+  position: absolute;
   left: 3px;
-  top: 2px;
+  top: -9px;
 }
-#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.top-right {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.top:after {
+  content: url('../img/green-light.gif');
+  position: absolute;
   right: 3px;
-  top: 2px;
+  top: -9px;
 }
-#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.bottom-left {
-  bottom: 2px;
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.bottom:before {
+  content: url('../img/green-light.gif');
+  position: absolute;
+  bottom: -1px;
   left: 3px;
 }
-#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.bottom-right {
-  background-image: url('../img/plus.gif');
-  height: 12px;
-  width: 12px;
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.bottom:after {
+  content: url('../img/plus.gif');
+  position: absolute;
+  bottom: -3px;
   right: -2px;
-  bottom: 0;
 }
 #left-column .box#navigation .inner-box .navigation-item .navigation-content {
   display: none;

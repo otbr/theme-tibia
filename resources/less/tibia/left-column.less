@@ -110,11 +110,15 @@
 				}
 				
 				.navigation-button .light {
-					display: none;
+					&.top { display: none; }
+					&.bottom {
+						&:before {
+							display: none;
+						}
 
-					&.bottom-right {
-						background-image: url('../img/minus.gif');
-						display: block;
+						&:after {
+							content: url('../img/minus.gif');
+						}
 					}
 				}
 			}
@@ -131,6 +135,7 @@
 				padding: 0;
 				z-index: 2;
 
+				.no-selection;
 				.clearfix;
 
 				&:hover {
@@ -139,43 +144,53 @@
 
 				.icon {
 					margin-left: 8px;
+					display: block;
 					float: left;
 				}
 
 				.label {
 					margin-left: 2px;
 					margin-top: 6px;
+					display: block;
 					float: left;
 				}
 
 				.light {
-					background: url('../img/green-light.gif') no-repeat;
 					position: absolute;
 					display: block;
-					height: 2px;
-					width: 2px;
+					height: 100%;
+					width: 100%;
 
-					&.top-left {
-						left: 3px;
-						top: 2px;
+					&.top {
+						&:before {
+							content: url('../img/green-light.gif');
+							position: absolute;
+							left: 3px;
+							top: -9px;
+						}
+
+						&:after {
+							content: url('../img/green-light.gif');
+							position: absolute;
+							right: 3px;
+							top: -9px;
+						}
 					}
 
-					&.top-right {
-						right: 3px;
-						top: 2px;
-					}
+					&.bottom {
+						&:before {
+							content: url('../img/green-light.gif');
+							position: absolute;
+							bottom: -1px;
+							left: 3px;
+						}
 
-					&.bottom-left {
-						bottom: 2px;
-						left: 3px;
-					}
-
-					&.bottom-right {
-						background-image: url('../img/plus.gif');
-						height: 12px;
-						width: 12px;
-						right: -2px;
-						bottom: 0;
+						&:after {
+							content: url('../img/plus.gif');
+							position: absolute;
+							bottom: -3px;
+							right: -2px;
+						}
 					}
 				}
 			}

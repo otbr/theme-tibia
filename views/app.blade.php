@@ -32,13 +32,10 @@
 				<ul class="inner-box">
 					<li class="navigation-item open">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-news.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-news.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -49,13 +46,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-abouttibia.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-abouttibia.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -69,13 +63,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-gameguides.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-gameguides.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -87,13 +78,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-library.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-library.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -109,13 +97,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-community.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-community.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -135,13 +120,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-forum.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-forum.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -156,13 +138,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-account.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-account.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -175,13 +154,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top-left"></span>
-							<span class="light top-right"></span>
-							<span class="light bottom-left"></span>
-							<span class="light bottom-right"></span>
-
+							<span class="light top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-support.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-support.gif') }}">
+							<span class="light bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
