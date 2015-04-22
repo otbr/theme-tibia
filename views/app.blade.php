@@ -32,24 +32,24 @@
 				<ul class="inner-box">
 					<li class="navigation-item open">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-news.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-news.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
-								<li><a href="#">Latest News</a></li>
+								<li class="active"><a href="#">Latest News</a></li>
 								<li><a href="#">News Archive</a></li>
 							</ul>
 						</div>
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-abouttibia.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-abouttibia.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -63,10 +63,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-gameguides.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-gameguides.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -78,10 +78,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-library.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-library.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -97,10 +97,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-community.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-community.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -120,10 +120,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-forum.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-forum.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -138,10 +138,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-account.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-account.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -154,10 +154,10 @@
 					</li>
 					<li class="navigation-item">
 						<div class="navigation-button">
-							<span class="light top"></span>
+							<span class="crystals top"></span>
 							<img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-support.gif') }}">
 							<img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-support.gif') }}">
-							<span class="light bottom"></span>
+							<span class="crystals bottom"></span>
 						</div>
 						<div class="navigation-content">
 							<ul>
@@ -175,7 +175,23 @@
 
 		<aside id="right-column" class="column"></aside>
 
-		<div id="middle-column" class="column"></div>
+		<section id="middle-column" class="column">
+			<div class="box">
+				<span class="corners top"></span>
+
+				<header class="header">
+					<img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-newsticker.gif') }}">
+				</header>
+
+				<div class="inner-box-border">
+					<div class="inner-box">
+						<strong>BREAKING NEWS!</strong> Justin is a confirmed racist.
+					</div>
+				</div>
+
+				<span class="corners bottom"></span>
+			</div>
+		</section>
 	</section>
 
 

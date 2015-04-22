@@ -1,0 +1,104 @@
+#middle-column {
+	position: relative;
+	padding-top: 5px;
+
+	.box {
+		background: url('../img/scroll.gif') repeat top left;
+		border-right: 2px solid #3a3738;
+		border-left: 2px solid #3a3738;
+		position: relative;
+		margin: 0 0 34px;
+
+		&:before {
+			background: url('../img/border-1.gif') repeat-x top left;
+			position: absolute;
+			height: 6px;
+			content: '';
+			right: -2px;
+			left: -2px;
+			top: -6px;
+		}
+
+		&:after {
+			background: url('../img/border-1.gif') repeat-x top left;
+			position: absolute;
+			bottom: -6px;
+			height: 6px;
+			content: '';
+			right: -2px;
+			left: -2px;
+		}
+
+		.corners {
+			position: absolute;
+			z-index: 2;
+			right: 0;
+			left: 0;
+
+			&.top {
+				top: 0;
+
+				&:before {
+					content: url('../img/corner-tl.gif');
+					position: absolute;
+					height: 17px;
+					width: 17px;
+					left: -5px;
+					top: -10px;
+				}
+
+				&:after {
+					content: url('../img/corner-tr.gif');
+					position: absolute;
+					height: 17px;
+					width: 17px;
+					right: -5px;
+					top: -10px;
+				}
+			}
+
+			&.bottom {
+				bottom: 0;
+
+				&:before {
+					content: url('../img/corner-bl.gif');
+					position: absolute;
+					bottom: -10px;
+					height: 17px;
+					width: 17px;
+					left: -5px;
+				}
+
+				&:after {
+					content: url('../img/corner-br.gif');
+					position: absolute;
+					bottom: -10px;
+					height: 17px;
+					width: 17px;
+					right: -5px;
+				}
+			}
+		}
+
+		.header {
+			background: url('../img/title-background-green.gif') repeat-x top left;
+			overflow: hidden;
+			display: block;
+			height: 24px;
+
+			.headline {
+				margin-left: 5px;
+				display: block;
+			}
+		}
+
+		.inner-box-border {
+			border: 4px solid #debb9d;
+
+			.inner-box {
+				border: 1px solid #793d03;
+				padding: 5px;
+			}
+		}
+	}
+}
