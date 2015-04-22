@@ -16,17 +16,20 @@
 
 	<section id="skeleton">
 		<aside id="left-column" class="column">
-			<a id="logo-artwork" href="/landing"></a>
+			<a id="logo-artwork" href="#"></a>
 
-			<div class="box">
+			<div id="login-box" class="box">
 				<div class="inner-box">
-					<br>
-					<br>
+					<a href="#" class="medium-button">
+						<img src="{{ asset('pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
+					</a>
+
+					<a href="#" class="create-account"></a>
 				</div>
 			</div>
 
-			<div class="box">
-				<ul id="navigation" class="inner-box">
+			<div id="navigation" class="box">
+				<ul class="inner-box">
 					<li class="navigation-item open">
 						<div class="navigation-button">
 							<span class="light top-left"></span>

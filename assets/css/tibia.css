@@ -1,10 +1,14 @@
+html {
+  min-width: 1000px;
+}
 body {
   background: url('../img/background-artwork.jpg') no-repeat top center #051122;
   font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
+  overflow-y: scroll;
   font-size: 13px;
 }
 #skeleton {
-  margin: 160px auto 20px;
+  margin: 161px auto 20px;
   max-width: 1200px;
   min-width: 1000px;
   display: block;
@@ -21,12 +25,17 @@ body {
   float: left;
 }
 #skeleton .column#middle-column {
+  background-color: rgba(255, 255, 255, 0.3);
   margin: 0 210px;
 }
 #skeleton .column#right-column {
+  background-color: rgba(255, 255, 255, 0.3);
   margin: 0 15px;
   width: 180px;
   float: right;
+}
+#left-column {
+  position: relative;
 }
 #left-column #logo-artwork {
   background: url('../img/tibia-logo-artwork-top.gif');
@@ -39,7 +48,7 @@ body {
   z-index: 3;
 }
 #left-column .box {
-  margin: 7px 8px 32px;
+  margin: 7px 8px 34px;
   position: relative;
   width: 164px;
 }
@@ -55,7 +64,7 @@ body {
 #left-column .box:after {
   content: url('../img/box-bottom.gif');
   position: absolute;
-  bottom: -9px;
+  bottom: -11px;
   height: 12px;
   width: 180px;
   right: -8px;
@@ -63,7 +72,10 @@ body {
 }
 #left-column .box .inner-box {
   background: url('../img/loginbox-textfield-background.gif') repeat top left;
+  display: inline-block;
   position: relative;
+  margin: 0 0 0 1px;
+  width: 162px;
 }
 #left-column .box .inner-box:before {
   background: url('../img/chain.gif') repeat;
@@ -83,29 +95,49 @@ body {
   top: -4px;
   bottom: 0;
 }
-#left-column .box .inner-box#navigation {
+#left-column .box#login-box .medium-button {
+  background: url('../img/medium-button.gif') no-repeat top left;
+  text-align: center;
+  margin: 1px auto 0;
+  line-height: 37px;
+  display: block;
+  height: 37px;
+  width: 150px;
+}
+#left-column .box#login-box .medium-button:hover {
+  background-position-y: -37px;
+}
+#left-column .box#login-box .create-account {
+  background: url('../img/loginbox-font-create-account.gif') no-repeat top left;
+  margin: 2px auto 1px;
+  display: block;
+  height: 11px;
+  width: 124px;
+}
+#left-column .box#login-box .create-account:hover {
+  background-position-y: -11px;
+}
+#left-column .box#navigation .inner-box {
   background: #0d2e2b;
-  margin: 0 0 0 1px;
   list-style: none;
-  width: 162px;
   color: #fff;
   padding: 0;
 }
-#left-column .box .inner-box#navigation .navigation-item {
+#left-column .box#navigation .inner-box .navigation-item {
   margin: 0 0 0 -1px;
   padding: 0;
 }
-#left-column .box .inner-box#navigation .navigation-item.open .navigation-content {
+#left-column .box#navigation .inner-box .navigation-item.open .navigation-content {
   display: block;
 }
-#left-column .box .inner-box#navigation .navigation-item.open .navigation-button .light {
+#left-column .box#navigation .inner-box .navigation-item.open .navigation-button .light {
   display: none;
 }
-#left-column .box .inner-box#navigation .navigation-item.open .navigation-button .light.bottom-right {
+#left-column .box#navigation .inner-box .navigation-item.open .navigation-button .light.bottom-right {
   background-image: url('../img/minus.gif');
   display: block;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-button {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button {
   background: url('../img/button-background.gif') no-repeat top left;
   position: relative;
   cursor: pointer;
@@ -117,53 +149,53 @@ body {
   padding: 0;
   z-index: 2;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-button:hover {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button:hover {
   background-position-y: -32px;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-button .light {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light {
   background: url('../img/green-light.gif') no-repeat;
   position: absolute;
   display: block;
   height: 2px;
   width: 2px;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.top-left {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.top-left {
   left: 3px;
   top: 2px;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.top-right {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.top-right {
   right: 3px;
   top: 2px;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.bottom-left {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.bottom-left {
   bottom: 2px;
   left: 3px;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-button .light.bottom-right {
+#left-column .box#navigation .inner-box .navigation-item .navigation-button .light.bottom-right {
   background-image: url('../img/plus.gif');
   height: 12px;
   width: 12px;
   right: -2px;
   bottom: 0;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-content {
+#left-column .box#navigation .inner-box .navigation-item .navigation-content {
   display: none;
   padding: 0;
   margin: 0;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul {
+#left-column .box#navigation .inner-box .navigation-item .navigation-content > ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul > li {
+#left-column .box#navigation .inner-box .navigation-item .navigation-content > ul > li {
   padding: 0;
   margin: 0;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul > li > a {
+#left-column .box#navigation .inner-box .navigation-item .navigation-content > ul > li > a {
   border-bottom: 1px solid #4b7874;
   font-family: Arial, sans-serif;
-  padding: 2px 0 2px 15px;
+  padding: 2px 0 2px 17px;
   text-decoration: none;
   font-weight: bold;
   line-height: 16px;
@@ -171,7 +203,7 @@ body {
   display: block;
   color: #d7d7d7;
 }
-#left-column .box .inner-box#navigation .navigation-item .navigation-content > ul > li > a:hover {
+#left-column .box#navigation .inner-box .navigation-item .navigation-content > ul > li > a:hover {
   background-color: #14433f;
   color: #fff;
 }
