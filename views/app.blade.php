@@ -21,11 +21,19 @@
 
 			<div id="login-box" class="box">
 				<div class="inner-box">
-					<a href="{{ url('/account/login') }}" class="medium-button">
-						<img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
-					</a>
+					@if (Auth::check())
+						<a href="{{ url('/account') }}" class="medium-button">
+							<img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_myaccount.png') }}" alt="My Account">
+						</a>
 
-					<a href="{{ url('/account/create') }}" class="create-account"></a>
+						<a href="{{ url('/account/logout') }}" class="logout"></a>
+					@else
+						<a href="{{ url('/account/login') }}" class="medium-button">
+							<img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
+						</a>
+
+						<a href="{{ url('/account/create') }}" class="create-account"></a>
+					@endif
 				</div>
 			</div>
 
