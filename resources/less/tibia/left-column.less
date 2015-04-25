@@ -7,34 +7,37 @@
 		display: block;
 		height: 158px;
 		width: 196px;
-		top: -158px;
+		top: -153px;
 		left: -10px;
 		z-index: 5;
 	}
 
 	.box {
-		margin: 7px 8px 34px;
+		margin: 0 8px 10px;
 		position: relative;
+		padding: 12px 0;
 		width: 164px;
 
 		&:before {
-			content: url('../img/box-top.gif');
+			background: url('../img/box-top.gif');
 			position: absolute;
 			height: 12px;
 			width: 180px;
-			top: -13px;
+			content: '';
 			left: -8px;
 			z-index: 4;
+			top: 0;
 		}
 
 		&:after {
-			content: url('../img/box-bottom.gif');
+			background: url('../img/box-bottom.gif');
 			position: absolute;
-			bottom: -11px;
 			height: 12px;
 			width: 180px;
+			content: '';
 			right: -8px;
 			z-index: 4;
+			bottom: 0;
 		}
 
 		.inner-box {
@@ -70,17 +73,7 @@
 
 	.box#login-box {
 		.medium-button {
-			background: url('../img/medium-button.gif') no-repeat top left;
-			text-align: center;
 			margin: 1px auto 0;
-			line-height: 37px;
-			display: block;
-			height: 37px;
-			width: 150px;
-
-			&:hover {
-				background-position-y: -37px;
-			}
 		}
 
 		.create-account {
@@ -112,14 +105,16 @@
 				}
 				
 				.navigation-button .crystals {
-					&.top { display: none; }
+					&.top:before, &.top:after {
+						content: none;
+					}
 					&.bottom {
 						&:before {
-							display: none;
+							content: none;
 						}
 
 						&:after {
-							content: url('../img/minus.gif');
+							background: url('../img/minus.gif');
 						}
 					}
 				}
@@ -165,33 +160,45 @@
 
 					&.top {
 						&:before {
-							content: url('../img/green-light.gif');
+							background: url('../img/green-light.gif');
 							position: absolute;
+							content: '';
+							height: 2px;
+							width: 2px;
 							left: 3px;
-							top: -9px;
+							top: 2px;
 						}
 
 						&:after {
-							content: url('../img/green-light.gif');
+							background: url('../img/green-light.gif');
 							position: absolute;
+							content: '';
+							height: 2px;
+							width: 2px;
 							right: 3px;
-							top: -9px;
+							top: 2px;
 						}
 					}
 
 					&.bottom {
 						&:before {
-							content: url('../img/green-light.gif');
+							background: url('../img/green-light.gif');
 							position: absolute;
-							bottom: -1px;
+							bottom: 2px;
+							content: '';
+							height: 2px;
+							width: 2px;
 							left: 3px;
 						}
 
 						&:after {
-							content: url('../img/plus.gif');
+							background: url('../img/plus.gif');
 							position: absolute;
-							bottom: -3px;
+							height: 12px;
+							width: 12px;
 							right: -2px;
+							content: '';
+							bottom: 0;
 						}
 					}
 				}
@@ -235,10 +242,10 @@
 							text-decoration: none;
 							font-weight: bold;
 							line-height: 16px;
-							margin-left: 1px;
-							font-size: 13px;
+							font-size: 13.3px;
 							display: block;
 							color: #d7d7d7;
+							width: 145px;
 
 							&:hover {
 								background-color: #14433f;

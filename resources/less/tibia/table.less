@@ -1,0 +1,142 @@
+table {
+	tr {
+		td, th {
+			padding: 2px 4px;
+		}
+
+		th {
+			padding-right: 11px;
+			text-align: left;
+		}
+	}
+}
+
+.table {
+	font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+	border: 1px solid #000;
+	position: relative;
+	font-size: 13.3px;
+	color: #5a2800;
+	margin: 5px;
+
+	& > .header {
+		background-color: #5f4d41;
+		padding: 6px 14px 7px;
+		position: relative;
+		font-weight: bold;
+		color: #fff;
+
+		&:before {
+			background: url('../img/box-frame-vertical.gif');
+			position: absolute;
+			content: '';
+			width: 3px;
+			left: -1px;
+			bottom: 0;
+			top: 0;
+		}
+
+		&:after {
+			background: url('../img/box-frame-vertical.gif');
+			position: absolute;
+			content: '';
+			right: -1px;
+			width: 3px;
+			bottom: 0;
+			top: 0;
+		}
+
+		& > .borders {
+			&:before {
+				background: url('../img/table-headline-border.gif');
+				position: absolute;
+				content: '';
+				height: 4px;
+				top: -1px;
+				right: 0;
+				left: 0;
+			}
+
+			&:after {
+				background: url('../img/table-headline-border.gif');
+				position: absolute;
+				bottom: -1px;
+				content: '';
+				height: 4px;
+				right: 0;
+				left: 0;
+			}
+
+			& > .edges {
+				&.top {
+					&:before {
+						background: url('../img/box-frame-edge.gif');
+						position: absolute;
+						content: '';
+						height: 5px;
+						width: 5px;
+						left: -2px;
+						top: -2px;
+					}
+
+					&:after {
+						background: url('../img/box-frame-edge.gif');
+						position: absolute;
+						content: '';
+						height: 5px;
+						right: -2px;
+						width: 5px;
+						top: -2px;
+					}
+				}
+
+				&.bottom {
+					&:before {
+						background: url('../img/box-frame-edge.gif');
+						position: absolute;
+						bottom: -2px;
+						content: '';
+						height: 5px;
+						width: 5px;
+						left: -2px;
+					}
+
+					&:after {
+						background: url('../img/box-frame-edge.gif');
+						position: absolute;
+						bottom: -2px;
+						content: '';
+						height: 5px;
+						right: -2px;
+						width: 5px;
+					}
+				}
+			}
+		}
+	}
+
+	& > .content {
+		background-color: #f1e0c5;
+		border: 2px solid #55636c;
+		padding: 7px 6px 0;
+		border-top: none;
+
+		& > .box {
+			box-shadow: 2px 3px 2px #7c5231;
+			background-color: #d4c0a1;
+			border: 1px solid #5f4d41;
+			margin-bottom: 9px;
+			margin-right: 2px;
+
+			& > .inner-box {
+				border: 1px solid #faf0d7;
+				box-sizing: border-box;
+				padding: 2px 4px 0;
+				overflow: hidden;
+				width: 100%;
+				
+				.clearfix;
+			}
+		}
+	}
+}

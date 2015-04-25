@@ -9,6 +9,12 @@
 	}
 }
 
+.img-responsive(@display: block) {
+	display: @display;
+	max-width: 100%; // Part 1: Set a maximum relative to the parent
+	height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+}
+
 .no-selection() {
 	-webkit-user-select: none; /* webkit (safari, chrome) browsers */
 	-moz-user-select: none; /* mozilla browsers */

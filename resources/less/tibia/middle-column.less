@@ -1,13 +1,14 @@
 #middle-column {
 	position: relative;
-	padding-top: 5px;
+	padding-top: 4px;
 
-	.box {
+	& > .box {
 		background: url('../img/scroll.gif') repeat top left;
 		border-right: 2px solid #3a3738;
 		border-left: 2px solid #3a3738;
 		position: relative;
-		margin: 0 0 34px;
+		margin: 0 0 18px;
+		padding: 6px 0;
 
 		&:before {
 			background: url('../img/border-1.gif') repeat-x top left;
@@ -16,20 +17,20 @@
 			content: '';
 			right: -2px;
 			left: -2px;
-			top: -6px;
+			top: 0;
 		}
 
 		&:after {
 			background: url('../img/border-1.gif') repeat-x top left;
 			position: absolute;
-			bottom: -6px;
 			height: 6px;
 			content: '';
 			right: -2px;
 			left: -2px;
+			bottom: 0;
 		}
 
-		.corners {
+		& > .corners {
 			position: absolute;
 			z-index: 2;
 			right: 0;
@@ -44,7 +45,7 @@
 					height: 17px;
 					width: 17px;
 					left: -5px;
-					top: -10px;
+					top: -4px;
 				}
 
 				&:after {
@@ -53,7 +54,7 @@
 					height: 17px;
 					width: 17px;
 					right: -5px;
-					top: -10px;
+					top: -4px;
 				}
 			}
 
@@ -63,7 +64,7 @@
 				&:before {
 					content: url('../img/corner-bl.gif');
 					position: absolute;
-					bottom: -10px;
+					bottom: -4px;
 					height: 17px;
 					width: 17px;
 					left: -5px;
@@ -72,7 +73,7 @@
 				&:after {
 					content: url('../img/corner-br.gif');
 					position: absolute;
-					bottom: -10px;
+					bottom: -4px;
 					height: 17px;
 					width: 17px;
 					right: -5px;
@@ -80,9 +81,8 @@
 			}
 		}
 
-		.header {
+		& > .header {
 			background: url('../img/title-background-green.gif') repeat-x top left;
-			overflow: hidden;
 			display: block;
 			height: 24px;
 
@@ -92,10 +92,10 @@
 			}
 		}
 
-		.inner-box-border {
+		& > .inner-box-border {
 			border: 4px solid #debb9d;
 
-			.inner-box {
+			& > .inner-box {
 				border: 1px solid #793d03;
 				padding: 5px;
 			}

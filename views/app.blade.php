@@ -5,6 +5,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<link href="{{ asset('/pandaac/theme-tibia/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
 	<link href="{{ asset('/pandaac/theme-tibia/css/tibia.css') }}" rel="stylesheet" media="all">
 
 	<!--[if lt IE 9]>
@@ -12,7 +13,7 @@
 		<script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	<![endif]-->
 </head>
-<body>
+<body class="@yield('body')">
 
 	<section id="skeleton">
 		<aside id="left-column" class="column">
@@ -20,11 +21,11 @@
 
 			<div id="login-box" class="box">
 				<div class="inner-box">
-					<a href="#" class="medium-button">
+					<a href="{{ url('/account/login') }}" class="medium-button">
 						<img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
 					</a>
 
-					<a href="#" class="create-account"></a>
+					<a href="{{ url('/account/create') }}" class="create-account"></a>
 				</div>
 			</div>
 
@@ -173,24 +174,35 @@
 			</div>
 		</aside>
 
-		<aside id="right-column" class="column"></aside>
+		<aside id="right-column" class="column">
+			<div id="pedestal">
+				<a href="#" class="monster"><img src="{{ asset('/pandaac/theme-tibia/img/monsters/waterelementalmassive.gif') }}" alt="Monster"></a>
+				<a href="#" class="online">{{ rand(0, 15000) }}<br>Players Online</a>
+			</div>
+
+			<div class="box premium">
+				<div class="inner-box">
+					<a href="#" class="green-button">
+						<img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="Get Premium">
+					</a>
+				</div>
+			</div>
+
+			<div class="box networks">
+				<div class="inner-box">
+					
+				</div>
+			</div>
+
+			<div class="box screenshots">
+				<div class="inner-box">
+					<a href="#"><img src="{{ asset('/pandaac/theme-tibia/img/screenshot.png') }}"></a>
+				</div>
+			</div>
+		</aside>
 
 		<section id="middle-column" class="column">
-			<div class="box">
-				<span class="corners top"></span>
-
-				<header class="header">
-					<img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-newsticker.gif') }}">
-				</header>
-
-				<div class="inner-box-border">
-					<div class="inner-box">
-						Lorem ipsum.
-					</div>
-				</div>
-
-				<span class="corners bottom"></span>
-			</div>
+			@yield('content')
 		</section>
 	</section>
 
