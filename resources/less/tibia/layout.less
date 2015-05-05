@@ -34,6 +34,45 @@ h1 {
 	color: #5a2800;
 }
 
+h2 {
+	font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+	margin: -6px 0 28px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 17px;
+	color: #5a2800;
+
+	&:before {
+		content: url('../img/headline-bracer-left.gif');
+		position: relative;
+		height: 41px;
+		width: 46px;
+		left: -4px;
+		top: 14px;
+	}
+
+	&:after {
+		content: url('../img/headline-bracer-right.gif');
+		position: relative;
+		height: 41px;
+		width: 46px;
+		right: -4px;
+		top: 14px;
+	}
+}
+
+h4 {
+	font-size: 18.6px;
+	font-weight: bold;
+	margin: 0;
+}
+
+.offline,
+.red,
+.free {
+	color: #ef0000;
+}
+
 .medium-button {
 	background: url('../img/medium-button.gif') no-repeat top left;
 	text-align: center;
@@ -51,30 +90,16 @@ h1 {
 	}
 }
 
-.green-button {
+.green-button,
+.blue-button,
+.red-button {
 	background: url('../img/sbutton_green.gif') no-repeat top left;
+	display: inline-block;
 	text-align: center;
 	line-height: 25px;
+	overflow: hidden;
 	margin: 0 0 2px;
 	cursor: pointer;
-	display: block;
-	height: 25px;
-	width: 135px;
-	border: none;
-	padding: 0;
-
-	&:hover {
-		background-position-y: -25px;
-	}
-}
-
-.blue-button {
-	background: url('../img/sbutton_blue.gif') no-repeat top left;
-	text-align: center;
-	line-height: 25px;
-	margin: 0 0 2px;
-	cursor: pointer;
-	display: block;
 	height: 25px;
 	width: 135px;
 	border: none;
@@ -89,19 +114,54 @@ h1 {
 	}
 }
 
+.blue-button {
+	background-image: url('../img/sbutton_blue.gif');
+}
+
+.red-button {
+	background-image: url('../img/sbutton_red.gif');
+}
+
+.play-button {
+	background: url('../img/play-button.gif') no-repeat top left;
+	text-align: center;
+	line-height: 46px;
+	cursor: pointer;
+	display: block;
+	border: none;
+	height: 46px;
+	width: 46px;
+	padding: 0;
+	margin: 0;
+
+	&:hover {
+		background-position-y: -46px;
+	}
+}
+
 .error {
 	color: #ed1111;
 }
 
-.errors {
+.padding {
+	padding: 10px;
+}
+
+.errors,
+.notification {
 	font-family: Verdana, Arial, 'Times New Roman', sans-serif;
 	background-color: #d4c0a1;
-	padding: 8px 5px 8px 42px;
 	margin: 6px 6px 16px;
 	position: relative;
-	font-size: 10.6px;
+	font-size: 13.3px;
 	min-height: 24px;
-	color: #ed1111;
+	padding: 8px 5px;
+
+	&.errors {
+		padding-left: 42px;
+		font-size: 10.6px;
+		color: #ed1111;
+	}
 
 	h5 {
 		font-weight: bold;
@@ -211,7 +271,7 @@ h1 {
 #skeleton {
 	margin: 156px auto 20px;
 	max-width: 1200px;
-	min-width: 1000px;
+	min-width: 1080px;
 	display: block;
 	clear: both;
 

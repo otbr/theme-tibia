@@ -5,8 +5,12 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
+	<title>@yield('title') &mdash; pandaac</title>
+
 	<link href="{{ asset('/pandaac/theme-tibia/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
 	<link href="{{ asset('/pandaac/theme-tibia/css/tibia.css') }}" rel="stylesheet" media="all">
+
+	@yield('head')
 
 	<!--[if lt IE 9]>
 		<script src="//oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -216,6 +220,8 @@
 
 
 	<script src="{{ asset('/pandaac/theme-tibia/js/app.min.js') }}"></script>
+
+	@yield('footer')
 
 </body>
 </html>

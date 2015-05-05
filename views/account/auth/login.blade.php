@@ -1,5 +1,6 @@
 @extends('theme::app')
 
+@section('title', 'Account Management')
 @section('body', 'account-login')
 
 @section('content')

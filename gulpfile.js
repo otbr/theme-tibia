@@ -22,6 +22,10 @@ elixir(function(mix) {
 		.scripts(
 			'app.js', 
 			'assets/js/app.min.js'
+		)
+		.scripts(
+			'faker.min.js',
+			'assets/js/faker.min.js'
 		);
 	
 	mix.copy('assets', '../../../public/pandaac/theme-tibia');
