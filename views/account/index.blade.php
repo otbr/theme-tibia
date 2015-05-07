@@ -110,7 +110,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td align="center" valign="middle">3.</td>
+								<td align="center" valign="middle">4.</td>
 								<td valign="middle">
 									<span>Chris of Olympa</span>
 									<small>Elite Knight - Level 192</small>
@@ -135,7 +135,7 @@
 								</td>
 							</tr>
 							<tr>
-								<td align="center" valign="middle">5.</td>
+								<td align="center" valign="middle">6.</td>
 								<td valign="middle">
 									<span>Chris of Secura</span>
 									<small>Elder Druid - Level 87</small>
@@ -145,7 +145,7 @@
 								<td></td>
 							</tr>
 							<tr>
-								<td align="center" valign="middle">6.</td>
+								<td align="center" valign="middle">7.</td>
 								<td valign="middle">
 									<span>Chris of Nova</span>
 									<small>Master Sorcerer - Level 233</small>

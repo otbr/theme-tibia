@@ -66,6 +66,7 @@ h4 {
   background: url('../img/medium-button.gif') no-repeat top left;
   text-align: center;
   line-height: 37px;
+  overflow: hidden;
   margin: 0 0 2px;
   cursor: pointer;
   display: block;
