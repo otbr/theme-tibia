@@ -24,6 +24,10 @@ class ServiceProvider extends ThemeServiceProvider {
 		$this->loadTranslationsFrom(__DIR__.'/lang');
 
 		$this->loadOverridesFrom(__DIR__.'/packages');
+
+		$this->publishes([
+			__DIR__.'/assets' => public_path($this->namespace),
+		], 'public');
 	}
 	
 	/**
