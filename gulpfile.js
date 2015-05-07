@@ -1,5 +1,6 @@
+var gulp = require('gulp');
+var shell = require('gulp-shell');
 var elixir = require('laravel-elixir');
-var os = require('os');
 
 elixir.config.assetsDir = 'resources/';
 elixir.config.publicDir = 'assets/';
@@ -18,21 +19,14 @@ elixir.config.jsOutput = elixir.config.publicDir + 'js/';
  */
 
 elixir(function(mix) {
-	mix
-		.less('tibia.less')
-		.scripts(
-			'app.js', 
-			'assets/js/app.min.js'
-		)
-		.scripts(
-			'faker.min.js',
-			'assets/js/faker.min.js'
-		);
-	
-	if (os.platform() == 'win32') {
-		mix.copy('assets/', '../pandaac/public/pandaac/theme-tibia/');
-	} else {
-		mix.copy('assets/', '../../../public/pandaac/theme-tibia/');
-	}
-	mix.registerWatcher('copy', elixir.config.publicDir + '/**/*');
+	mix.less('tibia.less');
+	mix.scripts('app.js', 'assets/js/app.min.js');
+	mix.scripts('faker.min.js', 'assets/js/faker.min.js');
+
+	mix.task('publish_assets');
+	mix.registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
 });
+
+gulp.task('publish_assets', shell.task([
+	"php ../../../artisan vendor:publish --tag=public --force"
+]));
