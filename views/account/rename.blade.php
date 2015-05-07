@@ -35,7 +35,7 @@
 						<table cellspacing="0" cellpadding="0" border="0">
 							<tr>
 								<th>Current Account Name:</th>
-								<td>{{ Auth::user()->name() }}</td>
+								<td>{{ account()->name() }}</td>
 							</tr>
 							<tr>
 								<th>New Account Name:</th>

@@ -1,4 +1,5 @@
 var elixir = require('laravel-elixir');
+var os = require('os');
 
 elixir.config.assetsDir = 'resources/';
 elixir.config.publicDir = 'assets/';
@@ -28,6 +29,10 @@ elixir(function(mix) {
 			'assets/js/faker.min.js'
 		);
 	
-	mix.copy('assets/', '../../../public/pandaac/theme-tibia/');
+	if (os.platform() == 'win32') {
+		mix.copy('assets/', '../pandaac/public/pandaac/theme-tibia/');
+	} else {
+		mix.copy('assets/', '../../../public/pandaac/theme-tibia/');
+	}
 	mix.registerWatcher('copy', elixir.config.publicDir + '/**/*');
 });
