@@ -1,5 +1,6 @@
 <?php namespace pandaac\ThemeTibia;
 
+use Illuminate\Routing\Router;
 use Apolune\Core\Providers\ThemeServiceProvider;
 use Illuminate\Contracts\Console\Kernel as Artisan;
 
@@ -37,7 +38,10 @@ class ServiceProvider extends ThemeServiceProvider {
 	 */
 	public function register()
 	{
-		//
+		// Temporary redirect to /account until a default page has been set.
+		\Route::get('/', function() {
+			return redirect('/account');
+		});
 	}
 	
 }
