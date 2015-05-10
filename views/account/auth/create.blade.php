@@ -74,22 +74,24 @@
 							</div>
 						</div>
 						
-						<div class="box">
-							<div class="inner-box">
-								<table cellspacing="0" cellpadding="0" border="0" width="100%">
-									<tr>
-										<th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">World:</strong></p></th>
-										<td>
-											<p><input id="antica" type="radio" name="world" value="0" checked> <label for="antica">Antica <small>(Open PvP)</small></label></p>
-											<p><input id="nika" type="radio" name="world" value="1"> <label for="nika">Nika <small>(Open PvP)</small></label></p>
-											<p><input id="secura" type="radio" name="world" value="2"> <label for="secura">Secura <small>(Optional PvP)</small></label></p>
-											<p><input id="inferna" type="radio" name="world" value="3"> <label for="inferna">Inferna <small>(Hardcore PvP)</small></label></p>
-											<p><small>[<a href="#" id="suggest-game">suggest game world</a>]</small></p>
-										</td>
-									</tr>
-								</table>
+						@if (count($worlds = worlds()) > 1)
+							<div class="box">
+								<div class="inner-box">
+									<table cellspacing="0" cellpadding="0" border="0" width="100%">
+										<tr>
+											<th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">World:</strong></p></th>
+											<td>
+												@foreach ($worlds as $world)
+													<p><label><input type="radio" name="world" value="{{ $world->id() }}"> {{ $world->name() }} <small>{{ $world->type() }}</small></label></p>
+												@endforeach
+												
+												<p><small>[<a href="#" id="suggest-game">suggest game world</a>]</small></p>
+											</td>
+										</tr>
+									</table>
+								</div>
 							</div>
-						</div>
+						@endif
 						
 						<div class="box">
 							<div class="inner-box">
