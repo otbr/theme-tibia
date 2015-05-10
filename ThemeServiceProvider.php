@@ -1,10 +1,8 @@
 <?php namespace pandaac\ThemeTibia;
 
-use Illuminate\Routing\Router;
-use Apolune\Core\Providers\ThemeServiceProvider;
-use Illuminate\Contracts\Console\Kernel as Artisan;
+use Illuminate\Support\ServiceProvider;
 
-class ServiceProvider extends ThemeServiceProvider {
+class ThemeServiceProvider extends ServiceProvider {
 
 	/**
 	 * Define the theme namespace.
@@ -20,9 +18,8 @@ class ServiceProvider extends ThemeServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->loadViewsFrom(__DIR__.'/views');
-		$this->loadTranslationsFrom(__DIR__.'/lang');
-		$this->loadOverridesFrom(__DIR__.'/packages');
+		$this->loadViewsFrom(__DIR__.'/views', 'theme');
+		$this->loadTranslationsFrom(__DIR__.'/lang', 'theme');
 
 		$this->publishes([
 			__DIR__.'/assets' => public_path($this->namespace),
@@ -41,8 +38,7 @@ class ServiceProvider extends ThemeServiceProvider {
 	 */
 	public function register()
 	{
-		// Temporary redirect to /account until a default page has been set.
-		get('/', function() { return redirect('/account'); });
+		get('/', function() { return redirect('/account'); }); // Temporary redirect to /account until a default page has been set.
 	}
 	
 }
