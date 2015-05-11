@@ -21,7 +21,6 @@ elixir.config.jsOutput = elixir.config.publicDir + 'js/';
 elixir(function(mix) {
 	mix.less('tibia.less');
 	mix.scripts('app.js', 'assets/js/app.min.js');
-	mix.scripts('faker.min.js', 'assets/js/faker.min.js');
 
 	mix.task('publish_assets');
 	mix.registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');

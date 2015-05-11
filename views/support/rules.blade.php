@@ -1,7 +1,7 @@
 @extends('theme::app')
 
 @section('title', 'Legal Documents')
-@section('body', 'legal-rules')
+@section('body', 'support-rules')
 
 @section('content')
 <div class="box">
