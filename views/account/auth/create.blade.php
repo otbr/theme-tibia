@@ -67,9 +67,9 @@
 										<tr>
 											<th><strong class="{{ $errors->has('sex') ? 'error' : null }}">Sex:</strong></th>
 											<td>
-												@foreach ($genders as $key => $gender)
+												@foreach ($genders as $gender)
 													<label>
-														<input type="radio" name="sex" value="{{ $gender->id() }}" {{ $key === 0 ? 'checked' : null }}> 
+														<input type="radio" name="sex" value="{{ $gender->id() }}" {{ old('sex', 1) == $gender->id() ? 'checked' : null }}> 
 														{{ $gender->name() }}
 													</label>
 													&nbsp;
@@ -88,9 +88,10 @@
 										<tr>
 											<th width="20%" valign="top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">Vocation:</strong></p></th>
 											<td>
-												@foreach ($vocations as $key => $vocation)
+												<?php $first = $vocations->first()->id(); ?>
+												@foreach ($vocations as $vocation)
 													<label>
-														<input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ $key === $vocations->first()->id() ? 'checked' : null }}> 
+														<input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ old('vocation', $first) == $vocation->id() ? 'checked' : null }}> 
 														{{ $vocation->name() }}
 													</label>
 													&nbsp;
@@ -113,7 +114,7 @@
 												@foreach ($worlds as $key => $world)
 													<p>
 														<label>
-															<input type="radio" name="world" value="{{ $world->id() }}" {{ $world->id() === $random ? 'checked' : null }}> 
+															<input type="radio" name="world" value="{{ $world->id() }}" {{ old('world', $random) == $world->id() ? 'checked' : null }}> 
 															{{ $world->name() }} 
 															<small>({{ $world->type() }})</small>
 														</label>
