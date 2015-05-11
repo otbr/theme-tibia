@@ -18,16 +18,16 @@ class ThemeServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->loadViewsFrom(__DIR__.'/views', 'theme');
-		$this->loadTranslationsFrom(__DIR__.'/lang', 'theme');
+		$this->loadViewsFrom(__DIR__.'/resources/views', 'theme');
+		$this->loadTranslationsFrom(__DIR__.'/resources/lang', 'theme');
 
 		$this->publishes([
-			__DIR__.'/assets' => public_path($this->namespace),
+			__DIR__.'/resources/assets' => public_path($this->namespace),
 		], 'public');
 
 		$this->publishes([
-			__DIR__.'/lang' => theme_path($this->namespace.'/lang'),
-			__DIR__.'/views' => theme_path($this->namespace.'/views'),
+			__DIR__.'/resources/views' => theme_path($this->namespace.'/views'),
+			__DIR__.'/resources/lang' => theme_path($this->namespace.'/lang'),
 		], 'theme');
 	}
 	
@@ -38,7 +38,7 @@ class ThemeServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		get('/', function() { return redirect('/account'); }); // Temporary redirect to /account until a default page has been set.
+		$this->app->register('pandaac\ThemeTibia\Providers\RouteServiceProvider');
 	}
 	
 }

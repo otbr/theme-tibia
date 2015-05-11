@@ -156,7 +156,6 @@
 @stop
 
 @section('footer')
-	<script src="{{ asset('/pandaac/theme-tibia/js/faker.min.js') }}"></script>
 	<script>
 		(function(window, document, undefined) {
 			var btnSuggestName = document.getElementById('suggest-name'),

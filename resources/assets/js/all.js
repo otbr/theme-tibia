@@ -1,0 +1,1 @@
+!function(e,n,a){for(var s=n.getElementsByClassName("navigation-button"),t=function(){var e=this.parentNode;e.className=-1===e.className.indexOf("open")?e.className+" open":e.className.replace(/open/i,"")},o=0;o<s.length;o++)s[o].addEventListener("click",t,!1)}(window,document);

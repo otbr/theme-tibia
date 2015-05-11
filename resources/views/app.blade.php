@@ -219,7 +219,7 @@
 	</section>
 
 
-	<script src="{{ asset('/pandaac/theme-tibia/js/app.min.js') }}"></script>
+	<script src="{{ asset('/pandaac/theme-tibia/js/all.js') }}"></script>
 
 	@yield('footer')
 

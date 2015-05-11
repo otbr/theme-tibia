@@ -3,7 +3,7 @@ var shell = require('gulp-shell');
 var elixir = require('laravel-elixir');
 
 elixir.config.assetsDir = 'resources/';
-elixir.config.publicDir = 'assets/';
+elixir.config.publicDir = elixir.config.assetsDir + 'assets/';
 elixir.config.cssOutput = elixir.config.publicDir + 'css/';
 elixir.config.jsOutput = elixir.config.publicDir + 'js/';
 
@@ -20,7 +20,7 @@ elixir.config.jsOutput = elixir.config.publicDir + 'js/';
 
 elixir(function(mix) {
 	mix.less('tibia.less');
-	mix.scripts('app.js', 'assets/js/app.min.js');
+	mix.scripts('app.js');
 
 	mix.task('publish_assets');
 	mix.registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
