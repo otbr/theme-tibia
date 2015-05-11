@@ -63,13 +63,32 @@
 										<th></th>
 										<td><small>[<a href="#" id="suggest-name">suggest name</a>]</small></td>
 									</tr>
-									<tr>
-										<th><strong class="{{ $errors->has('sex') ? 'error' : null }}">Sex:</strong></th>
-										<td>
-											<input id="male" type="radio" name="sex" value="1" checked> <label for="male">male</label>
-											<input id="female" type="radio" name="sex" value="0"> <label for="female">female</label>
-										</td>
-									</tr>
+									@if (count($genders = genders()) > 1)
+										<tr>
+											<th><strong class="{{ $errors->has('sex') ? 'error' : null }}">Sex:</strong></th>
+											<td>
+												@foreach ($genders as $key => $gender)
+													<label>
+														<input type="radio" name="sex" value="{{ $gender->id() }}" {{ $key === 0 ? 'checked' : null }}> 
+														{{ $gender->name() }}
+													</label>
+												@endforeach
+											</td>
+										</tr>
+									@endif
+									@if (count($vocations = vocations(true)) > 1)
+										<tr>
+											<th><strong class="{{ $errors->has('vocation') ? 'error' : null }}">Vocation:</strong></th>
+											<td>
+												@foreach ($vocations as $key => $vocation)
+													<label>
+														<input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ $key === $vocations->first()->id() ? 'checked' : null }}> 
+														{{ $vocation->name() }}
+													</label>
+												@endforeach
+											</td>
+										</tr>
+									@endif
 								</table>
 							</div>
 						</div>
@@ -81,8 +100,15 @@
 										<tr>
 											<th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">World:</strong></p></th>
 											<td>
-												@foreach ($worlds as $world)
-													<p><label><input type="radio" name="world" value="{{ $world->id() }}"> {{ $world->name() }} <small>{{ $world->type() }}</small></label></p>
+												<?php $random = $worlds->random()->id(); ?>
+												@foreach ($worlds as $key => $world)
+													<p>
+														<label>
+															<input type="radio" name="world" value="{{ $world->id() }}" {{ $world->id() === $random ? 'checked' : null }}> 
+															{{ $world->name() }} 
+															<small>({{ $world->type() }})</small>
+														</label>
+													</p>
 												@endforeach
 												
 												<p><small>[<a href="#" id="suggest-game">suggest game world</a>]</small></p>
