@@ -72,19 +72,7 @@
 														<input type="radio" name="sex" value="{{ $gender->id() }}" {{ $key === 0 ? 'checked' : null }}> 
 														{{ $gender->name() }}
 													</label>
-												@endforeach
-											</td>
-										</tr>
-									@endif
-									@if (count($vocations = vocations(true)) > 1)
-										<tr>
-											<th><strong class="{{ $errors->has('vocation') ? 'error' : null }}">Vocation:</strong></th>
-											<td>
-												@foreach ($vocations as $key => $vocation)
-													<label>
-														<input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ $key === $vocations->first()->id() ? 'checked' : null }}> 
-														{{ $vocation->name() }}
-													</label>
+													&nbsp;
 												@endforeach
 											</td>
 										</tr>
@@ -92,6 +80,27 @@
 								</table>
 							</div>
 						</div>
+
+						@if (count($vocations = vocations(true)) > 1)
+							<div class="box">
+								<div class="inner-box">
+									<table cellspacing="0" cellpadding="0" border="0" width="100%">
+										<tr>
+											<th width="20%" valign="top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">Vocation:</strong></p></th>
+											<td>
+												@foreach ($vocations as $key => $vocation)
+													<label>
+														<input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ $key === $vocations->first()->id() ? 'checked' : null }}> 
+														{{ $vocation->name() }}
+													</label>
+													&nbsp;
+												@endforeach
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						@endif
 						
 						@if (count($worlds = worlds()) > 1)
 							<div class="box">
