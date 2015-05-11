@@ -13,7 +13,19 @@
 
 	<div class="inner-box-border">
 		<div class="inner-box">
-			{{ $document }}
+			<div class="table">
+				<header class="header">
+					<div class="borders">
+						<span class="edges top"></span>
+						Tibia Privacy Policy
+						<span class="edges bottom"></span>
+					</div>
+				</header>
+
+				<div class="content dark">
+					{!! $document !!}
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
