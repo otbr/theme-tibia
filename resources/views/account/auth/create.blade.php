@@ -171,7 +171,11 @@
 				$(document).on('click', '#suggest-name', function suggestName(e) {
 					e.preventDefault();
 
-					$('#name-suggestion').val('bla bla bla');
+					var request = $.get('{{ url("/api/name") }}');
+
+					request.done(function(response) {
+						$('#name-suggestion').val(response[0]);
+					});
 				});
 
 			});
