@@ -1,5 +1,7 @@
 <?php namespace pandaac\ThemeTibia\Http\Controllers;
 
+use Faker\Factory as Faker;
+use Faker\Provider\en_US\Person;
 use Apolune\Core\Http\Controllers\Controller;
 
 use Illuminate\Http\JsonResponse;
@@ -32,7 +34,13 @@ class ApiController extends Controller {
 	 */
 	public function suggestName()
 	{
-		return new JsonResponse([]);
+		$faker = Faker::create();
+
+		$faker->addProvider(new Person($faker));
+
+		$name = $faker->firstName().' '.(rand(0, 1) ? $faker->firstName().' ' : null).$faker->lastName();
+
+		return new JsonResponse([$name]);
 	}
 
 }

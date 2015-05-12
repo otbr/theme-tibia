@@ -57,7 +57,7 @@
 								<table cellspacing="0" cellpadding="0" border="0" width="100%">
 									<tr>
 										<th width="20%"><strong class="{{ $errors->has('character') ? 'error' : null }}">Character Name:</strong></th>
-										<td><input type="text" name="character" size="35" maxlength="30" id="name-field" value="{{ old('character') }}"></td>
+										<td><input type="text" name="character" size="35" maxlength="30" id="name-suggestion" value="{{ old('character') }}"></td>
 									</tr>
 									<tr>
 										<th></th>
@@ -121,7 +121,7 @@
 													</p>
 												@endforeach
 												
-												<p><small>[<a href="#" id="suggest-game">suggest game world</a>]</small></p>
+												<p><small>[<a href="#" id="suggest-world">suggest game world</a>]</small></p>
 											</td>
 										</tr>
 									</table>
@@ -157,30 +157,24 @@
 
 @section('footer')
 	<script>
-		(function(window, document, undefined) {
-			var btnSuggestName = document.getElementById('suggest-name'),
-				btnSuggestGame = document.getElementById('suggest-game'),
-				nameField      = document.getElementById('name-field'),
-				gameWorlds     = document.querySelectorAll('[name="world"]'),
-				suggestName    = function(e) {
+		(function($, window, document, undefined) {
+			$(document).ready(function() {
+
+				$(document).on('click', '#suggest-world', function suggestWorld(e) {
 					e.preventDefault();
 
-					nameField.value = faker.name.firstName() + ' ' + faker.name.lastName();
+					var $worlds = $('[name="world"]:not(:checked)');
 
-					return false;
-				},
-				suggestGameWorld = function(e) {
+					$worlds.eq(Math.floor(Math.random() * $worlds.length)).prop('checked', true);
+				});
+
+				$(document).on('click', '#suggest-name', function suggestName(e) {
 					e.preventDefault();
 
-					var rand = Math.floor(Math.random() * gameWorlds.length);
-					if (gameWorlds[rand].checked === true) return suggestGameWorld(e);
-					gameWorlds[rand].checked = true;
+					$('#name-suggestion').val('bla bla bla');
+				});
 
-					return false;
-				};
-
-			btnSuggestName.addEventListener('click', suggestName, false);
-			btnSuggestGame.addEventListener('click', suggestGameWorld, false);
-		})(window, document);
+			});
+		})(jQuery, window, document);
 	</script>
 @stop

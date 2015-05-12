@@ -219,7 +219,8 @@
 	</section>
 
 
-	<script src="{{ asset('/pandaac/theme-tibia/js/all.js') }}"></script>
+	<script src="{{ asset('/pandaac/theme-tibia/js/vendor.min.js') }}"></script>
+	<script src="{{ asset('/pandaac/theme-tibia/js/app.min.js') }}"></script>
 
 	@yield('footer')
 
