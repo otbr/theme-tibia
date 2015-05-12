@@ -6,15 +6,6 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 class RouteServiceProvider extends ServiceProvider {
 
 	/**
-	 * This namespace is applied to the controller routes in your routes file.
-	 *
-	 * In addition, it is set as the URL generator's root namespace.
-	 *
-	 * @var string
-	 */
-	protected $namespace = 'pandaac\ThemeTibia\Http\Controllers';
-
-	/**
 	 * Define your route model bindings, pattern filters, etc.
 	 *
 	 * @param  \Illuminate\Routing\Router  $router
@@ -33,10 +24,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 */
 	public function map(Router $router)
 	{
-		$router->group(['namespace' => $this->namespace], function($router)
-		{
-			require __DIR__.'/../Http/routes.php';
-		});
+		require __DIR__.'/../Http/routes.php';
 	}
 
 }

@@ -1,6 +1,6 @@
 <?php namespace pandaac\ThemeTibia\Http\Controllers;
 
-use Cornex\App\Generator
+use Cornex\App\Generator;
 use Apolune\Core\Http\Controllers\Controller;
 
 use Illuminate\Http\JsonResponse;
