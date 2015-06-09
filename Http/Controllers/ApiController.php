@@ -1,7 +1,8 @@
 <?php namespace pandaac\ThemeTibia\Http\Controllers;
 
-use Cornex\App\Generator;
+use Eklundchristopher\NameGen\Generator;
 use Apolune\Core\Http\Controllers\Controller;
+use Eklundchristopher\NameGen\Recipes\Fantasy;
 
 use Illuminate\Http\JsonResponse;
 use Illuminate\Contracts\Foundation\Application;
@@ -33,7 +34,9 @@ class ApiController extends Controller {
 	 */
 	public function suggestName()
 	{
-		$name = (new Generator)->generate(rand(2, 3));
+		$generator new Generator(new Fantasy);
+
+		$name = $generator->words(rand(2, 3));
 
 		return new JsonResponse([$name]);
 	}

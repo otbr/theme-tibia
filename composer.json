@@ -14,7 +14,7 @@
 	],
 	"require": {
 		"pandaac/apolune": "dev-master",
-		"cornex/generator": "~1.0"
+		"eklundchristopher/name-gen": "dev-master"
 	},
 	"autoload": {
 		"psr-4": {
