@@ -34,9 +34,9 @@ class ApiController extends Controller {
 	 */
 	public function suggestName()
 	{
-		$generator new Generator(new Fantasy);
+		$generator = new Generator(new Fantasy);
 
-		$name = $generator->words(rand(2, 3));
+		$name = $generator->name(rand(2, 3));
 
 		return new JsonResponse([$name]);
 	}
