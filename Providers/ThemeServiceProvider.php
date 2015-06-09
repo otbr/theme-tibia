@@ -39,7 +39,6 @@ class ThemeServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		$this->app->register('pandaac\ThemeTibia\Providers\RouteServiceProvider');
-		$this->app->register('Cornex\Generator\GeneratorServiceProvider');
 	}
 	
 }
