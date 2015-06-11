@@ -1,25 +1,25 @@
 {
-	"name": "pandaac/theme-tibia",
-	"keywords": ["pandaac", "theme", "tibia", "opentibia"],
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Christopher Eklund",
-			"email": "eklundchristopher@gmail.com"
-		},
-		{
-			"name": "Kristoffer Eklund",
-			"email": "kristoffereklund1@gmail.com"
-		}
-	],
-	"require": {
-		"pandaac/apolune": "dev-master",
-		"eklundchristopher/name-gen": "dev-master"
-	},
-	"autoload": {
-		"psr-4": {
-			"pandaac\\ThemeTibia\\": ""
-		}
-	},
-	"minimum-stability": "dev"
+    "name": "pandaac/theme-tibia",
+    "keywords": ["pandaac", "theme", "tibia", "opentibia"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christopher Eklund",
+            "email": "eklundchristopher@gmail.com"
+        },
+        {
+            "name": "Kristoffer Eklund",
+            "email": "kristoffereklund1@gmail.com"
+        }
+    ],
+    "require": {
+        "pandaac/apolune": "dev-master",
+        "eklundchristopher/name-gen": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "pandaac\\ThemeTibia\\": ""
+        }
+    },
+    "minimum-stability": "dev"
 }

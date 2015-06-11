@@ -19,18 +19,18 @@ elixir.config.jsOutput = elixir.config.publicDir + 'js/';
  */
 
 elixir(function(mix) {
-	mix.less('tibia.less');
+    mix.less('tibia.less');
 
-	mix.scripts([
-		'vendor/jquery.min.js'
-	], elixir.config.jsOutput + 'vendor.min.js');
+    mix.scripts([
+        'vendor/jquery.min.js'
+    ], elixir.config.jsOutput + 'vendor.min.js');
 
-	mix.scripts('app.js', elixir.config.jsOutput + 'app.min.js');
+    mix.scripts('app.js', elixir.config.jsOutput + 'app.min.js');
 
-	mix.task('publish_assets');
-	mix.registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
+    mix.task('publish_assets');
+    mix.registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
 });
 
 gulp.task('publish_assets', shell.task([
-	"php ../../../artisan vendor:publish --tag=public --force"
+    "php ../../../artisan vendor:publish --tag=public --force"
 ]));
