@@ -73,6 +73,34 @@ h4 {
     color: #ef0000;
 }
 
+.flag {
+    vertical-align: middle;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.showhide {
+    background: url('../img/showhide.gif');
+    cursor: pointer;
+    display: block;
+    outline: none;
+    border: none;
+    height: 12px;
+    width: 32px;
+
+    .pull-right;
+
+    &.active {
+        background-position-y: -12px;
+    }
+}
+
 .medium-button {
     background: url('../img/medium-button.gif') no-repeat top left;
     text-align: center;

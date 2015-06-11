@@ -115,6 +115,11 @@
                                                     <p>
                                                         <label>
                                                             <input type="radio" name="world" value="{{ $world->id() }}" {{ old('world', $random) == $world->id() ? 'checked' : null }}> 
+
+                                                            @if ($flag = $world->flag() and is_file(public_path($path = "/pandaac/theme-tibia/img/flags/${flag}.png")))
+                                                                <img src="{{ asset($path) }}" alt="{{ strtoupper($flag) }}" title="{{ strtoupper($flag) }}" class="flag">
+                                                            @endif
+
                                                             {{ $world->name() }} 
                                                             <small>({{ $world->type() }})</small>
                                                         </label>

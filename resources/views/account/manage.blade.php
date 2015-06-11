@@ -56,11 +56,17 @@
                         <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <th width="24%">Account Name:</th>
-                                <td>******</td>
+                                <td valign="middle">
+                                    <button class="showhide"></button>
+                                    <span data-value="{{ auth()->user()->name() }}">{{ str_repeat('*', strlen(auth()->user()->name())) }}</span>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Email Address:</th>
-                                <td>************************</td>
+                                <td valign="middle">
+                                    <button class="showhide"></button>
+                                    <span data-value="{{ auth()->user()->email() }}">{{ str_repeat('*', strlen(auth()->user()->email())) }}</span>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Created:</th>

@@ -80,6 +80,28 @@
             margin-bottom: 4px;
         }
     }
+
+    tr.character {
+        .play-integer {
+            display: block;
+        }
+
+        .play-button,
+        .character-buttons {
+            display: none;
+        }
+
+        &.active {
+            .play-integer {
+                display: none;
+            }
+
+            .play-button,
+            .character-buttons {
+                display: block;
+            }
+        }
+    }
 }
 
 

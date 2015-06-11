@@ -79,81 +79,29 @@
                                 <th class="header" width="90">Status</th>
                                 <th class="header" width="90"></th>
                             </tr>
-                            <tr>
-                                <td align="center" valign="middle">1.</td>
-                                <td valign="middle">
-                                    <span>Chris of Askara</span>
-                                    <small>Knight - Level 8</small>
-                                </td>
-                                <td>Askara</td>
-                                <td>Hidden</td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="middle">2.</td>
-                                <td valign="middle">
-                                    <span>Chris of Candia</span>
-                                    <small>Knight - Level 8</small>
-                                </td>
-                                <td>Candia</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="middle">3.</td>
-                                <td valign="middle">
-                                    <span>Chris of Celesta</span>
-                                    <small>Knight - Level 8</small>
-                                </td>
-                                <td>Celesta</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="middle">4.</td>
-                                <td valign="middle">
-                                    <span>Chris of Olympa</span>
-                                    <small>Elite Knight - Level 192</small>
-                                </td>
-                                <td>Olympa</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr class="active">
-                                <td align="center" valign="middle">
-                                    <a href="#" class="play-button"></a>
-                                </td>
-                                <td valign="middle">
-                                    <span>Chris of Antica</span>
-                                    <small>Paladin - Level 16</small>
-                                </td>
-                                <td>Antica</td>
-                                <td></td>
-                                <td align="center" valign="middle">
-                                    [<a href="#">Edit</a>]<br>
-                                    [<a href="#">Delete</a>]
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="middle">6.</td>
-                                <td valign="middle">
-                                    <span>Chris of Secura</span>
-                                    <small>Elder Druid - Level 87</small>
-                                </td>
-                                <td>Secura</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
-                                <td align="center" valign="middle">7.</td>
-                                <td valign="middle">
-                                    <span>Chris of Nova</span>
-                                    <small>Master Sorcerer - Level 233</small>
-                                </td>
-                                <td>Nova</td>
-                                <td></td>
-                                <td></td>
-                            </tr>
+
+                            @foreach (['Askara', 'Candia', 'Celesta', 'Olympa', 'Antica', 'Secura', 'Nova'] as $i => $world)
+                                <?php $level = rand(1, 150); ?>
+
+                                <tr class="character {{ $i === 0 ? 'active' : null }}">
+                                    <td align="center" valign="middle">
+                                        <span class="play-integer">{{ ++$i }}.</span>
+                                        <a href="#" class="play-button"></a>
+                                    </td>
+                                    <td valign="middle">
+                                        <span>Chris of {{ $world }}</span>
+                                        <small>{{ vocation($level < 8 ? 0 : rand(1, $level < 20 ? 4 : 8))->name() }} - Level {{ $level }}</small>
+                                    </td>
+                                    <td>{{ $world }}</td>
+                                    <td>hidden</td>
+                                    <td align="center">
+                                        <div class="character-buttons">
+                                            [<a href="#">Edit</a>]
+                                            [<a href="#">Delete</a>]
+                                        </div>
+                                    </td>
+                                </tr>
+                            @endforeach
                         </table>
                     </div>
 

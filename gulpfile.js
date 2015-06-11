@@ -25,7 +25,10 @@ elixir(function(mix) {
         'vendor/jquery.min.js'
     ], elixir.config.jsOutput + 'vendor.min.js');
 
-    mix.scripts('app.js', elixir.config.jsOutput + 'app.min.js');
+    mix.scripts([
+        'pandaac.js',
+        'app.js'
+    ], elixir.config.jsOutput + 'app.min.js');
 
     mix.task('publish_assets');
     mix.registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
