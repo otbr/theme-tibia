@@ -117,7 +117,7 @@
                                                             <input type="radio" name="world" value="{{ $world->id() }}" {{ old('world', $random) == $world->id() ? 'checked' : null }}> 
 
                                                             @if ($flag = $world->flag() and is_file(public_path($path = "/pandaac/theme-tibia/img/flags/${flag}.png")))
-                                                                <img src="{{ asset($path) }}" alt="{{ strtoupper($flag) }}" title="{{ strtoupper($flag) }}" class="flag">
+                                                                <img src="{{ asset($path) }}" alt="{{ strtoupper($flag) }}" title="{{ country($flag) }}" class="flag">
                                                             @endif
 
                                                             {{ $world->name() }} 
@@ -158,32 +158,4 @@
 
     <span class="corners bottom"></span>
 </div>
-@stop
-
-@section('footer')
-    <script>
-        (function($, window, document, undefined) {
-            $(document).ready(function() {
-
-                $(document).on('click', '#suggest-world', function suggestWorld(e) {
-                    e.preventDefault();
-
-                    var $worlds = $('[name="world"]:not(:checked)');
-
-                    $worlds.eq(Math.floor(Math.random() * $worlds.length)).prop('checked', true);
-                });
-
-                $(document).on('click', '#suggest-name', function suggestName(e) {
-                    e.preventDefault();
-
-                    var request = $.get('{{ url("/api/name") }}');
-
-                    request.done(function(response) {
-                        $('#name-suggestion').val(response[0]);
-                    });
-                });
-
-            });
-        })(jQuery, window, document);
-    </script>
 @stop

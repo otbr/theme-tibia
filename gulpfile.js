@@ -26,7 +26,7 @@ elixir(function(mix) {
     ], elixir.config.jsOutput + 'vendor.min.js');
 
     mix.scripts([
-        'pandaac.js',
+        'theme.js',
         'app.js'
     ], elixir.config.jsOutput + 'app.min.js');
 

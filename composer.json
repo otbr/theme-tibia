@@ -14,8 +14,7 @@
     ],
     "require": {
         "pandaac/apolune": "dev-master",
-        "eklundchristopher/name-gen": "dev-master",
-        "anomaly/country-field_type": "1.0.0-alpha"
+        "eklundchristopher/name-gen": "dev-master"
     },
     "autoload": {
         "psr-4": {

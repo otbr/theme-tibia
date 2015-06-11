@@ -2,7 +2,7 @@
     position: relative;
 
     #logo-artwork {
-        background: url('../img/tibia-logo-artwork-top.gif');
+        background: url('@{image-path}/tibia-logo-artwork-top.gif');
         position: absolute;
         display: block;
         height: 158px;
@@ -19,7 +19,7 @@
         width: 164px;
 
         &:before {
-            background: url('../img/box-top.gif');
+            background: url('@{image-path}/box-top.gif');
             position: absolute;
             height: 12px;
             width: 180px;
@@ -30,7 +30,7 @@
         }
 
         &:after {
-            background: url('../img/box-bottom.gif');
+            background: url('@{image-path}/box-bottom.gif');
             position: absolute;
             height: 12px;
             width: 180px;
@@ -41,14 +41,14 @@
         }
 
         .inner-box {
-            background: url('../img/loginbox-textfield-background.gif') repeat top left;
+            background: url('@{image-path}/loginbox-textfield-background.gif') repeat top left;
             display: inline-block;
             position: relative;
             margin: 0 0 0 1px;
             width: 162px;
 
             &:before {
-                background: url('../img/chain.gif') repeat;
+                background: url('@{image-path}/chain.gif') repeat;
                 position: absolute;
                 content: '';
                 z-index: 2;
@@ -59,7 +59,7 @@
             }
 
             &:after {
-                background: url('../img/chain.gif') repeat;
+                background: url('@{image-path}/chain.gif') repeat;
                 position: absolute;
                 content: '';
                 z-index: 2;
@@ -77,7 +77,7 @@
         }
 
         .create-account {
-            background: url('../img/loginbox-font-create-account.gif') no-repeat top left;
+            background: url('@{image-path}/loginbox-font-create-account.gif') no-repeat top left;
             margin: 2px auto 1px;
             display: block;
             height: 11px;
@@ -89,7 +89,7 @@
         }
 
         .logout {
-            background: url('../img/loginbox-font-logout.gif') no-repeat top left;
+            background: url('@{image-path}/loginbox-font-logout.gif') no-repeat top left;
             margin: 2px auto 1px;
             display: block;
             height: 11px;
@@ -102,10 +102,10 @@
     }
 
     .box#navigation .inner-box {
-        background: #0d2e2b;
+        background: @navigation-bgcolor;
+        color: @navigation-color;
         list-style: none;
         display: block;
-        color: #fff;
         padding: 0;
 
         .navigation-item {
@@ -127,14 +127,14 @@
                         }
 
                         &:after {
-                            background: url('../img/minus.gif');
+                            background: url('@{image-path}/minus.gif');
                         }
                     }
                 }
             }
 
             .navigation-button {
-                background: url('../img/button-background.gif') no-repeat top left;
+                background: url('@{image-path}/button-background.gif') no-repeat top left;
                 position: relative;
                 cursor: pointer;
                 margin: 0 -3px;
@@ -173,7 +173,7 @@
 
                     &.top {
                         &:before {
-                            background: url('../img/green-light.gif');
+                            background: url('@{image-path}/green-light.gif');
                             position: absolute;
                             content: '';
                             height: 2px;
@@ -183,7 +183,7 @@
                         }
 
                         &:after {
-                            background: url('../img/green-light.gif');
+                            background: url('@{image-path}/green-light.gif');
                             position: absolute;
                             content: '';
                             height: 2px;
@@ -195,7 +195,7 @@
 
                     &.bottom {
                         &:before {
-                            background: url('../img/green-light.gif');
+                            background: url('@{image-path}/green-light.gif');
                             position: absolute;
                             bottom: 2px;
                             content: '';
@@ -205,7 +205,7 @@
                         }
 
                         &:after {
-                            background: url('../img/plus.gif');
+                            background: url('@{image-path}/plus.gif');
                             position: absolute;
                             height: 12px;
                             width: 12px;
@@ -235,7 +235,7 @@
                             position: relative;
 
                             &:before {
-                                content: url('../img/icon-activesubmenu.gif');
+                                content: url('@{image-path}/icon-activesubmenu.gif');
                                 position: absolute;
                                 height: 10px;
                                 width: 10px;
@@ -244,25 +244,25 @@
                             }
 
                             & > a {
-                                color: #fff;
+                                color: @navigation-link-color;
                             }
                         }
 
                         & > a {
                             border-bottom: 1px solid #4b7874;
                             font-family: Arial, sans-serif;
+                            color: @subnavigation-color;
                             padding: 2px 0 2px 17px;
                             text-decoration: none;
                             font-weight: bold;
                             line-height: 16px;
                             font-size: 13.3px;
                             display: block;
-                            color: #d7d7d7;
                             width: 145px;
 
                             &:hover {
-                                background-color: #14433f;
-                                color: #fff;
+                                background-color: @subnavigation-bgcolor;
+                                color: @subnavigation-hover;
                             }
                         }
                     }

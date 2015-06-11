@@ -1,4 +1,4 @@
-var pandaac = {
+var Theme = {
 
     /**
      * Toggle a navigation button.
@@ -40,6 +40,36 @@ var pandaac = {
 
         $('.account-index tr.character.active').removeClass('active');
         $(this).toggleClass('active');
+    },
+
+    /**
+     * Suggest a character world.
+     *
+     * @param  \Event  e
+     * @return void
+     */
+    suggestWorld: function(e) {
+        e.preventDefault();
+
+        var $worlds = $('[name="world"]:not(:checked)');
+
+        $worlds.eq(Math.floor(Math.random() * $worlds.length)).prop('checked', true);
+    },
+
+    /**
+     * Suggest a character name.
+     *
+     * @param  \Event  e
+     * @return void
+     */
+    suggestName: function(e) {
+        e.preventDefault();
+
+        var request = $.get(baseurl + '/api/name');
+
+        request.done(function(response) {
+            $('#name-suggestion').val(response[0]);
+        });
     }
 
 };
