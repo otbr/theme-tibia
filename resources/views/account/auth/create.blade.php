@@ -103,7 +103,7 @@
                             </div>
                         @endif
                         
-                        @if (count($worlds = worlds()) > 1)
+                        @if ($worlds = worlds() and $worlds->count() > 1)
                             <div class="box">
                                 <div class="inner-box">
                                     <table cellspacing="0" cellpadding="0" border="0" width="100%">
