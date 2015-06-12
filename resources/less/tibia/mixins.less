@@ -1,9 +1,10 @@
 .clearfix() {
     &:before,
     &:after {
-        content: " "; // 1
-        display: table; // 2
+        display: table;
+        content: " ";
     }
+
     &:after {
         clear: both;
     }
@@ -11,13 +12,13 @@
 
 .img-responsive(@display: block) {
     display: @display;
-    max-width: 100%; // Part 1: Set a maximum relative to the parent
-    height: auto; // Part 2: Scale the height according to the width, otherwise you get stretching
+    max-width: 100%;
+    height: auto;
 }
 
 .no-selection() {
-    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
-    -moz-user-select: none; /* mozilla browsers */
-    -khtml-user-select: none; /* webkit (konqueror) browsers */
-    -ms-user-select: none; /* IE10+ */
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }

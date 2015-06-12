@@ -19,7 +19,7 @@ elixir.config.jsOutput = elixir.config.publicDir + 'js/';
  */
 
 elixir(function(mix) {
-    mix.less('tibia.less');
+    mix.less('app.less');
 
     mix.scripts([
         'vendor/jquery.min.js'

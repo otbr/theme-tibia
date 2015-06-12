@@ -1,76 +1,13 @@
-html {
-    min-width: 1000px;
-}
-
-body {
-    background: url('@{image-path}/background-artwork.jpg') no-repeat top center #051122;
-    font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-    overflow-y: scroll;
-    font-size: 13px;
-    margin: 0;
-}
-
-a {
-    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
-    text-decoration: none;
-    color: @link-color;
-    font-weight: bold;
-
-    &:hover {
-        text-decoration: underline;
-    }
-
-    img {
-        border: none;
-    }
-}
-
-h1 {
-    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
-    color: @heading-color;
-    text-align: center;
-    font-weight: bold;
-    font-size: 24px;
-    margin: 16px 0;
-}
-
-h2 {
-    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
-    color: @heading-color;
-    margin: -6px 0 28px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 17px;
-
-    &:before {
-        content: url('@{image-path}/headline-bracer-left.gif');
-        position: relative;
-        height: 41px;
-        width: 46px;
-        left: -4px;
-        top: 14px;
-    }
-
-    &:after {
-        content: url('@{image-path}/headline-bracer-right.gif');
-        position: relative;
-        height: 41px;
-        width: 46px;
-        right: -4px;
-        top: 14px;
-    }
-}
-
-h4 {
-    font-size: 18.6px;
-    font-weight: bold;
-    margin: 0;
-}
-
 .offline,
 .red,
 .free {
     color: @offline-color;
+}
+
+.online,
+.green,
+.premium {
+    color: @online-color;
 }
 
 .flag {
@@ -169,12 +106,12 @@ h4 {
     }
 }
 
-.error {
-    color: @error-color;
-}
-
 .padding {
     padding: 10px;
+}
+
+.error {
+    color: @error-color;
 }
 
 .errors,
@@ -294,35 +231,6 @@ h4 {
                     width: 5px;
                 }
             }
-        }
-    }
-}
-
-#skeleton {
-    margin: 156px auto 20px;
-    max-width: 1200px;
-    min-width: 1080px;
-    display: block;
-    clear: both;
-
-    .column {
-        position: relative;
-        display: block;
-
-        &#left-column {
-            margin: 0 15px;
-            width: 180px;
-            float: left;
-        }
-
-        &#middle-column {
-            margin: 0 210px;
-        }
-
-        &#right-column {
-            margin: 0 15px;
-            width: 180px;
-            float: right;
         }
     }
 }

@@ -8,7 +8,7 @@
     <title>@yield('title') &mdash; pandaac</title>
 
     <link href="{{ asset('/pandaac/theme-tibia/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{ asset('/pandaac/theme-tibia/css/tibia.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('/pandaac/theme-tibia/css/app.css') }}" rel="stylesheet" media="all">
 
     @yield('head')
 
