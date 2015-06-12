@@ -56,8 +56,8 @@
                             <div class="inner-box">
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <th width="20%"><strong class="{{ $errors->has('character') ? 'error' : null }}">Character Name:</strong></th>
-                                        <td><input type="text" name="character" size="35" maxlength="30" id="name-suggestion" value="{{ old('character') }}"></td>
+                                        <th width="20%"><strong class="{{ $errors->has('player') ? 'error' : null }}">Character Name:</strong></th>
+                                        <td><input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}"></td>
                                     </tr>
                                     <tr>
                                         <th></th>

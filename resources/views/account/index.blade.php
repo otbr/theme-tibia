@@ -80,19 +80,17 @@
                                 <th class="header" width="90"></th>
                             </tr>
 
-                            @foreach (['Askara', 'Candia', 'Celesta', 'Olympa', 'Antica', 'Secura', 'Nova'] as $i => $world)
-                                <?php $level = rand(1, 150); ?>
-
+                            @forelse (account()->players as $i => $player)
                                 <tr class="character {{ $i === 0 ? 'active' : null }}">
                                     <td align="center" valign="middle">
                                         <span class="play-integer">{{ ++$i }}.</span>
                                         <a href="#" class="play-button"></a>
                                     </td>
                                     <td valign="middle">
-                                        <span>Chris of {{ $world }}</span>
-                                        <small>{{ vocation($level < 8 ? 0 : rand(1, $level < 20 ? 4 : 8))->name() }} - Level {{ $level }}</small>
+                                        <span>{{ $player->name }}</span>
+                                        <small>{{ $player->vocation()->name() }} - Level {{ $player->level }}</small>
                                     </td>
-                                    <td>{{ $world }}</td>
+                                    <td>{{ $player->world()->name() }}</td>
                                     <td>hidden</td>
                                     <td align="center">
                                         <div class="character-buttons">
@@ -101,7 +99,13 @@
                                         </div>
                                     </td>
                                 </tr>
-                            @endforeach
+                            @empty
+                                <tr>
+                                    <td colspan="5">
+                                        No characters yet.
+                                    </td>
+                                </tr>
+                            @endforelse
                         </table>
                     </div>
 
