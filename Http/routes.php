@@ -2,6 +2,7 @@
 
 require_once apolune_path('Account/Http/routes.php');
 require_once apolune_path('Support/Http/routes.php');
+require_once apolune_path('Library/Http/routes.php');
 
 $router->get('/', function () {
     return redirect('/account');

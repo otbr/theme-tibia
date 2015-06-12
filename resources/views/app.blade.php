@@ -98,7 +98,7 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="#">Creatures</a></li>
+                                <li><a href="{{ url('/library/creatures') }}">Creatures</a></li>
                                 <li><a href="#">Spells</a></li>
                                 <li><a href="#">Achievements</a></li>
                                 <li><a href="#">World Quests</a></li>
@@ -188,7 +188,7 @@
 
         <aside id="right-column" class="column">
             <div id="pedestal">
-                <a href="#" class="monster"><img src="{{ asset('/pandaac/theme-tibia/img/monsters/waterelementalmassive.gif') }}" alt="Monster"></a>
+                <a href="#" class="monster"><img src="{{ asset('/pandaac/theme-tibia/img/monsters/header/demon.gif') }}" alt="Monster"></a>
                 <a href="#" class="online">{{ rand(0, 15000) }}<br>Players Online</a>
             </div>
 
