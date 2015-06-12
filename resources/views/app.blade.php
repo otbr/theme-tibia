@@ -188,7 +188,7 @@
 
         <aside id="right-column" class="column">
             <div id="pedestal">
-                <a href="#" class="monster"><img src="{{ asset('/pandaac/theme-tibia/img/monsters/header/demon.gif') }}" alt="Monster"></a>
+                <a href="#" class="monster"><img src="https://cdn.pandaac.io/creatures/1077/header/demon.gif" alt="Monster"></a>
                 <a href="#" class="online">{{ rand(0, 15000) }}<br>Players Online</a>
             </div>
 

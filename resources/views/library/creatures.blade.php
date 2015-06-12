@@ -1,7 +1,7 @@
 @extends('theme::app')
 
 @section('title', 'Creatures')
-@section('body', 'support-terms')
+@section('body', 'library-creatures')
 
 @section('content')
 <div class="box">
@@ -13,7 +13,12 @@
 
     <div class="inner-box-border">
         <div class="inner-box">
-            lorem
+            @foreach($creatures as $row)
+                <div class="monster">
+                    <img src="https://cdn.pandaac.io/creatures/1077/{{ $row->image() }}">
+                    <div class="title">{{ $row->name() }}</div>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>
