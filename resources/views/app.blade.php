@@ -21,7 +21,7 @@
 
     <section id="skeleton">
         <aside id="left-column" class="column">
-            <a id="logo-artwork" href="#"></a>
+            <a id="logo-artwork" href="{{ url('/') }}"></a>
 
             <div id="login-box" class="box">
                 <div class="inner-box">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li class="active"><a href="#">Latest News</a></li>
+                                <li class="active"><a href="{{ url('/') }}">Latest News</a></li>
                                 <li><a href="#">News Archive</a></li>
                             </ul>
                         </div>
