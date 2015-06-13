@@ -7,31 +7,18 @@ elixir.config.publicDir = 'public/';
 elixir.config.cssOutput = elixir.config.publicDir + 'css/';
 elixir.config.jsOutput = elixir.config.publicDir + 'js/';
 
-/*
- |--------------------------------------------------------------------------
- | Elixir Asset Management
- |--------------------------------------------------------------------------
- |
- | Elixir provides a clean, fluent API for defining some basic Gulp tasks
- | for your Laravel application. By default, we are compiling the Less
- | file for our application, as well as publishing vendor resources.
- |
- */
+elixir.config.production = true;
+elixir.config.sourcemaps = false;
 
 elixir(function(mix) {
-    mix.less('app.less');
+    mix
+        .less('app.less')
 
-    mix.scripts([
-        'vendor/jquery.min.js'
-    ], elixir.config.jsOutput + 'vendor.min.js');
+        .scripts(['vendor/jquery.min.js'], elixir.config.jsOutput + 'vendor.min.js')
+        .scripts(['theme.js', 'app.js'], elixir.config.jsOutput + 'app.min.js')
 
-    mix.scripts([
-        'theme.js',
-        'app.js'
-    ], elixir.config.jsOutput + 'app.min.js');
-
-    mix.task('publish_assets');
-    mix.registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
+        .task('publish_assets')
+        .registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
 });
 
 gulp.task('publish_assets', shell.task([

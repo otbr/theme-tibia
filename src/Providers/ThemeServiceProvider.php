@@ -20,17 +20,10 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'theme');
-        $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'theme');
+        $path = realpath(__DIR__.'/../..');
 
-        $this->publishes([
-            __DIR__.'/../../public' => public_path($this->namespace),
-        ], 'public');
-
-        $this->publishes([
-            __DIR__.'/../../resources/views' => theme_path($this->namespace.'/views'),
-            __DIR__.'/../../resources/lang' => theme_path($this->namespace.'/lang'),
-        ], 'theme');
+        $this->loaders($path);
+        $this->publisher($path);
     }
     
     /**
@@ -41,5 +34,40 @@ class ThemeServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register('pandaac\ThemeTibia\Providers\RouteServiceProvider');
+    }
+
+    /**
+     * Define the location of where to load certain resources.
+     *
+     * @param  string  $path
+     * @return void
+     */
+    private function loaders($path)
+    {
+        $this->loadViewsFrom(
+            "${path}/resources/views", 'theme'
+        );
+
+        $this->loadTranslationsFrom(
+            "${path}/resources/lang", 'theme'
+        );
+    }
+
+    /**
+     * Define which resources should be published, and to where.
+     *
+     * @param  string  $path
+     * @return void
+     */
+    private function publisher($path)
+    {
+        $this->publishes([
+                "${path}/public"    => public_path($this->namespace),
+        ], 'public');
+
+        $this->publishes([
+            "${path}/resources/views"   => theme_path($this->namespace.'/views'),
+            "${path}/resources/lang"    => theme_path($this->namespace.'/lang'),
+        ], 'theme');
     }
 }
