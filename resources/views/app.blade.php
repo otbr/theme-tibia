@@ -103,7 +103,7 @@
                                 <li><a href="#">Achievements</a></li>
                                 <li><a href="#">World Quests</a></li>
                                 <li><a href="#">Experience Table</a></li>
-                                <li><a href="#">Maps</a></li>
+                                <li><a href="{{ url('/library/maps') }}">Maps</a></li>
                                 <li><a href="#">Genesis</a></li>
                             </ul>
                         </div>
