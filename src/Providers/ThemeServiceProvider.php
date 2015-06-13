@@ -24,12 +24,12 @@ class ThemeServiceProvider extends ServiceProvider
         $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'theme');
 
         $this->publishes([
-            __DIR__.'/../resources/assets' => public_path($this->namespace),
+            __DIR__.'/../../public' => public_path($this->namespace),
         ], 'public');
 
         $this->publishes([
-            __DIR__.'/../resources/views' => theme_path($this->namespace.'/views'),
-            __DIR__.'/../resources/lang' => theme_path($this->namespace.'/lang'),
+            __DIR__.'/../../resources/views' => theme_path($this->namespace.'/views'),
+            __DIR__.'/../../resources/lang' => theme_path($this->namespace.'/lang'),
         ], 'theme');
     }
     

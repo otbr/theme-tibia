@@ -3,7 +3,7 @@ var shell = require('gulp-shell');
 var elixir = require('laravel-elixir');
 
 elixir.config.assetsDir = 'resources/';
-elixir.config.publicDir = elixir.config.assetsDir + 'assets/';
+elixir.config.publicDir = 'public/';
 elixir.config.cssOutput = elixir.config.publicDir + 'css/';
 elixir.config.jsOutput = elixir.config.publicDir + 'js/';
 

@@ -19,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "pandaac\\ThemeTibia\\": ""
+            "pandaac\\ThemeTibia\\": "src/"
         }
     },
     "minimum-stability": "dev"
