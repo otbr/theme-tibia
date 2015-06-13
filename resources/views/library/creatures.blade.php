@@ -15,7 +15,7 @@
         <div class="inner-box">
             @foreach($creatures as $row)
                 <div class="monster">
-                    <img src="https://cdn.pandaac.io/creatures/1077/{{ $row->image() }}">
+                    <img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/{{ $row->image() }}">
                     <div class="title">{{ $row->name() }}</div>
                 </div>
             @endforeach

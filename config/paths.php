@@ -12,6 +12,6 @@ return [
     |
     */
    
-    'creatures' => 'https://cdn.pandaac.io/creatures/1077/',
+    'creatures' => 'https://cdn.pandaac.io/creatures/1077',
 
 ];
