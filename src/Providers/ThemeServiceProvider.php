@@ -23,7 +23,7 @@ class ThemeServiceProvider extends ServiceProvider
         $path = realpath(__DIR__.'/../..');
 
         $this->loaders($path);
-        $this->publisher($path);
+        $this->publisher($path, $this->namespace);
     }
     
     /**
@@ -57,17 +57,22 @@ class ThemeServiceProvider extends ServiceProvider
      * Define which resources should be published, and to where.
      *
      * @param  string  $path
+     * @param  string  $namespace
      * @return void
      */
-    private function publisher($path)
+    private function publisher($path, $namespace)
     {
         $this->publishes([
-                "${path}/public"    => public_path($this->namespace),
+                "${path}/public" => public_path($namespace),
         ], 'public');
 
         $this->publishes([
-            "${path}/resources/views"   => theme_path($this->namespace.'/views'),
-            "${path}/resources/lang"    => theme_path($this->namespace.'/lang'),
+                "${path}/config" => base_path("config/${namespace}"),
+        ], 'config');
+
+        $this->publishes([
+            "${path}/resources/views" => theme_path($namespace.'/views'),
+            "${path}/resources/lang" => theme_path($namespace.'/lang'),
         ], 'theme');
     }
 }
