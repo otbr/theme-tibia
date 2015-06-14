@@ -175,7 +175,7 @@
                         <div class="navigation-content">
                             <ul>
                                 <li><a href="#">FAQ</a></li>
-                                <li><a href="#">Tibia Rules</a></li>
+                                <li><a href="{{ url('/support/rules') }}">Tibia Rules</a></li>
                                 <li><a href="#">Tutor Guide</a></li>
                                 <li><a href="#">Parents' Guide</a></li>
                                 <li><a href="#">Legal Documents</a></li>
