@@ -26,7 +26,7 @@
                 <div class="content dark">
                     <table cellspacing="0" cellpadding="0" border="0">
                         <tr>
-                            <td>You have logged out of your Tibia account. In order to view your account you need to <a href="{{ url('/account/login') }}">log in</a> again.</td>
+                            <td>You have logged out of your {{ server()->name() }} account. In order to view your account you need to <a href="{{ url('/account/login') }}">log in</a> again.</td>
                         </tr>
                     </table>
                 </div>

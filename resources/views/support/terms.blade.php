@@ -17,7 +17,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        Tibia Service Agreement
+                        {{ server()->name() }} Service Agreement
                         <span class="edges bottom"></span>
                     </div>
                 </header>

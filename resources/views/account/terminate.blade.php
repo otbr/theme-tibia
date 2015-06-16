@@ -16,7 +16,7 @@
 
             @include('theme::modules.errors')
 
-            <p>Do you really want to terminate your Tibia account and delete all of your characters?</p>
+            <p>Do you really want to terminate your {{ server()->name() }} account and delete all of your characters?</p>
 
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

@@ -66,7 +66,7 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="#">What Is Tibia?</a></li>
+                                <li><a href="#">What Is {{ server()->name() }}?</a></li>
                                 <li><a href="#">Screenshots</a></li>
                                 <li><a href="#">Game Features</a></li>
                                 <li><a href="#">Premium Features</a></li>
@@ -175,7 +175,7 @@
                         <div class="navigation-content">
                             <ul>
                                 <li><a href="#">FAQ</a></li>
-                                <li><a href="{{ url('/support/rules') }}">Tibia Rules</a></li>
+                                <li><a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a></li>
                                 <li><a href="#">Tutor Guide</a></li>
                                 <li><a href="#">Parents' Guide</a></li>
                                 <li><a href="#">Legal Documents</a></li>

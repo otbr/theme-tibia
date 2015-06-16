@@ -58,7 +58,7 @@
 
             <br>
 
-            <h1>New to Tibia?</h1>
+            <h1>New to {{ server()->name() }}?</h1>
             
             <div class="table">
                 <header class="header">
@@ -79,7 +79,7 @@
                                     </a>
                                 </div>
 
-                                <strong>Tibia...</strong>
+                                <strong>{{ server()->name() }}...</strong>
                                 <p class="indent">... where hardcore gaming meets fantasy.</p>
                                 <p class="indent">... where friendships last a lifetime.</p>
                                 <p class="indent">... unites adventurers since 1997!</p>

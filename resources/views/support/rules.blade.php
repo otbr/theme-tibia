@@ -17,7 +17,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        Tibia Rules
+                        {{ server()->name() }} Rules
                         <span class="edges bottom"></span>
                     </div>
                 </header>

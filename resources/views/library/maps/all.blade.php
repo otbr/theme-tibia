@@ -15,7 +15,7 @@
         <div class="inner-box">
 
             <div class="top-text">
-                The world of Tibia is separated in two continents and several islands. Please click on a link or on a part of the map below to learn more about the different areas.
+                The world of {{ server()->name() }} is separated in two continents and several islands. Please click on a link or on a part of the map below to learn more about the different areas.
             </div>
 
             <div class="block">

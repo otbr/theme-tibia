@@ -139,7 +139,9 @@
                                 <p>
                                     <strong>Please select the following check box:</strong><br>
                                     <input type="checkbox" name="terms" value="1">
-                                    I agree to the <a href="{{ url('/support/terms') }}">Tibia Service Agreement</a>, the <a href="{{ url('/support/rules') }}">Tibia Rules</a> and the <a href="{{ url('/support/privacy') }}">Tibia Privacy Policy</a>.
+                                    I agree to the <a href="{{ url('/support/terms') }}">{{ server()->name() }} Service Agreement</a>, 
+                                    the <a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a> and the 
+                                    <a href="{{ url('/support/privacy') }}">{{ server()->name() }} Privacy Policy</a>.
                                 </p>
                             </div>
                         </div>
