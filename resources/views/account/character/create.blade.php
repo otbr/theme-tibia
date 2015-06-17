@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@section('title', 'Create Character')
+@section('title', 'Account Management')
 @section('body', 'account-character')
 
 @section('content')
@@ -94,8 +94,8 @@
                                                         <label>
                                                             <input type="radio" name="world" value="{{ $world->id() }}" {{ old('world', $random) == $world->id() ? 'checked' : null }}> 
 
-                                                            @if ($flag = $world->flag() and is_file(public_path($path = "/pandaac/theme-tibia/img/flags/${flag}.png")))
-                                                                <img src="{{ asset($path) }}" alt="{{ strtoupper($flag) }}" title="{{ country($flag) }}" class="flag">
+                                                            @if ($flag = $world->flag())
+                                                                <img src="{{ config('pandaac.theme-tibia.paths.flags') }}/{{ $flag }}.gif" alt="{{ strtoupper($flag) }}" title="{{ country($flag) }}" class="flag">
                                                             @endif
 
                                                             {{ $world->name() }} 

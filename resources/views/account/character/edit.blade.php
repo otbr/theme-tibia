@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@section('title', 'Create Character')
+@section('title', 'Account Management')
 @section('body', 'account-character-edit')
 
 @section('content')
