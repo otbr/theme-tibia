@@ -53,7 +53,7 @@
                         <div class="navigation-content">
                             <ul>
                                 <li class="active"><a href="{{ url('/') }}">Latest News</a></li>
-                                <li><a href="#">News Archive</a></li>
+                                <li><a href="{{ url('/archive') }}">News Archive</a></li>
                             </ul>
                         </div>
                     </li>
@@ -66,26 +66,10 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="#">What Is {{ server()->name() }}?</a></li>
-                                <li><a href="#">Screenshots</a></li>
-                                <li><a href="#">Game Features</a></li>
-                                <li><a href="#">Premium Features</a></li>
-                                <li><a href="#">About CipSoft</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="navigation-item">
-                        <div class="navigation-button">
-                            <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-gameguides.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-gameguides.gif') }}">
-                            <span class="crystals bottom"></span>
-                        </div>
-                        <div class="navigation-content">
-                            <ul>
-                                <li><a href="#">Quickstart</a></li>
-                                <li><a href="#">Manual</a></li>
-                                <li><a href="#">Security Hints</a></li>
+                                <li><a href="{{ url('/about/server') }}">What Is {{ server()->name() }}?</a></li>
+                                <li><a href="{{ url('/about/screenshots') }}">Screenshots</a></li>
+                                <li><a href="{{ url('/about/features') }}">Game Features</a></li>
+                                <li><a href="{{ url('/about/premium') }}">Premium Features</a></li>
                             </ul>
                         </div>
                     </li>
@@ -99,12 +83,12 @@
                         <div class="navigation-content">
                             <ul>
                                 <li><a href="{{ url('/library/creatures') }}">Creatures</a></li>
-                                <li><a href="#">Spells</a></li>
-                                <li><a href="#">Achievements</a></li>
-                                <li><a href="#">World Quests</a></li>
-                                <li><a href="#">Experience Table</a></li>
+                                <li><a href="{{ url('/library/spells') }}">Spells</a></li>
+                                <li><a href="{{ url('/library/achievements') }}">Achievements</a></li>
+                                <li><a href="{{ url('/library/quests') }}">World Quests</a></li>
+                                <li><a href="{{ url('/library/experience') }}">Experience Table</a></li>
                                 <li><a href="{{ url('/library/maps') }}">Maps</a></li>
-                                <li><a href="#">Genesis</a></li>
+                                <li><a href="{{ url('/library/genesis') }}">Genesis</a></li>
                             </ul>
                         </div>
                     </li>
@@ -117,17 +101,13 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="#">Characters</a></li>
-                                <li><a href="#">Worlds</a></li>
-                                <li><a href="#">Highscores</a></li>
-                                <li><a href="#">Kill Statistics</a></li>
-                                <li><a href="#">Houses</a></li>
-                                <li><a href="#">Guilds</a></li>
-                                <li><a href="#">Polls</a></li>
-                                <li><a href="#">Feedback Form</a></li>
-                                <li><a href="#">Conventions</a></li>
-                                <li><a href="#">Fansites</a></li>
-                                <li><a href="#">Resellers</a></li>
+                                <li><a href="{{ url('/characters') }}">Characters</a></li>
+                                <li><a href="{{ url('/worlds') }}">Worlds</a></li>
+                                <li><a href="{{ url('/highscores') }}">Highscores</a></li>
+                                <li><a href="{{ url('/statistics') }}">Kill Statistics</a></li>
+                                <li><a href="{{ url('/houses') }}">Houses</a></li>
+                                <li><a href="{{ url('/guilds') }}">Guilds</a></li>
+                                <li><a href="{{ url('/polls') }}">Polls</a></li>
                             </ul>
                         </div>
                     </li>
@@ -140,12 +120,12 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="#">World Boards</a></li>
-                                <li><a href="#">Trade Boards</a></li>
-                                <li><a href="#">Community Boards</a></li>
-                                <li><a href="#">Council Boards</a></li>
-                                <li><a href="#">Support Boards</a></li>
-                                <li><a href="#">Guild Boards</a></li>
+                                <li><a href="{{ url('/forum/world') }}">World Boards</a></li>
+                                <li><a href="{{ url('/forum/trade') }}">Trade Boards</a></li>
+                                <li><a href="{{ url('/forum/community') }}">Community Boards</a></li>
+                                <li><a href="{{ url('/forum/council') }}">Council Boards</a></li>
+                                <li><a href="{{ url('/forum/support') }}">Support Boards</a></li>
+                                <li><a href="{{ url('/forum/guild') }}">Guild Boards</a></li>
                             </ul>
                         </div>
                     </li>
@@ -158,10 +138,10 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="#">Account Management</a></li>
-                                <li><a href="#">Create Account</a></li>
-                                <li><a href="#">Download Client</a></li>
-                                <li><a href="#">Lost Account?</a></li>
+                                <li><a href="{{ url('/account') }}">Account Management</a></li>
+                                <li><a href="{{ url('/account/create') }}">Create Account</a></li>
+                                <li><a href="{{ url('/account/download') }}">Download Client</a></li>
+                                <li><a href="{{ url('/account/recover') }}">Lost Account?</a></li>
                             </ul>
                         </div>
                     </li>
@@ -174,11 +154,10 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="#">FAQ</a></li>
+                                <li><a href="{{ url('/support/faq') }}">FAQ</a></li>
                                 <li><a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a></li>
-                                <li><a href="#">Tutor Guide</a></li>
-                                <li><a href="#">Parents' Guide</a></li>
-                                <li><a href="#">Legal Documents</a></li>
+                                <li><a href="{{ url('/support/tutor') }}">Tutor Guide</a></li>
+                                <li><a href="{{ url('/support/legal') }}">Legal Documents</a></li>
                             </ul>
                         </div>
                     </li>
@@ -195,7 +174,7 @@
                 @else
                     <a href="{{ url('/library/creatures') }}" class="monster"><img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/header/fire-elemental.gif" alt="Fire Elemental"></a>
                 @endif
-                <a href="#" class="online">{{ rand(0, 15000) }}<br>Players Online</a>
+                <a href="{{ url('/whosonline') }}" class="online">{{ rand(0, 15000) }}<br>Players Online</a>
             </div>
 
             <div class="box premium">
@@ -214,7 +193,7 @@
 
             <div class="box screenshots">
                 <div class="inner-box">
-                    <a href="#"><img src="{{ asset('/pandaac/theme-tibia/img/screenshot.png') }}"></a>
+                    <a href="{{ url('/about/screenshots') }}"><img src="{{ asset('/pandaac/theme-tibia/img/screenshot.png') }}"></a>
                 </div>
             </div>
         </aside>

@@ -28,6 +28,23 @@ table {
         }
     }
 
+    &.inverse tr {
+        &:nth-child(odd) {
+            td, th {
+                background-color: @table-light-bgcolor;
+            }
+        }
+
+        td, th {
+            border: 1px solid @table-medium-bgcolor !important;
+            background-color: @table-light-bgcolor;
+
+            span {
+                display: block;
+            }
+        }
+    }
+
     tr {
         &:nth-child(odd) {
             td, th {
