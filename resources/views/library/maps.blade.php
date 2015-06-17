@@ -219,7 +219,7 @@
                 <area shape="rect" coords="72,333,113,371" href="{{ url('/library/maps/dawnport') }}">
             </map>
 
-            <img src="{{ config('pandaac.theme-tibia.paths.maps') }}/_small.jpg" usemap="#map_small" class="map-small">
+            <img src="{{ config('pandaac.theme-tibia.paths.maps') }}/_small.jpg" usemap="#map_small" class="map-small img-responsive">
 
             <div class="download-small-map">
                 <a href="{{ config('pandaac.theme-tibia.paths.maps') }}/_big.jpg" target="_blank">[Download high resolution map (5 MB)]</a>

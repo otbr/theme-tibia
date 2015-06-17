@@ -191,9 +191,9 @@
                 @if ($creature = Cache::get('pedestal.creature') ?: creatures()->random())
                     {{ ! Cache::has('pedestal.creature') ? Cache::put('pedestal.creature', $creature, 30) : null }}
 
-                    <a href="#" class="monster"><img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/header/{{ $creature->image() }}" alt="{{ $creature->name() }}"></a>
+                    <a href="{{ url('/library/creatures') }}" class="monster"><img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/header/{{ $creature->image() }}" alt="{{ $creature->name() }}"></a>
                 @else
-                    <a href="#" class="monster"><img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/header/fire-elemental.gif" alt="Fire Elemental"></a>
+                    <a href="{{ url('/library/creatures') }}" class="monster"><img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/header/fire-elemental.gif" alt="Fire Elemental"></a>
                 @endif
                 <a href="#" class="online">{{ rand(0, 15000) }}<br>Players Online</a>
             </div>
