@@ -158,3 +158,84 @@
  * @route  /account/terminate
  */
 .account-terminate #middle-column { }
+
+
+/**
+ * The following styles were written with the subsequent route in mind,
+ * although are not necessarily limited to it.
+ *
+ * @route  /account/character
+ */
+.account-character #middle-column {
+    p {
+        margin: 5px 0;
+    }
+}
+
+
+/**
+ * The following styles were written with the subsequent route in mind,
+ * although are not necessarily limited to it.
+ *
+ * @route  /account/character/{id}/edit
+ */
+.account-character-edit #middle-column {
+    .paddingless td {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+
+    p {
+        margin: 5px 0;
+    }
+}
+
+
+/**
+ * The following styles were written with the subsequent route in mind,
+ * although are not necessarily limited to it.
+ *
+ * @route  /account/character/{id}/delete
+ */
+.account-character-delete #middle-column {
+    p {
+        margin: 5px 0;
+    }
+}
+
+
+/**
+ * The following styles were written with the subsequent route in mind,
+ * although are not necessarily limited to it.
+ *
+ * @route  /account/character/{id}/name
+ */
+.account-character-name #middle-column { }
+
+
+/**
+ * The following styles were written with the subsequent route in mind,
+ * although are not necessarily limited to it.
+ *
+ * @route  /account/character/{id}/world
+ */
+.account-character-world #middle-column {
+    ul > li {
+        &.yes {
+            list-style-image: url('@{image-path}/yes.gif');
+        }
+
+        &.no {
+            list-style-image: url('@{image-path}/no.gif');
+        }
+    }
+}
+
+
+/**
+ * The following styles were written with the subsequent route in mind,
+ * although are not necessarily limited to it.
+ *
+ * @route  /account/character/{id}/sex
+ */
+.account-character-sex #middle-column { }

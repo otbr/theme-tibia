@@ -94,8 +94,8 @@
                                     <td>hidden</td>
                                     <td align="center">
                                         <div class="character-buttons">
-                                            [<a href="#">Edit</a>]
-                                            [<a href="#">Delete</a>]
+                                            [<a href="{{ url('/account/character', [$player->id, 'edit']) }}">Edit</a>]
+                                            [<a href="{{ url('/account/character', [$player->id, 'delete']) }}">Delete</a>]
                                         </div>
                                     </td>
                                 </tr>
@@ -111,7 +111,7 @@
 
                     <div style="height: 31px;">
                         <div class="buttons-right">
-                            <a href="#" class="blue-button">
+                            <a href="{{ url('/account/character') }}" class="blue-button">
                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_createcharacter.gif') }}" alt="Create Character">
                             </a>
                         </div>
