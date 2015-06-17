@@ -94,7 +94,7 @@
                                     <td>hidden</td>
                                     <td align="center">
                                         <div class="character-buttons">
-                                            [<a href="{{ url('/account/character', [$player->id, 'edit']) }}">Edit</a>]
+                                            [<a href="{{ url('/account/character', [$player->id]) }}">Edit</a>]
                                             [<a href="{{ url('/account/character', [$player->id, 'delete']) }}">Delete</a>]
                                         </div>
                                     </td>
