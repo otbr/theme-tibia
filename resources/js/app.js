@@ -7,5 +7,7 @@
         $(document).on('click', '#suggest-world', Theme.suggestWorld);
         $(document).on('click', '#suggest-name', Theme.suggestName);
 
+        $('img[usemap]').rwdImageMaps();
+
     });
 })(jQuery, window, document);

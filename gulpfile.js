@@ -14,7 +14,7 @@ elixir(function(mix) {
     mix
         .less('app.less')
 
-        .scripts(['vendor/jquery.min.js'], elixir.config.jsOutput + 'vendor.min.js')
+        .scripts(['vendor/jquery.min.js', 'vendor/jquery.rwdImageMaps.min.js'], elixir.config.jsOutput + 'vendor.min.js')
         .scripts(['theme.js', 'app.js'], elixir.config.jsOutput + 'app.min.js')
 
         .task('publish_assets')
