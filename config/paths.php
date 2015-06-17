@@ -12,7 +12,7 @@ return [
     |
     */
    
-    'items' => 'https://cdn.pandaac.io/items/1077',
+    'items' => 'https://cdn.pandaac.io/items/1076',
 
     /*
     |--------------------------------------------------------------------------
@@ -24,7 +24,7 @@ return [
     |
     */
    
-    'creatures' => 'https://cdn.pandaac.io/creatures/1077',
+    'creatures' => 'https://cdn.pandaac.io/creatures/1076',
 
     /*
     |--------------------------------------------------------------------------
