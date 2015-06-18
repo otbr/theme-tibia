@@ -21,7 +21,7 @@
             </div>
 
             <p>
-                Fenrock, one of Tibia's smallest islands, is situated right in the middle between Yalahar and the Ice Islands. The island's green and smooth surface is partly covered with snow, but hot geysers create an almost sub-tropical climate beneath the surface. For this reason, also creatures that are rather exotic in cold areas have found a living environment in Fenrock's dungeons. Fenrock can be reached from Yalahar and the nearby island Mistrock.
+                Fenrock, one of {{ server()->name() }}'s smallest islands, is situated right in the middle between Yalahar and the Ice Islands. The island's green and smooth surface is partly covered with snow, but hot geysers create an almost sub-tropical climate beneath the surface. For this reason, also creatures that are rather exotic in cold areas have found a living environment in Fenrock's dungeons. Fenrock can be reached from Yalahar and the nearby island Mistrock.
             </p>
 
         </div>

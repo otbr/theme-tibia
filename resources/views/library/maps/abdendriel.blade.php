@@ -21,7 +21,7 @@
             </div>
 
             <p>
-                After roaming the whole continent for centuries, the elves settled in this area of luxuriant vegetation in the north of Tibia. They built their houses in and out of trees - most houses are actually located high above the ground in tree-tops and connected via bridges - and named their village "Ab'Dendriel" after the ancient word "déndron", which means "tree". Elves are also called "tree-singers", because they are able to enchant plants by singing. You can find many examples of this art there. But the idyll is deceptive. Below the surface horrible creatures are lurking for incautious adventurers and the pyramid on the isle off the coast is filled with undead monsters.
+                After roaming the whole continent for centuries, the elves settled in this area of luxuriant vegetation in the north of {{ server()->name() }}. They built their houses in and out of trees - most houses are actually located high above the ground in tree-tops and connected via bridges - and named their village "Ab'Dendriel" after the ancient word "déndron", which means "tree". Elves are also called "tree-singers", because they are able to enchant plants by singing. You can find many examples of this art there. But the idyll is deceptive. Below the surface horrible creatures are lurking for incautious adventurers and the pyramid on the isle off the coast is filled with undead monsters.
             </p>
 
         </div>

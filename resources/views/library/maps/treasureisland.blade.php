@@ -21,7 +21,7 @@
             </div>
 
             <p>
-                South-west of Vandura, a small island fascinates people from all over Tibia. It is said that pirates used this place to hide their treasures there, buried deep in the sand. Thousands of treasure hunters have dug for their luck there and now, the once idyllic island reminds one of a huge building site. Everywhere you have to watch out not to fall in one of the numerous holes or to trip over some rubbish or some stones laying around.
+                South-west of Vandura, a small island fascinates people from all over {{ server()->name() }}. It is said that pirates used this place to hide their treasures there, buried deep in the sand. Thousands of treasure hunters have dug for their luck there and now, the once idyllic island reminds one of a huge building site. Everywhere you have to watch out not to fall in one of the numerous holes or to trip over some rubbish or some stones laying around.
             </p>
 
         </div>

@@ -4,18 +4,16 @@
  *
  * @route  /
  */
-.news-latest {
-	
+.news-latest #middle-column {
 	.news-block {
-
 		.headline {
-			position: relative;
 			background-image: url('@{image-path}/newsheadline_background.gif');
+			position: relative;
 			height: 28px;
 
 			.icon {
-				position: absolute;
 				background-image: url('@{image-path}/newsicon_development_big.gif');
+				position: absolute;
 				height: 32px;
 				width: 32px;
 				float: left;
@@ -23,32 +21,30 @@
 			}
 
 			.date {
-				font-size: 7pt;
 				position: absolute;
-				top: 10px;
-				left: 50px;
+				font-size: 7pt;
 				width: 85px;
-				color: white;
+				color: #fff;
+				left: 50px;
+				top: 10px;
 			}
 
 			.title {
 				position: relative;
-				top: 7px;
-				left: 135px;
-				font-size: 10pt;
 				font-weight: bold;
-				color: white;
+				font-size: 10pt;
+				color: #fff;
+				left: 135px;
+				top: 7px;
 			}
 
 			.body {
+				background-color: red;
+				margin-left: 10px;
 				font-size: 10pt;
 				color: #5A2800;
-				margin-left: 10px;
 				padding: 108px;
-				background-color: red;
 			}
 		}
-
 	}
-
 }

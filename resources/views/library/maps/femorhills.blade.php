@@ -21,7 +21,7 @@
             </div>
 
             <p>
-                Femor Hills are located in north-central Tibia. As they are a difficult terrain with many small hills, even the road from Thais to Carlin gives them a wide berth. Only some tribes of wild goblins live in this inhospitable area and ambush travellers that try to find a shortcut on their way to Carlin. In former days, the inhabitants of Carlin prospected for mineral resources in the hills, and the old tunnels are still worth an investigation.
+                Femor Hills are located in north-central {{ server()->name() }}. As they are a difficult terrain with many small hills, even the road from Thais to Carlin gives them a wide berth. Only some tribes of wild goblins live in this inhospitable area and ambush travellers that try to find a shortcut on their way to Carlin. In former days, the inhabitants of Carlin prospected for mineral resources in the hills, and the old tunnels are still worth an investigation.
             </p>
 
         </div>
