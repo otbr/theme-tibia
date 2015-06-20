@@ -143,9 +143,15 @@
                         <div class="navigation-content">
                             <ul>
                                 <li><a href="{{ url('/account') }}">Account Management</a></li>
-                                <li><a href="{{ url('/account/create') }}">Create Account</a></li>
+                                @if (! Auth::check())
+                                    <li><a href="{{ url('/account/create') }}">Create Account</a></li>
+                                @else
+                                    <li><a href="{{ url('/account/logout') }}">Logout</a></li>
+                                @endif
                                 <li><a href="{{ url('/account/download') }}">Download Client</a></li>
-                                <li><a href="{{ url('/account/recover') }}">Lost Account?</a></li>
+                                @if (! Auth::check())
+                                    <li><a href="{{ url('/account/recover') }}">Lost Account?</a></li>
+                                @endif
                             </ul>
                         </div>
                     </li>

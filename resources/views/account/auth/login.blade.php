@@ -35,7 +35,7 @@
                                     <button class="blue-button">
                                         <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_login.gif') }}" alt="Login">
                                     </button>
-                                    <a href="#" class="blue-button">
+                                    <a href="{{ url('/account/recover') }}" class="blue-button">
                                         <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_accountlost.gif') }}" alt="Account Lost?">
                                     </a>
                                 </div>
