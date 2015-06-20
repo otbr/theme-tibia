@@ -8,7 +8,7 @@ new Vue({
     el: '#skeleton',
 
     data: {
-        debug           : true,
+        debug           : false,
         toggleable      : [],
         navigation      : JSON.parse(Cookies.get('navigation') || null) || ['news'],
         selectedPlayer  : 0,
