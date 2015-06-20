@@ -19,6 +19,10 @@
 </head>
 <body class="@yield('body')">
 
+    <script id="vue-debug-template" type="x-template">
+        <pre v-show="debug" class="vue-debug">@{{ $data | json 4 }}</pre>
+    </script>
+
     <section id="skeleton">
         <aside id="left-column" class="column">
             <a id="logo-artwork" href="{{ url('/') }}"></a>
@@ -43,8 +47,8 @@
 
             <div id="navigation" class="box">
                 <ul class="inner-box">
-                    <li class="navigation-item open">
-                        <div class="navigation-button">
+                    <li class="navigation-item" v-class="open: isNavToggled('news')">
+                        <div class="navigation-button" v-on="click: toggleNav('news')">
                             <span class="crystals top"></span>
                             <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-news.gif') }}">
                             <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-news.gif') }}">
@@ -57,8 +61,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item">
-                        <div class="navigation-button">
+                    <li class="navigation-item" v-class="open: isNavToggled('about')">
+                        <div class="navigation-button" v-on="click: toggleNav('about')">
                             <span class="crystals top"></span>
                             <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-abouttibia.gif') }}">
                             <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-abouttibia.gif') }}">
@@ -73,8 +77,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item">
-                        <div class="navigation-button">
+                    <li class="navigation-item" v-class="open: isNavToggled('library')">
+                        <div class="navigation-button" v-on="click: toggleNav('library')">
                             <span class="crystals top"></span>
                             <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-library.gif') }}">
                             <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-library.gif') }}">
@@ -92,8 +96,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item">
-                        <div class="navigation-button">
+                    <li class="navigation-item" v-class="open: isNavToggled('community')">
+                        <div class="navigation-button" v-on="click: toggleNav('community')">
                             <span class="crystals top"></span>
                             <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-community.gif') }}">
                             <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-community.gif') }}">
@@ -111,8 +115,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item">
-                        <div class="navigation-button">
+                    <li class="navigation-item" v-class="open: isNavToggled('forum')">
+                        <div class="navigation-button" v-on="click: toggleNav('forum')">
                             <span class="crystals top"></span>
                             <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-forum.gif') }}">
                             <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-forum.gif') }}">
@@ -129,8 +133,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item">
-                        <div class="navigation-button">
+                    <li class="navigation-item" v-class="open: isNavToggled('account')">
+                        <div class="navigation-button" v-on="click: toggleNav('account')">
                             <span class="crystals top"></span>
                             <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-account.gif') }}">
                             <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-account.gif') }}">
@@ -145,8 +149,8 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item">
-                        <div class="navigation-button">
+                    <li class="navigation-item" v-class="open: isNavToggled('support')">
+                        <div class="navigation-button" v-on="click: toggleNav('support')">
                             <span class="crystals top"></span>
                             <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-support.gif') }}">
                             <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-support.gif') }}">
@@ -199,13 +203,13 @@
         </aside>
 
         <section id="middle-column" class="column">
+            <vue-debug></vue-debug>
+            
             @yield('content')
         </section>
     </section>
 
-
     <script>var baseurl = '{{ url("/") }}';</script>
-    <script src="{{ asset('/pandaac/theme-tibia/js/vendor.min.js') }}"></script>
     <script src="{{ asset('/pandaac/theme-tibia/js/app.min.js') }}"></script>
 
     @yield('footer')

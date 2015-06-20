@@ -57,11 +57,11 @@
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
                                         <th width="20%"><strong class="{{ $errors->has('player') ? 'error' : null }}">Character Name:</strong></th>
-                                        <td><input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}"></td>
+                                        <td><input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="suggestedName"></td>
                                     </tr>
                                     <tr>
                                         <th></th>
-                                        <td><small>[<a href="#" id="suggest-name">suggest name</a>]</small></td>
+                                        <td><small>[<a href="#" id="suggest-name" v-on="click: suggestName">suggest name</a>]</small></td>
                                     </tr>
                                     @if (count($genders = genders()) > 1)
                                         <tr>
@@ -126,7 +126,7 @@
                                                     </p>
                                                 @endforeach
                                                 
-                                                <p><small>[<a href="#" id="suggest-world">suggest game world</a>]</small></p>
+                                                <p><small>[<a href="#" id="suggest-world" v-on="click: suggestWorld">suggest game world</a>]</small></p>
                                             </td>
                                         </tr>
                                     </table>

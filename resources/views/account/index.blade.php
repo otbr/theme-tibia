@@ -81,7 +81,7 @@
                             </tr>
 
                             @forelse (account()->players as $i => $player)
-                                <tr class="character {{ $i === 0 ? 'active' : null }}">
+                                <tr class="character {{ $i === 0 ? 'active' : null }}" v-class="active: isActivated({{ $i }}, 'selectedPlayer')" v-on="click: activate({{ $i }}, 'selectedPlayer')">
                                     <td align="center" valign="middle">
                                         <span class="play-integer">{{ ++$i }}.</span>
                                         <a href="#" class="play-button"></a>

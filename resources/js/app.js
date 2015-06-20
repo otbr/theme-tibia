@@ -1,13 +1,36 @@
-(function($, window, document, undefined) {
-    $(document).ready(function() {
+var Vue = require('vue');
+var Cookies = require('cookies-js');
+var responsiveImageMaps = require('./methods/image-maps');
 
-        $(document).on('click', '.navigation-button', Theme.toggleNavigationButton);
-        $(document).on('click', '.showhide', Theme.toggleShowHideButton);
-        $(document).on('click', '.account-index tr.character:not(.active)', Theme.toggleCharacterList);
-        $(document).on('click', '#suggest-world', Theme.suggestWorld);
-        $(document).on('click', '#suggest-name', Theme.suggestName);
+Vue.use(require('vue-resource'));
 
-        $('img[usemap]').rwdImageMaps();
+new Vue({
+    el: '#skeleton',
 
-    });
-})(jQuery, window, document);
+    data: {
+        debug           : true,
+        toggleable      : [],
+        navigation      : JSON.parse(Cookies.get('navigation') || null) || ['news'],
+        selectedPlayer  : 0,
+        suggestedName   : null
+    },
+
+    components: {
+        'vue-debug'     : require('./components/vue-debug')
+    },
+
+    methods: {
+        activate        : require('./methods/activate'),
+        isActivated     : require('./methods/is-activated'),
+        toggle          : require('./methods/toggle'),
+        isToggled       : require('./methods/is-toggled'),
+        toggleNav       : require('./methods/toggle-nav'),
+        isNavToggled    : require('./methods/is-nav-toggled'),
+        suggestWorld    : require('./methods/suggest-world'),
+        suggestName     : require('./methods/suggest-name')
+    },
+
+    ready: function () {
+        responsiveImageMaps('[usemap]');
+    }
+});

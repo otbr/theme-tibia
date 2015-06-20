@@ -53,5 +53,7 @@
 
         </div>
     </div>
+
+    <span class="corners bottom"></span>
 </div>
 @endsection
