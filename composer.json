@@ -18,6 +18,9 @@
         "eklundchristopher/name-gen": "dev-master"
     },
     "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
             "pandaac\\ThemeTibia\\": "src/"
         }
