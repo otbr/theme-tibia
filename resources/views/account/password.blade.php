@@ -2,6 +2,7 @@
 
 @section('title', 'Account Management')
 @section('body', 'account-password')
+@section('navigation', '/account')
 
 @section('content')
 <div class="box">

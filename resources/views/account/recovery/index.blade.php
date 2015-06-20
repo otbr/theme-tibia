@@ -2,6 +2,7 @@
 
 @section('title', 'Lost Account')
 @section('body', 'account-recover')
+@section('navigation', '/account/recover')
 
 @section('content')
 <div class="box">

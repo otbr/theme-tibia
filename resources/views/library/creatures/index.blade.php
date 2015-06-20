@@ -2,6 +2,7 @@
 
 @section('title', 'Creatures')
 @section('body', 'library-creatures')
+@section('navigation', '/library/creatures')
 
 @section('content')
 <div class="box">

@@ -2,6 +2,7 @@
 
 @section('title', 'Legal Documents')
 @section('body', 'support-terms')
+@section('navigation', '/support/legal')
 
 @section('content')
 <div class="box">

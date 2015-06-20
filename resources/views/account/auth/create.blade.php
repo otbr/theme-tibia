@@ -2,6 +2,7 @@
 
 @section('title', 'Create Account')
 @section('body', 'account-create')
+@section('navigation', '/account/create')
 
 @section('content')
 <div class="box">

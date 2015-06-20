@@ -2,6 +2,7 @@
 
 @section('title', 'Screenshots')
 @section('body', 'about-screenshots')
+@section('navigation', '/about/screenshots')
 
 @section('content')
 <div class="box">

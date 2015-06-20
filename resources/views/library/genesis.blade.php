@@ -2,6 +2,7 @@
 
 @section('title', 'Genesis')
 @section('body', 'library-genesis')
+@section('navigation', '/library/genesis')
 
 @section('content')
 <div class="box">

@@ -2,6 +2,7 @@
 
 @section('title', 'Tutor Guide')
 @section('body', 'support-tutor')
+@section('navigation', '/support/tutor')
 
 @section('content')
 <div class="box">

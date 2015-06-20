@@ -56,8 +56,8 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li class="active"><a href="{{ url('/') }}">Latest News</a></li>
-                                <li><a href="{{ url('/archive') }}">News Archive</a></li>
+                                <li class="{{ activate_menu('/') }}"><a href="{{ url('/') }}">Latest News</a></li>
+                                <li class="{{ activate_menu('/archive') }}"><a href="{{ url('/archive') }}">News Archive</a></li>
                             </ul>
                         </div>
                     </li>
@@ -70,10 +70,10 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="{{ url('/about/server') }}">What Is {{ server()->name() }}?</a></li>
-                                <li><a href="{{ url('/about/screenshots') }}">Screenshots</a></li>
-                                <li><a href="{{ url('/about/features') }}">Game Features</a></li>
-                                <li><a href="{{ url('/about/premium') }}">Premium Features</a></li>
+                                <li class="{{ activate_menu('/about/server') }}"><a href="{{ url('/about/server') }}">What Is {{ server()->name() }}?</a></li>
+                                <li class="{{ activate_menu('/about/screenshots') }}"><a href="{{ url('/about/screenshots') }}">Screenshots</a></li>
+                                <li class="{{ activate_menu('/about/features') }}"><a href="{{ url('/about/features') }}">Game Features</a></li>
+                                <li class="{{ activate_menu('/about/premium') }}"><a href="{{ url('/about/premium') }}">Premium Features</a></li>
                             </ul>
                         </div>
                     </li>
@@ -86,13 +86,13 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="{{ url('/library/creatures') }}">Creatures</a></li>
-                                <li><a href="{{ url('/library/spells') }}">Spells</a></li>
-                                <li><a href="{{ url('/library/achievements') }}">Achievements</a></li>
-                                <li><a href="{{ url('/library/quests') }}">World Quests</a></li>
-                                <li><a href="{{ url('/library/experience') }}">Experience Table</a></li>
-                                <li><a href="{{ url('/library/maps') }}">Maps</a></li>
-                                <li><a href="{{ url('/library/genesis') }}">Genesis</a></li>
+                                <li class="{{ activate_menu('/library/creatures') }}"><a href="{{ url('/library/creatures') }}">Creatures</a></li>
+                                <li class="{{ activate_menu('/library/spells') }}"><a href="{{ url('/library/spells') }}">Spells</a></li>
+                                <li class="{{ activate_menu('/library/achievements') }}"><a href="{{ url('/library/achievements') }}">Achievements</a></li>
+                                <li class="{{ activate_menu('/library/quests') }}"><a href="{{ url('/library/quests') }}">World Quests</a></li>
+                                <li class="{{ activate_menu('/library/experience') }}"><a href="{{ url('/library/experience') }}">Experience Table</a></li>
+                                <li class="{{ activate_menu('/library/maps') }}"><a href="{{ url('/library/maps') }}">Maps</a></li>
+                                <li class="{{ activate_menu('/library/genesis') }}"><a href="{{ url('/library/genesis') }}">Genesis</a></li>
                             </ul>
                         </div>
                     </li>
@@ -105,13 +105,13 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="{{ url('/characters') }}">Characters</a></li>
-                                <li><a href="{{ url('/worlds') }}">Worlds</a></li>
-                                <li><a href="{{ url('/highscores') }}">Highscores</a></li>
-                                <li><a href="{{ url('/statistics') }}">Kill Statistics</a></li>
-                                <li><a href="{{ url('/houses') }}">Houses</a></li>
-                                <li><a href="{{ url('/guilds') }}">Guilds</a></li>
-                                <li><a href="{{ url('/polls') }}">Polls</a></li>
+                                <li class="{{ activate_menu('/characters') }}"><a href="{{ url('/characters') }}">Characters</a></li>
+                                <li class="{{ activate_menu('/worlds') }}"><a href="{{ url('/worlds') }}">Worlds</a></li>
+                                <li class="{{ activate_menu('/highscores') }}"><a href="{{ url('/highscores') }}">Highscores</a></li>
+                                <li class="{{ activate_menu('/statistics') }}"><a href="{{ url('/statistics') }}">Kill Statistics</a></li>
+                                <li class="{{ activate_menu('/houses') }}"><a href="{{ url('/houses') }}">Houses</a></li>
+                                <li class="{{ activate_menu('/guilds') }}"><a href="{{ url('/guilds') }}">Guilds</a></li>
+                                <li class="{{ activate_menu('/polls') }}"><a href="{{ url('/polls') }}">Polls</a></li>
                             </ul>
                         </div>
                     </li>
@@ -124,12 +124,12 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="{{ url('/forum/world') }}">World Boards</a></li>
-                                <li><a href="{{ url('/forum/trade') }}">Trade Boards</a></li>
-                                <li><a href="{{ url('/forum/community') }}">Community Boards</a></li>
-                                <li><a href="{{ url('/forum/council') }}">Council Boards</a></li>
-                                <li><a href="{{ url('/forum/support') }}">Support Boards</a></li>
-                                <li><a href="{{ url('/forum/guild') }}">Guild Boards</a></li>
+                                <li class="{{ activate_menu('/forum/world') }}"><a href="{{ url('/forum/world') }}">World Boards</a></li>
+                                <li class="{{ activate_menu('/forum/trade') }}"><a href="{{ url('/forum/trade') }}">Trade Boards</a></li>
+                                <li class="{{ activate_menu('/forum/community') }}"><a href="{{ url('/forum/community') }}">Community Boards</a></li>
+                                <li class="{{ activate_menu('/forum/council') }}"><a href="{{ url('/forum/council') }}">Council Boards</a></li>
+                                <li class="{{ activate_menu('/forum/support') }}"><a href="{{ url('/forum/support') }}">Support Boards</a></li>
+                                <li class="{{ activate_menu('/forum/guild') }}"><a href="{{ url('/forum/guild') }}">Guild Boards</a></li>
                             </ul>
                         </div>
                     </li>
@@ -142,15 +142,13 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="{{ url('/account') }}">Account Management</a></li>
+                                <li class="{{ activate_menu('/account') }}"><a href="{{ url('/account') }}">Account Management</a></li>
                                 @if (! Auth::check())
-                                    <li><a href="{{ url('/account/create') }}">Create Account</a></li>
-                                @else
-                                    <li><a href="{{ url('/account/logout') }}">Logout</a></li>
+                                    <li class="{{ activate_menu('/account/create') }}"><a href="{{ url('/account/create') }}">Create Account</a></li>
                                 @endif
-                                <li><a href="{{ url('/account/download') }}">Download Client</a></li>
+                                <li class="{{ activate_menu('/account/download') }}"><a href="{{ url('/account/download') }}">Download Client</a></li>
                                 @if (! Auth::check())
-                                    <li><a href="{{ url('/account/recover') }}">Lost Account?</a></li>
+                                    <li class="{{ activate_menu('/account/recover') }}"><a href="{{ url('/account/recover') }}">Lost Account?</a></li>
                                 @endif
                             </ul>
                         </div>
@@ -164,10 +162,10 @@
                         </div>
                         <div class="navigation-content">
                             <ul>
-                                <li><a href="{{ url('/support/faq') }}">FAQ</a></li>
-                                <li><a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a></li>
-                                <li><a href="{{ url('/support/tutor') }}">Tutor Guide</a></li>
-                                <li><a href="{{ url('/support/legal') }}">Legal Documents</a></li>
+                                <li class="{{ activate_menu('/support/faq') }}"><a href="{{ url('/support/faq') }}">FAQ</a></li>
+                                <li class="{{ activate_menu('/support/rules') }}"><a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a></li>
+                                <li class="{{ activate_menu('/support/tutor') }}"><a href="{{ url('/support/tutor') }}">Tutor Guide</a></li>
+                                <li class="{{ activate_menu('/support/legal') }}"><a href="{{ url('/support/legal') }}">Legal Documents</a></li>
                             </ul>
                         </div>
                     </li>

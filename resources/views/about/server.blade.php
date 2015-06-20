@@ -2,6 +2,7 @@
 
 @section('title', 'What Is '.server()->name().'?')
 @section('body', 'about-server')
+@section('navigation', '/about/server')
 
 @section('content')
 <div class="box">

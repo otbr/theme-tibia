@@ -2,6 +2,7 @@
 
 @section('title', 'News')
 @section('body', 'news-latest')
+@section('navigation', '/')
 
 @section('content')
 <div class="box">

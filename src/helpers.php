@@ -10,6 +10,10 @@ if (! function_exists('activate_menu')) {
      */
     function activate_menu($path, $class = 'active')
     {
-        return app('router')->is($path) ? $class : null;
+        $sections = app('view')->getSections();
+
+        $navigation = isset($sections['navigation']) ? trim($sections['navigation']) : null;
+
+        return str_is($path, $navigation) ? $class : null;
     }
 }

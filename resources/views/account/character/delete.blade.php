@@ -2,6 +2,7 @@
 
 @section('title', 'Account Management')
 @section('body', 'account-character-delete')
+@section('navigation', '/account')
 
 @section('content')
 <div class="box">
