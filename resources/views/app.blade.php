@@ -18,6 +18,7 @@
     <![endif]-->
 </head>
 <body class="@yield('body')">
+    <a name="top"></a>
 
     <script id="vue-debug-template" type="x-template">
         <pre v-show="debug" class="vue-debug">@{{ $data | json 4 }}</pre>

@@ -35,6 +35,22 @@
     float: right;
 }
 
+.valign {
+    vertical-align: middle;
+}
+
+.first-letter {
+    margin: 27px 5px !important;
+
+    &:first-letter {
+        font-family: 'Martel', serif;
+        color: @first-letter-color;
+        margin-right: 1px;
+        font-size: 36px;
+        line-height: 0;
+    }
+}
+
 .showhide {
     background: url('@{image-path}/showhide.gif');
     cursor: pointer;

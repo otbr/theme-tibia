@@ -47,6 +47,23 @@ table {
         }
     }
 
+    &.inverse.dark tr {
+        &:nth-child(odd) {
+            td, th {
+                background-color: @table-medium-bgcolor;
+            }
+        }
+
+        td, th {
+            border: 1px solid @table-light-bgcolor !important;
+            background-color: @table-medium-bgcolor;
+
+            span {
+                display: block;
+            }
+        }
+    }
+
     tr {
         &:nth-child(odd) {
             td, th {
@@ -199,7 +216,10 @@ table {
 
         &.dark {
             background-color: @table-bgcolor-dark;
-            padding: 7px 6px;
+        }
+
+        & > p {
+            margin: 2px 0 6px;
         }
 
         & > .box {

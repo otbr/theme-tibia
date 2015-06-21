@@ -56,7 +56,7 @@
                             </button>
                         </td>
                         <td align="center">
-                            <a href="{{ url('/account/character', [$player->id, 'edit']) }}" class="blue-button">
+                            <a href="{{ url('/account/character', [$player->id]) }}" class="blue-button">
                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
                             </a>
                         </td>
