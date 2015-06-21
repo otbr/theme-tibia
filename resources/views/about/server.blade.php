@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'What Is '.server()->name().'?')
-@section('body', 'about-server')
-@section('navigation', '/about/server')
+@title('What Is '.server()->name().'?')
+@navigation('/about/server')
+@bodyclass('about-server')
 
 @section('content')
 <div class="box">

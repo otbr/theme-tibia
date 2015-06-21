@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Maps')
-@section('body', 'library-maps')
-@section('navigation', '/library/maps')
+@title('Maps')
+@navigation('/library/maps')
+@bodyclass('library-maps')
 
 @section('content')
 <div class="box">

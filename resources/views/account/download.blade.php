@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Download Client')
-@section('body', 'account-download')
-@section('navigation', '/account/download')
+@title('Download Client')
+@navigation('/account/download')
+@bodyclass('account-download')
 
 @section('content')
 <div class="box">

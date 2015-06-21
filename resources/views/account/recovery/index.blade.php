@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Lost Account')
-@section('body', 'account-recover')
-@section('navigation', '/account/recover')
+@title('Lost Account')
+@navigation('/account/recover')
+@bodyclass('account-recover')
 
 @section('content')
 <div class="box">

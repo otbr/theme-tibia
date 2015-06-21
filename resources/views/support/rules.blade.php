@@ -1,19 +1,22 @@
 @extends('theme::app')
 
-@section('title', 'Legal Documents')
-@section('body', 'support-rules')
-@section('navigation', '/support/rules')
+@title('Tibia Rules')
+@navigation('/support/rules')
+@bodyclass('support-rules')
 
 @section('content')
 <div class="box">
     <span class="corners top"></span>
 
     <header class="header">
-        <img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-legaldocuments.gif') }}">
+        <img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-tibiarules.gif') }}">
     </header>
 
     <div class="inner-box-border">
         <div class="inner-box">
+
+            <p>All players have to respect the following code of conduct, so-called "{{ server()->name() }} Rules".</p>
+
             <div class="table">
                 <header class="header">
                     <div class="borders">
@@ -27,6 +30,12 @@
                     {!! $document !!}
                 </div>
             </div>
+
+            <br>
+
+            <p>If your account or one of your characters got punished, you will find an entry in your criminal record on your <a href="{{ url('/account') }}">account</a> page. There you can read the reason and the duration of the punishment.</p>
+
+            <p>Have fun in {{ server()->name() }}!</p>
         </div>
     </div>
 

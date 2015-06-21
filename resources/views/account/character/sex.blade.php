@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Account Management')
-@section('body', 'account-character-sex')
-@section('navigation', '/account')
+@title('Account Management')
+@navigation('/account')
+@bodyclass('account-character-sex')
 
 @section('content')
 <div class="box">

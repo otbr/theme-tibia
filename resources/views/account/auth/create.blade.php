@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Create Account')
-@section('body', 'account-create')
-@section('navigation', '/account/create')
+@title('Create Account')
+@navigation('/account/create')
+@bodyclass('account-create')
 
 @section('content')
 <div class="box">

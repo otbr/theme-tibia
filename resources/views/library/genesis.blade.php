@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Genesis')
-@section('body', 'library-genesis')
-@section('navigation', '/library/genesis')
+@title('Genesis')
+@navigation('/library/genesis')
+@bodyclass('library-genesis')
 
 @section('content')
 <div class="box">

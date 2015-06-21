@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Premium Features')
-@section('body', 'about-premium')
-@section('navigation', '/about/premium')
+@title('Premium Features')
+@navigation('/about/premium')
+@bodyclass('about-premium')
 
 @section('content')
 <div class="box">

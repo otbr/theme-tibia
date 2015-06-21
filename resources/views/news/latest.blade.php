@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'News')
-@section('body', 'news-latest')
-@section('navigation', '/')
+@title('News')
+@navigation('/')
+@bodyclass('news-latest')
 
 @section('content')
 <div class="box">

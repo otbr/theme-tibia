@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Screenshots')
-@section('body', 'about-screenshots')
-@section('navigation', '/about/screenshots')
+@title('Screenshots')
+@navigation('/about/screenshots')
+@bodyclass('about-screenshots')
 
 @section('content')
 <div class="box">

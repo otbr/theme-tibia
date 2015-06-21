@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'World Quests')
-@section('body', 'library-quests')
-@section('navigation', '/library/quests')
+@title('World Quests')
+@navigation('/library/quests')
+@bodyclass('library-quests')
 
 @section('content')
 <div class="box">

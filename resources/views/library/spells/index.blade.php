@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Spells')
-@section('body', 'library-spells')
-@section('navigation', '/library/spells')
+@title('Spells')
+@navigation('/library/spells')
+@bodyclass('library-spells')
 
 @section('content')
 <div class="box">

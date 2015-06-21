@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Achievements')
-@section('body', 'library-achievements')
-@section('navigation', '/library/achievements')
+@title('Achievements')
+@navigation('/library/achievements')
+@bodyclass('library-achievements')
 
 @section('content')
 <div class="box">

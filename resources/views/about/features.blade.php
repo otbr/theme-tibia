@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Game Features')
-@section('body', 'about-features')
-@section('navigation', '/about/features')
+@title('Game Features')
+@navigation('/about/features')
+@bodyclass('about-features')
 
 @section('content')
 <div class="box">

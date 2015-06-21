@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Creatures')
-@section('body', 'library-creatures')
-@section('navigation', '/library/creatures')
+@title('Creatures')
+@navigation('/library/creatures')
+@bodyclass('library-creatures')
 
 @section('content')
 <div class="box">

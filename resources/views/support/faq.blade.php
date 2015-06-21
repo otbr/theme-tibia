@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'F.A.Q.')
-@section('body', 'support-faq')
-@section('navigation', '/support/faq')
+@title('F.A.Q.')
+@navigation('/support/faq')
+@bodyclass('support-faq')
 
 @section('content')
 <div class="box">

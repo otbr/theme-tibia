@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Experience Table')
-@section('body', 'library-experience')
-@section('navigation', '/library/experience')
+@title('Experience Table')
+@navigation('/library/experience')
+@bodyclass('library-experience')
 
 @section('content')
 <div class="box">

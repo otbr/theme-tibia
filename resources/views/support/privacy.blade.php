@@ -1,8 +1,8 @@
 @extends('theme::app')
 
-@section('title', 'Legal Documents')
-@section('body', 'support-privacy')
-@section('navigation', '/support/legal')
+@title('Legal Documents')
+@navigation('/support/legal')
+@bodyclass('support-privacy')
 
 @section('content')
 <div class="box">
