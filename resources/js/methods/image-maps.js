@@ -34,21 +34,8 @@ function responsiveImageMaps (selector) {
             }
         }
 
-        console.log({
-            'width': width,
-            'defaultWidth': defaultWidth,
-            'height': height,
-            'defaultHeight': defaultHeight
-        });
-
         if (defaultHeight === 0) {
             defaultHeight = Math.round(height * (defaultWidth / width));
-            console.log({
-                'width': width,
-                'defaultWidth': defaultWidth,
-                'height': height,
-                'defaultHeight': defaultHeight
-            });
         }
 
         var widthPercentage = defaultWidth / 100,
