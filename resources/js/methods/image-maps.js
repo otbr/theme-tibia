@@ -1,4 +1,4 @@
-module.exports = function(selector) {
+module.exports = function (selector) {
     window.addEventListener('resize', function (e) {
         responsiveImageMaps(selector);
     });
@@ -7,7 +7,7 @@ module.exports = function(selector) {
 };
 
 
-function responsiveImageMaps(selector) {
+function responsiveImageMaps (selector) {
     var images = document.querySelectorAll(selector);
 
     [].forEach.call(images, function (image) {
@@ -25,13 +25,30 @@ function responsiveImageMaps(selector) {
             var tmp = new Image();
             tmp.src = image.getAttribute('src');
 
-            if ( ! width) {
+            if (! width) {
                 width = tmp.width;
             }
 
-            if ( ! height) {
+            if (! height) {
                 height = tmp.height;
             }
+        }
+
+        console.log({
+            'width': width,
+            'defaultWidth': defaultWidth,
+            'height': height,
+            'defaultHeight': defaultHeight
+        });
+
+        if (defaultHeight === 0) {
+            defaultHeight = Math.round(height * (defaultWidth / width));
+            console.log({
+                'width': width,
+                'defaultWidth': defaultWidth,
+                'height': height,
+                'defaultHeight': defaultHeight
+            });
         }
 
         var widthPercentage = defaultWidth / 100,

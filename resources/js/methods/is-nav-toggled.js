@@ -1,3 +1,3 @@
-module.exports = function(identifier) {
+module.exports = function (identifier) {
     return this.isToggled(identifier, 'navigation');
 };
