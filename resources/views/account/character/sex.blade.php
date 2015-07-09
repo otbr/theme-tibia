@@ -17,7 +17,7 @@
 
             @include('theme::modules.errors')
 
-            <form method="POST" action="{{ url('/account/character', [$player->id, 'sex']) }}">
+            <form method="POST" action="{{ url('/account/character', [$player->id(), 'sex']) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
 
@@ -31,7 +31,7 @@
                     </header>
 
                     <div class="content dark">
-                        Do you really want to change the sex of your character <strong>{{ $player->name }}</strong>?
+                        Do you really want to change the sex of your character <strong>{{ $player->name() }}</strong>?
                     </div>
                 </div>
 
@@ -45,7 +45,7 @@
                             </button>
                         </td>
                         <td align="center">
-                            <a href="{{ url('/account/character', [$player->id]) }}" class="blue-button">
+                            <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
                             </a>
                         </td>

@@ -2,7 +2,7 @@
 
 @title('Account Management')
 @navigation('/account')
-@bodyclass('account-character-delete')
+@bodyclass('account-email')
 
 @section('content')
 <div class="box">
@@ -17,19 +17,17 @@
 
             @include('theme::modules.errors')
 
-            <p>To delete this character enter your password and click on "Submit".<br>
-            You can undelete the character within the first 2 months (60 days) after the deletion.<br>
-            After this time the character is deleted for good and cannot be restored anymore!</p>
+            <p>Please enter your password and the new email address. Make sure that you enter a valid email address which you have access to. <strong>For security reasons, the actual change will be finalised after a waiting period of {{ config('pandaac.timers.email-change') }} days.</strong></p>
 
-            <form method="POST" action="{{ url('/account/character', $player->id()) }}">
+            <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="DELETE">
+                <input type="hidden" name="_method" value="PUT">
 
                 <div class="table">
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Delete Character
+                            Change Email
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -37,8 +35,8 @@
                     <div class="content dark">
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
-                                <th>Character Name:</th>
-                                <td>{{ $player->name() }}</td>
+                                <th>New Email Address:</th>
+                                <td><input type="email" name="email" size="30" maxlength="50"></td>
                             </tr>
                             <tr>
                                 <th>Password:</th>
@@ -58,7 +56,7 @@
                             </button>
                         </td>
                         <td align="center">
-                            <a href="{{ url('/account') }}" class="blue-button">
+                            <a href="{{ url('/account/manage') }}" class="blue-button">
                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
                             </a>
                         </td>

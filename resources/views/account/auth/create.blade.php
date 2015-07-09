@@ -35,19 +35,41 @@
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
                                         <th width="20%"><strong class="{{ $errors->has('name') ? 'error' : null }}">Account Name:</strong></th>
-                                        <td><input type="password" name="name" size="35" maxlength="30"></td>
+                                        <td>
+                                            <input type="text" name="name" size="35" maxlength="30" v-model="account" v-on="change: validateAccount"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.account">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.account">
+
+                                            <div class="error" v-show="typeof errors.account !== 'boolean'"><small>@{{ errors.account }}</small></div>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th><strong class="{{ $errors->has('email') ? 'error' : null }}">Email:</strong></th>
-                                        <td><input type="email" name="email" size="35" maxlength="50" value="{{ old('email') }}"></td>
+                                        <th><strong class="{{ $errors->has('email') ? 'error' : null }}">Email Address:</strong></th>
+                                        <td>
+                                            <input type="email" name="email" size="35" maxlength="50" value="{{ old('email') }}" v-model="email" v-on="change: validateEmail"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.email">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.email">
+
+                                            <div class="error" v-show="typeof errors.email !== 'boolean'"><small>@{{ errors.email }}</small></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th><strong class="{{ $errors->has('password') ? 'error' : null }}">Password:</strong></th>
-                                        <td><input type="password" name="password" size="35" maxlength="29"></td>
+                                        <td>
+                                            <input type="password" name="password" size="35" maxlength="29" v-model="password" v-on="change: validatePassword"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.password">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.password">
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th><strong class="{{ $errors->has('password') ? 'error' : null }}">Password Again:</strong></th>
-                                        <td><input type="password" name="password_confirmation" size="35" maxlength="29"></td>
+                                        <td>
+                                            <input type="password" name="password_confirmation" size="35" maxlength="29" v-model="confirmation" v-on="change: validatePassword"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.password">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.password">
+
+                                            <div class="error" v-show="typeof errors.password !== 'boolean'"><small>@{{ errors.password }}</small></div>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -58,7 +80,13 @@
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
                                         <th width="20%"><strong class="{{ $errors->has('player') ? 'error' : null }}">Character Name:</strong></th>
-                                        <td><input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="suggestedName"></td>
+                                        <td>
+                                            <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="suggestedName" v-on="change: validateName"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.suggestedName">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.suggestedName">
+
+                                            <div class="error" v-show="typeof errors.suggestedName !== 'boolean'"><small>@{{ errors.suggestedName }}</small></div>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <th></th>

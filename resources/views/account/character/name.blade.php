@@ -19,7 +19,7 @@
 
             <p>Please enter the new name for your character. Note that also your new name must not violate the naming conventions stated in the <a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a> or your character will get name locked and your account might be punished.</p>
 
-            <form method="POST" action="{{ url('/account/character', [$player->id, 'name']) }}">
+            <form method="POST" action="{{ url('/account/character', [$player->id(), 'name']) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
 
@@ -36,7 +36,7 @@
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <th>Current Character Name:</th>
-                                <td>{{ $player->name }}</td>
+                                <td>{{ $player->name() }}</td>
                             </tr>
                             <tr>
                                 <th>New Character Name:</th>
@@ -56,7 +56,7 @@
                             </button>
                         </td>
                         <td align="center">
-                            <a href="{{ url('/account/character', [$player->id]) }}" class="blue-button">
+                            <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
                             </a>
                         </td>

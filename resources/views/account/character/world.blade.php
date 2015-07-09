@@ -36,7 +36,7 @@
                 <li class="no">You have left the beginner's island.</li>
             </ul>
 
-            <form method="POST" action="{{ url('/account/character', [$player->id, 'world']) }}">
+            <form method="POST" action="{{ url('/account/character', [$player->id(), 'world']) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
 
@@ -59,7 +59,7 @@
                                     <th>Requirement Status:</th>
                                 </tr>
                                 <tr>
-                                    <td>{{ $player->name }}</td>
+                                    <td>{{ $player->name() }}</td>
                                     <td>{{ $player->world()->name() }} ({{ $player->world()->type() }})</td>
                                     <td>
                                         <select name="world">
@@ -86,7 +86,7 @@
                             </button>
                         </td>
                         <td align="center">
-                            <a href="{{ url('/account/character', [$player->id]) }}" class="blue-button">
+                            <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
                             </a>
                         </td>

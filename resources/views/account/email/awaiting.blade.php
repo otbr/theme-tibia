@@ -17,32 +17,23 @@
 
             @include('theme::modules.errors')
 
-            <p>Please enter your password and the new email address. Make sure that you enter a valid email address which you have access to. <strong>For security reasons, the actual change will be finalised after a waiting period of 30 days.</strong></p>
-
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
+                <input type="hidden" name="_method" value="DELETE">
 
                 <div class="table">
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Change Email
+                            Change of Email Address
                             <span class="edges bottom"></span>
                         </div>
                     </header>
 
                     <div class="content dark">
-                        <table cellspacing="0" cellpadding="0" border="0">
-                            <tr>
-                                <th>New Email Address:</th>
-                                <td><input type="email" name="email" size="30" maxlength="50"></td>
-                            </tr>
-                            <tr>
-                                <th>Password:</th>
-                                <td><input type="password" name="password" size="30" maxlength="29"></td>
-                            </tr>
-                        </table>
+                        A request has been submitted to change the email address of this account to <strong>{{ account()->emailChange() }}</strong>.<br>
+                        The actual change will take place on <strong>{{ account()->emailChangeDate() }}</strong>.<br>
+                        If you do not want to change your email address, please click on "Cancel".
                     </div>
                 </div>
 
@@ -52,7 +43,7 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_cancel.gif') }}" alt="Cancel">
                             </button>
                         </td>
                         <td align="center">

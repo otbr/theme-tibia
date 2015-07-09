@@ -57,9 +57,9 @@
                                 <table class="paddingless" cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
                                         <th width="10%"><strong class="{{ $errors->has('name') ? 'error' : null }}">Name:</strong></th>
-                                        <td width="80%">{{ $player->name }}</td>
+                                        <td width="80%">{{ $player->name() }}</td>
                                         <td align="right">
-                                            <a href="{{ url('/account/character', [$player->id, 'name']) }}" class="blue-button">
+                                            <a href="{{ url('/account/character', [$player->id(), 'name']) }}" class="blue-button">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changename.gif') }}" alt="Change Name">
                                             </a>
                                         </td>
@@ -69,7 +69,7 @@
                                             <th><strong class="{{ $errors->has('world') ? 'error' : null }}">World:</strong></th>
                                             <td>{{ $world->name() }}</td>
                                             <td align="right">
-                                                <a href="{{ url('/account/character', [$player->id, 'world']) }}" class="blue-button">
+                                                <a href="{{ url('/account/character', [$player->id(), 'world']) }}" class="blue-button">
                                                     <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeworld.gif') }}" alt="Change World">
                                                 </a>
                                             </td>
@@ -79,7 +79,7 @@
                                         <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">Sex:</strong></th>
                                         <td>{{ $player->gender()->name() }}</td>
                                         <td align="right">
-                                            <a href="{{ url('/account/character', [$player->id, 'sex']) }}" class="blue-button">
+                                            <a href="{{ url('/account/character', [$player->id(), 'sex']) }}" class="blue-button">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changesex.gif') }}" alt="Change Sex">
                                             </a>
                                         </td>

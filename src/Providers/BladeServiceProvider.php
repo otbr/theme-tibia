@@ -54,7 +54,7 @@ class BladeServiceProvider extends ServiceProvider
      * @param  string  $expression
      * @return string
      */
-    protected function directiveTitle($expression)
+    public function directiveTitle($expression)
     {
         $expression = preg_replace('/^\(/', '("title", ', $expression, 1);
 
@@ -67,7 +67,7 @@ class BladeServiceProvider extends ServiceProvider
      * @param  string  $expression
      * @return string
      */
-    protected function directiveNavigation($expression)
+    public function directiveNavigation($expression)
     {
         $expression = preg_replace('/^\(/', '("navigation", ', $expression, 1);
 
@@ -80,7 +80,7 @@ class BladeServiceProvider extends ServiceProvider
      * @param  string  $expression
      * @return string
      */
-    protected function directiveBodyclass($expression)
+    public function directiveBodyclass($expression)
     {
         $expression = preg_replace('/^\(/', '("body", ', $expression, 1);
 

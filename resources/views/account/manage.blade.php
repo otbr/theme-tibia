@@ -60,8 +60,8 @@
                                 <td valign="middle">
                                     <button class="showhide" v-on="click: toggle('account')" v-class="active: isToggled('account')"></button>
 
-                                    <span v-show="isToggled('account')">{{ auth()->user()->name() }}</span>
-                                    <span v-show="! isToggled('account')">{{ str_repeat('*', strlen(auth()->user()->name())) }}</span>
+                                    <span v-show="isToggled('account')">{{ account()->name() }}</span>
+                                    <span v-show="! isToggled('account')">{{ str_repeat('*', strlen(account()->name())) }}</span>
                                 </td>
                             </tr>
                             <tr>
@@ -69,8 +69,8 @@
                                 <td valign="middle">
                                     <button class="showhide" v-on="click: toggle('email')" v-class="active: isToggled('email')"></button>
 
-                                    <span v-show="isToggled('email')">{{ auth()->user()->email() }}</span>
-                                    <span v-show="! isToggled('email')">{{ str_repeat('*', strlen(auth()->user()->email())) }}</span>
+                                    <span v-show="isToggled('email')">{{ account()->email() }}</span>
+                                    <span v-show="! isToggled('email')">{{ str_repeat('*', strlen(account()->email())) }}</span>
                                 </td>
                             </tr>
                             <tr>

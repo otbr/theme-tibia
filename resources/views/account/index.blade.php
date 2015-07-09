@@ -59,6 +59,32 @@
                 </div>
             </div>
 
+            @if (account()->isAwaitingEmailChange())
+                <br>
+
+                <div class="notification">
+                    <div class="borders">
+                        <span class="edges top"></span>
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td>
+                                    <div class="buttons-right">
+                                        <a href="{{ url('/account/email') }}" class="blue-button">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_edit.gif') }}" alt="Edit">
+                                        </a>
+                                    </div>
+
+                                    <p style="margin-top: 5px;"><strong>There is an email change request for the account!</strong></p>
+
+                                    <p style="margin-bottom: 5px;">A request has been submitted to change the email address of this account to <strong>{{ account()->emailChange() }}</strong>. After a waiting period of <strong>{{ config('pandaac.timers.email-change') }} days</strong> you can accept the new email address and finish the process. Please cancel the request if you do not want your email address to be changed! Also cancel the request if you have no access to the new email address!</p>
+                                </td>
+                            </tr>
+                        </table>
+                        <span class="edges bottom"></span>
+                    </div>
+                </div>
+            @endif
+
             <br>
 
             <div class="table">
@@ -88,15 +114,15 @@
                                         <a href="#" class="play-button"></a>
                                     </td>
                                     <td valign="middle">
-                                        <span>{{ $player->name }}</span>
-                                        <small>{{ $player->vocation()->name() }} - Level {{ $player->level }}</small>
+                                        <span>{{ $player->name() }}</span>
+                                        <small>{{ $player->vocation()->name() }} - Level {{ $player->level() }}</small>
                                     </td>
                                     <td>{{ $player->world()->name() }}</td>
                                     <td>hidden</td>
                                     <td align="center">
                                         <div class="character-buttons">
-                                            [<a href="{{ url('/account/character', [$player->id]) }}">Edit</a>]
-                                            [<a href="{{ url('/account/character', [$player->id, 'delete']) }}">Delete</a>]
+                                            [<a href="{{ url('/account/character', $player->id()) }}">Edit</a>]
+                                            [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">Delete</a>]
                                         </div>
                                     </td>
                                 </tr>
