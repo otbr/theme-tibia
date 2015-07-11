@@ -85,7 +85,7 @@ class ApiController extends Controller
             return new JsonResponse('Your account name must include at least one letter A-Z!');
         }
 
-        if (app('Apolune\Contracts\Account\Account')->whereName($account)->first()) {
+        if (app('account')->whereName($account)->first()) {
             return new JsonResponse('This account name is already used. Please select another one!');
         }
 
@@ -109,8 +109,8 @@ class ApiController extends Controller
             return new JsonResponse('This email address has an invalid format. Please enter a correct email address!');
         }
 
-        $account  = app('Apolune\Contracts\Account\Account')->whereEmail($email)->first();
-        $property = app('Apolune\Contracts\Account\AccountProperties')->whereEmail($email)->first();
+        $account  = app('account')->whereEmail($email)->first();
+        $property = app('account.properties')->whereEmail($email)->first();
 
         if ($account or $property) {
             return new JsonResponse('This email address is already used. Please enter another email address!');
@@ -213,7 +213,7 @@ class ApiController extends Controller
             return new JsonResponse('This name contains more than 3 words. Please choose another name!');
         }
 
-        if (app('Apolune\Contracts\Account\Player')->whereName($name)->first()) {
+        if (app('player')->whereName($name)->first()) {
             return new JsonResponse('This character name is already used. Please select another one!');
         }
 
