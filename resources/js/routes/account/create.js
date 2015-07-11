@@ -44,7 +44,7 @@
                  * @return void
                  */
                 suggestName : function (e) {
-                    e.preventDefault();
+                    if (e) e.preventDefault();
                     
                     var endpoint = baseurl + '/api/name';
 
@@ -63,7 +63,7 @@
                  * @return void
                  */
                 validateAccount : function (e) {
-                    e.preventDefault();
+                    if (e) e.preventDefault();
                     
                     var endpoint = baseurl + '/api/validate/account';
 
@@ -81,7 +81,7 @@
                  * @return void
                  */
                 validateEmail : function (e) {
-                    e.preventDefault();
+                    if (e) e.preventDefault();
                     
                     var endpoint = baseurl + '/api/validate/email';
 
@@ -99,7 +99,7 @@
                  * @return void
                  */
                 validatePassword : function (e) {
-                    e.preventDefault();
+                    if (e) e.preventDefault();
                     
                     var endpoint = baseurl + '/api/validate/password';
 
@@ -117,7 +117,7 @@
                  * @return void
                  */
                 validateName : function (e) {
-                    e.preventDefault();
+                    if (e) e.preventDefault();
                     
                     var endpoint = baseurl + '/api/validate/name';
 

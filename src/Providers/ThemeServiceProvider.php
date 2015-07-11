@@ -14,6 +14,16 @@ class ThemeServiceProvider extends ServiceProvider
     protected $namespace = 'pandaac/theme-tibia';
 
     /**
+     * Holds all of the service providers we want to register.
+     *
+     * @var array
+     */
+    protected $providers = [
+        RouteServiceProvider::class,
+        BladeServiceProvider::class,
+    ];
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
@@ -33,8 +43,9 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->register('pandaac\ThemeTibia\Providers\RouteServiceProvider');
-        $this->app->register('pandaac\ThemeTibia\Providers\BladeServiceProvider');
+        foreach ($this->providers as $provider) {
+            $this->app->register($provider);
+        }
     }
 
     /**
@@ -45,13 +56,8 @@ class ThemeServiceProvider extends ServiceProvider
      */
     private function loaders($path)
     {
-        $this->loadViewsFrom(
-            "${path}/resources/views", 'theme'
-        );
-
-        $this->loadTranslationsFrom(
-            "${path}/resources/lang", 'theme'
-        );
+        $this->loadViewsFrom("${path}/resources/views", 'theme');
+        $this->loadTranslationsFrom("${path}/resources/lang", 'theme');
     }
 
     /**
@@ -63,14 +69,8 @@ class ThemeServiceProvider extends ServiceProvider
      */
     private function publisher($path, $namespace)
     {
-        $this->publishes([
-                "${path}/public" => public_path($namespace),
-        ], 'public');
-
-        $this->publishes([
-                "${path}/config" => base_path("config/${namespace}"),
-        ], 'config');
-
+        $this->publishes(["${path}/public" => public_path($namespace)], 'public');
+        $this->publishes(["${path}/config" => base_path("config/${namespace}")], 'config');
         $this->publishes([
             "${path}/resources/views" => theme_path($namespace.'/views'),
             "${path}/resources/lang" => theme_path($namespace.'/lang'),
