@@ -43,7 +43,7 @@
                                     </tr>
                                     <tr v-show="typeof errors.account !== 'boolean'">
                                         <th></th>
-                                        <td><small class="error">@{{{ errors.account }}}</small></td>
+                                        <td><small class="error">@{{ errors.account }}</small></td>
                                     </tr>
                                     <tr>
                                         <th><strong v-class="error: (typeof errors.email !== 'boolean' || (errors.email !== false && {{ $errors->has('email') ? 'true' : 'false' }}))">Email Address:</strong></th>
@@ -55,7 +55,7 @@
                                     </tr>
                                     <tr v-show="typeof errors.email !== 'boolean'">
                                         <th></th>
-                                        <td><small class="error">@{{{ errors.email }}}</small></td>
+                                        <td><small class="error">@{{ errors.email }}</small></td>
                                     </tr>
                                     <tr>
                                         <th><strong v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">Password:</strong></th>
@@ -75,7 +75,7 @@
                                     </tr>
                                     <tr v-show="typeof errors.password !== 'boolean'">
                                         <th></th>
-                                        <td><small class="error">@{{{ errors.password }}}</small></td>
+                                        <td><small class="error">@{{ errors.password }}</small></td>
                                     </tr>
                                 </table>
                             </div>
@@ -94,7 +94,7 @@
                                     </tr>
                                     <tr v-show="typeof errors.name !== 'boolean'">
                                         <th></th>
-                                        <td><small class="error">@{{{ errors.name }}}</small></td>
+                                        <td><small class="error">@{{ errors.name }}</small></td>
                                     </tr>
                                     <tr>
                                         <th></th>

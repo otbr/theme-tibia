@@ -140,8 +140,16 @@ class ApiController extends Controller
             return new JsonResponse('The two passwords do not match!');
         }
 
-        if (strlen($password) < 8 or strlen($password) > 30 or preg_match('/^([a-z]+)$/i', $password)) {
-            return new JsonResponse('The password must have at least 8 and less than 30 letters!<br>The password must contain at least one character other than A-Z or a-z!');
+        if (strlen($password) < 8 or strlen($password) > 30) {
+            return new JsonResponse('The password must have at least 8 and less than 30 letters!');
+        }
+
+        if (! preg_match('/([a-z]+)/i', $password)) {
+            return new JsonResponse('The password must contain at least one letter A-Z or a-z!');
+        }
+
+        if (! preg_match('/([^a-z]+)/i', $password)) {
+            return new JsonResponse('The password must contain at least one character other than A-Z or a-z!');
         }
 
         return new JsonResponse(false);
@@ -169,11 +177,11 @@ class ApiController extends Controller
             return new JsonResponse('This name contains invalid letters. Please use only A-Z, a-z and space!');
         }
 
-        if (preg_match('/^ /', $name)) {
+        if (preg_match('/^\s/', $name)) {
             return new JsonResponse('This name contains a space at the beginning. Please remove this space!');
         }
 
-        if (preg_match('/ $/', $name)) {
+        if (preg_match('/\s$/', $name)) {
             return new JsonResponse('This name contains a space at the end. Please remove this space!');
         }
 
@@ -189,11 +197,11 @@ class ApiController extends Controller
             return new JsonResponse('This name contains a word with only one letter. Please use more than one letter for each word!');
         }
 
-        if (preg_match('/(^|\s)([^aeiou]+)(\s|$)/i', $name)) {
+        if (preg_match('/(^|\s)([^aeiou\s]+)(\s|$)/i', $name)) {
             return new JsonResponse('This name contains a word without vowels. Please choose another name!');
         }
 
-        if (preg_match('/\s(\w)\s/', $name)) {
+        if (preg_match('/(.)\1{2,}/', $name)) {
             return new JsonResponse('This name contains too many successively repeated character symbols. Please choose another name!');
         }
 
