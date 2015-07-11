@@ -7,5 +7,10 @@ require_once apolune_path('Library/Http/routes.php');
 require_once apolune_path('News/Http/routes.php');
 
 $router->group(['namespace' => 'pandaac\ThemeTibia\Http\Controllers'], function ($router) {
-    $router->get('/api/name', 'ApiController@suggestName');
+    $router->post('/api/name', 'ApiController@suggestName');
+    
+    $router->post('/api/validate/account', 'ApiController@validateAccount');
+    $router->post('/api/validate/email', 'ApiController@validateEmail');
+    $router->post('/api/validate/password', 'ApiController@validatePassword');
+    $router->post('/api/validate/name', 'ApiController@validateName');
 });

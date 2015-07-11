@@ -44,7 +44,7 @@
                                 </tr>
                                 <tr>
                                     <td width="50%">
-                                        <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="suggestedName"><br>
+                                        <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="name"><br>
                                         <small>[<a href="#" id="suggest-name" v-on="click: suggestName">suggest name</a>]</small>
                                     </td>
                                     @if (count($genders = genders()) > 1)

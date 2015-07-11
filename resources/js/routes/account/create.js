@@ -1,65 +1,134 @@
 (function (window, document, undefined) {
+    if (document.getElementsByTagName('body')[0].className.indexOf('account-create') !== -1) {
 
-    var Vue = require('vue');
+        var Vue = require('vue');
 
-    new Vue({
-        el: 'body.account-create',
+        new Vue({
+            el: 'body.account-create',
 
-        data: {
-            account         : null,
-            email           : null,
-            password        : null,
-            confirmation    : null,
-            suggestedName   : null,
-            errors: {
-                account         : true,
-                email           : true,
-                password        : true,
-                suggestedName   : true
-            }
-        },
+            data: {
+                account         : null,
+                email           : null,
+                password        : null,
+                confirmation    : null,
+                name   : null,
+                errors: {
+                    account         : true,
+                    email           : true,
+                    password        : true,
+                    name   : true
+                }
+            },
 
-        methods: {
-            suggestWorld    : require('../../methods/suggest-world'),
-            suggestName     : require('../../methods/suggest-name'),
+            ready: function () {
+                if (this.account != "") {
+                    this.validateAccount();
+                }
 
-            validateAccount : function (e) {
-                var endpoint = baseurl + '/api/account';
+                if (this.email != "") {
+                    this.validateEmail();
+                }
 
-                this.$http.get(endpoint)
-                    .success(function (response) {
+                if (this.name != "") {
+                    this.validateName();
+                }
+            },
+
+            methods: {
+                suggestWorld : require('../../methods/suggest-world'),
+
+                /**
+                 * Send an API request to generate a character name.
+                 *
+                 * @param  \Event  e
+                 * @return void
+                 */
+                suggestName : function (e) {
+                    e.preventDefault();
+                    
+                    var endpoint = baseurl + '/api/name';
+
+                    this.$http.post(endpoint, function (response) {
+                        this.name = response;
+                        this.errors.name = false;
+                    }).error(function () {
+                        this.errors.name = 'Could not generate name, please try again.';
+                    });
+                },
+
+                /**
+                 * Send an API request to check the validity of the account name.
+                 *
+                 * @param  \Event  e
+                 * @return void
+                 */
+                validateAccount : function (e) {
+                    e.preventDefault();
+                    
+                    var endpoint = baseurl + '/api/validate/account';
+
+                    this.$http.post(endpoint, { account: this.account }, function (response) {
                         this.errors.account = response;
+                    }).error(function () {
+                        this.errors.account = 'Could not validate field, please try again.';
                     });
-            },
+                },
 
-            validateEmail : function (e) {
-                var endpoint = baseurl + '/api/email';
+                /**
+                 * Send an API request to check the validity of the email address.
+                 *
+                 * @param  \Event  e
+                 * @return void
+                 */
+                validateEmail : function (e) {
+                    e.preventDefault();
+                    
+                    var endpoint = baseurl + '/api/validate/email';
 
-                this.$http.get(endpoint)
-                    .success(function (response) {
+                    this.$http.post(endpoint, { email: this.email }, function (response) {
                         this.errors.email = response;
+                    }).error(function () {
+                        this.errors.email = 'Could not validate field, please try again.';
                     });
-            },
+                },
 
-            validatePassword : function (e) {
-                if ((this.password === null || this.password === "") || (this.confirmation === null || this.confirmation === "")) {
-                    return this.errors.password = 'Please enter the password again!';
+                /**
+                 * Send an API request to check the validity of the password.
+                 *
+                 * @param  \Event  e
+                 * @return void
+                 */
+                validatePassword : function (e) {
+                    e.preventDefault();
+                    
+                    var endpoint = baseurl + '/api/validate/password';
+
+                    this.$http.post(endpoint, { password: this.password, confirmation: this.confirmation }, function (response) {
+                        this.errors.password = response;
+                    }).error(function () {
+                        this.errors.password = 'Could not validate field, please try again.';
+                    });
+                },
+
+                /**
+                 * Send an API request to check the validity of the character name.
+                 *
+                 * @param  \Event  e
+                 * @return void
+                 */
+                validateName : function (e) {
+                    e.preventDefault();
+                    
+                    var endpoint = baseurl + '/api/validate/name';
+
+                    this.$http.post(endpoint, { name: this.name }, function (response) {
+                        this.errors.name = response;
+                    }).error(function () {
+                        this.errors.name = 'Could not validate field, please try again.';
+                    });
                 }
-
-                if (this.password !== this.confirmation) {
-                    return this.errors.password = 'The two passwords do not match!';
-                }
-
-                if (this.password.length < 8 || this.password.length > 30 || this.password.match(/^([a-z]+)$/ig)) {
-                    return this.errors.password = 'The password must have at least 8 and less than 30 letters!<br />The password must contain at least one character other than A-Z or a-z!';
-                }
-
-                return this.errors.password = false;
-            },
-
-            validateName : function (e) {
             }
-        }
-    });
+        });
 
+    }
 })(window, document);

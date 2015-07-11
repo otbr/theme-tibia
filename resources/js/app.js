@@ -3,8 +3,8 @@
     var Vue = require('vue');
     var Cookies = require('cookies-js');
 
-    //Vue.config.silent = true;
     Vue.use(require('vue-resource'));
+    Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     new Vue({
         el: 'aside.column',
