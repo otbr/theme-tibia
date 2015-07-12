@@ -11,26 +11,12 @@
                 email           : null,
                 password        : null,
                 confirmation    : null,
-                name   : null,
+                name            : null,
                 errors: {
-                    account         : true,
-                    email           : true,
-                    password        : true,
-                    name   : true
-                }
-            },
-
-            ready: function () {
-                if (this.account != "") {
-                    this.validateAccount();
-                }
-
-                if (this.email != "") {
-                    this.validateEmail();
-                }
-
-                if (this.name != "") {
-                    this.validateName();
+                    account     : true,
+                    email       : true,
+                    password    : true,
+                    name        : true
                 }
             },
 
@@ -127,6 +113,12 @@
                         this.errors.name = 'Could not validate field, please try again.';
                     });
                 }
+            },
+
+            ready: function () {
+                if (this.account != "") this.validateAccount();
+                if (this.email != "") this.validateEmail();
+                if (this.name != "") this.validateName();
             }
         });
 
