@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.character.delete.title'))
 @navigation('/account')
 @bodyclass('account-character-delete')
 
@@ -17,9 +17,7 @@
 
             @include('theme::modules.errors')
 
-            <p>To delete this character enter your password and click on "Submit".<br>
-            You can undelete the character within the first 2 months (60 days) after the deletion.<br>
-            After this time the character is deleted for good and cannot be restored anymore!</p>
+            {!! trans('theme::account.character.delete.preamble') !!}
 
             <form method="POST" action="{{ url('/account/character', $player->id()) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -29,7 +27,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Delete Character
+                            {!! trans('theme::account.character.delete.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -37,11 +35,11 @@
                     <div class="content dark">
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
-                                <th>Character Name:</th>
+                                <th>{!! trans('theme::account.character.delete.player') !!}</th>
                                 <td>{{ $player->name() }}</td>
                             </tr>
                             <tr>
-                                <th>Password:</th>
+                                <th>{!! trans('theme::account.character.delete.password') !!}</th>
                                 <td><input type="password" name="password" size="30" maxlength="29"></td>
                             </tr>
                         </table>
@@ -54,12 +52,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.character.delete.submit') }}">
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.delete.back') }}">
                             </a>
                         </td>
                     </tr>

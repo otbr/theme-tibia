@@ -2,7 +2,7 @@
 
 namespace pandaac\ThemeTibia\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Apolune\Core\ServiceProvider;
 
 class BladeServiceProvider extends ServiceProvider
 {

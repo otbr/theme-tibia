@@ -2,7 +2,7 @@
 
 namespace pandaac\ThemeTibia\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Apolune\Core\ThemeServiceProvider as ServiceProvider;
 
 class ThemeServiceProvider extends ServiceProvider
 {
@@ -14,13 +14,38 @@ class ThemeServiceProvider extends ServiceProvider
     protected $namespace = 'pandaac/theme-tibia';
 
     /**
-     * Holds all of the service providers we want to register.
+     * The provider class names.
      *
      * @var array
      */
     protected $providers = [
         RouteServiceProvider::class,
         BladeServiceProvider::class,
+        ComposerServiceProvider::class,
+    ];
+
+    /**
+     * The paths that should be published.
+     *
+     * @var array
+     */
+    protected $publish = [
+        'public' => [
+            '../../public' => 'public/pandaac/theme-tibia',
+        ],
+        'config' => [
+            '../../config' => 'config/pandaac/theme-tibia',
+        ],
+        'theme' => [
+            '../../config'          => 'themes/pandaac/theme-tibia/config',
+            '../../public'          => 'themes/pandaac/theme-tibia/public',
+            '../../resources'       => 'themes/pandaac/theme-tibia/resources',
+            '../../src'             => 'themes/pandaac/theme-tibia/src',
+            '../../.gitignore'      => 'themes/pandaac/theme-tibia/.gitignore',
+            '../../composer.json'   => 'themes/pandaac/theme-tibia/composer.json',
+            '../../gulpfile.js'     => 'themes/pandaac/theme-tibia/gulpfile.js',
+            '../../package.json'    => 'themes/pandaac/theme-tibia/package.json',
+        ],
     ];
 
     /**
@@ -30,50 +55,7 @@ class ThemeServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $path = realpath(__DIR__.'/../..');
-
-        $this->loaders($path);
-        $this->publisher($path, $this->namespace);
-    }
-    
-    /**
-     * Register any application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-        foreach ($this->providers as $provider) {
-            $this->app->register($provider);
-        }
-    }
-
-    /**
-     * Define the location of where to load certain resources.
-     *
-     * @param  string  $path
-     * @return void
-     */
-    private function loaders($path)
-    {
-        $this->loadViewsFrom("${path}/resources/views", 'theme');
-        $this->loadTranslationsFrom("${path}/resources/lang", 'theme');
-    }
-
-    /**
-     * Define which resources should be published, and to where.
-     *
-     * @param  string  $path
-     * @param  string  $namespace
-     * @return void
-     */
-    private function publisher($path, $namespace)
-    {
-        $this->publishes(["${path}/public" => public_path($namespace)], 'public');
-        $this->publishes(["${path}/config" => base_path("config/${namespace}")], 'config');
-        $this->publishes([
-            "${path}/resources/views" => theme_path($namespace.'/views'),
-            "${path}/resources/lang" => theme_path($namespace.'/lang'),
-        ], 'theme');
+        $this->getViewsFrom('../../resources/views');
+        $this->getTranslationsFrom('../../resources/lang');
     }
 }

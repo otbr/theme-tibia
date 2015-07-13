@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.character.name.title'))
 @navigation('/account')
 @bodyclass('account-character-name')
 
@@ -17,7 +17,10 @@
 
             @include('theme::modules.errors')
 
-            <p>Please enter the new name for your character. Note that also your new name must not violate the naming conventions stated in the <a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a> or your character will get name locked and your account might be punished.</p>
+            {!! trans('theme::account.character.name.preamble', [
+                'server'    => $server,
+                'rules'     => url('/support/rules'),
+            ]) !!}
 
             <form method="POST" action="{{ url('/account/character', [$player->id(), 'name']) }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -27,7 +30,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Change Character Name
+                            {!! trans('theme::account.character.name.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -35,11 +38,11 @@
                     <div class="content dark">
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
-                                <th>Current Character Name:</th>
+                                <th>{!! trans('theme::account.character.name.current') !!}</th>
                                 <td>{{ $player->name() }}</td>
                             </tr>
                             <tr>
-                                <th>New Character Name:</th>
+                                <th>{!! trans('theme::account.character.name.new') !!}</th>
                                 <td><input type="text" name="name" size="30" maxlength="29"></td>
                             </tr>
                         </table>
@@ -52,12 +55,12 @@
                     <tr>
                         <td align="center">
                             <button class="green-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.character.name.submit') }}">
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.name.back') }}">
                             </a>
                         </td>
                     </tr>

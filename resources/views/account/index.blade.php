@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.index.title'))
 @navigation('/account')
 @bodyclass('account-index')
 
@@ -17,13 +17,13 @@
 
             @include('theme::modules.errors')
             
-            <h2>Welcome to your account!</h2>
+            <h2>{!! trans('theme::account.index.welcome') !!}</h2>
 
             <div class="table">
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        Account Status
+                        {!! trans('theme::account.index.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -33,13 +33,13 @@
                         <div class="inner-box">
                             <div class="buttons-right">
                                 <a href="{{ url('/account/manage') }}" class="blue-button">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_manageaccount.gif') }}" alt="Manage Account">
+                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_manageaccount.gif') }}" alt="{{ trans('theme::account.index.manageaccount') }}">
                                 </a>
                                 <a href="#" class="green-button">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="Get Premium">
+                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="{{ trans('theme::account.index.getpremium') }}">
                                 </a>
                                 <a href="{{ url('/account/logout') }}" class="red-button">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_logout.gif') }}" alt="Logout">
+                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_logout.gif') }}" alt="{{ trans('theme::account.index.logout') }}">
                                 </a>
                             </div>
 
@@ -49,8 +49,8 @@
                                         <img src="{{ asset('/pandaac/theme-tibia/img/account-status_red.gif') }}">
                                     </td>
                                     <td valign="middle">
-                                        <h4 class="free">Free Account</h4>
-                                        <small>To benefit from our great premium features, get Premium Time for your account.</small>
+                                        <h4 class="free">{!! trans('theme::account.index.free') !!}</h4>
+                                        <small>{!! trans('theme::account.index.freedesc') !!}</small>
                                     </td>
                                 </tr>
                             </table>
@@ -70,13 +70,18 @@
                                 <td>
                                     <div class="buttons-right">
                                         <a href="{{ url('/account/email') }}" class="blue-button">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_edit.gif') }}" alt="Edit">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_edit.gif') }}" alt="{{ trans('theme::account.index.email.edit') }}">
                                         </a>
                                     </div>
 
-                                    <p style="margin-top: 5px;"><strong>There is an email change request for the account!</strong></p>
+                                    <p style="margin-top: 5px;"><strong>{!! trans('theme::account.index.email.heading') !!}</strong></p>
 
-                                    <p style="margin-bottom: 5px;">A request has been submitted to change the email address of this account to <strong>{{ account()->emailChange() }}</strong>. After a waiting period of <strong>{{ config('pandaac.timers.email-change') }} days</strong> you can accept the new email address and finish the process. Please cancel the request if you do not want your email address to be changed! Also cancel the request if you have no access to the new email address!</p>
+                                    <p style="margin-bottom: 5px;">
+                                        {!! trans('theme::account.index.email.content', [
+                                            'email' => account()->emailChange(),
+                                            'days'  => config('pandaac.mail.timers.email-change'),
+                                        ]) !!}
+                                    </p>
                                 </td>
                             </tr>
                         </table>
@@ -91,7 +96,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        Characters
+                        {!! trans('theme::account.index.characters.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -101,9 +106,9 @@
                         <table class="table-striped table-hover" cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <th class="header" width="40"></th>
-                                <th class="header">Name</th>
-                                <th class="header" width="120">World</th>
-                                <th class="header" width="90">Status</th>
+                                <th class="header">{!! trans('theme::account.index.characters.name') !!}</th>
+                                <th class="header" width="120">{!! trans('theme::account.index.characters.world') !!}</th>
+                                <th class="header" width="90">{!! trans('theme::account.index.characters.status') !!}</th>
                                 <th class="header" width="90"></th>
                             </tr>
 
@@ -118,18 +123,18 @@
                                         <small>{{ $player->vocation()->name() }} - Level {{ $player->level() }}</small>
                                     </td>
                                     <td>{{ $player->world()->name() }}</td>
-                                    <td>hidden</td>
+                                    <td>{!! trans('theme::account.index.characters.hidden') !!}</td>
                                     <td align="center">
                                         <div class="character-buttons">
-                                            [<a href="{{ url('/account/character', $player->id()) }}">Edit</a>]
-                                            [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">Delete</a>]
+                                            [<a href="{{ url('/account/character', $player->id()) }}">{!! trans('theme::account.index.characters.edit') !!}</a>]
+                                            [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">{!! trans('theme::account.index.characters.delete') !!}</a>]
                                         </div>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
                                     <td colspan="5">
-                                        No characters yet.
+                                        {!! trans('theme::account.index.characters.empty') !!}
                                     </td>
                                 </tr>
                             @endforelse
@@ -139,7 +144,7 @@
                     <div style="height: 31px;">
                         <div class="buttons-right">
                             <a href="{{ url('/account/character') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_createcharacter.gif') }}" alt="Create Character">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_createcharacter.gif') }}" alt="{{ trans('theme::account.index.characters.create') }}">
                             </a>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.character.create.title'))
 @navigation('/account')
 @bodyclass('account-character')
 
@@ -15,9 +15,10 @@
     <div class="inner-box-border">
         <div class="inner-box">
 
-            <p>Please choose a name and sex for your character as well as the game world on which you want the character to live. If you cannot think of any fantasy names, click on the link below the name field to get some suggestions for a name.</p>
-
-            <p>In any case the name must not violate the naming conventions stated in the <a href="{{ url('/support/rules') }}">{{ server()->name() }} Rules</a>, or your character might get deleted or name locked.</p>
+            {!! trans('theme::account.character.create.preamble', [
+                'server'    => $server,
+                'rules'     => url('/support/rules'),
+            ]) !!}
             
             <br>
 
@@ -30,7 +31,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Create Character
+                            {!! trans('theme::account.character.create.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -39,13 +40,13 @@
                         <div class="box">
                             <table class="table-striped" cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
-                                    <th width="20%"><strong class="{{ $errors->has('player') ? 'error' : null }}">Name</strong></th>
-                                    <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">Sex</strong></th>
+                                    <th width="20%"><strong class="{{ $errors->has('player') ? 'error' : null }}">{!! trans('theme::account.character.create.name') !!}</strong></th>
+                                    <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.create.sex') !!}</strong></th>
                                 </tr>
                                 <tr>
                                     <td width="50%">
                                         <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="name"><br>
-                                        <small>[<a href="#" id="suggest-name" v-on="click: suggestName">suggest name</a>]</small>
+                                        <small>[<a href="#" id="suggest-name" v-on="click: suggestName">{!! trans('theme::account.character.create.suggestname') !!}</a>]</small>
                                     </td>
                                     @if (count($genders = genders()) > 1)
                                         <td>
@@ -64,21 +65,23 @@
 
                         @if (count($vocations = vocations(true)) > 1)
                             <div class="box">
-                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                                    <tr>
-                                        <th width="20%" valign="top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">Vocation:</strong></p></th>
-                                        <td>
-                                            <?php $first = $vocations->first()->id(); ?>
-                                            @foreach ($vocations as $vocation)
-                                                <label>
-                                                    <input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ old('vocation', $first) == $vocation->id() ? 'checked' : null }}> 
-                                                    {{ $vocation->name() }}
-                                                </label>
-                                                &nbsp;
-                                            @endforeach
-                                        </td>
-                                    </tr>
-                                </table>
+                                <div class="inner-box">
+                                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                        <tr>
+                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account.character.create.vocation') !!}</strong></p></th>
+                                            <td>
+                                                <?php $first = $vocations->first()->id(); ?>
+                                                @foreach ($vocations as $vocation)
+                                                    <label>
+                                                        <input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ old('vocation', $first) == $vocation->id() ? 'checked' : null }}> 
+                                                        {{ $vocation->name() }}
+                                                    </label>
+                                                    &nbsp;
+                                                @endforeach
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         @endif
                         
@@ -87,7 +90,7 @@
                                 <div class="inner-box">
                                     <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                         <tr>
-                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">World:</strong></p></th>
+                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.create.world') !!}</strong></p></th>
                                             <td>
                                                 <?php $random = $worlds->random()->id(); ?>
                                                 @foreach ($worlds as $key => $world)
@@ -105,7 +108,7 @@
                                                     </p>
                                                 @endforeach
                                                 
-                                                <p><small>[<a href="#" id="suggest-world" v-on="click: suggestWorld">suggest game world</a>]</small></p>
+                                                <p><small>[<a href="#" id="suggest-world" v-on="click: suggestWorld">{!! trans('theme::account.character.create.suggestworld') !!}</a>]</small></p>
                                             </td>
                                         </tr>
                                     </table>
@@ -121,12 +124,12 @@
                     <tr>
                         <td width="50%" align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.character.create.submit') }}">
                             </button>
                         </td>
                         <td width="50%" align="center">
                             <a href="{{ url('/account') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Submit">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.create.back') }}">
                             </a>
                         </td>
                     </tr>

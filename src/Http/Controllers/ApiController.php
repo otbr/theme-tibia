@@ -8,6 +8,7 @@ use Eklundchristopher\NameGen\Generator;
 use Apolune\Core\Http\Controllers\Controller;
 use Eklundchristopher\NameGen\Recipes\Fantasy;
 use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Validation\Factory as Validator;
 
 class ApiController extends Controller
 {
@@ -29,7 +30,7 @@ class ApiController extends Controller
      * Create a new document controller instance.
      *
      * @param  \Illuminate\Contracts\Foundation\Application  $app
-     * @param  \Illuminate\Http\Request  $app
+     * @param  \Illuminate\Http\Request  $request
      * @return void
      */
     public function __construct(Application $app, Request $request)
@@ -41,16 +42,18 @@ class ApiController extends Controller
     /**
      * Generate a suggested name.
      *
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Contracts\Validation\Factory  $validator
+     * @return response
      */
-    public function suggestName()
+    public function suggestName(Request $request, Validator $validator)
     {
         $generator = new Generator(new Fantasy);
 
         $name = $generator->name(rand(2, 3));
 
-        if ($this->validateName($name)->getData() !== false) {
-            return $this->suggestName();
+        if ($this->validateName($request, $validator, $name)->getData() !== false) {
+            return $this->suggestName($request, $validator);
         }
 
         return new JsonResponse($name);
@@ -59,164 +62,108 @@ class ApiController extends Controller
     /**
      * Check if the given account is valid.
      *
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Contracts\Validation\Factory  $validator
+     * @return response
      */
-    public function validateAccount()
+    public function validateAccount(Request $request, Validator $validator)
     {
-        $account = $this->request->get('account');
+        list($rules, $messages) = [[
+            'account'           => ['required', 'min:6', 'max:30', 'alphanum', 'contains_alpha', 'unique:accounts,name'],
+        ], [
+            'required'          => 'Please enter an account name!',
+            'min'               => 'This account name is too short!',
+            'max'               => 'This account name is too long!',
+            'alphanum'          => 'This account name has an invalid format. Your account name may only consist of numbers 0-9 and letters A-Z!',
+            'contains_alpha'    => 'Your account name must include at least one letter A-Z!',
+            'unique'            => 'This account name is already used. Please select another one!',
+        ]];
 
-        if (empty($account)) {
-            return new JsonResponse('Please enter an account name!');
-        }
+        $validator = $validator->make($request->only('account'), $rules, $messages);
 
-        if (strlen($account) < 6) {
-            return new JsonResponse('This account name is too short!');
-        }
-
-        if (strlen($account) > 30) {
-            return new JsonResponse('This account name is too long!');
-        }
-
-        if (! preg_match('/^([a-z0-9]+)$/i', $account)) {
-            return new JsonResponse('This account name has an invalid format. Your account name may only consist of numbers 0-9 and letters A-Z!');
-        }
-
-        if (! preg_match('/([a-z]+)/i', $account)) {
-            return new JsonResponse('Your account name must include at least one letter A-Z!');
-        }
-
-        if (app('account')->whereName($account)->first()) {
-            return new JsonResponse('This account name is already used. Please select another one!');
-        }
-
-        return new JsonResponse(false);
+        return new JsonResponse($validator->messages()->first() ?: false);
     }
 
     /**
      * Check if the given email address is valid.
      *
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Contracts\Validation\Factory  $validator
+     * @return response
      */
-    public function validateEmail()
+    public function validateEmail(Request $request, Validator $validator)
     {
-        $email = $this->request->get('email');
+        list($rules, $messages) = [[
+            'email'     => ['required', 'email', 'unique:accounts,email', 'unique:__pandaac_accounts,email'],
+        ], [
+            'required'  => 'Please enter your email address!',
+            'email'     => 'This email address has an invalid format. Please enter a correct email address!',
+            'unique'    => 'This email address is already used. Please enter another email address!',
+        ]];
 
-        if (empty($email)) {
-            return new JsonResponse('Please enter your email address!');
-        }
+        $validator = $validator->make($request->only('email'), $rules, $messages);
 
-        if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            return new JsonResponse('This email address has an invalid format. Please enter a correct email address!');
-        }
-
-        $account  = app('account')->whereEmail($email)->first();
-        $property = app('account.properties')->whereEmail($email)->first();
-
-        if ($account or $property) {
-            return new JsonResponse('This email address is already used. Please enter another email address!');
-        }
-
-        return new JsonResponse(false);
+        return new JsonResponse($validator->messages()->first() ?: false);
     }
 
     /**
      * Check if the given password is valid.
      *
-     * @return \Illuminate\Http\Response
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Contracts\Validation\Factory  $validator
+     * @return response
      */
-    public function validatePassword()
+    public function validatePassword(Request $request, Validator $validator)
     {
-        list($password, $confirmation) = array_values($this->request->only('password', 'confirmation'));
+        list($rules, $messages) = [[
+            'password'          => ['required', 'confirmed', 'min:8', 'max:30', 'contains_alpha', 'contains_nonalpha'],
+        ], [
+            'required'          => 'Please enter a password!',
+            'confirmed'         => 'The two passwords do not match!',
+            'min'               => 'The password must have at least 8 and less than 30 letters!',
+            'max'               => 'The password must have at least 8 and less than 30 letters!',
+            'contains_alpha'    => 'The password must contain at least one letter A-Z or a-z!',
+            'contains_nonalpha' => 'The password must contain at least one character other than A-Z or a-z!',
+        ]];
 
-        if (empty($password) and empty($confirmation)) {
-            return new JsonResponse('Please enter a password!');
-        }
+        $validator = $validator->make($request->only('password', 'password_confirmation'), $rules, $messages);
 
-        if (empty($password) or empty($confirmation)) {
-            return new JsonResponse('Please enter the password again!');
-        }
-
-        if ($password !== $confirmation) {
-            return new JsonResponse('The two passwords do not match!');
-        }
-
-        if (strlen($password) < 8 or strlen($password) > 30) {
-            return new JsonResponse('The password must have at least 8 and less than 30 letters!');
-        }
-
-        if (! preg_match('/([a-z]+)/i', $password)) {
-            return new JsonResponse('The password must contain at least one letter A-Z or a-z!');
-        }
-
-        if (! preg_match('/([^a-z]+)/i', $password)) {
-            return new JsonResponse('The password must contain at least one character other than A-Z or a-z!');
-        }
-
-        return new JsonResponse(false);
+        return new JsonResponse($validator->messages()->first() ?: false);
     }
 
     /**
      * Check if the given character name is valid.
      *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Illuminate\Contracts\Validation\Factory  $validator
      * @param  string  $name  null
-     * @return \Illuminate\Http\Response
+     * @return response
      */
-    public function validateName($name = null)
+    public function validateName(Request $request, Validator $validator, $name = null)
     {
-        $name = $name ?: $this->request->get('name');
+        $attributes = $name ? ['name' => $name] : $request->only('name');
 
-        if (empty($name)) {
-            return new JsonResponse('Please enter a name for your character!');
-        }
+        list($rules, $messages) = [[
+            'name'                      => ['required', 'min:2', 'max:29', 'alpha_space', 'no_initial_space', 'no_final_space', 'no_multiple_spaces', 
+                                            'max_words:3', 'short_words', 'long_words', 'no_vowelless_words', 'no_repeated_characters', 'unique:players,name'],
+        ], [
+            'required'                  => 'Please enter a name for your character!',
+            'min'                       => 'A name must have at least 2 but no more than 29 letters!',
+            'max'                       => 'A name must have at least 2 but no more than 29 letters!',
+            'alpha_space'               => 'This name contains invalid letters. Please use only A-Z, a-z and space!',
+            'no_initial_space'          => 'This name contains a space at the beginning. Please remove this space!',
+            'no_final_space'            => 'This name contains a space at the end. Please remove this space!',
+            'no_multiple_spaces'        => 'This name contains more than one space between words. Please use only one space between words!',
+            'max_words'                 => 'This name contains more than 3 words. Please choose another name!',
+            'short_words'               => 'This name contains a word with only one letter. Please use more than one letter for each word!',
+            'long_words'                => 'This name contains a word that is too long. Please use no more than 14 letters for each word!',
+            'no_vowelless_words'        => 'This name contains a word without vowels. Please choose another name!',
+            'no_repeated_characters'    => 'This name contains too many successively repeated character symbols. Please choose another name!',
+            'unique'                    => 'This character name is already used. Please select another one!',
+        ]];
 
-        if (strlen($name) < 2 and strlen($name) > 29) {
-            return new JsonResponse('A name must have at least 2 but no more than 29 letters!');
-        }
+        $validator = $validator->make($attributes, $rules, $messages);
 
-        if (! preg_match('/^([a-z ]+)$/i', $name)) {
-            return new JsonResponse('This name contains invalid letters. Please use only A-Z, a-z and space!');
-        }
-
-        if (preg_match('/^\s/', $name)) {
-            return new JsonResponse('This name contains a space at the beginning. Please remove this space!');
-        }
-
-        if (preg_match('/\s$/', $name)) {
-            return new JsonResponse('This name contains a space at the end. Please remove this space!');
-        }
-
-        if (preg_match('/\s{2,}/', $name)) {
-            return new JsonResponse('This name contains more than one space between words. Please use only one space between words!');
-        }
-
-        if (! preg_match('/^[A-Z]/', $name)) {
-            return new JsonResponse('The first letter of a name has to be a capital letter!');
-        }
-
-        if (preg_match('/(^|\s)(\w){1}(\s|$)/', $name)) {
-            return new JsonResponse('This name contains a word with only one letter. Please use more than one letter for each word!');
-        }
-
-        if (preg_match('/(^|\s)([^aeiou\s]+)(\s|$)/i', $name)) {
-            return new JsonResponse('This name contains a word without vowels. Please choose another name!');
-        }
-
-        if (preg_match('/(.)\1{2,}/', $name)) {
-            return new JsonResponse('This name contains too many successively repeated character symbols. Please choose another name!');
-        }
-
-        if (preg_match('/\S{15,}/', $name)) {
-            return new JsonResponse('This name contains a word that is too long. Please use no more than 14 letters for each word!');
-        }
-
-        if (str_word_count($name) > 3) {
-            return new JsonResponse('This name contains more than 3 words. Please choose another name!');
-        }
-
-        if (app('player')->whereName($name)->first()) {
-            return new JsonResponse('This character name is already used. Please select another one!');
-        }
-
-        return new JsonResponse(false);
+        return new JsonResponse($validator->messages()->first() ?: false);
     }
 }

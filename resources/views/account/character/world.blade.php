@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.character.world.title'))
 @navigation('/account')
 @bodyclass('account-character-world')
 
@@ -17,23 +17,15 @@
 
             @include('theme::modules.errors')
 
-            <p>Before you initiate a transfer of your character to another game world, please make sure that you are aware of the following points:</p>
+            {!! trans('theme::account.character.world.preamble') !!}
 
             <ul>
-                <li>In case you get a red or black skull or a final warning after having paid for a pending character world transfer, you will have to wait until the final warning or the skull mark have been gone before you can move to the new game world.</li>
-                <li>Note that you can only move to game worlds with stricter or the same PvP rules. Therefore, if you move your character to an optional PvP game world, it will be impossible to move it back to an open or hardcore PvP game world at a later point.</li>
-                <li>If you move to a new game world make sure that you select one that is close to your home. If a Brazilian player moves from a game world located in the USA to one located in Europe, he will very likely experience a worse connection than before.</li>
-            </ul>
-
-            <p>In order to transfer your character to another game world, you have to fulfil the following requirements:</p>
-
-            <ul>
-                <li class="yes">Character has not been transferred within the last 6 months.</li>
-                <li class="no">Conduct level is low enough.</li>
-                <li class="yes">Character is not a member of a guild.</li>
-                <li class="yes">Character is not married.</li>
-                <li class="no">Character owns no house.</li>
-                <li class="no">You have left the beginner's island.</li>
+                <li class="yes">{!! trans('theme::account.character.world.transfered') !!}</li>
+                <li class="no">{!! trans('theme::account.character.world.level') !!}</li>
+                <li class="yes">{!! trans('theme::account.character.world.guild') !!}</li>
+                <li class="yes">{!! trans('theme::account.character.world.marriage') !!}</li>
+                <li class="no">{!! trans('theme::account.character.world.house') !!}</li>
+                <li class="no">{!! trans('theme::account.character.world.beginner') !!}</li>
             </ul>
 
             <form method="POST" action="{{ url('/account/character', [$player->id(), 'world']) }}">
@@ -44,7 +36,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Character Data
+                            {!! trans('theme::account.character.world.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -53,10 +45,10 @@
                         <div class="box">
                             <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
                                 <tr>
-                                    <th>Name:</th>
-                                    <th>Current World:</th>
-                                    <th>Possible Target World:</th>
-                                    <th>Requirement Status:</th>
+                                    <th>{!! trans('theme::account.character.world.name') !!}</th>
+                                    <th>{!! trans('theme::account.character.world.current') !!}</th>
+                                    <th>{!! trans('theme::account.character.world.target') !!}</th>
+                                    <th>{!! trans('theme::account.character.world.requirement') !!}</th>
                                 </tr>
                                 <tr>
                                     <td>{{ $player->name() }}</td>
@@ -69,7 +61,7 @@
                                             @endforeach
                                         </select>
                                     </td>
-                                    <td><strong class="green">available</strong></td>
+                                    <td><strong class="green">{!! trans('theme::account.character.world.available') !!}</strong></td>
                                 </tr>
                             </table>
                         </div>
@@ -82,12 +74,12 @@
                     <tr>
                         <td align="center">
                             <button class="green-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_continue.gif') }}" alt="Continue">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_continue.gif') }}" alt="{{ trans('theme::account.character.world.continue') }}">
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.world.back') }}">
                             </a>
                         </td>
                     </tr>

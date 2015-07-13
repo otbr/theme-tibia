@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.email.cancelled.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -21,13 +21,13 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        Email Address Change Cancelled
+                        {!! trans('theme::account.email.cancelled.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    Your request to change the email address of your account has been cancelled. The email address will not be changed.
+                    {!! trans('theme::account.email.cancelled.content') !!}
                 </div>
             </div>
 
@@ -37,7 +37,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.cancelled.back') }}">
                         </a>
                     </td>
                 </tr>

@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.logout.title'))
 @navigation('/account')
 @bodyclass('account-logout')
 
@@ -19,7 +19,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        Logout Successful
+                        {!! trans('theme::account.logout.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -27,7 +27,12 @@
                 <div class="content dark">
                     <table cellspacing="0" cellpadding="0" border="0">
                         <tr>
-                            <td>You have logged out of your {{ server()->name() }} account. In order to view your account you need to <a href="{{ url('/account/login') }}">log in</a> again.</td>
+                            <td>
+                                {!! trans('theme::account.logout.content', [
+                                    'server'    => $server, 
+                                    'url'       => url('/account/login'),
+                                ]) !!}
+                            </td>
                         </tr>
                     </table>
                 </div>

@@ -89,7 +89,7 @@
                     
                     var endpoint = baseurl + '/api/validate/password';
 
-                    this.$http.post(endpoint, { password: this.password, confirmation: this.confirmation }, function (response) {
+                    this.$http.post(endpoint, { password: this.password, password_confirmation: this.confirmation }, function (response) {
                         this.errors.password = response;
                     }).error(function () {
                         this.errors.password = 'Could not validate field, please try again.';

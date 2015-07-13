@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Lost Account')
+@title(trans('theme::account.recovery.index.title'))
 @navigation('/account/recover')
 @bodyclass('account-recover')
 

@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.terminate.title'))
 @navigation('/account')
 @bodyclass('account-terminate')
 
@@ -17,7 +17,7 @@
 
             @include('theme::modules.errors')
 
-            <p>Do you really want to terminate your {{ server()->name() }} account and delete all of your characters?</p>
+            {!! trans('theme::account.terminate.preamble', compact('server')) !!}
 
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -27,7 +27,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Terminate Account
+                            {!! trans('theme::account.terminate.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -35,7 +35,7 @@
                     <div class="content dark">
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
-                                <th>Password:</th>
+                                <th>{!! trans('theme::account.terminate.password') !!}</th>
                                 <td><input type="password" name="password" size="30" maxlength="29"></td>
                             </tr>
                         </table>
@@ -48,12 +48,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.terminate.submit') }}">
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.terminate.back') }}">
                             </a>
                         </td>
                     </tr>

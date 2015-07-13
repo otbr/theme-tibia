@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.email.awaiting.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -25,15 +25,16 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Change of Email Address
+                            {!! trans('theme::account.email.awaiting.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
 
                     <div class="content dark">
-                        A request has been submitted to change the email address of this account to <strong>{{ account()->emailChange() }}</strong>.<br>
-                        The actual change will take place on <strong>{{ account()->emailChangeDate() }}</strong>.<br>
-                        If you do not want to change your email address, please click on "Cancel".
+                        {!! trans('theme::account.email.awaiting.content', [
+                            'email' => account()->emailChange(),
+                            'date'  => account()->emailChangeDate(),
+                        ]) !!}
                     </div>
                 </div>
 
@@ -43,12 +44,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_cancel.gif') }}" alt="Cancel">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_cancel.gif') }}" alt="{{ trans('theme::account.email.awaiting.cancel') }}">
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.awaiting.back') }}">
                             </a>
                         </td>
                     </tr>

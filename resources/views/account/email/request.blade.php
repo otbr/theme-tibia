@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.email.request.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -21,13 +21,16 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        New Email Address Requested
+                        {!! trans('theme::account.email.request.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    You have requested to change your email address to <strong>{{ $account->emailChange() }}</strong>. The actual change will take place after a waiting period of {{ config('pandaac.timers.email-change') }} days, during which you can cancel the request at any time.
+                    {!! trans('theme::account.email.request.content', [
+                        'email' => $account->emailChange(),
+                        'days'  => config('pandaac.mail.timers.email-change'),
+                    ]) !!}
                 </div>
             </div>
 
@@ -37,7 +40,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.request.back') }}">
                         </a>
                     </td>
                 </tr>

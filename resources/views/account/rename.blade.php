@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.rename.title'))
 @navigation('/account')
 @bodyclass('account-rename')
 
@@ -17,7 +17,7 @@
 
             @include('theme::modules.errors')
 
-            <p>Please enter your new account name. Please use a secure combination of letters and numbers that cannot be guessed easily.</p>
+            {!! trans('theme::account.rename.preamble') !!}
 
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -27,7 +27,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Change Account Name
+                            {!! trans('theme::account.rename.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -35,11 +35,11 @@
                     <div class="content dark">
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
-                                <th>Current Account Name:</th>
+                                <th>{!! trans('theme::account.rename.current') !!}</th>
                                 <td>{{ account()->name() }}</td>
                             </tr>
                             <tr>
-                                <th>New Account Name:</th>
+                                <th>{!! trans('theme::account.rename.new') !!}</th>
                                 <td><input type="text" name="name" size="30" maxlength="29"></td>
                             </tr>
                         </table>
@@ -52,12 +52,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.rename.submit') }}">
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.rename.back') }}">
                             </a>
                         </td>
                     </tr>

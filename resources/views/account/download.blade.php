@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Download Client')
+@title(trans('theme::account.download.title'))
 @navigation('/account/download')
 @bodyclass('account-download')
 

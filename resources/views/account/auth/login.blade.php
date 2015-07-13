@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.login.title'))
 @navigation('/account')
 @bodyclass('account-login')
 
@@ -21,7 +21,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        Account Login
+                        {!! trans('theme::account.login.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -34,20 +34,20 @@
 
                                 <div class="buttons-right">
                                     <button class="blue-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_login.gif') }}" alt="Login">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_login.gif') }}" alt="{{ trans('theme::account.login.login') }}">
                                     </button>
                                     <a href="{{ url('/account/recover') }}" class="blue-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_accountlost.gif') }}" alt="Account Lost?">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_accountlost.gif') }}" alt="{{ trans('theme::account.login.lost') }}">
                                     </a>
                                 </div>
 
                                 <table cellspacing="0" cellpadding="0" border="0">
                                     <tr>
-                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">Account Name:</strong></th>
+                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account.login.name') !!}</strong></th>
                                         <td><input type="password" name="name" size="35" maxlength="30"></td>
                                     </tr>
                                     <tr>
-                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">Password:</strong></th>
+                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account.login.password') !!}</strong></th>
                                         <td><input type="password" name="password" size="35" maxlength="29"></td>
                                     </tr>
                                 </table>
@@ -59,13 +59,13 @@
 
             <br>
 
-            <h1>New to {{ server()->name() }}?</h1>
+            <h1>{!! trans('theme::account.login.new.heading', compact('server')) !!}</h1>
             
             <div class="table">
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        New Player
+                        {!! trans('theme::account.login.new.player') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -76,14 +76,14 @@
                             <div class="information">
                                 <div class="buttons-right">
                                     <a href="{{ url('/account/create') }}" class="medium-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_createaccount.png') }}" alt="Create Account">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_createaccount.png') }}" alt="{{ trans('theme::account.login.new.create') }}">
                                     </a>
                                 </div>
 
-                                <strong>{{ server()->name() }}...</strong>
-                                <p class="indent">... where hardcore gaming meets fantasy.</p>
-                                <p class="indent">... where friendships last a lifetime.</p>
-                                <p class="indent">... unites adventurers since 1997!</p>
+                                <strong>{!! trans('theme::account.login.new.server', compact('server')) !!}</strong>
+                                <p class="indent">{!! trans('theme::account.login.new.one') !!}</p>
+                                <p class="indent">{!! trans('theme::account.login.new.two') !!}</p>
+                                <p class="indent">{!! trans('theme::account.login.new.three') !!}</p>
                             </div>
                         </div>
                     </div>

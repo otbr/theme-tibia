@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.character.sex.title'))
 @navigation('/account')
 @bodyclass('account-character-sex')
 
@@ -25,13 +25,13 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Change Character Sex
+                            {!! trans('theme::account.character.sex.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
 
                     <div class="content dark">
-                        Do you really want to change the sex of your character <strong>{{ $player->name() }}</strong>?
+                        {!! trans('theme::account.character.sex.content', ['name' => $player->name()]) !!}
                     </div>
                 </div>
 
@@ -41,12 +41,12 @@
                     <tr>
                         <td align="center">
                             <button class="green-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_yes.gif') }}" alt="Yes">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_yes.gif') }}" alt="{{ trans('theme::account.character.sex.yes') }}">
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Back">
+                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.sex.back') }}">
                             </a>
                         </td>
                     </tr>

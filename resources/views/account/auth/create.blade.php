@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Create Account')
+@title(trans('theme::account.create.title'))
 @navigation('/account/create')
 @bodyclass('account-create')
 
@@ -24,7 +24,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Create New Account
+                            {!! trans('theme::account.create.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -34,7 +34,7 @@
                             <div class="inner-box">
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <th width="20%"><strong v-class="error: (typeof errors.account !== 'boolean' || (errors.account !== false && {{ $errors->has('name') ? 'true' : 'false' }}))">Account Name:</strong></th>
+                                        <th width="20%"><strong v-class="error: (typeof errors.account !== 'boolean' || (errors.account !== false && {{ $errors->has('name') ? 'true' : 'false' }}))">{!! trans('theme::account.create.account') !!}</strong></th>
                                         <td>
                                             <input type="text" name="name" size="35" maxlength="30" value="{{ old('name') }}" v-model="account" v-on="change: validateAccount"> &nbsp;
                                             <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.account">
@@ -46,7 +46,7 @@
                                         <td><small class="error">@{{ errors.account }}</small></td>
                                     </tr>
                                     <tr>
-                                        <th><strong v-class="error: (typeof errors.email !== 'boolean' || (errors.email !== false && {{ $errors->has('email') ? 'true' : 'false' }}))">Email Address:</strong></th>
+                                        <th><strong v-class="error: (typeof errors.email !== 'boolean' || (errors.email !== false && {{ $errors->has('email') ? 'true' : 'false' }}))">{!! trans('theme::account.create.email') !!}</strong></th>
                                         <td>
                                             <input type="email" name="email" size="35" maxlength="50" value="{{ old('email') }}" v-model="email" v-on="change: validateEmail"> &nbsp;
                                             <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.email">
@@ -58,7 +58,7 @@
                                         <td><small class="error">@{{ errors.email }}</small></td>
                                     </tr>
                                     <tr>
-                                        <th><strong v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">Password:</strong></th>
+                                        <th><strong v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">{!! trans('theme::account.create.password') !!}</strong></th>
                                         <td>
                                             <input type="password" name="password" size="35" maxlength="29" v-model="password" v-on="change: validatePassword"> &nbsp;
                                             <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.password">
@@ -66,7 +66,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th><strong v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">Password Again:</strong></th>
+                                        <th><strong v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">{!! trans('theme::account.create.confirmation') !!}</strong></th>
                                         <td>
                                             <input type="password" name="password_confirmation" size="35" maxlength="29" v-model="confirmation" v-on="change: validatePassword"> &nbsp;
                                             <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.password">
@@ -85,7 +85,7 @@
                             <div class="inner-box">
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <th width="20%"><strong v-class="error: (typeof errors.name !== 'boolean' || (errors.name !== false && {{ $errors->has('player') ? 'true' : 'false' }}))">Character Name:</strong></th>
+                                        <th width="20%"><strong v-class="error: (typeof errors.name !== 'boolean' || (errors.name !== false && {{ $errors->has('player') ? 'true' : 'false' }}))">{!! trans('theme::account.create.player') !!}</strong></th>
                                         <td>
                                             <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="name" v-on="change: validateName"> &nbsp;
                                             <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.name">
@@ -98,11 +98,11 @@
                                     </tr>
                                     <tr>
                                         <th></th>
-                                        <td><small>[<a href="#" id="suggest-name" v-on="click: suggestName">suggest name</a>]</small></td>
+                                        <td><small>[<a href="#" id="suggest-name" v-on="click: suggestName">{!! trans('theme::account.create.suggestname') !!}</a>]</small></td>
                                     </tr>
                                     @if (count($genders = genders()) > 1)
                                         <tr>
-                                            <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">Sex:</strong></th>
+                                            <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.create.sex') !!}</strong></th>
                                             <td>
                                                 @foreach ($genders as $gender)
                                                     <label>
@@ -123,7 +123,7 @@
                                 <div class="inner-box">
                                     <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                         <tr>
-                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">Vocation:</strong></p></th>
+                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account.create.vocation') !!}</strong></p></th>
                                             <td>
                                                 <?php $first = $vocations->first()->id(); ?>
                                                 @foreach ($vocations as $vocation)
@@ -145,7 +145,7 @@
                                 <div class="inner-box">
                                     <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                         <tr>
-                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">World:</strong></p></th>
+                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.create.world') !!}</strong></p></th>
                                             <td>
                                                 <?php $random = $worlds->random()->id(); ?>
                                                 @foreach ($worlds as $key => $world)
@@ -163,7 +163,7 @@
                                                     </p>
                                                 @endforeach
                                                 
-                                                <p><small>[<a href="#" id="suggest-world" v-on="click: suggestWorld">suggest game world</a>]</small></p>
+                                                <p><small>[<a href="#" id="suggest-world" v-on="click: suggestWorld">{!! trans('theme::account.create.suggestworld') !!}</a>]</small></p>
                                             </td>
                                         </tr>
                                     </table>
@@ -174,11 +174,15 @@
                         <div class="box">
                             <div class="inner-box">
                                 <p>
-                                    <strong>Please select the following check box:</strong><br>
+                                    <strong>{!! trans('theme::account.create.terms') !!}</strong><br>
                                     <input type="checkbox" name="terms" value="1">
-                                    I agree to the <a href="{{ url('/support/terms') }}" target="_blank">{{ server()->name() }} Service Agreement</a>, 
-                                    the <a href="{{ url('/support/rules') }}" target="_blank">{{ server()->name() }} Rules</a> and the 
-                                    <a href="{{ url('/support/privacy') }}" target="_blank">{{ server()->name() }} Privacy Policy</a>.
+
+                                    {!! trans('theme::account.create.accept', [
+                                        'server'    => $server, 
+                                        'terms'     => url('/support/terms'),
+                                        'rules'     => url('/support/rules'),
+                                        'privacy'   => url('/support/privacy'),
+                                    ]) !!}
                                 </p>
                             </div>
                         </div>
@@ -188,7 +192,7 @@
                 <br>
 
                 <button class="blue-button">
-                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.create.submit') }}">
                 </button>
             </form>
 

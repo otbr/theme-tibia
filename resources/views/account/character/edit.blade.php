@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Account Management')
+@title(trans('theme::account.character.edit.title'))
 @navigation('/account')
 @bodyclass('account-character-edit')
 
@@ -22,8 +22,8 @@
                         <tr>
                             <td align="center" valign="middle">
                                 <div class="padding">
-                                    [<a href="#character-data">Character Data</a>]
-                                    [<a href="#character-information">Edit Character Information</a>]
+                                    [<a href="#character-data">{!! trans('theme::account.character.edit.characterdata') !!}</a>]
+                                    [<a href="#character-information">{!! trans('theme::account.character.edit.characterinfo') !!}</a>]
                                 </div>
                             </td>
                         </tr>
@@ -34,7 +34,7 @@
 
             <br>
 
-            <p>Here you can see and edit the information about your character.<br>If you do not want to specify a certain field, just leave it blank.</p>
+            {!! trans('theme::account.character.edit.preamble') !!}
 
             @include('theme::modules.errors')
             
@@ -46,7 +46,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Character Data
+                            {!! trans('theme::account.character.edit.characterdata') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -56,31 +56,31 @@
                             <div class="inner-box">
                                 <table class="paddingless" cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <th width="10%"><strong class="{{ $errors->has('name') ? 'error' : null }}">Name:</strong></th>
+                                        <th width="10%"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account.character.edit.name') !!}</strong></th>
                                         <td width="80%">{{ $player->name() }}</td>
                                         <td align="right">
                                             <a href="{{ url('/account/character', [$player->id(), 'name']) }}" class="blue-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changename.gif') }}" alt="Change Name">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changename.gif') }}" alt="{{ trans('theme::account.character.edit.changename') }}">
                                             </a>
                                         </td>
                                     </tr>
                                     @if ($world = $player->world())
                                         <tr>
-                                            <th><strong class="{{ $errors->has('world') ? 'error' : null }}">World:</strong></th>
+                                            <th><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.edit.world') !!}</strong></th>
                                             <td>{{ $world->name() }}</td>
                                             <td align="right">
                                                 <a href="{{ url('/account/character', [$player->id(), 'world']) }}" class="blue-button">
-                                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeworld.gif') }}" alt="Change World">
+                                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeworld.gif') }}" alt="{{ trans('theme::account.character.edit.changeworld') }}">
                                                 </a>
                                             </td>
                                         </tr>
                                     @endif
                                     <tr>
-                                        <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">Sex:</strong></th>
+                                        <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.edit.sex') !!}</strong></th>
                                         <td>{{ $player->gender()->name() }}</td>
                                         <td align="right">
                                             <a href="{{ url('/account/character', [$player->id(), 'sex']) }}" class="blue-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changesex.gif') }}" alt="Change Sex">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changesex.gif') }}" alt="{{ trans('theme::account.character.edit.changesex') }}">
                                             </a>
                                         </td>
                                     </tr>
@@ -96,7 +96,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            Edit Character Information
+                            {!! trans('theme::account.character.edit.characterinfo') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -106,21 +106,21 @@
                             <div class="inner-box">
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <th width="22%"><p><strong class="{{ $errors->has('hide') ? 'error' : null }}">Hide Account:</strong></p></th>
+                                        <th width="22%"><p><strong class="{{ $errors->has('hide') ? 'error' : null }}">{!! trans('theme::account.character.edit.hideaccount') !!}</strong></p></th>
                                         <td>
                                             <p>
                                                 <label>
-                                                    <input type="checkbox"> check to hide your account information
+                                                    <input type="checkbox"> {!! trans('theme::account.character.edit.hide') !!}
                                                 </label>
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th valign="top"><p><strong class="{{ $errors->has('comment') ? 'error' : null }}">Comment:</strong></p></th>
+                                        <th valign="top"><p><strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong></p></th>
                                         <td><p><textarea cols="50" rows="10"></textarea></p></td>
                                     </tr>
                                     <tr>
-                                        <th valign="top"><p><strong class="{{ $errors->has('signature') ? 'error' : null }}">Forum Signature:</strong></p></th>
+                                        <th valign="top"><p><strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong></p></th>
                                         <td><p><textarea cols="50" rows="4"></textarea></p></td>
                                     </tr>
                                 </table>
@@ -131,12 +131,12 @@
                             <tr>
                                 <td width="50%" align="center">
                                     <button class="blue-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.character.edit.submit') }}">
                                     </button>
                                 </td>
                                 <td width="50%" align="center">
                                     <a href="{{ url('/account') }}" class="blue-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="Submit">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.edit.back') }}">
                                     </a>
                                 </td>
                             </tr>
