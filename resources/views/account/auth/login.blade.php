@@ -44,7 +44,7 @@
                                 <table cellspacing="0" cellpadding="0" border="0">
                                     <tr>
                                         <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account.login.name') !!}</strong></th>
-                                        <td><input type="password" name="name" size="35" maxlength="30"></td>
+                                        <td><input type="password" name="name" size="35" maxlength="30" autofocus></td>
                                     </tr>
                                     <tr>
                                         <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account.login.password') !!}</strong></th>
