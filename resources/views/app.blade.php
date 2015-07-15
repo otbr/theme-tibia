@@ -9,7 +9,7 @@
     <title>@yield('title') &mdash; pandaac</title>
 
     <link href="{{ asset('/pandaac/theme-tibia/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{ asset('/pandaac/theme-tibia/css/app.css') }}" rel="stylesheet" media="all">
+    <link href="{{ theme_elixir('/pandaac/theme-tibia/css/app.css') }}" rel="stylesheet" media="all">
 
     @yield('head')
 
@@ -216,7 +216,7 @@
     </section>
 
     <script>var baseurl = '{{ url("/") }}';</script>
-    <script src="{{ asset('/pandaac/theme-tibia/js/app.min.js') }}"></script>
+    <script src="{{ theme_elixir('/pandaac/theme-tibia/js/app.min.js') }}"></script>
 
     @yield('footer')
 
