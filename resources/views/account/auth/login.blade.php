@@ -33,7 +33,7 @@
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                 <div class="buttons-right">
-                                    <button class="blue-button">
+                                    <button class="blue-button" style="margin-bottom: 2px;">
                                         <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_login.gif') }}" alt="{{ trans('theme::account.login.login') }}">
                                     </button>
                                     <a href="{{ url('/account/recover') }}" class="blue-button">

@@ -108,6 +108,10 @@ table {
     font-size: 13.3px;
     margin: 5px;
 
+    &.top {
+        margin-top: 15px;
+    }
+
     & > .header {
         background-color: @table-header-bgcolor;
         color: @table-header-color;
@@ -211,7 +215,7 @@ table {
     & > .content {
         border: 2px solid @table-inner-border;
         background-color: @table-bgcolor;
-        padding: 7px 6px 0;
+        padding: 7px 6px 6px;
         border-top: none;
 
         &.dark {
@@ -232,11 +236,17 @@ table {
             & > .inner-box {
                 border: 1px solid @table-light-border;
                 box-sizing: border-box;
-                padding: 2px 4px 0;
+                padding: 2px 4px;
                 overflow: hidden;
                 width: 100%;
                 
                 .clearfix;
+
+                & > table:not(.table) {
+                    tr td, tr th {
+                        padding: 0;
+                    }
+                }
             }
         }
     }

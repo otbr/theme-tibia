@@ -32,15 +32,29 @@
                     <div class="box">
                         <div class="inner-box">
                             <div class="buttons-right">
-                                <a href="{{ url('/account/manage') }}" class="blue-button">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_manageaccount.gif') }}" alt="{{ trans('theme::account.index.manageaccount') }}">
-                                </a>
-                                <a href="#" class="green-button">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="{{ trans('theme::account.index.getpremium') }}">
-                                </a>
-                                <a href="{{ url('/account/logout') }}" class="red-button">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_logout.gif') }}" alt="{{ trans('theme::account.index.logout') }}">
-                                </a>
+                                <table cellspacing="0" cellpadding="0" border="0">
+                                    <tr>
+                                        <td valign="top">
+                                            <a href="{{ url('/account/manage') }}" class="blue-button">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_manageaccount.gif') }}" alt="{{ trans('theme::account.index.manageaccount') }}">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="middle">
+                                            <a href="#" class="green-button">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="{{ trans('theme::account.index.getpremium') }}">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td valign="bottom">
+                                            <a href="{{ url('/account/logout') }}" class="red-button">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_logout.gif') }}" alt="{{ trans('theme::account.index.logout') }}">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
 
                             <table height="85" cellspacing="0" cellpadding="0" border="0">
@@ -59,10 +73,56 @@
                 </div>
             </div>
 
-            @if (account()->isAwaitingEmailChange())
-                <br>
+            @if (! account()->isConfirmed())
+                <div class="notification top">
+                    <div class="borders">
+                        <span class="edges top"></span>
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td>
+                                    <div class="buttons-right">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                            <tr>
+                                                <td valign="top">
+                                                    <a href="{{ url('/account/email/request') }}" class="blue-button">
+                                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_rerequestemail.gif') }}" alt="{{ trans('theme::account.index.confirm.request') }}">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="bottom">
+                                                    <a href="{{ url('/account/email') }}" class="blue-button">
+                                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeemail.gif') }}" alt="{{ trans('theme::account.index.confirm.edit') }}">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
 
-                <div class="notification">
+                                    <div style="margin: 5px 0 13px;">
+                                        <strong>{!! trans('theme::account.index.confirm.heading') !!}</strong>
+                                        <div class="alert">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign">
+                                            <div class="message">
+                                                {!! trans('theme::account.index.confirm.alert') !!}
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p style="margin-bottom: 5px;">
+                                        {!! trans('theme::account.index.confirm.content') !!}
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <span class="edges bottom"></span>
+                    </div>
+                </div>
+            @endif
+
+            @if (account()->hasPendingEmail())
+                <div class="notification top">
                     <div class="borders">
                         <span class="edges top"></span>
                         <table cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -78,7 +138,7 @@
 
                                     <p style="margin-bottom: 5px;">
                                         {!! trans('theme::account.index.email.content', [
-                                            'email' => account()->emailChange(),
+                                            'email' => account()->properties->email(),
                                             'days'  => config('pandaac.mail.timers.email-change'),
                                         ]) !!}
                                     </p>
@@ -90,9 +150,7 @@
                 </div>
             @endif
 
-            <br>
-
-            <div class="table">
+            <div class="table top">
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
@@ -125,7 +183,7 @@
                                     <td>{{ $player->world()->name() }}</td>
                                     <td>{!! trans('theme::account.index.characters.hidden') !!}</td>
                                     <td align="center">
-                                        <div class="character-buttons">
+                                        <div class="character-buttons" style="font-weight: normal;">
                                             [<a href="{{ url('/account/character', $player->id()) }}">{!! trans('theme::account.index.characters.edit') !!}</a>]
                                             [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">{!! trans('theme::account.index.characters.delete') !!}</a>]
                                         </div>

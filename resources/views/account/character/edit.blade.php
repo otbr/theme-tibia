@@ -58,27 +58,33 @@
                                     <tr>
                                         <th width="10%"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account.character.edit.name') !!}</strong></th>
                                         <td width="80%">{{ $player->name() }}</td>
-                                        <td align="right">
+                                        <td valign="top" align="right">
                                             <a href="{{ url('/account/character', [$player->id(), 'name']) }}" class="blue-button">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changename.gif') }}" alt="{{ trans('theme::account.character.edit.changename') }}">
                                             </a>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td colspan="3" height="8"></td>
+                                    </tr>
                                     @if ($world = $player->world())
                                         <tr>
                                             <th><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.edit.world') !!}</strong></th>
                                             <td>{{ $world->name() }}</td>
-                                            <td align="right">
+                                            <td valign="middle" align="right">
                                                 <a href="{{ url('/account/character', [$player->id(), 'world']) }}" class="blue-button">
                                                     <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeworld.gif') }}" alt="{{ trans('theme::account.character.edit.changeworld') }}">
                                                 </a>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <td colspan="3" height="8"></td>
+                                        </tr>
                                     @endif
                                     <tr>
                                         <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.edit.sex') !!}</strong></th>
                                         <td>{{ $player->gender()->name() }}</td>
-                                        <td align="right">
+                                        <td valign="bottom" align="right">
                                             <a href="{{ url('/account/character', [$player->id(), 'sex']) }}" class="blue-button">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changesex.gif') }}" alt="{{ trans('theme::account.character.edit.changesex') }}">
                                             </a>

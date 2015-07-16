@@ -61,6 +61,7 @@
 
 .showhide {
     background: url('@{image-path}/showhide.gif');
+    margin: 2px 0 0;
     cursor: pointer;
     display: block;
     outline: none;
@@ -97,16 +98,17 @@
 .blue-button,
 .red-button {
     background: url('@{image-path}/sbutton_green.gif') no-repeat top left;
+    vertical-align: middle;
     display: inline-block;
     text-align: center;
     line-height: 25px;
     overflow: hidden;
-    margin: 0 0 2px;
     cursor: pointer;
     height: 25px;
     width: 135px;
     border: none;
     padding: 0;
+    margin: 0;
 
     &:hover {
         background-position-y: -25px;
@@ -114,6 +116,10 @@
         img {
             margin: 1px 0 0 1px;
         }
+    }
+
+    &.bottom {
+        margin-bottom: 2px;
     }
 }
 
@@ -150,6 +156,61 @@
     color: @error-color;
 }
 
+.alert {
+    display: inline-block;
+    position: relative;
+
+    & > img {
+        cursor: help;
+    }
+
+    &:hover > .message {
+        display: block;
+    }
+
+    & > .message {
+        background: url('@{image-path}/scroll.gif') repeat top left;
+        border: 1px solid @heading-color;
+        padding: 10px 10px 20px;
+        color: @heading-color;
+        text-align: justify;
+        position: absolute;
+        font-size: 12px;
+        cursor: normal;
+        display: none;
+        width: 245px;
+        z-index: 5;
+        left: 27px;
+        top: 4px;
+
+        &:before {
+            content: url('@{image-path}/alertcorner.gif');
+            position: absolute;
+            height: 13px;
+            left: -8px;
+            width: 8px;
+            z-index: 6;
+            top: -1px;
+        }
+
+        & > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
+            color: @heading-color;
+            font-weight: bold;
+            text-align: left;
+            font-size: 16px;
+            margin: 0;
+        }
+
+        & > p {
+            margin: 12px 0;
+        }
+
+        & > img {
+            .img-responsive;
+        }
+    }
+}
+
 .errors,
 .notification {
     font-family: Verdana, Arial, 'Times New Roman', sans-serif;
@@ -159,6 +220,10 @@
     font-size: 13.3px;
     min-height: 24px;
     padding: 8px 5px;
+
+    &.top {
+        margin-top: 16px;
+    }
 
     &.errors {
         color: @error-color;

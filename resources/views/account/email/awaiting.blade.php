@@ -32,8 +32,8 @@
 
                     <div class="content dark">
                         {!! trans('theme::account.email.awaiting.content', [
-                            'email' => account()->emailChange(),
-                            'date'  => account()->emailChangeDate(),
+                            'email' => account()->properties->email(),
+                            'date'  => account()->properties->emailDate(),
                         ]) !!}
                     </div>
                 </div>

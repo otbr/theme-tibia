@@ -15,13 +15,14 @@ elixir(function(mix) {
         .less('app.less')
         .browserify('app.js', elixir.config.jsOutput + 'app.min.js')
         .copy(elixir.config.assetsDir + 'img', elixir.config.publicDir + 'img')
+        .task('publish_assets')
         .version([
             'css/app.css',
             'js/app.min.js'
         ])
-
-        .task('publish_assets')
-        .registerWatcher('publish_assets', elixir.config.assetsDir + '/**/*');
+        
+        .registerWatcher('copy', elixir.config.assetsDir + '/img/*')
+        .registerWatcher('publish_assets', elixir.config.publicDir + '/**/*');
 });
 
 gulp.task('publish_assets', shell.task([

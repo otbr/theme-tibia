@@ -22,7 +22,7 @@
             toggle          : require('./methods/toggle'),
             isToggled       : require('./methods/is-toggled'),
             toggleNav       : require('./methods/toggle-nav'),
-            isNavToggled    : require('./methods/is-nav-toggled'),
+            isNavToggled    : require('./methods/is-nav-toggled')
         }
     });
 
