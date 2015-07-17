@@ -15,7 +15,7 @@
     "require": {
         "php": ">=5.5.9",
         "pandaac/apolune": "dev-master",
-        "eklundchristopher/name-gen": "dev-master"
+        "eklundchristopher/name-gen": "~1.0"
     },
     "autoload": {
         "files": [
