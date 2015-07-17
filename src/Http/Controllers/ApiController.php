@@ -50,7 +50,7 @@ class ApiController extends Controller
     {
         $generator = new Generator(new Fantasy);
 
-        $name = $generator->name(rand(2, 3));
+        $name = $generator->name(rand(1, 2));
 
         if ($this->validateName($request, $validator, $name)->getData() !== false) {
             return $this->suggestName($request, $validator);
