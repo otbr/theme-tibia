@@ -21,6 +21,7 @@ class ComposerServiceProvider extends ServiceProvider
             'theme::account.character.create',
             'theme::account.character.name',
             'theme::account.terminate',
+            'theme::account.registration.form',
         ],
     ];
 

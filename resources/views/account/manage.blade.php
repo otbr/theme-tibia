@@ -102,27 +102,27 @@
 
                     <table cellspacing="0" cellpadding="0" border="0" width="100%">
                         <tr>
-                            <td style="padding-left: 0;">
+                            <td align="left" style="padding-left: 0;">
                                 <a href="{{ url('/account/password') }}" class="blue-button bottom">
                                     <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changepassword.gif') }}" alt="{{ trans('theme::account.manage.changepassword') }}">
                                 </a>
                             </td>
                             @if (account()->isConfirmed())
                                 <td width="5%"></td>
-                                <td>
+                                <td align="middle">
                                     <a href="{{ url('/account/email') }}" class="blue-button bottom">
                                         <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeemail.gif') }}" alt="{{ trans('theme::account.manage.changeemail') }}">
                                     </a>
                                 </td>
                             @endif
                             <td width="5%"></td>
-                            <td>
+                            <td align="middle">
                                 <a href="{{ url('/account/rename') }}" class="blue-button bottom">
                                     <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_renameaccount.gif') }}" alt="{{ trans('theme::account.manage.renameaccount') }}">
                                 </a>
                             </td>
                             <td width="5%"></td>
-                            <td>
+                            <td align="right" style="padding-right: 0;">
                                 <a href="{{ url('/account/terminate') }}" class="blue-button bottom">
                                     <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_terminateaccount.gif') }}" alt="{{ trans('theme::account.manage.terminateaccount') }}">
                                 </a>
@@ -165,7 +165,16 @@
                             <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
                                     <td>
-                                        <strong>{!! trans('theme::account.manage.premiumscrolls') !!}</strong><br>
+                                        <div>
+                                            <strong>{!! trans('theme::account.manage.premiumscrolls') !!}</strong>
+                                            <div class="alert">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign">
+                                                <div class="message">
+                                                    {!! trans('theme::account.manage.premiumscrollsalert') !!}
+                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}">
+                                                </div>
+                                            </div>
+                                        </div>
                                         {!! trans('theme::account.manage.premiumscrollsdesc') !!}
                                     </td>
                                     <td valign="top" align="right">
@@ -183,7 +192,16 @@
                             <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                 <tr>
                                     <td>
-                                        <strong>{!! trans('theme::account.manage.extraservices') !!}</strong><br>
+                                        <div>
+                                            <strong>{!! trans('theme::account.manage.extraservices') !!}</strong>
+                                            <div class="alert">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign">
+                                                <div class="message">
+                                                    {!! trans('theme::account.manage.extraservicesalert') !!}
+                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}">
+                                                </div>
+                                            </div>
+                                        </div>
                                         {!! trans('theme::account.manage.extraservicesdesc') !!}
                                     </td>
                                     <td valign="top" align="right">
@@ -264,6 +282,10 @@
 
                 <div class="content">
                     <div class="box">
+                        <div class="inner-box">
+                            {!! trans('theme::account.manage.noreadyproducts') !!}
+                        </div>
+                        {{--
                         <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <th width="85">{!! trans('theme::account.manage.date') !!}</th>
@@ -276,6 +298,7 @@
                                 <td align="center">[<a href="#">{!! trans('theme::account.manage.view') !!}</a>]</td>
                             </tr>
                         </table>
+                        --}}
                     </div>
                 </div>
             </div>
@@ -326,6 +349,7 @@
                         </div>
                     </div>
 
+                    {{--
                     <div class="box">
                         <div class="inner-box">
                             <table cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -361,6 +385,7 @@
                             </table>
                         </div>
                     </div>
+                    --}}
                 </div>
             </div>
 
@@ -376,7 +401,50 @@
                 <div class="content">
                     <div class="box">
                         <div class="inner-box">
-                            @if (! account()->isConfirmed())
+                            @if (account()->isConfirmed())
+                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <th width="20%" valign="top">{!! trans('theme::account.manage.registration.address') !!}</th>
+                                        <td>
+                                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                                <tr>
+                                                    <td>
+                                                        {{ account()->registration->firstname() }} {{ account()->registration->surname() }}<br>
+                                                        {{ account()->registration->country() }}
+                                                    </td>
+                                                    <td valign="top" align="right">
+                                                        <a href="{{ url('/account/register/edit') }}" class="blue-button">
+                                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_edit.gif') }}" alt="{{ trans('theme::account.manage.registration.edit') }}">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" height="5"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>{!! trans('theme::account.manage.registration.birthday') !!}</th>
+                                        <td>
+                                            {{ account()->registration->birthday()->format('F d Y') }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" height="5"></td>
+                                    </tr>
+                                    <tr>
+                                        <th>{!! trans('theme::account.manage.registration.gender') !!}</th>
+                                        <td>
+                                            @if (account()->registration->gender() == 'male')
+                                                {!! trans('theme::account.manage.registration.male') !!}
+                                            @else
+                                                {!! trans('theme::account.manage.registration.female') !!}
+                                            @endif
+                                        </td>
+                                    </tr>
+                                </table>
+                            @else
                                 <strong class="error">{!! trans('theme::account.manage.registration.confirm', ['url' => url('/account')]) !!}</strong>
                             @endif
                         </div>

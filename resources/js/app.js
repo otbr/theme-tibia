@@ -10,12 +10,7 @@
         el: 'aside.column',
 
         data: {
-            debug           : false,
-            navigation      : JSON.parse(Cookies.get('navigation') || null) || ['news']
-        },
-
-        components: {
-            'vue-debug'     : require('./components/vue-debug')
+            navigation : JSON.parse(Cookies.get('navigation') || null) || ['news']
         },
 
         methods: {

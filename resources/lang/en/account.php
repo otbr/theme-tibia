@@ -246,32 +246,35 @@ return [
     |--------------------------------------------------------------------------
     */
    
-    'index.title'               => 'Account Management',
-    'index.welcome'             => 'Welcome to your account!',
-    'index.welcomename'         => 'Weclome to your account, :name!',
-    'index.heading'             => 'Account Status',
-    'index.manageaccount'       => 'Manage Account',
-    'index.getpremium'          => 'Get Premium',
-    'index.logout'              => 'Logout',
-    'index.free'                => 'Free Account',
-    'index.freedesc'            => 'To benefit from our great premium features, get Premium Time for your account.',
-    'index.email.edit'          => 'Edit',
-    'index.email.heading'       => 'There is an email change request for the account!',
-    'index.email.content'       => 'A request has been submitted to change the email address of this account to <strong>:email</strong>. After a waiting period of <strong>:days days</strong> you can accept the new email address and finish the process. Please cancel the request if you do not want your email address to be changed! Also cancel the request if you have no access to the new email address!',
-    'index.confirm.heading'     => 'Your account is not confirmed!',
-    'index.confirm.content'     => 'Please check your emails to confirm your account.',
-    'index.confirm.alert'       => '<h3>Confirm Account</h3><p>An email has been sent to the address you have entered while you have created your account. Please check your emails to confirm your account.</p><p>In case you have lost your confirmation email or did not receive it, you can request the email containing the confirmation link for your account again.</p><p>If you no longer have access to the email address the confirmation link was sent to, you can change the email address and the email will be sent again automatically.</p>',
-    'index.confirm.request'     => 'Re-request Email',
-    'index.confirm.edit'        => 'Change Email',
-    'index.characters.heading'  => 'Characters',
-    'index.characters.name'     => 'Name',
-    'index.characters.world'    => 'World',
-    'index.characters.status'   => 'Status',
-    'index.characters.hidden'   => 'hidden',
-    'index.characters.edit'     => 'Edit',
-    'index.characters.delete'   => 'Delete',
-    'index.characters.empty'    => 'No characters yet.',
-    'index.characters.create'   => 'Create Character',
+    'index.title'                   => 'Account Management',
+    'index.welcome'                 => 'Welcome to your account!',
+    'index.welcomename'             => 'Weclome to your account, :name!',
+    'index.heading'                 => 'Account Status',
+    'index.manageaccount'           => 'Manage Account',
+    'index.getpremium'              => 'Get Premium',
+    'index.logout'                  => 'Logout',
+    'index.free'                    => 'Free Account',
+    'index.freedesc'                => 'To benefit from our great premium features, get Premium Time for your account.',
+    'index.email.edit'              => 'Edit',
+    'index.email.heading'           => 'There is an email change request for the account!',
+    'index.email.content'           => 'A request has been submitted to change the email address of this account to <strong>:email</strong>. After a waiting period of <strong>:days days</strong> you can accept the new email address and finish the process. Please cancel the request if you do not want your email address to be changed! Also cancel the request if you have no access to the new email address!',
+    'index.confirm.heading'         => 'Your account is not confirmed!',
+    'index.confirm.content'         => 'Please check your emails to confirm your account.',
+    'index.confirm.alert'           => '<h3>Confirm Account</h3><p>An email has been sent to the address you have entered while you have created your account. Please check your emails to confirm your account.</p><p>In case you have lost your confirmation email or did not receive it, you can request the email containing the confirmation link for your account again.</p><p>If you no longer have access to the email address the confirmation link was sent to, you can change the email address and the email will be sent again automatically.</p>',
+    'index.confirm.request'         => 'Re-request Email',
+    'index.confirm.edit'            => 'Change Email',
+    'index.unregistered.heading'    => 'Your account is not registered!',
+    'index.unregistered.register'   => 'Register Account',
+    'index.unregistered.content'    => 'You can register your account for increased protection. Click on "Register Account" and get your free recovery key today!',
+    'index.characters.heading'      => 'Characters',
+    'index.characters.name'         => 'Name',
+    'index.characters.world'        => 'World',
+    'index.characters.status'       => 'Status',
+    'index.characters.hidden'       => 'hidden',
+    'index.characters.edit'         => 'Edit',
+    'index.characters.delete'       => 'Delete',
+    'index.characters.empty'        => 'No characters yet.',
+    'index.characters.create'       => 'Create Character',
 
     /*
     |--------------------------------------------------------------------------
@@ -283,9 +286,16 @@ return [
     'manage.generalinfo'            => 'General Information',
     'manage.availableproducts'      => 'Products Available',
     'manage.readyproducts'          => 'Products Ready To Use',
+    'manage.noreadyproducts'        => 'You currently have no products available to use.',
     'manage.history'                => 'History',
     'manage.registration.heading'   => 'Registration',
     'manage.registration.confirm'   => 'After you <a href=":url">confirmed</a> your account you can register your account.',
+    'manage.registration.address'   => 'Address:',
+    'manage.registration.birthday'  => 'Date of Birth:',
+    'manage.registration.gender'    => 'Gender:',
+    'manage.registration.male'      => 'Male',
+    'manage.registration.female'    => 'Female',
+    'manage.registration.edit'      => 'Edit',
     'manage.getpremium'             => 'Get Premium',
     'manage.overview'               => 'Overview',
     'manage.account'                => 'Account Name:',
@@ -303,9 +313,16 @@ return [
     'manage.premiumtimedesc'        => 'Buy low-priced Premium Time to add it to your own account.',
     'manage.getpremiumscroll'       => 'Get Premium Scroll',
     'manage.premiumscrolls'         => 'Premium Scrolls',
+    'manage.premiumscrollsalert'    => '<h3>Premium Scrolls</h3>
+                                        <p>Each Premium Scroll represents a 30 days period of Premium Time.</p>
+                                        <ul>
+                                            <li>You can use this Premium Scrolls to extend the Premium Time of your account.</li>
+                                            <li>You can transfer Premium Scrolls to one of your characters into the game. Premium Scrolls can be traded freely with other characters through the market or the safe trade option.</li>
+                                        </ul>',
     'manage.premiumscrollsdesc'     => 'Buy Premium Scrolls to transfer Premium Time to the game or to use it for your own account.',
     'manage.getextraservice'        => 'Get Extra Services',
     'manage.extraservices'          => 'Extra Services',
+    'manage.extraservicesalert'     => '<h3>Extra Services</h3><p>It is strongly recommend that you set up an extra service before you purchase it.</p><p>This way you can ensure that your desired name is available and reserved for you or that you have selected a game world to which you are allowed to move.</p>',
     'manage.extraservicesdesc'      => 'Buy an extra service to transfer a character to another game world, to change your character\'s name or sex, to change your account name, or to get a new recovery key.',
     'manage.getmount'               => 'Get Mount',
     'manage.mounts'                 => 'Mounts',
@@ -370,5 +387,85 @@ return [
     'terminate.password'    => 'Password:',
     'terminate.submit'      => 'Submit',
     'terminate.back'        => 'Back',
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/registration/form.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'register.index.title'        => 'Account Management',
+    'register.index.preheading'   => 'Register Account',
+    'register.index.date'         => 'Registration Date',
+    'register.index.verification' => 'Verification',
+    'register.index.recoverykey'  => 'Recovery Key',
+    'register.index.preamble'     => '<p>Account registration offers many important advantages:</p>
+                                <ul>
+                                    <li>Registered users get a recovery key, which can be used to recover their accounts if they have lost access to the assigned email address.</li>
+                                    <li>Registered users can request a new recovery key for a small fee.</li>
+                                    <li>Extra Services can only be bought for registered accounts.</li>
+                                    <li>Finally, only registered users can become tutor.</li>
+                                </ul>
+                                <p><strong>NOTE:</strong> The data given in the registration will be used exclusively for sending recovery letters and compiling internal statistical surveys. It will be treated in a strictly confidential manner. For details please see the <a href=":privacy">:server Privacy Policy</a>.</p>
+                                <p>Please enter correct and complete data to make sure we can provide you with the best possible support. Above all, give your full address to make sure that our postal recovery letters will reach you. Note that all data entered in the registration can be re-edited later on, except for your gender and date of birth.</p>',
+    'register.index.heading'      => 'Enter Registration Data',
+    'register.index.firstname'    => 'First Name:',
+    'register.index.surname'      => 'Last Name:',
+    'register.index.country'      => 'Country:',
+    'register.index.birthday'     => 'Date of Birth:',
+    'register.index.gender'       => 'Gender:',
+    'register.index.female'       => 'Female',
+    'register.index.male'         => 'Male',
+    'register.index.continue'     => 'Continue',
+    'register.index.back'         => 'Back',
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/registration/verify.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'register.verify.title'        => 'Account Management',
+    'register.verify.preheading'   => 'Register Account',
+    'register.verify.date'         => 'Registration Date',
+    'register.verify.verification' => 'Verification',
+    'register.verify.recoverykey'  => 'Recovery Key',
+    'register.verify.preamble'     => '<p>Please review the data you have entered. Pay special attention to the address. It should be as accurate as possible to make sure that our postal recovery letters will reach you. If you would like to correct data, click on "Back".</p>',
+    'register.verify.heading'      => 'Verify Registration Data',
+    'register.verify.firstname'    => 'First Name:',
+    'register.verify.surname'      => 'Last Name:',
+    'register.verify.country'      => 'Country:',
+    'register.verify.birthday'     => 'Date of Birth:',
+    'register.verify.gender'       => 'Gender:',
+    'register.verify.female'       => 'Female',
+    'register.verify.male'         => 'Male',
+    'register.verify.confirmation' => 'Please enter your password to confirm your registration data.',
+    'register.verify.password'     => 'Password:',
+    'register.verify.submit'       => 'Submit',
+    'register.verify.back'         => 'Back',
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/registration/success.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'register.key.title'        => 'Account Management',
+    'register.key.preheading'   => 'Register Account',
+    'register.key.date'         => 'Registration Date',
+    'register.key.verification' => 'Verification',
+    'register.key.recoverykey'  => 'Recovery Key',
+    'register.key.heading'      => 'Account Registered',
+    'register.key.content'      => '<p>Thank you for registering your account! You can now recover your account if you have lost access to the assigned email 
+                                    address by using the following</p>
+                                    <h1 class="text-center">Recovery Key: :key</h1>
+                                    <p><strong>Important:</strong></p>
+                                    <ul>
+                                        <li>Write down this recovery key carefully.</li>
+                                        <li>Store it at a safe place! Do not save it on your computer!</li>
+                                        <li>You will not receive an email containing this recovery key.</li>
+                                        <li>If you lose your recovery key, you can request a new one for a small fee at the Lost Account Interface.</li>
+                                    </ul>',
+    'register.key.back'         => 'Back',
 
 ];

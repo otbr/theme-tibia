@@ -17,7 +17,11 @@
 
             @include('theme::modules.errors')
             
-            <h2>{!! trans('theme::account.index.welcome') !!}</h2>
+            @if (account()->isRegistered())
+                <h2>{!! trans('theme::account.index.welcomename', ['name' => account()->registration->firstname()]) !!}</h2>
+            @else
+                <h2>{!! trans('theme::account.index.welcome') !!}</h2>
+            @endif
 
             <div class="table">
                 <header class="header">
@@ -34,21 +38,21 @@
                             <div class="buttons-right">
                                 <table cellspacing="0" cellpadding="0" border="0">
                                     <tr>
-                                        <td valign="top">
+                                        <td valign="top" style="padding-right: 0;">
                                             <a href="{{ url('/account/manage') }}" class="blue-button">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_manageaccount.gif') }}" alt="{{ trans('theme::account.index.manageaccount') }}">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="middle">
+                                        <td valign="middle" style="padding-right: 0;">
                                             <a href="#" class="green-button">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="{{ trans('theme::account.index.getpremium') }}">
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td valign="bottom">
+                                        <td valign="bottom" style="padding-right: 0;">
                                             <a href="{{ url('/account/logout') }}" class="red-button">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_logout.gif') }}" alt="{{ trans('theme::account.index.logout') }}">
                                             </a>
@@ -62,6 +66,7 @@
                                     <td valign="middle" width="55">
                                         <img src="{{ asset('/pandaac/theme-tibia/img/account-status_red.gif') }}">
                                     </td>
+                                    <td width="5"></td>
                                     <td valign="middle">
                                         <h4 class="free">{!! trans('theme::account.index.free') !!}</h4>
                                         <small>{!! trans('theme::account.index.freedesc') !!}</small>
@@ -83,14 +88,14 @@
                                     <div class="buttons-right">
                                         <table cellspacing="0" cellpadding="0" border="0">
                                             <tr>
-                                                <td valign="top">
+                                                <td valign="top" style="padding-right: 0;">
                                                     <a href="{{ url('/account/email/request') }}" class="blue-button">
                                                         <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_rerequestemail.gif') }}" alt="{{ trans('theme::account.index.confirm.request') }}">
                                                     </a>
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td valign="bottom">
+                                                <td valign="bottom" style="padding-right: 0;">
                                                     <a href="{{ url('/account/email') }}" class="blue-button">
                                                         <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeemail.gif') }}" alt="{{ trans('theme::account.index.confirm.edit') }}">
                                                     </a>
@@ -112,6 +117,38 @@
 
                                     <p style="margin-bottom: 5px;">
                                         {!! trans('theme::account.index.confirm.content') !!}
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <span class="edges bottom"></span>
+                    </div>
+                </div>
+            @elseif (! account()->isRegistered())
+                <div class="notification top">
+                    <div class="borders">
+                        <span class="edges top"></span>
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                                <td>
+                                    <div class="buttons-right">
+                                        <table cellspacing="0" cellpadding="0" border="0">
+                                            <tr>
+                                                <td valign="middle" style="padding-right: 0;">
+                                                    <a href="{{ url('/account/register') }}" class="blue-button">
+                                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_registeraccount.gif') }}" alt="{{ trans('theme::account.index.unregistered.register') }}">
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div style="margin: 5px 0 13px;">
+                                        <strong>{!! trans('theme::account.index.unregistered.heading') !!}</strong>
+                                    </div>
+
+                                    <p style="margin-bottom: 5px;">
+                                        {!! trans('theme::account.index.unregistered.content') !!}
                                     </p>
                                 </td>
                             </tr>
@@ -199,13 +236,15 @@
                         </table>
                     </div>
 
-                    <div style="height: 31px;">
-                        <div class="buttons-right">
-                            <a href="{{ url('/account/character') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_createcharacter.gif') }}" alt="{{ trans('theme::account.index.characters.create') }}">
-                            </a>
-                        </div>
-                    </div>
+                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <tr>
+                            <td valign="bottom" align="right" style="padding-right: 0;">
+                                <a href="{{ url('/account/character') }}" class="blue-button">
+                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_createcharacter.gif') }}" alt="{{ trans('theme::account.index.characters.create') }}">
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 

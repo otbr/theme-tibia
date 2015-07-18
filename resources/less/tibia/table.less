@@ -215,7 +215,7 @@ table {
     & > .content {
         border: 2px solid @table-inner-border;
         background-color: @table-bgcolor;
-        padding: 7px 6px 6px;
+        padding: 7px 6px 3px;
         border-top: none;
 
         &.dark {
@@ -233,13 +233,17 @@ table {
             margin-bottom: 9px;
             margin-right: 2px;
 
+            &:last-of-type {
+                margin-bottom: 6px;
+            }
+
             & > .inner-box {
                 border: 1px solid @table-light-border;
                 box-sizing: border-box;
                 padding: 2px 4px;
-                overflow: hidden;
+                //overflow: hidden;
                 width: 100%;
-                
+
                 .clearfix;
 
                 & > table:not(.table) {

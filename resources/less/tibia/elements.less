@@ -40,7 +40,11 @@ h2 {
     font-weight: bold;
     font-size: 17px;
 
-    &:before {
+    &.iconless {
+        margin: 0 0 5px;
+    }
+
+    &:not(.iconless):before {
         content: url('@{image-path}/headline-bracer-left.gif');
         position: relative;
         height: 41px;
@@ -49,7 +53,7 @@ h2 {
         top: 14px;
     }
 
-    &:after {
+    &:not(.iconless):after {
         content: url('@{image-path}/headline-bracer-right.gif');
         position: relative;
         height: 41px;

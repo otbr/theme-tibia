@@ -59,6 +59,140 @@
     }
 }
 
+.progressbar {
+    background: url('@{image-path}/stonebar-center.gif') top center repeat-x;
+    margin: 15px 50px 45px;
+    position: relative;
+    height: 17px;
+
+    &:before {
+        background: url('@{image-path}/stonebar-left-end.gif') top center no-repeat;
+        position: absolute;
+        height: 17px;
+        width: 45px;
+        left: -45px;
+        content: '';
+    }
+
+    &:after {
+        background: url('@{image-path}/stonebar-right-end.gif') top center no-repeat;
+        position: absolute;
+        right: -45px;
+        height: 17px;
+        width: 45px;
+        content: '';
+        top: 0;
+    }
+
+    & > ul.steps {
+        position: relative;
+        list-style: none;
+        display: table;
+        width: 100%;
+        top: -11px;
+        padding: 0;
+        z-index: 2;
+        margin: 0;
+
+        & > li {
+            display: table-cell;
+
+            &.step {
+                background: top left no-repeat;
+                position: relative;
+                max-width: 47px;
+                min-width: 47px;
+                height: 39px;
+                width: 47px;
+                padding: 0;
+                margin: 0;
+
+                & > strong,
+                & > span {
+                    color: @heading-color;
+                    white-space: nowrap;
+                    position: absolute;
+                    text-align: center;
+                    display: block;
+                    font-size: 9px;
+                    bottom: -12px;
+                    right: -100%;
+                    left: -100%;
+                }
+
+                &.green {
+                    &.payment { background-image: url('@{image-path}/progress-bar-icon-1-green.gif'); }
+                    &.scroll { background-image: url('@{image-path}/progress-bar-icon-2-green.gif'); }
+                    &.questionmark { background-image: url('@{image-path}/progress-bar-icon-3-green.gif'); }
+                    &.checkmark { background-image: url('@{image-path}/progress-bar-icon-4-green.gif'); }
+
+                    &:first-child {
+                        &:before {
+                            content: url('@{image-path}/progress-bar-tube-left-green.gif');
+                            position: absolute;
+                            height: 9px;
+                            width: 20px;
+                            left: -20px;
+                            top: 12px;
+                        }
+                    }
+
+                    &:last-child {
+                        &:after {
+                            content: url('@{image-path}/progress-bar-tube-right-green.gif');
+                            position: absolute;
+                            right: -20px;
+                            height: 9px;
+                            width: 20px;
+                            top: 12px;
+                        }
+                    }
+                }
+
+                &.blue {
+                    &.payment { background-image: url('@{image-path}/progress-bar-icon-1-blue.gif'); }
+                    &.scroll { background-image: url('@{image-path}/progress-bar-icon-2-blue.gif'); }
+                    &.questionmark { background-image: url('@{image-path}/progress-bar-icon-3-blue.gif'); }
+                    &.checkmark { background-image: url('@{image-path}/progress-bar-icon-4-blue.gif'); }
+
+                    &:last-child {
+                        &:after {
+                            content: url('@{image-path}/progress-bar-tube-right-blue.gif');
+                            position: absolute;
+                            right: -20px;
+                            height: 9px;
+                            width: 20px;
+                            top: 12px;
+                        }
+                    }
+                }
+            }
+        }
+
+        & > .green:not(.step),
+        & > .blue:not(.step),
+        & > .greenblue:not(.step) {
+            position: relative;
+
+            &:before {
+                background: center center no-repeat;
+                background-size: 100% 7px;
+                position: absolute;
+                content: "";
+                height: 7px;
+                width: 100%;
+                top: 16px;
+                right: 0;
+                left: 0;
+            }
+
+            &.green:before { background-image: url('@{image-path}/progress-bar-tube-green.gif'); }
+            &.blue:before { background-image: url('@{image-path}/progress-bar-tube-blue.gif'); }
+            &.greenblue:before { background-image: url('@{image-path}/progress-bar-tube-green-blue.gif'); }
+        }
+    }
+}
+
 .showhide {
     background: url('@{image-path}/showhide.gif');
     margin: 2px 0 0;
@@ -199,6 +333,15 @@
             text-align: left;
             font-size: 16px;
             margin: 0;
+        }
+
+        & > ul,
+        & > ol {
+            margin-left: 0;
+
+            & > li {
+                margin-left: -18px;
+            }
         }
 
         & > p {

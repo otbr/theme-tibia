@@ -1,12 +1,14 @@
 .clearfix() {
-    &:before,
-    &:after {
-        display: table;
-        content: " ";
-    }
+    vertical-align: bottom;
+    display: inline-block;
 
     &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: "";
         clear: both;
+        height: 0;
     }
 }
 
