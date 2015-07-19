@@ -401,7 +401,9 @@
                 <div class="content">
                     <div class="box">
                         <div class="inner-box">
-                            @if (account()->isConfirmed())
+                            @if (! account()->isConfirmed())
+                                <strong class="error">{!! trans('theme::account.manage.registration.confirm', ['url' => url('/account')]) !!}</strong>
+                            @elseif (account()->isRegistered())
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
                                         <th width="20%" valign="top">{!! trans('theme::account.manage.registration.address') !!}</th>
@@ -445,7 +447,16 @@
                                     </tr>
                                 </table>
                             @else
-                                <strong class="error">{!! trans('theme::account.manage.registration.confirm', ['url' => url('/account')]) !!}</strong>
+                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+                                        <td>{!! trans('theme::account.manage.registration.unregistered') !!}</td>
+                                        <td valign="top" align="right">
+                                            <a href="{{ url('/account/register') }}" class="blue-button">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_registeraccount.gif') }}" alt="{{ trans('theme::account.manage.registration.register') }}">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
                             @endif
                         </div>
                     </div>
