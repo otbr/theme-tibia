@@ -1,10 +1,10 @@
 (function (window, document, undefined) {
-    if (document.getElementsByTagName('body')[0].className.indexOf('account-index') !== -1) {
+    if (document.getElementsByTagName('body')[0].className.indexOf('account-overview') !== -1) {
     
         var Vue = require('vue');
 
         new Vue({
-            el: 'body.account-index',
+            el: 'body.account-overview',
 
             data: {
                 selectedPlayer : 0
