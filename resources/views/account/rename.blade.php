@@ -36,7 +36,7 @@
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <th>{!! trans('theme::account.rename.current') !!}</th>
-                                <td>{{ account()->name() }}</td>
+                                <td>{{ $account->name() }}</td>
                             </tr>
                             <tr>
                                 <th>{!! trans('theme::account.rename.new') !!}</th>

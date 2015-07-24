@@ -204,25 +204,37 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | resources/views/account/email/confirm.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'email.confirm.title'       => 'Create Account',
+    'email.confirm.heading'     => 'Account Confirmed',
+    'email.confirm.content'     => '<p>Congratulations, your account is confirmed!</p><p>Now you can fully enjoy all features of a :server free account. If you have not done yet, you can now download the :server client by clicking on the download button below.</p>',
+    'email.confirm.download'    => 'Download',
+    'email.confirm.login'       => 'Login',
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/email/update.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'email.update.title'   => 'Account Management',
+    'email.update.heading' => 'New Email Address Requested',
+    'email.update.content' => 'You have requested to change your email address to <strong>:email</strong>. The actual change will take place after a waiting period of :days days, during which you can cancel the request at any time.',
+    'email.update.back'    => 'Back',
+
+    /*
+    |--------------------------------------------------------------------------
     | resources/views/account/email/request.blade.php
     |--------------------------------------------------------------------------
     */
    
-    'email.request.title'   => 'Account Management',
-    'email.request.heading' => 'New Email Address Requested',
-    'email.request.content' => 'You have requested to change your email address to <strong>:email</strong>. The actual change will take place after a waiting period of :days days, during which you can cancel the request at any time.',
-    'email.request.back'    => 'Back',
-
-    /*
-    |--------------------------------------------------------------------------
-    | resources/views/account/email/confirmation.blade.php
-    |--------------------------------------------------------------------------
-    */
-   
-    'email.confirmation.title'      => 'Account Management',
-    'email.confirmation.heading'    => 'Confirmation Email Sent',
-    'email.confirmation.content'    => 'An email containing the confirmation link as well as instructions on how to confirm your account was sent to your email address:',
-    'email.confirmation.back'       => 'Back',
+    'email.request.title'      => 'Account Management',
+    'email.request.heading'    => 'Confirmation Email Sent',
+    'email.request.content'    => 'An email containing the confirmation link as well as instructions on how to confirm your account was sent to your email address:',
+    'email.request.back'       => 'Back',
 
     /*
     |--------------------------------------------------------------------------

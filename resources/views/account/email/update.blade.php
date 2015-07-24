@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.email.request.title'))
+@title(trans('theme::account.email.update.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -21,15 +21,16 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.email.request.heading') !!}
+                        {!! trans('theme::account.email.update.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    <p>{!! trans('theme::account.email.request.content') !!}</p>
-                    <p class="text-center"><strong>{{ $account->email() }}</strong></p>
-                    <br>
+                    {!! trans('theme::account.email.update.content', [
+                        'email' => $account->properties->email(),
+                        'days'  => config('pandaac.mail.timers.email-change'),
+                    ]) !!}
                 </div>
             </div>
 
@@ -39,7 +40,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.request.back') }}">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.update.back') }}">
                         </a>
                     </td>
                 </tr>

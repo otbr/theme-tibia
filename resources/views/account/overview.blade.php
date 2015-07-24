@@ -17,8 +17,8 @@
 
             @include('theme::modules.errors')
             
-            @if (account()->isRegistered())
-                <h2>{!! trans('theme::account.overview.welcomename', ['name' => account()->registration->firstname()]) !!}</h2>
+            @if ($account->isRegistered())
+                <h2>{!! trans('theme::account.overview.welcomename', ['name' => $account->registration->firstname()]) !!}</h2>
             @else
                 <h2>{!! trans('theme::account.overview.welcome') !!}</h2>
             @endif
@@ -78,7 +78,7 @@
                 </div>
             </div>
 
-            @if (! account()->isConfirmed())
+            @if (! $account->isConfirmed())
                 <div class="notification top">
                     <div class="borders">
                         <span class="edges top"></span>
@@ -87,13 +87,15 @@
                                 <td>
                                     <div class="buttons-right">
                                         <table cellspacing="0" cellpadding="0" border="0">
-                                            <tr>
-                                                <td valign="top" style="padding-right: 0;">
-                                                    <a href="{{ url('/account/email/request') }}" class="blue-button">
-                                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_rerequestemail.gif') }}" alt="{{ trans('theme::account.overview.confirm.request') }}">
-                                                    </a>
-                                                </td>
-                                            </tr>
+                                            @if ($account->properties->emailRequests() < 2)
+                                                <tr>
+                                                    <td valign="top" style="padding-right: 0;">
+                                                        <a href="{{ url('/account/email/request') }}" class="blue-button">
+                                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_rerequestemail.gif') }}" alt="{{ trans('theme::account.overview.confirm.request') }}">
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            @endif
                                             <tr>
                                                 <td valign="bottom" style="padding-right: 0;">
                                                     <a href="{{ url('/account/email') }}" class="blue-button">
@@ -124,7 +126,7 @@
                         <span class="edges bottom"></span>
                     </div>
                 </div>
-            @elseif (! account()->isRegistered())
+            @elseif (! $account->isRegistered())
                 <div class="notification top">
                     <div class="borders">
                         <span class="edges top"></span>
@@ -158,7 +160,7 @@
                 </div>
             @endif
 
-            @if (account()->hasPendingEmail())
+            @if ($account->hasPendingEmail())
                 <div class="notification top">
                     <div class="borders">
                         <span class="edges top"></span>
@@ -175,7 +177,7 @@
 
                                     <p style="margin-bottom: 5px;">
                                         {!! trans('theme::account.overview.email.content', [
-                                            'email' => account()->properties->email(),
+                                            'email' => $account->properties->email(),
                                             'days'  => config('pandaac.mail.timers.email-change'),
                                         ]) !!}
                                     </p>
@@ -207,7 +209,7 @@
                                 <th class="header" width="90"></th>
                             </tr>
 
-                            @forelse (account()->players as $i => $player)
+                            @forelse ($account->players as $i => $player)
                                 <tr class="character {{ $i === 0 ? 'active' : null }}" v-class="active: isActivated({{ $i }}, 'selectedPlayer')" v-on="click: activate({{ $i }}, 'selectedPlayer')">
                                     <td align="center" valign="middle">
                                         <span class="play-integer">{{ ++$i }}.</span>
