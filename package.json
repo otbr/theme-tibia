@@ -1,13 +1,12 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp": "^3.8.8",
-    "gulp-shell": "^0.4.1",
-    "laravel-elixir": "*"
-  },
-  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-shell": "^0.4.2",
+    "laravel-elixir": "^3.0.4",
     "cookies-js": "^1.2.1",
-    "vue": "^0.12.1",
-    "vue-resource": "^0.1.3"
-  }
+    "vue": "^0.12.8",
+    "vue-resource": "^0.1.10"
+  },
+  "dependencies": {}
 }
