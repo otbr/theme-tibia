@@ -21,10 +21,6 @@
 <body class="@yield('body')">
     <a name="top"></a>
 
-    <script id="vue-debug-template" type="x-template">
-        <pre v-show="debug" class="vue-debug">@{{ $data | json 4 }}</pre>
-    </script>
-
     <section id="skeleton">
         <aside id="left-column" class="column">
             <a id="logo-artwork" href="{{ url('/') }}"></a>
@@ -209,14 +205,12 @@
         </aside>
 
         <section id="middle-column" class="column">
-            <vue-debug></vue-debug>
-            
             @yield('content')
         </section>
     </section>
 
     <script>var baseurl = '{{ url("/") }}';</script>
-    <script src="{{ theme_elixir('/pandaac/theme-tibia/js/app.min.js') }}"></script>
+    <script src="{{ theme_elixir('/pandaac/theme-tibia/js/app.js') }}"></script>
 
     @yield('footer')
 

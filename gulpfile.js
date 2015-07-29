@@ -1,26 +1,27 @@
-var gulp = require('gulp');
-var shell = require('gulp-shell');
-var elixir = require('laravel-elixir');
+var Elixir = require('laravel-elixir');
 
-elixir.config.assetsPath = 'resources/';
-elixir.config.publicPath = 'public/';
-elixir.config.production = true;
-elixir.config.sourcemaps = false;
+Elixir.config.assetsPath = 'resources/';
+Elixir.config.publicPath = 'public/';
+Elixir.config.sourcemaps = false;
+Elixir.config.production = true;
 
-gulp.task('publishAssets', shell.task([
-    "php ../../../artisan vendor:publish --tag=public --force"
-]));
+require('./resources/js/elixir/artisan');
 
-elixir(function(mix) {
+Elixir(function (mix) {
     mix
-        .less('app.less')
-        .browserify('app.js', 'app.min.js')
         .copy('resources/img', 'public/img')
+        .less('app.less')
+        .browserify('app.js')
         .version([
             'public/css/app.css',
-            'public/js/app.min.js'
+            'public/js/app.js'
         ])
-
-        .task('publishAssets', 'public/**/*')
+        .artisan(
+            'vendor:publish --tag=public --force',
+            'public/**/*',
+            [
+                'version'
+            ]
+        )
     ;
 });
