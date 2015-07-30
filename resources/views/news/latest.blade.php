@@ -56,18 +56,20 @@
                 </header>
 
                 <div class="body">
-                    <p class="first-letter">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacus lacus, scelerisque vitae nisi sed, gravida porttitor sem. Aenean diam arcu, egestas ut elit in, consectetur vulputate diam. Vestibulum luctus vestibulum elementum. Fusce eu efficitur ligula.
+                    <p>
+                        <span class="first-letter">W</span>e would like to give you the opportunity to explore <a href="https://pandaac.io" target="_blank">pandaac</a> and all of its features before using it as your very own automatic account creator. Your server deserves the absolute best, and we hope we can help you reach that level &ndash; but ultimately, the choice lands in your hands.
                     </p>
                     <p>
-                        Nam diam libero, convallis ac faucibus vel, placerat id ipsum. Ut semper, urna vitae vestibulum tristique, tellus purus tincidunt erat, in consectetur enim augue a odio. Etiam vel elementum ipsum. Sed nisl ipsum, ultrices at tristique in, tincidunt rutrum purus. Praesent facilisis ipsum ex, sit amet porttitor nunc molestie et. Vivamus non metus tempor, vehicula lacus eget, venenatis risus. Duis commodo non mi nec porttitor.
+                        <a href="https://pandaac.io" target="_blank">pandaac</a> is still in an early development stage and thus may be missing a lot of the functionality that you would expect. We are however progressing steadily and aim for perfection rather than a quick development process. In the end, this will benefit all of us.
                     </p>
                     <p>
-                        Cras sit amet euismod ligula. Maecenas rhoncus sapien et quam cursus, vel efficitur ex vehicula. Sed ac sem quis sapien laoreet aliquet. Integer molestie iaculis porttitor. Phasellus rutrum tempor metus hendrerit malesuada. Donec ut mauris laoreet, sollicitudin orci eget, vulputate orci.
+                        If you have a feature you think we should implement, or if you found a bug, please report it using the <a href="https://github.com/pandaac/pandaac/issues" target="_blank">issue tracker</a> over at GitHub.
                     </p>
                     <p>
-                        Thank you,<br>
-                        Chris.
+                        For any other enquiries, please send a private message to <a href="https://otland.net/members/chris.13882/" target="_blank">@Chris</a> through OtLand.
+                    </p>
+                    <p>
+                        To a bright future together!
                     </p>
                     <p class="text-right">
                         <a href="#">&raquo; Comment on this news</a>

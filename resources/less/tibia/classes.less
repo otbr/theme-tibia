@@ -48,15 +48,14 @@
 }
 
 .first-letter {
-    margin: 27px 5px !important;
-
-    &:first-letter {
-        font-family: 'Martel', serif;
-        color: @first-letter-color;
-        margin-right: 1px;
-        font-size: 36px;
-        line-height: 0;
-    }
+    font-family: 'MartelDescent', serif;
+    color: @first-letter-color;
+    text-transform: uppercase;
+    font-weight: 200;
+    font-size: 36px;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .progressbar {
@@ -189,6 +188,70 @@
             &.green:before { background-image: url('@{image-path}/progress-bar-tube-green.gif'); }
             &.blue:before { background-image: url('@{image-path}/progress-bar-tube-blue.gif'); }
             &.greenblue:before { background-image: url('@{image-path}/progress-bar-tube-green-blue.gif'); }
+        }
+    }
+}
+
+.article {
+    & > .header {
+        background-image: url('@{image-path}/newsheadline_background.gif');
+        overflow: hidden;
+        height: 28px;
+        width: 100%;
+
+        .clearfix;
+
+        & > .icon {
+            margin: -2px 18px 0 5px;
+            display: inline-block;
+            height: 32px;
+            width: 32px;
+            float: left;
+
+            &.cogwheel {
+                background-image: url('@{image-path}/newsicon_development_big.gif');
+            }
+        }
+
+        & > time {
+            display: inline-block;
+            margin: 10px 25px 0 0;
+            font-size: 9.3px;
+            height: 28px;
+            color: #fff;
+            float: left;
+
+            &:after {
+                content: '\002D';
+                margin-left: 2px;
+            }
+        }
+
+        & > h2 {
+            display: inline-block;
+            font-size: 13.3px;
+            font-weight: bold;
+            margin: 7px 0 0 0;
+            height: 28px;
+            color: #fff;
+            float: left;
+
+            &:before,
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    & > .body {
+        font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+        line-height: normal;
+        padding: 5px 10px 0;
+        font-size: 13.3px;
+
+        p,
+        p.first-letter {
+            margin: 15px 0 !important;
         }
     }
 }

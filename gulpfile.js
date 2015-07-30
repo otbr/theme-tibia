@@ -14,6 +14,7 @@ gulp.task('vendor:publish', function () {
 elixir(function (mix) {
     mix
         .copy('./resources/img', './public/img')
+        .copy('./resources/fonts', './public/fonts')
         .less('app.less')
         .browserify('app.js')
         .version([
