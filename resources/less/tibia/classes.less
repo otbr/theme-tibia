@@ -47,15 +47,30 @@
     vertical-align: middle;
 }
 
-.first-letter {
+.martel {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Martel', serif;
+    font-weight: normal;
+}
+
+.martel-descent {
+    -webkit-font-smoothing: antialiased;
     font-family: 'MartelDescent', serif;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+}
+
+.first-letter {
     color: @first-letter-color;
     text-transform: uppercase;
-    font-weight: 200;
+    display: inline-block;
+    line-height: 30px;
     font-size: 36px;
-    line-height: 0;
     padding: 0;
     margin: 0;
+
+    .martel-descent;
 }
 
 .progressbar {
@@ -192,25 +207,44 @@
     }
 }
 
+.headline {
+    text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+    -webkit-font-smoothing: antialiased;
+    text-transform: capitalize;
+    font-weight: normal;
+    line-height: 24.3px;
+    font-size: 24.3px;
+    display: block;
+    color: #efcfa4;
+
+    &:not(img) {
+        padding: 2px 0 0 4px;
+    }
+
+    .martel;
+}
+
 .article {
     & > .header {
         background-image: url('@{image-path}/newsheadline_background.gif');
-        overflow: hidden;
         height: 28px;
         width: 100%;
 
         .clearfix;
 
         & > .icon {
+            background: no-repeat center center;
             margin: -2px 18px 0 5px;
             display: inline-block;
             height: 32px;
             width: 32px;
             float: left;
 
-            &.cogwheel {
-                background-image: url('@{image-path}/newsicon_development_big.gif');
-            }
+            &.community { background-image: url('@{image-path}/newsicon_community_big.gif'); }
+            &.development { background-image: url('@{image-path}/newsicon_development_big.gif'); }
+            &.staff { background-image: url('@{image-path}/newsicon_cipsoft_big.gif'); margin-top: -1px; }
+            &.support { background-image: url('@{image-path}/newsicon_support_big.gif'); }
+            &.technical { background-image: url('@{image-path}/newsicon_technical_big.gif'); }
         }
 
         & > time {
@@ -251,7 +285,7 @@
 
         p,
         p.first-letter {
-            margin: 15px 0 !important;
+            margin: 0 0 15px !important;
         }
     }
 }

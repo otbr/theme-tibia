@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('Tibia Rules')
+@title(server()->name().' Rules')
 @navigation('/support/rules')
 @bodyclass('support-rules')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-tibiarules.gif') }}">
+        <div class="headline">{{ server()->name() }} Rules</div>
     </header>
 
     <div class="inner-box-border">

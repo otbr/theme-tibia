@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-lostaccount.gif') }}">
+        <div class="headline">{!! trans('theme::account.recovery.index.title') !!}</div>
     </header>
 
     <div class="inner-box-border">

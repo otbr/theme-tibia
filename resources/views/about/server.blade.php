@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-whatistibia.gif') }}">
+        <div class="headline">What Is {{ server()->name() }}</div>
     </header>
 
     <div class="inner-box-border">

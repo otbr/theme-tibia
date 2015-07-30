@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <img class="headline" src="{{ asset('/pandaac/theme-tibia/img/headline-tutorguide.gif') }}">
+        <div class="headline">Tutor Guide</div>
     </header>
 
     <div class="inner-box-border">
