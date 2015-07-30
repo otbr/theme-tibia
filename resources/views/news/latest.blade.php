@@ -5,7 +5,7 @@
 @bodyclass('news-latest')
 
 @section('content')
-<div class="box">
+<div class="box ticker">
     <span class="corners top"></span>
 
     <header class="header">
@@ -14,14 +14,40 @@
 
     <div class="inner-box-border">
         <div class="inner-box fluid">
-            Lorem ipsum.
+            <table class="table-striped" cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                    <td width="20"><span class="icon technical"></span></td>
+                    <td width="85"><time datetime="2015-07-29 12:00:00">Jul 29 2015</time></td>
+                    <td>With today's server save, unusable sudden death runes that ...</td>
+                </tr>
+                <tr>
+                    <td width="20"><span class="icon community"></span></td>
+                    <td width="85"><time datetime="2015-07-28 12:00:00">Jul 28 2015</time></td>
+                    <td>Due to lack of entries, the event board will be deleted on ...</td>
+                </tr>
+                <tr>
+                    <td width="20"><span class="icon support"></span></td>
+                    <td width="85"><time datetime="2015-07-28 12:00:00">Jul 28 2015</time></td>
+                    <td>A thorough check of the compensation handed out on July 15 ...</td>
+                </tr>
+                <tr>
+                    <td width="20"><span class="icon community"></span></td>
+                    <td width="85"><time datetime="2015-07-28 12:00:00">Jul 28 2015</time></td>
+                    <td>TibiaVenezuela.com has published a new article, yet again! ...</td>
+                </tr>
+                <tr>
+                    <td width="20"><span class="icon technical"></span></td>
+                    <td width="85"><time datetime="2015-07-27 12:00:00">Jul 27 2015</time></td>
+                    <td>The server save on some game worlds took longer than usual ...</td>
+                </tr>
+            </table>
         </div>
     </div>
 
     <span class="corners bottom"></span>
 </div>
 
-<div class="box">
+<div class="box featured">
     <span class="corners top"></span>
 
     <header class="header">
@@ -30,7 +56,24 @@
 
     <div class="inner-box-border">
         <div class="inner-box fluid">
-            Lorem ipsum.
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <tr>
+                    <td valign="top">
+                        <p>
+                            <strong>Tibia Coins and the Store</strong>
+                            This month, we would like to share some information about an important new feature which will be released in July: Tibia Coins, a special new currency. Along with it, the ingame Store will open its doors. Read on to find out more!
+                        </p>
+                    </td>
+                    <td align="right" valign="top" rowspan="2">
+                        <a href="#"><img src="{{ asset('/pandaac/theme-tibia/img/featuredthumb_3238.jpg') }}"></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="right">
+                        <a href="#">&raquo; read more</a>
+                    </td>
+                </tr>
+            </table>
         </div>
     </div>
 
@@ -45,7 +88,7 @@
     </header>
 
     <div class="inner-box-border">
-        <div class="inner-box">
+        <div class="inner-box fluid">
 
             <article class="article">
                 <header class="header">
