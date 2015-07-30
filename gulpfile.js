@@ -1,27 +1,25 @@
-var Elixir = require('laravel-elixir');
+var gulp = require('gulp');
+var shell = require('gulp-shell');
+var elixir = require('laravel-elixir');
 
-Elixir.config.assetsPath = 'resources/';
-Elixir.config.publicPath = 'public/';
-Elixir.config.sourcemaps = false;
-Elixir.config.production = true;
+elixir.config.assetsPath = './resources/';
+elixir.config.publicPath = './public/';
+elixir.config.sourcemaps = false;
+elixir.config.production = true;
 
-require('./resources/js/elixir/artisan');
+gulp.task('vendor:publish', function () {
+    return gulp.src('').pipe(shell('php ../../../artisan vendor:publish --tag=public --force'));
+});
 
-Elixir(function (mix) {
+elixir(function (mix) {
     mix
-        .copy('resources/img', 'public/img')
+        .copy('./resources/img', './public/img')
         .less('app.less')
         .browserify('app.js')
         .version([
-            'public/css/app.css',
-            'public/js/app.js'
+            './public/css/app.css',
+            './public/js/app.js'
         ])
-        .artisan(
-            'vendor:publish --tag=public --force',
-            'public/**/*',
-            [
-                'version'
-            ]
-        )
+        .task('vendor:publish', './public/**/*')
     ;
 });

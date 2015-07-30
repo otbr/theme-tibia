@@ -37,7 +37,7 @@
     <span class="corners bottom"></span>
 </div>
 
-<div class="box">
+<div class="box news">
     <span class="corners top"></span>
 
     <header class="header">
@@ -46,22 +46,34 @@
 
     <div class="inner-box-border">
         <div class="inner-box">
-            
-            <div class="news-block">
-                <div class="headline">
-                    <div class="icon"></div>
-                    <div class="date">May 24 2015 -</div>
-                    <div class="title">At the Bottom of the Sea</div>
-                </div>
+
+            <article class="article">
+                <header class="header">
+                    <span class="icon cogwheel"></span>
+                    <time datetime="2015-07-30 12:00:00">July 30 2015</time>
+
+                    <h2>This is a demo-site of pandaac</h2>
+                </header>
+
                 <div class="body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    <p class="first-letter">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque lacus lacus, scelerisque vitae nisi sed, gravida porttitor sem. Aenean diam arcu, egestas ut elit in, consectetur vulputate diam. Vestibulum luctus vestibulum elementum. Fusce eu efficitur ligula.
+                    </p>
+                    <p>
+                        Nam diam libero, convallis ac faucibus vel, placerat id ipsum. Ut semper, urna vitae vestibulum tristique, tellus purus tincidunt erat, in consectetur enim augue a odio. Etiam vel elementum ipsum. Sed nisl ipsum, ultrices at tristique in, tincidunt rutrum purus. Praesent facilisis ipsum ex, sit amet porttitor nunc molestie et. Vivamus non metus tempor, vehicula lacus eget, venenatis risus. Duis commodo non mi nec porttitor.
+                    </p>
+                    <p>
+                        Cras sit amet euismod ligula. Maecenas rhoncus sapien et quam cursus, vel efficitur ex vehicula. Sed ac sem quis sapien laoreet aliquet. Integer molestie iaculis porttitor. Phasellus rutrum tempor metus hendrerit malesuada. Donec ut mauris laoreet, sollicitudin orci eget, vulputate orci.
+                    </p>
+                    <p>
+                        Thank you,<br>
+                        Chris.
+                    </p>
+                    <p class="text-right">
+                        <a href="#">&raquo; Comment on this news</a>
+                    </p>
                 </div>
-            </div>
+            </article>
 
         </div>
     </div>
