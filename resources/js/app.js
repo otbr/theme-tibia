@@ -6,6 +6,8 @@
     Vue.use(require('vue-resource'));
     Vue.http.headers.common['X-CSRF-TOKEN'] = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+    Vue.config.prefix = 'data-v-';
+
     new Vue({
         el: 'aside.column',
 

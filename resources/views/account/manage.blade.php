@@ -70,19 +70,19 @@
                             <tr>
                                 <th width="24%">{!! trans('theme::account.manage.account') !!}</th>
                                 <td valign="middle">
-                                    <button class="showhide" v-on="click: toggle('account')" v-class="active: isToggled('account')"></button>
+                                    <button class="showhide" data-v-on="click: toggle('account')" data-v-class="active: isToggled('account')"></button>
 
-                                    <span v-show="isToggled('account')">{{ $account->name() }}</span>
-                                    <span v-show="! isToggled('account')">{{ str_repeat('*', strlen($account->name())) }}</span>
+                                    <span data-v-show="isToggled('account')">{{ $account->name() }}</span>
+                                    <span data-v-show="! isToggled('account')">{{ str_repeat('*', strlen($account->name())) }}</span>
                                 </td>
                             </tr>
                             <tr>
                                 <th>{!! trans('theme::account.manage.email') !!}</th>
                                 <td valign="middle">
-                                    <button class="showhide" v-on="click: toggle('email')" v-class="active: isToggled('email')"></button>
+                                    <button class="showhide" data-v-on="click: toggle('email')" data-v-class="active: isToggled('email')"></button>
 
-                                    <span v-show="isToggled('email')">{{ $account->email() }}</span>
-                                    <span v-show="! isToggled('email')">{{ str_repeat('*', strlen($account->email())) }}</span>
+                                    <span data-v-show="isToggled('email')">{{ $account->email() }}</span>
+                                    <span data-v-show="! isToggled('email')">{{ str_repeat('*', strlen($account->email())) }}</span>
                                 </td>
                             </tr>
                             <tr>

@@ -34,14 +34,14 @@
                             <div class="inner-box">
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <th width="20%"><strong v-class="error: (typeof errors.account !== 'boolean' || (errors.account !== false && {{ $errors->has('name') ? 'true' : 'false' }}))">{!! trans('theme::account.create.account') !!}</strong></th>
+                                        <th width="20%"><strong data-v-class="error: (typeof errors.account !== 'boolean' || (errors.account !== false && {{ $errors->has('name') ? 'true' : 'false' }}))">{!! trans('theme::account.create.account') !!}</strong></th>
                                         <td>
-                                            <input type="text" name="name" size="35" maxlength="30" value="{{ old('name') }}" v-model="account" v-on="change: validateAccount"> &nbsp;
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.account">
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.account">
+                                            <input type="text" name="name" size="35" maxlength="30" value="{{ old('name') }}" data-v-model="account" data-v-on="change: validateAccount"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" data-v-show="errors.account">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" data-v-show="! errors.account">
                                         </td>
                                     </tr>
-                                    <tr v-show="typeof errors.account !== 'boolean'">
+                                    <tr data-v-show="typeof errors.account !== 'boolean'">
                                         <th></th>
                                         <td><small class="error">@{{ errors.account }}</small></td>
                                     </tr>
@@ -49,14 +49,14 @@
                                         <td colspan="2" height="4"></td>
                                     </tr>
                                     <tr>
-                                        <th><strong v-class="error: (typeof errors.email !== 'boolean' || (errors.email !== false && {{ $errors->has('email') ? 'true' : 'false' }}))">{!! trans('theme::account.create.email') !!}</strong></th>
+                                        <th><strong data-v-class="error: (typeof errors.email !== 'boolean' || (errors.email !== false && {{ $errors->has('email') ? 'true' : 'false' }}))">{!! trans('theme::account.create.email') !!}</strong></th>
                                         <td>
-                                            <input type="email" name="email" size="35" maxlength="50" value="{{ old('email') }}" v-model="email" v-on="change: validateEmail"> &nbsp;
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.email">
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.email">
+                                            <input type="email" name="email" size="35" maxlength="50" value="{{ old('email') }}" data-v-model="email" data-v-on="change: validateEmail"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" data-v-show="errors.email">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" data-v-show="! errors.email">
                                         </td>
                                     </tr>
-                                    <tr v-show="typeof errors.email !== 'boolean'">
+                                    <tr data-v-show="typeof errors.email !== 'boolean'">
                                         <th></th>
                                         <td><small class="error">@{{ errors.email }}</small></td>
                                     </tr>
@@ -64,25 +64,25 @@
                                         <td colspan="2" height="4"></td>
                                     </tr>
                                     <tr>
-                                        <th><strong v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">{!! trans('theme::account.create.password') !!}</strong></th>
+                                        <th><strong data-v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">{!! trans('theme::account.create.password') !!}</strong></th>
                                         <td>
-                                            <input type="password" name="password" size="35" maxlength="29" v-model="password" v-on="change: validatePassword"> &nbsp;
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.password">
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.password">
+                                            <input type="password" name="password" size="35" maxlength="29" data-v-model="password" data-v-on="change: validatePassword"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" data-v-show="errors.password">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" data-v-show="! errors.password">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" height="4"></td>
                                     </tr>
                                     <tr>
-                                        <th><strong v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">{!! trans('theme::account.create.confirmation') !!}</strong></th>
+                                        <th><strong data-v-class="error: (typeof errors.password !== 'boolean' || (errors.password !== false && {{ $errors->has('password') ? 'true' : 'false' }}))">{!! trans('theme::account.create.confirmation') !!}</strong></th>
                                         <td>
-                                            <input type="password" name="password_confirmation" size="35" maxlength="29" v-model="confirmation" v-on="change: validatePassword"> &nbsp;
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.password">
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.password">
+                                            <input type="password" name="password_confirmation" size="35" maxlength="29" data-v-model="confirmation" data-v-on="change: validatePassword"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" data-v-show="errors.password">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" data-v-show="! errors.password">
                                         </td>
                                     </tr>
-                                    <tr v-show="typeof errors.password !== 'boolean'">
+                                    <tr data-v-show="typeof errors.password !== 'boolean'">
                                         <th></th>
                                         <td><small class="error">@{{ errors.password }}</small></td>
                                     </tr>
@@ -97,14 +97,14 @@
                             <div class="inner-box">
                                 <table cellspacing="0" cellpadding="0" border="0" width="100%">
                                     <tr>
-                                        <th width="20%"><strong v-class="error: (typeof errors.name !== 'boolean' || (errors.name !== false && {{ $errors->has('player') ? 'true' : 'false' }}))">{!! trans('theme::account.create.player') !!}</strong></th>
+                                        <th width="20%"><strong data-v-class="error: (typeof errors.name !== 'boolean' || (errors.name !== false && {{ $errors->has('player') ? 'true' : 'false' }}))">{!! trans('theme::account.create.player') !!}</strong></th>
                                         <td>
-                                            <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="name" v-on="change: validateName"> &nbsp;
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" v-show="errors.name">
-                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" v-show="! errors.name">
+                                            <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" data-v-model="name" data-v-on="change: validateName"> &nbsp;
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/nok.gif') }}" data-v-show="errors.name">
+                                            <img class="valign" src="{{ asset('/pandaac/theme-tibia/img/ok.gif') }}" data-v-show="! errors.name">
                                         </td>
                                     </tr>
-                                    <tr v-show="typeof errors.name !== 'boolean'">
+                                    <tr data-v-show="typeof errors.name !== 'boolean'">
                                         <th></th>
                                         <td><small class="error">@{{ errors.name }}</small></td>
                                     </tr>
@@ -113,7 +113,7 @@
                                     </tr>
                                     <tr>
                                         <th></th>
-                                        <td><small>[<a href="#" id="suggest-name" v-on="click: suggestName">{!! trans('theme::account.create.suggestname') !!}</a>]</small></td>
+                                        <td><small>[<a href="#" id="suggest-name" data-v-on="click: suggestName">{!! trans('theme::account.create.suggestname') !!}</a>]</small></td>
                                     </tr>
                                     <tr>
                                         <td colspan="2" height="4"></td>
@@ -187,7 +187,7 @@
                                                     </p>
                                                 @endforeach
                                                 
-                                                <p><small>[<a href="#" id="suggest-world" v-on="click: suggestWorld">{!! trans('theme::account.create.suggestworld') !!}</a>]</small></p>
+                                                <p><small>[<a href="#" id="suggest-world" data-v-on="click: suggestWorld">{!! trans('theme::account.create.suggestworld') !!}</a>]</small></p>
                                             </td>
                                         </tr>
                                     </table>

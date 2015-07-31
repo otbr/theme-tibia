@@ -45,8 +45,8 @@
                                 </tr>
                                 <tr>
                                     <td width="50%">
-                                        <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" v-model="name"><br>
-                                        <small>[<a href="#" id="suggest-name" v-on="click: suggestName">{!! trans('theme::account.character.create.suggestname') !!}</a>]</small>
+                                        <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" data-v-model="name"><br>
+                                        <small>[<a href="#" id="suggest-name" data-v-on="click: suggestName">{!! trans('theme::account.character.create.suggestname') !!}</a>]</small>
                                     </td>
                                     @if (count($genders = genders()) > 1)
                                         <td>
@@ -108,7 +108,7 @@
                                                     </p>
                                                 @endforeach
                                                 
-                                                <p><small>[<a href="#" id="suggest-world" v-on="click: suggestWorld">{!! trans('theme::account.character.create.suggestworld') !!}</a>]</small></p>
+                                                <p><small>[<a href="#" id="suggest-world" data-v-on="click: suggestWorld">{!! trans('theme::account.character.create.suggestworld') !!}</a>]</small></p>
                                             </td>
                                         </tr>
                                     </table>

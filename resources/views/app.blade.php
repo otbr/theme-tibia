@@ -19,7 +19,7 @@
     <![endif]-->
 </head>
 <body class="@yield('body')">
-    <a name="top"></a>
+    <a id="top"></a>
 
     <section id="skeleton">
         <aside id="left-column" class="column">
@@ -45,11 +45,11 @@
 
             <div id="navigation" class="box">
                 <ul class="inner-box">
-                    <li class="navigation-item open" v-class="open: isNavToggled('news')">
-                        <div class="navigation-button" v-on="click: toggleNav('news')">
+                    <li class="navigation-item open" data-v-class="open: isNavToggled('news')">
+                        <div class="navigation-button" data-v-on="click: toggleNav('news')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-news.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-news.gif') }}">
+                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-news.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-news.gif') }}" alt="News">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -59,11 +59,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item open" v-class="open: isNavToggled('about')">
-                        <div class="navigation-button" v-on="click: toggleNav('about')">
+                    <li class="navigation-item open" data-v-class="open: isNavToggled('about')">
+                        <div class="navigation-button" data-v-on="click: toggleNav('about')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-abouttibia.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-abouttibia.gif') }}">
+                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-abouttibia.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-abouttibia.gif') }}" alt="About {{ server()->name() }}">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -75,11 +75,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item open" v-class="open: isNavToggled('library')">
-                        <div class="navigation-button" v-on="click: toggleNav('library')">
+                    <li class="navigation-item open" data-v-class="open: isNavToggled('library')">
+                        <div class="navigation-button" data-v-on="click: toggleNav('library')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-library.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-library.gif') }}">
+                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-library.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-library.gif') }}" alt="Library">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -94,11 +94,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item open" v-class="open: isNavToggled('community')">
-                        <div class="navigation-button" v-on="click: toggleNav('community')">
+                    <li class="navigation-item open" data-v-class="open: isNavToggled('community')">
+                        <div class="navigation-button" data-v-on="click: toggleNav('community')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-community.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-community.gif') }}">
+                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-community.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-community.gif') }}" alt="Community">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -113,11 +113,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item open" v-class="open: isNavToggled('forum')">
-                        <div class="navigation-button" v-on="click: toggleNav('forum')">
+                    <li class="navigation-item open" data-v-class="open: isNavToggled('forum')">
+                        <div class="navigation-button" data-v-on="click: toggleNav('forum')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-forum.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-forum.gif') }}">
+                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-forum.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-forum.gif') }}" alt="Forum">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -131,11 +131,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item open" v-class="open: isNavToggled('account')">
-                        <div class="navigation-button" v-on="click: toggleNav('account')">
+                    <li class="navigation-item open" data-v-class="open: isNavToggled('account')">
+                        <div class="navigation-button" data-v-on="click: toggleNav('account')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-account.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-account.gif') }}">
+                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-account.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-account.gif') }}" alt="Account">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -151,11 +151,11 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="navigation-item open" v-class="open: isNavToggled('support')">
-                        <div class="navigation-button" v-on="click: toggleNav('support')">
+                    <li class="navigation-item open" data-v-class="open: isNavToggled('support')">
+                        <div class="navigation-button" data-v-on="click: toggleNav('support')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-support.gif') }}">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-support.gif') }}">
+                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-support.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-support.gif') }}" alt="Support">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
