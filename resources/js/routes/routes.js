@@ -5,3 +5,5 @@ require('./account/manage');
 require('./account/register');
 
 require('./library/maps');
+
+require('./news/latest');

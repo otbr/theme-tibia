@@ -18,6 +18,14 @@
             isToggled       : require('./methods/is-toggled'),
             toggleNav       : require('./methods/toggle-nav'),
             isNavToggled    : require('./methods/is-nav-toggled')
+        },
+
+        created: function () {
+            var menuItems = document.querySelectorAll('.navigation-item.open');
+
+            [].forEach.call(menuItems, function (menuItem) {
+                menuItem.classList.toggle('open');
+            });
         }
     });
 
