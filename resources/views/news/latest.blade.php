@@ -122,7 +122,7 @@
                     </td>
                     <td class="valign top text-right" rowspan="2">
                         <a href="#" class="featured-image">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/featuredthumb_3238.jpg') }}">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/featuredthumb_3238.jpg') }}" alt="Featured Image">
                         </a>
                     </td>
                 </tr>

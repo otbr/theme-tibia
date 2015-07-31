@@ -21,7 +21,7 @@
 <body class="@yield('body')">
     <a id="top"></a>
 
-    <section id="skeleton">
+    <div id="skeleton">
         <aside id="left-column" class="column">
             <a id="logo-artwork" href="{{ url('/') }}"></a>
 
@@ -199,15 +199,15 @@
 
             <div class="box screenshots">
                 <div class="inner-box">
-                    <a href="{{ url('/about/screenshots') }}"><img src="{{ asset('/pandaac/theme-tibia/img/screenshot.png') }}"></a>
+                    <a href="{{ url('/about/screenshots') }}"><img src="{{ asset('/pandaac/theme-tibia/img/screenshot.png') }}" alt="Screenshot"></a>
                 </div>
             </div>
         </aside>
 
-        <section id="middle-column" class="column">
+        <main id="middle-column" class="column">
             @yield('content')
-        </section>
-    </section>
+        </main>
+    </div>
 
     <script>var baseurl = '{{ url("/") }}';</script>
     <script src="{{ theme_elixir('/pandaac/theme-tibia/js/app.js') }}"></script>
