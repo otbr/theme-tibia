@@ -7,20 +7,24 @@ elixir.config.publicPath = './public/';
 elixir.config.sourcemaps = false;
 elixir.config.production = true;
 
-gulp.task('vendor:publish', function () {
-    return gulp.src('').pipe(shell('php ../../../artisan vendor:publish --tag=public --force'));
+elixir.extend('artisan', function (command, watcher) {
+    new elixir.Task('artisan', function () {
+        return gulp.src('').pipe(shell('php ../../../artisan ' + command));
+    })
+    .watch(watcher);
 });
 
 elixir(function (mix) {
     mix
-        .copy('./resources/img', './public/img')
-        .copy('./resources/fonts', './public/fonts')
         .less('app.less')
         .browserify('app.js')
         .version([
-            './public/css/app.css',
-            './public/js/app.js'
+            elixir.config.publicPath + 'css/app.css',
+            elixir.config.publicPath + 'js/app.js'
         ])
-        .task('vendor:publish', './public/**/*')
+        .artisan(
+            'vendor:publish --tag=public --force', 
+            elixir.config.publicPath + 'build/rev-manifest.json'
+        )
     ;
 });
