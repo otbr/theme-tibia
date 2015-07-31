@@ -119,6 +119,8 @@
                 if (this.account != "") this.validateAccount();
                 if (this.email != "") this.validateEmail();
                 if (this.name != "") this.validateName();
+
+                document.querySelector('input[name="name"]').focus();
             }
         });
 
