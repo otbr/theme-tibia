@@ -13,79 +13,98 @@ table {
     }
 }
 
-.table-striped {
+table.normalise {
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    & > tr > td,
+    & > tr > th {
+        border: none !important;
+    }
+}
+
+table.table-striped {
     border-collapse: collapse;
     width: 100%;
     margin: 0;
 
     &.table-hover {
-        tr:hover {
-            td {
+        & > tr:hover {
+            & > td {
                 background-color: @table-light-hover;
             }
 
-            &:nth-child(odd) td {
+            &:nth-child(odd) > td {
                 background-color: @table-medium-hover;
             }
         }
     }
 
-    &.inverse tr {
+    &.inverse > tr,
+    &.inverse > thead > tr,
+    &.inverse > tbody > tr,
+    &.inverse > tfoot > tr {
         &:nth-child(odd) {
-            td, th {
+            & > td, & > th {
                 background-color: @table-light-bgcolor;
             }
         }
 
-        td, th {
+        & > td, & > th {
             border: 1px solid @table-medium-bgcolor !important;
             background-color: @table-light-bgcolor;
 
-            span {
+            & > span {
                 display: block;
             }
         }
     }
 
-    &.inverse.dark tr {
+    &.inverse.dark > tr,
+    &.inverse.dark > thead > tr,
+    &.inverse.dark > tbody > tr,
+    &.inverse.dark > tfoot > tr {
         &:nth-child(odd) {
-            td, th {
+            & > td, & > th {
                 background-color: @table-medium-bgcolor;
             }
         }
 
-        td, th {
+        & > td, & > th {
             border: 1px solid @table-light-bgcolor !important;
             background-color: @table-medium-bgcolor;
 
-            span {
+            & > span {
                 display: block;
             }
         }
     }
 
-    tr {
+    & > tr,
+    & > thead > tr,
+    & > tbody > tr,
+    & > tfoot > tr {
         &:nth-child(odd) {
-            td, th {
+            & > td, & > th {
                 background-color: @table-medium-bgcolor;
             }
         }
 
         &.active {
-            td {
+            & > td {
                 font-weight: bold;
             
                 &[align="center"][valign="middle"] {
                     font-weight: normal;
                 }
 
-                span {
+                & > span {
                     font-size: 17.3px;
                 }
             }
         }
 
-        td, th {
+        & > td, & > th {
             border: 1px solid @table-light-border !important;
             background-color: @table-light-bgcolor;
 
@@ -93,7 +112,7 @@ table {
                 background-color: @table-medium-bgcolor;
             }
 
-            span {
+            & > span {
                 display: block;
             }
         }
@@ -241,7 +260,6 @@ table {
                 border: 1px solid @table-light-border;
                 box-sizing: border-box;
                 padding: 2px 4px;
-                //overflow: hidden;
                 width: 100%;
 
                 .clearfix;
