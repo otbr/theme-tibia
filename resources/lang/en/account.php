@@ -220,10 +220,14 @@ return [
     |--------------------------------------------------------------------------
     */
    
-    'email.update.title'   => 'Account Management',
-    'email.update.heading' => 'New Email Address Requested',
-    'email.update.content' => 'You have requested to change your email address to <strong>:email</strong>. The actual change will take place after a waiting period of :days days, during which you can cancel the request at any time.',
-    'email.update.back'    => 'Back',
+    'email.update.title'        => 'Account Management',
+    'email.update.heading'      => 'New Email Address Requested',
+    'email.update.changed'      => 'Email Address Changed',
+    'email.update.confirmed'    => 'You have requested to change your email address to <strong>:email</strong>. The actual change will take place after a waiting period of :days days, during which you can cancel the request at any time.',
+    'email.update.unconfirmed'  => 'Your account email address was changed. Your new email address is:
+                                    <p class="text-center" style="margin: 15px 0;"><strong>:email</strong></p>
+                                    An email with the confirmation link for your account was sent to the new email address.',
+    'email.update.back'         => 'Back',
 
     /*
     |--------------------------------------------------------------------------
@@ -260,7 +264,7 @@ return [
    
     'overview.title'                   => 'Account Management',
     'overview.welcome'                 => 'Welcome to your account!',
-    'overview.welcomename'             => 'Weclome to your account, :name!',
+    'overview.welcomename'             => 'Welcome to your account, :name!',
     'overview.heading'                 => 'Account Status',
     'overview.manageaccount'           => 'Manage Account',
     'overview.getpremium'              => 'Get Premium',
@@ -325,19 +329,19 @@ return [
     'manage.getpremiumtime'             => 'Get Premium Time',
     'manage.premiumtime'                => 'Premium Time',
     'manage.premiumtimedesc'            => 'Buy low-priced Premium Time to add it to your own account.',
-    'manage.getpremiumscroll'           => 'Get Premium Scroll',
-    'manage.premiumscrolls'             => 'Premium Scrolls',
-    'manage.premiumscrollsalert'        => '<h3>Premium Scrolls</h3>
-                                            <p>Each Premium Scroll represents a 30 days period of Premium Time.</p>
-                                            <ul>
-                                                <li>You can use this Premium Scrolls to extend the Premium Time of your account.</li>
-                                                <li>You can transfer Premium Scrolls to one of your characters into the game. Premium Scrolls can be traded freely with other characters through the market or the safe trade option.</li>
-                                            </ul>',
-    'manage.premiumscrollsdesc'         => 'Buy Premium Scrolls to transfer Premium Time to the game or to use it for your own account.',
+    'manage.getpoints'                  => 'Get Premium Points',
+    'manage.points'                     => 'Premium Points',
+    'manage.pointsalert'                => '<h3>Premium Points</h3>
+                                            <p>Premium Points are :server\'s currency to purchase exclusive products in the Store.</p>
+                                            <p>Not only can you buy Premium Time in the Store, but also treat your character to one or more of the following products: Character Name Change, Character Sex Change, (Express) Character World Transfer, Outfits, Addons and Mounts.</p>
+                                            <p>The Store can be entered ingame by clicking on the little coin icon in your character\'s inventory.</p>',
+    'manage.pointsdesc'                 => 'Get Premium Points to shop exclusive products in the Store, including Mounts, Outfits, a Character Name Change or even Premium Time.',
     'manage.getextraservice'            => 'Get Extra Services',
     'manage.extraservices'              => 'Extra Services',
-    'manage.extraservicesalert'         => '<h3>Extra Services</h3><p>It is strongly recommend that you set up an extra service before you purchase it.</p><p>This way you can ensure that your desired name is available and reserved for you or that you have selected a game world to which you are allowed to move.</p>',
-    'manage.extraservicesdesc'          => 'Buy an extra service to transfer a character to another game world, to change your character\'s name or sex, to change your account name, or to get a new recovery key.',
+    'manage.extraservicesalert'         => '<h3>Extra Services</h3>
+                                            <p>It is strongly recommend that you set up an extra service before you purchase it.</p>
+                                            <p>This way you can ensure that your desired name is available and reserved for you or that you have selected a game world to which you are allowed to move.</p>',
+    'manage.extraservicesdesc'          => 'Get here an Account Name Change or order a Recovery Key if you need a new one.',
     'manage.getmount'                   => 'Get Mount',
     'manage.mounts'                     => 'Mounts',
     'manage.mountsdesc'                 => 'Buy your characters one or more of the fabulous mounts offered here.',
@@ -346,7 +350,7 @@ return [
     'manage.outfitsdesc'                => 'Buy your characters one or more of the fancy outfits offered here.',
     'manage.usegamecode'                => 'Use Game Code',
     'manage.gamecodes'                  => 'Game Codes',
-    'manage.gamecodesdesc'              => 'Enter your game code for Premium Time, Premium Scrolls or an Extra Service.',
+    'manage.gamecodesdesc'              => 'Enter your game code for Premium Time, Premium Points or an Extra Service',
     'manage.date'                       => 'Date',
     'manage.voucher'                    => 'Voucher',
     'manage.view'                       => 'View',
@@ -359,6 +363,8 @@ return [
     'manage.extrahistorydesc'           => 'Contains all historical data about your Extra Services.',
     'manage.voucherhistory'             => 'Vouchers History',
     'manage.voucherhistorydesc'         => 'Contains all historical data about your account vouchers.',
+    'manage.coinhistory'                => 'Premium Points History',
+    'manage.coinhistorydesc'            => 'Contains all historical data about your Premium Points and products buyable with Premium Points.',
 
     /*
     |--------------------------------------------------------------------------
@@ -481,5 +487,26 @@ return [
                                         <li>If you lose your recovery key, you can request a new one for a small fee at the Lost Account Interface.</li>
                                     </ul>',
     'register.key.back'         => 'Back',
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/registration/edit.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'register.edit.title'           => 'Account Management',
+    'register.edit.preamble'        => '<p>Use this interface to edit incorrect registration data, such as your postal address after moving elsewhere. Note that the gender and date of birth cannot be altered. Also, the changes will only be finalised after a waiting period of 30 days has passed.</p>',
+    'register.edit.heading'         => 'Change Registration Data',
+    'register.edit.firstname'       => 'First Name:',
+    'register.edit.surname'         => 'Last Name:',
+    'register.edit.country'         => 'Country:',
+    'register.edit.birthday'        => 'Date of Birth:',
+    'register.edit.gender'          => 'Gender:',
+    'register.edit.female'          => 'Female',
+    'register.edit.male'            => 'Male',
+    'register.edit.confirmation'    => 'Please enter your password to confirm the request to change your registration data.',
+    'register.edit.password'        => 'Password:',
+    'register.edit.continue'        => 'Continue',
+    'register.edit.back'            => 'Back',
 
 ];

@@ -56,12 +56,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.password.submit') }}">
+                                <span>{{ trans('theme::account.password.submit') }}</span>
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.password.back') }}">
+                                <span>{{ trans('theme::account.password.back') }}</span>
                             </a>
                         </td>
                     </tr>

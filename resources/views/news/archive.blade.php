@@ -14,7 +14,7 @@
 
     <div class="inner-box-border">
         <div class="inner-box">
-        
+
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
@@ -31,9 +31,9 @@
                         <div class="box">
                             <table class="table-striped inverse dark">
                                 <tr>
-                                    <th class="text-center" style="width: 33.3%;">Time Period</th>
-                                    <th class="text-center" style="width: 33.3%;">Type</th>
-                                    <th class="text-center" style="width: 33.3%;">Category</th>
+                                    <th class="text-center">Time Period</th>
+                                    <th class="text-center">Type</th>
+                                    <th class="text-center">Category</th>
                                 </tr>
                                 <tr>
                                     <td class="valign middle">
@@ -167,7 +167,7 @@
                 <br>
 
                 <button class="blue-button">
-                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.create.submit') }}">
+                    <span>{{ trans('theme::account.create.submit') }}</span>
                 </button>
             </form>
 

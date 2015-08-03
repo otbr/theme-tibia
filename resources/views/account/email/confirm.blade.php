@@ -15,8 +15,6 @@
     <div class="inner-box-border">
         <div class="inner-box">
 
-            @include('theme::modules.errors')
-
             <div class="table">
                 <header class="header">
                     <div class="borders">
@@ -37,12 +35,12 @@
                 <tr>
                     <td align="center">
                         <a href="{{ url('/account/download') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_download.gif') }}" alt="{{ trans('theme::account.email.confirm.download') }}">
+                            <span>{{ trans('theme::account.email.confirm.download') }}</span>
                         </a>
                     </td>
                     <td align="center">
                         <a href="{{ url('/account/login') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_login.gif') }}" alt="{{ trans('theme::account.email.confirm.login') }}">
+                            <span>{{ trans('theme::account.email.confirm.login') }}</span>
                         </a>
                     </td>
                 </tr>

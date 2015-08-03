@@ -216,7 +216,7 @@
                 <br>
 
                 <button class="blue-button">
-                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.create.submit') }}">
+                    <span>{{ trans('theme::account.create.submit') }}</span>
                 </button>
             </form>
 

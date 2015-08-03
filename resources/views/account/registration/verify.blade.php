@@ -90,12 +90,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.register.verify.submit') }}">
+                                <span>{{ trans('theme::account.register.verify.submit') }}</span>
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/register') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.register.verify.back') }}">
+                                <span>{{ trans('theme::account.register.verify.back') }}</span>
                             </a>
                         </td>
                     </tr>

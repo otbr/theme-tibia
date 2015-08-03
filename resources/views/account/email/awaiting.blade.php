@@ -15,8 +15,6 @@
     <div class="inner-box-border">
         <div class="inner-box">
 
-            @include('theme::modules.errors')
-
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="DELETE">
@@ -44,12 +42,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_cancel.gif') }}" alt="{{ trans('theme::account.email.awaiting.cancel') }}">
+                                <span>{{ trans('theme::account.email.awaiting.cancel') }}</span>
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.awaiting.back') }}">
+                                <span>{{ trans('theme::account.email.awaiting.back') }}</span>
                             </a>
                         </td>
                     </tr>

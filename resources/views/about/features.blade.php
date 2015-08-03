@@ -135,7 +135,7 @@
                     <tr>
                         <td align="center">
                             <a href="{{ url('/account/create') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_createaccount.gif') }}" alt="Create Account">
+                                <span>Create Account</span>
                             </a>
                         </td>
                     </tr>

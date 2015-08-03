@@ -15,8 +15,6 @@
     <div class="inner-box-border">
         <div class="inner-box">
 
-            @include('theme::modules.errors')
-
             <div class="table">
                 <header class="header">
                     <div class="borders">
@@ -37,7 +35,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.cancelled.back') }}">
+                            <span>{{ trans('theme::account.email.cancelled.back') }}</span>
                         </a>
                     </td>
                 </tr>

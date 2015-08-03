@@ -52,12 +52,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.character.delete.submit') }}">
+                                <span>{{ trans('theme::account.character.delete.submit') }}</span>
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.delete.back') }}">
+                                <span>{{ trans('theme::account.character.delete.back') }}</span>
                             </a>
                         </td>
                     </tr>

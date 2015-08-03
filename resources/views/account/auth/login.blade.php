@@ -34,10 +34,10 @@
 
                                 <div class="buttons-right">
                                     <button class="blue-button" style="margin-bottom: 2px;">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_login.gif') }}" alt="{{ trans('theme::account.login.login') }}">
+                                        <span>{{ trans('theme::account.login.login') }}</span>
                                     </button>
                                     <a href="{{ url('/account/recover') }}" class="blue-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_accountlost.gif') }}" alt="{{ trans('theme::account.login.lost') }}">
+                                        <span>{{ trans('theme::account.login.lost') }}</span>
                                     </a>
                                 </div>
 

@@ -43,7 +43,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{ url('/account') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.register.key.back') }}">
+                            <span>{{ trans('theme::account.register.key.back') }}</span>
                         </a>
                     </td>
                 </tr>

@@ -140,7 +140,7 @@
                 <tr>
                     <td align="center">
                         <a href="#" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="Submit">
+                            <span>Submit</span>
                         </a>
                     </td>
                 </tr>

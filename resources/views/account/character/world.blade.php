@@ -74,12 +74,12 @@
                     <tr>
                         <td align="center">
                             <button class="green-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_continue.gif') }}" alt="{{ trans('theme::account.character.world.continue') }}">
+                                <span>{{ trans('theme::account.character.world.continue') }}</span>
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.world.back') }}">
+                                <span>{{ trans('theme::account.character.world.back') }}</span>
                             </a>
                         </td>
                     </tr>

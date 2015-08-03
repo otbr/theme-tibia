@@ -186,7 +186,7 @@
             <div class="box premium">
                 <div class="inner-box">
                     <a href="#" class="green-button">
-                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="Get Premium">
+                        <span>Get Premium</span>
                     </a>
                 </div>
             </div>

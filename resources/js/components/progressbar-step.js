@@ -16,6 +16,10 @@ module.exports = {
             var tag    = active ? 'strong' : 'span';
             var color  = active ? 'green' : 'blue';
 
+            this.class.split(' ').forEach(function (custom) {
+                $element.classList.add(custom);
+            });
+
             $element.classList.add(color);
             $element.innerHTML = '<'+tag+'>'+$element.innerHTML+'</'+tag+'>';
 

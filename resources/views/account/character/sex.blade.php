@@ -41,12 +41,12 @@
                     <tr>
                         <td align="center">
                             <button class="green-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_yes.gif') }}" alt="{{ trans('theme::account.character.sex.yes') }}">
+                                <span>{{ trans('theme::account.character.sex.yes') }}</span>
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.sex.back') }}">
+                                <span>{{ trans('theme::account.character.sex.back') }}</span>
                             </a>
                         </td>
                     </tr>

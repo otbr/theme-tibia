@@ -35,14 +35,14 @@
                                         <tr>
                                             <td valign="top">
                                                 <a href="#" class="green-button">
-                                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="{{ trans('theme::account.manage.getpremium') }}">
+                                                    <span>{{ trans('theme::account.manage.getpremium') }}</span>
                                                 </a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td valign="bottom">
                                                 <a href="{{ url('/account') }}" class="blue-button">
-                                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_overview.gif') }}" alt="{{ trans('theme::account.manage.overview') }}">
+                                                    <span>{{ trans('theme::account.manage.overview') }}</span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -104,27 +104,27 @@
                         <tr>
                             <td align="left" style="padding-left: 0;">
                                 <a href="{{ url('/account/password') }}" class="blue-button bottom">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changepassword.gif') }}" alt="{{ trans('theme::account.manage.changepassword') }}">
+                                    <span>{{ trans('theme::account.manage.changepassword') }}</span>
                                 </a>
                             </td>
                             @if ($account->isConfirmed())
                                 <td width="5%"></td>
                                 <td align="middle">
                                     <a href="{{ url('/account/email') }}" class="blue-button bottom">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeemail.gif') }}" alt="{{ trans('theme::account.manage.changeemail') }}">
+                                        <span>{{ trans('theme::account.manage.changeemail') }}</span>
                                     </a>
                                 </td>
                             @endif
                             <td width="5%"></td>
                             <td align="middle">
                                 <a href="{{ url('/account/rename') }}" class="blue-button bottom">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_renameaccount.gif') }}" alt="{{ trans('theme::account.manage.renameaccount') }}">
+                                    <span>{{ trans('theme::account.manage.renameaccount') }}</span>
                                 </a>
                             </td>
                             <td width="5%"></td>
                             <td align="right" style="padding-right: 0;">
                                 <a href="{{ url('/account/terminate') }}" class="blue-button bottom">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_terminateaccount.gif') }}" alt="{{ trans('theme::account.manage.terminateaccount') }}">
+                                    <span>{{ trans('theme::account.manage.terminateaccount') }}</span>
                                 </a>
                             </td>
                         </tr>
@@ -152,7 +152,7 @@
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="green-button">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremiumtime.gif') }}" alt="{{ trans('theme::account.manage.getpremiumtime') }}">
+                                            <span>{{ trans('theme::account.manage.getpremiumtime') }}</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -166,20 +166,22 @@
                                 <tr>
                                     <td>
                                         <div>
-                                            <strong>{!! trans('theme::account.manage.premiumscrolls') !!}</strong>
+                                            <strong>{!! trans('theme::account.manage.points') !!}</strong>
                                             <div class="alert">
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign">
                                                 <div class="message">
-                                                    {!! trans('theme::account.manage.premiumscrollsalert') !!}
+                                                    {!! trans('theme::account.manage.pointsalert', [
+                                                        'server' => server()->name(),
+                                                    ]) !!}
                                                     <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}">
                                                 </div>
                                             </div>
                                         </div>
-                                        {!! trans('theme::account.manage.premiumscrollsdesc') !!}
+                                        {!! trans('theme::account.manage.pointsdesc') !!}
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="green-button">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremiumscroll.gif') }}" alt="{{ trans('theme::account.manage.getpremiumscroll') }}">
+                                            <span>{{ trans('theme::account.manage.getpoints') }}</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -206,48 +208,11 @@
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="green-button">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getextraservice.gif') }}" alt="{{ trans('theme::account.manage.getextraservice') }}">
+                                            <span>{{ trans('theme::account.manage.getextraservice') }}</span>
                                         </a>
                                     </td>
                                 </tr>
                             </table>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                                <tr>
-                                    <td>
-                                        <strong>{!! trans('theme::account.manage.mounts') !!}</strong><br>
-                                        {!! trans('theme::account.manage.mountsdesc') !!}
-                                    </td>
-                                    <td valign="top" align="right">
-                                        <a href="{{ url('/account') }}" class="green-button" style="float: right;">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getmount.gif') }}" alt="{{ trans('theme::account.manage.getmount') }}">
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div class="box">
-                        <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
-                                <tr>
-                                    <td>
-                                        <strong>{!! trans('theme::account.manage.outfits') !!}</strong><br>
-                                        {!! trans('theme::account.manage.outfitsdesc') !!}
-                                    </td>
-                                    <td valign="top" align="right">
-                                        <a href="{{ url('/account') }}" class="green-button" style="float: right;">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getoutfit.gif') }}" alt="{{ trans('theme::account.manage.getoutfit') }}">
-                                        </a>
-                                    </td>
-                                </tr>
-                            </table>
-
                         </div>
                     </div>
 
@@ -261,7 +226,7 @@
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_usegamecode.gif') }}" alt="{{ trans('theme::account.manage.usegamecode') }}">
+                                            <span>{{ trans('theme::account.manage.usegamecode') }}</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -323,7 +288,7 @@
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_viewhistory.gif') }}" alt="{{ trans('theme::account.manage.viewhistory') }}">
+                                            <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -341,8 +306,26 @@
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_viewhistory.gif') }}" alt="{{ trans('theme::account.manage.viewhistory') }}">
-                                        </a>    
+                                            <span>{{ trans('theme::account.manage.viewhistory') }}</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="box">
+                        <div class="inner-box">
+                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <tr>
+                                    <td>
+                                        <strong>{!! trans('theme::account.manage.coinhistory') !!}</strong><br>
+                                        {!! trans('theme::account.manage.coinhistorydesc') !!}
+                                    </td>
+                                    <td valign="top" align="right">
+                                        <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
+                                            <span>{{ trans('theme::account.manage.viewhistory') }}</span>
+                                        </a>
                                     </td>
                                 </tr>
                             </table>
@@ -360,7 +343,7 @@
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_viewhistory.gif') }}" alt="{{ trans('theme::account.manage.viewhistory') }}">
+                                            <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -378,7 +361,7 @@
                                     </td>
                                     <td valign="top" align="right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_viewhistory.gif') }}" alt="{{ trans('theme::account.manage.viewhistory') }}">
+                                            <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
                                     </td>
                                 </tr>
@@ -416,7 +399,7 @@
                                                     </td>
                                                     <td valign="top" align="right">
                                                         <a href="{{ url('/account/register/edit') }}" class="blue-button">
-                                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_edit.gif') }}" alt="{{ trans('theme::account.manage.registration.edit') }}">
+                                                            <span>{{ trans('theme::account.manage.registration.edit') }}</span>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -452,7 +435,7 @@
                                         <td>{!! trans('theme::account.manage.registration.unregistered') !!}</td>
                                         <td valign="top" align="right">
                                             <a href="{{ url('/account/register') }}" class="blue-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_registeraccount.gif') }}" alt="{{ trans('theme::account.manage.registration.register') }}">
+                                                <span>{{ trans('theme::account.manage.registration.register') }}</span>
                                             </a>
                                         </td>
                                     </tr>

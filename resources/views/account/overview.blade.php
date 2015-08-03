@@ -40,21 +40,21 @@
                                     <tr>
                                         <td valign="top" style="padding-right: 0;">
                                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_manageaccount.gif') }}" alt="{{ trans('theme::account.overview.manageaccount') }}">
+                                                <span>{{ trans('theme::account.overview.manageaccount') }}</span>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td valign="middle" style="padding-right: 0;">
                                             <a href="#" class="green-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_getpremium.gif') }}" alt="{{ trans('theme::account.overview.getpremium') }}">
+                                                <span>{{ trans('theme::account.overview.getpremium') }}</span>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td valign="bottom" style="padding-right: 0;">
                                             <a href="{{ url('/account/logout') }}" class="red-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_logout.gif') }}" alt="{{ trans('theme::account.overview.logout') }}">
+                                                <span>{{ trans('theme::account.overview.logout') }}</span>
                                             </a>
                                         </td>
                                     </tr>
@@ -91,7 +91,7 @@
                                                 <tr>
                                                     <td valign="top" style="padding-right: 0;">
                                                         <a href="{{ url('/account/email/request') }}" class="blue-button">
-                                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_rerequestemail.gif') }}" alt="{{ trans('theme::account.overview.confirm.request') }}">
+                                                            <span>{{ trans('theme::account.overview.confirm.request') }}</span>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -99,7 +99,7 @@
                                             <tr>
                                                 <td valign="bottom" style="padding-right: 0;">
                                                     <a href="{{ url('/account/email') }}" class="blue-button">
-                                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeemail.gif') }}" alt="{{ trans('theme::account.overview.confirm.edit') }}">
+                                                        <span>{{ trans('theme::account.overview.confirm.edit') }}</span>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -138,7 +138,7 @@
                                             <tr>
                                                 <td valign="middle" style="padding-right: 0;">
                                                     <a href="{{ url('/account/register') }}" class="blue-button">
-                                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_registeraccount.gif') }}" alt="{{ trans('theme::account.overview.unregistered.register') }}">
+                                                        <span>{{ trans('theme::account.overview.unregistered.register') }}</span>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -169,7 +169,7 @@
                                 <td>
                                     <div class="buttons-right">
                                         <a href="{{ url('/account/email') }}" class="blue-button">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_edit.gif') }}" alt="{{ trans('theme::account.overview.email.edit') }}">
+                                            <span>{{ trans('theme::account.overview.email.edit') }}</span>
                                         </a>
                                     </div>
 
@@ -242,7 +242,7 @@
                         <tr>
                             <td valign="bottom" align="right" style="padding-right: 0;">
                                 <a href="{{ url('/account/character') }}" class="blue-button">
-                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_createcharacter.gif') }}" alt="{{ trans('theme::account.overview.characters.create') }}">
+                                    <span>{{ trans('theme::account.overview.characters.create') }}</span>
                                 </a>
                             </td>
                         </tr>

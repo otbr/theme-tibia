@@ -17,7 +17,9 @@
 
             @include('theme::modules.errors')
 
-            {!! trans('theme::account.email.form.preamble', ['days' => config('pandaac.mail.timers.email-change')]) !!}
+            @if ($account->isConfirmed())
+                {!! trans('theme::account.email.form.preamble', ['days' => config('pandaac.mail.timers.email-change')]) !!}
+            @endif
 
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -36,7 +38,7 @@
                         <table cellspacing="0" cellpadding="0" border="0">
                             <tr>
                                 <th>{!! trans('theme::account.email.form.email') !!}</th>
-                                <td><input type="email" name="email" size="30" maxlength="50"></td>
+                                <td><input type="email" name="email" size="30" maxlength="50" value="{{ old('email') }}"></td>
                             </tr>
                             <tr>
                                 <th>{!! trans('theme::account.email.form.password') !!}</th>
@@ -52,12 +54,12 @@
                     <tr>
                         <td align="center">
                             <button class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.email.form.submit') }}">
+                                <span>{{ trans('theme::account.email.form.submit') }}</span>
                             </button>
                         </td>
                         <td align="center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.form.back') }}">
+                                <span>{{ trans('theme::account.email.form.back') }}</span>
                             </a>
                         </td>
                     </tr>

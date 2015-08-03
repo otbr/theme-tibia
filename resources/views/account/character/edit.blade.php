@@ -60,7 +60,7 @@
                                         <td width="80%">{{ $player->name() }}</td>
                                         <td valign="top" align="right">
                                             <a href="{{ url('/account/character', [$player->id(), 'name']) }}" class="blue-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changename.gif') }}" alt="{{ trans('theme::account.character.edit.changename') }}">
+                                                <span>{{ trans('theme::account.character.edit.changename') }}</span>
                                             </a>
                                         </td>
                                     </tr>
@@ -73,7 +73,7 @@
                                             <td>{{ $world->name() }}</td>
                                             <td valign="middle" align="right">
                                                 <a href="{{ url('/account/character', [$player->id(), 'world']) }}" class="blue-button">
-                                                    <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changeworld.gif') }}" alt="{{ trans('theme::account.character.edit.changeworld') }}">
+                                                    <span>{{ trans('theme::account.character.edit.changeworld') }}</span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -86,7 +86,7 @@
                                         <td>{{ $player->gender()->name() }}</td>
                                         <td valign="bottom" align="right">
                                             <a href="{{ url('/account/character', [$player->id(), 'sex']) }}" class="blue-button">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_changesex.gif') }}" alt="{{ trans('theme::account.character.edit.changesex') }}">
+                                                <span>{{ trans('theme::account.character.edit.changesex') }}</span>
                                             </a>
                                         </td>
                                     </tr>
@@ -137,12 +137,12 @@
                             <tr>
                                 <td width="50%" align="center">
                                     <button class="blue-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_submit.gif') }}" alt="{{ trans('theme::account.character.edit.submit') }}">
+                                        <span>{{ trans('theme::account.character.edit.submit') }}</span>
                                     </button>
                                 </td>
                                 <td width="50%" align="center">
                                     <a href="{{ url('/account') }}" class="blue-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.character.edit.back') }}">
+                                        <span>{{ trans('theme::account.character.edit.back') }}</span>
                                     </a>
                                 </td>
                             </tr>

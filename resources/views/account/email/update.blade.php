@@ -15,22 +15,30 @@
     <div class="inner-box-border">
         <div class="inner-box">
 
-            @include('theme::modules.errors')
-
             <div class="table">
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.email.update.heading') !!}
+                        @if ($account->isConfirmed())
+                            {!! trans('theme::account.email.update.heading') !!}
+                        @else
+                            {!! trans('theme::account.email.update.changed') !!}
+                        @endif
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    {!! trans('theme::account.email.update.content', [
-                        'email' => $account->properties->email(),
-                        'days'  => config('pandaac.mail.timers.email-change'),
-                    ]) !!}
+                    @if ($account->isConfirmed())
+                        {!! trans('theme::account.email.update.confirmed', [
+                            'email' => $account->properties->email(),
+                            'days'  => config('pandaac.mail.timers.email-change'),
+                        ]) !!}
+                    @else
+                        {!! trans('theme::account.email.update.unconfirmed', [
+                            'email' => $account->email(),
+                        ]) !!}
+                    @endif
                 </div>
             </div>
 
@@ -40,7 +48,7 @@
                 <tr>
                     <td align="center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/_sbutton_back.gif') }}" alt="{{ trans('theme::account.email.update.back') }}">
+                            <span>{{ trans('theme::account.email.update.back') }}</span>
                         </a>
                     </td>
                 </tr>
