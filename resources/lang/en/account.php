@@ -45,6 +45,7 @@ return [
     'login.new.two'     => '... where friendships last a lifetime.',
     'login.new.three'   => '... unites adventurers since 1997!',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/auth/logout.blade.php
@@ -54,6 +55,7 @@ return [
     'logout.title'      => 'Account Management',
     'logout.heading'    => 'Logout Successful',
     'logout.content'    => 'You have logged out of your :server account. In order to view your account you need to <a href=":url">log in</a> again.',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -73,6 +75,7 @@ return [
     'character.create.submit'       => 'Submit',
     'character.create.back'         => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/character/delete.blade.php
@@ -86,6 +89,7 @@ return [
     'character.delete.password' => 'Password:',
     'character.delete.submit'   => 'Submit',
     'character.delete.back'     => 'Back',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -110,6 +114,7 @@ return [
     'character.edit.submit'         => 'Submit',
     'character.edit.back'           => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/character/name.blade.php
@@ -124,6 +129,7 @@ return [
     'character.name.submit'     => 'Submit',
     'character.name.back'       => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/character/sex.blade.php
@@ -135,6 +141,7 @@ return [
     'character.sex.content' => 'Do you really want to change the sex of your character <strong>:name</strong>?',
     'character.sex.yes'     => 'Yes',
     'character.sex.back'    => 'Back',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +172,7 @@ return [
     'character.world.requirement'   => 'Requirement Status:',
     'character.world.available'     => 'available',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/email/awaiting.blade.php
@@ -177,6 +185,7 @@ return [
     'email.awaiting.cancel'     => 'Cancel',
     'email.awaiting.back'       => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/email/cancelled.blade.php
@@ -187,6 +196,7 @@ return [
     'email.cancelled.heading'   => 'Email Address Change Cancelled',
     'email.cancelled.content'   => 'Your request to change the email address of your account has been cancelled. The email address will not be changed.',
     'email.cancelled.back'      => 'Back',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -202,6 +212,7 @@ return [
     'email.form.submit'     => 'Submit',
     'email.form.back'       => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/email/confirm.blade.php
@@ -213,6 +224,7 @@ return [
     'email.confirm.content'     => '<p>Congratulations, your account is confirmed!</p><p>Now you can fully enjoy all features of a :server free account. If you have not done yet, you can now download the :server client by clicking on the download button below.</p>',
     'email.confirm.download'    => 'Download',
     'email.confirm.login'       => 'Login',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -229,6 +241,7 @@ return [
                                     An email with the confirmation link for your account was sent to the new email address.',
     'email.update.back'         => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/email/request.blade.php
@@ -240,6 +253,7 @@ return [
     'email.request.content'    => 'An email containing the confirmation link as well as instructions on how to confirm your account was sent to your email address:',
     'email.request.back'       => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/recovery/index.blade.php
@@ -248,6 +262,7 @@ return [
    
     'recovery.index.title' => 'Lost Account',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/download.blade.php
@@ -255,6 +270,7 @@ return [
     */
    
     'download.title' => 'Download Client',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -291,6 +307,7 @@ return [
     'overview.characters.delete'       => 'Delete',
     'overview.characters.empty'        => 'No characters yet.',
     'overview.characters.create'       => 'Create Character',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -366,6 +383,7 @@ return [
     'manage.coinhistory'                => 'Premium Points History',
     'manage.coinhistorydesc'            => 'Contains all historical data about your Premium Points and products buyable with Premium Points.',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/password.blade.php
@@ -381,6 +399,7 @@ return [
     'password.submit'       => 'Submit',
     'password.back'         => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/rename.blade.php
@@ -395,6 +414,7 @@ return [
     'rename.submit'     => 'Submit',
     'rename.back'       => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/terminate.blade.php
@@ -407,6 +427,7 @@ return [
     'terminate.password'    => 'Password:',
     'terminate.submit'      => 'Submit',
     'terminate.back'        => 'Back',
+
 
     /*
     |--------------------------------------------------------------------------
@@ -439,6 +460,7 @@ return [
     'register.index.continue'     => 'Continue',
     'register.index.back'         => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/registration/verify.blade.php
@@ -464,6 +486,7 @@ return [
     'register.verify.submit'       => 'Submit',
     'register.verify.back'         => 'Back',
 
+
     /*
     |--------------------------------------------------------------------------
     | resources/views/account/registration/success.blade.php
@@ -487,6 +510,7 @@ return [
                                         <li>If you lose your recovery key, you can request a new one for a small fee at the Lost Account Interface.</li>
                                     </ul>',
     'register.key.back'         => 'Back',
+
 
     /*
     |--------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title('News')
+@title(trans('theme::news.latest.title'))
 @navigation('/')
 @bodyclass('news-latest')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">News Ticker</div>
+        <div class="headline">{!! trans('theme::news.latest.newsticker.heading') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -107,7 +107,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">Featured Article</div>
+        <div class="headline">{!! trans('theme::news.latest.featured.heading') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -128,7 +128,7 @@
                 </tr>
                 <tr>
                     <td class="text-right">
-                        <a href="#">&raquo; read more</a>
+                        <a href="#">{!! trans('theme::news.latest.featured.readmore') !!}</a>
                     </td>
                 </tr>
             </table>
@@ -142,7 +142,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">News</div>
+        <div class="headline">{!! trans('theme::news.latest.news.heading') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -173,7 +173,7 @@
                         To a bright future together!
                     </p>
                     <p class="text-right">
-                        <a href="#">&raquo; Comment on this news</a>
+                        <a href="#">{!! trans('theme::news.latest.news.comment') !!}</a>
                     </p>
                 </div>
             </article>
