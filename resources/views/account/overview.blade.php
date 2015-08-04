@@ -38,21 +38,21 @@
                             <div class="buttons-right">
                                 <table>
                                     <tr>
-                                        <td class="valign top" style="padding-right: 0;">
+                                        <td class="valign-top" style="padding-right: 0;">
                                             <a href="{{ url('/account/manage') }}" class="blue-button">
                                                 <span>{{ trans('theme::account.overview.manageaccount') }}</span>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="valign middle" style="padding-right: 0;">
+                                        <td class="valign-middle" style="padding-right: 0;">
                                             <a href="#" class="green-button">
                                                 <span>{{ trans('theme::account.overview.getpremium') }}</span>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td class="valign bottom" style="padding-right: 0;">
+                                        <td class="valign-bottom" style="padding-right: 0;">
                                             <a href="{{ url('/account/logout') }}" class="red-button">
                                                 <span>{{ trans('theme::account.overview.logout') }}</span>
                                             </a>
@@ -63,11 +63,11 @@
 
                             <table style="height: 85px;">
                                 <tr>
-                                    <td class="valign middle" style="width: 55px;">
+                                    <td class="valign-middle" style="width: 55px;">
                                         <img src="{{ asset('/pandaac/theme-tibia/img/account-status_red.gif') }}" alt="">
                                     </td>
                                     <td style="width: 5px;"></td>
-                                    <td class="valign middle">
+                                    <td class="valign-middle">
                                         <h4 class="free">{!! trans('theme::account.overview.free') !!}</h4>
                                         <small>{!! trans('theme::account.overview.freedesc') !!}</small>
                                     </td>
@@ -82,14 +82,14 @@
                 <div class="notification top">
                     <div class="borders">
                         <span class="edges top"></span>
-                        <table class="full">
+                        <table class="full-width">
                             <tr>
                                 <td>
                                     <div class="buttons-right">
                                         <table>
                                             @if ($account->properties->emailRequests() < 2)
                                                 <tr>
-                                                    <td class="valign top" style="padding-right: 0;">
+                                                    <td class="valign-top" style="padding-right: 0;">
                                                         <a href="{{ url('/account/email/request') }}" class="blue-button">
                                                             <span>{{ trans('theme::account.overview.confirm.request') }}</span>
                                                         </a>
@@ -97,7 +97,7 @@
                                                 </tr>
                                             @endif
                                             <tr>
-                                                <td class="valign bottom" style="padding-right: 0;">
+                                                <td class="valign-bottom" style="padding-right: 0;">
                                                     <a href="{{ url('/account/email') }}" class="blue-button">
                                                         <span>{{ trans('theme::account.overview.confirm.edit') }}</span>
                                                     </a>
@@ -109,7 +109,7 @@
                                     <div style="margin: 5px 0 13px;">
                                         <strong>{!! trans('theme::account.overview.confirm.heading') !!}</strong>
                                         <div class="alert">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign" alt="{!! trans('theme::account.overview.confirm.heading') !!}">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign-middle" alt="{!! trans('theme::account.overview.confirm.heading') !!}">
                                             <div class="message">
                                                 {!! trans('theme::account.overview.confirm.alert') !!}
                                                 <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}" alt="{!! trans('theme::account.overview.confirm.heading') !!}">
@@ -130,13 +130,13 @@
                 <div class="notification top">
                     <div class="borders">
                         <span class="edges top"></span>
-                        <table class="full">
+                        <table class="full-width">
                             <tr>
                                 <td>
                                     <div class="buttons-right">
                                         <table>
                                             <tr>
-                                                <td class="valign middle" style="padding-right: 0;">
+                                                <td class="valign-middle" style="padding-right: 0;">
                                                     <a href="{{ url('/account/register') }}" class="blue-button">
                                                         <span>{{ trans('theme::account.overview.unregistered.register') }}</span>
                                                     </a>
@@ -164,7 +164,7 @@
                 <div class="notification top">
                     <div class="borders">
                         <span class="edges top"></span>
-                        <table class="full">
+                        <table class="full-width">
                             <tr>
                                 <td>
                                     <div class="buttons-right">
@@ -180,6 +180,32 @@
                                             'email' => $account->properties->email(),
                                             'days'  => config('pandaac.mail.timers.email-change'),
                                         ]) !!}
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                        <span class="edges bottom"></span>
+                    </div>
+                </div>
+            @endif
+
+            @if (false /* has vouchers */)
+                <div class="notification top">
+                    <div class="borders">
+                        <span class="edges top"></span>
+                        <table class="full-width">
+                            <tr>
+                                <td>
+                                    <div class="buttons-right">
+                                        <a href="{{ url('/account') }}" class="blue-button">
+                                            <span>{{ trans('theme::account.overview.vouchers.vouchers') }}</span>
+                                        </a>
+                                    </div>
+
+                                    <p style="margin-top: 5px;"><strong>{!! trans('theme::account.overview.vouchers.heading') !!}</strong></p>
+
+                                    <p style="margin-bottom: 5px;">
+                                        {!! trans('theme::account.overview.vouchers.content') !!}
                                     </p>
                                 </td>
                             </tr>
@@ -211,11 +237,11 @@
 
                             @forelse ($account->players as $i => $player)
                                 <tr class="character {{ $i === 0 ? 'active' : null }}" data-v-class="active: isActivated({{ $i }}, 'selectedPlayer')" data-v-on="click: activate({{ $i }}, 'selectedPlayer')">
-                                    <td class="valign middle text-center">
+                                    <td class="valign-middle text-center">
                                         <span class="play-integer">{{ ++$i }}.</span>
                                         <a href="#" class="play-button"></a>
                                     </td>
-                                    <td class="valign middle">
+                                    <td class="valign-middle">
                                         <span>{{ $player->name() }}</span>
                                         <small>{{ $player->vocation()->name() }} - Level {{ $player->level() }}</small>
                                     </td>
@@ -238,9 +264,9 @@
                         </table>
                     </div>
 
-                    <table class="full">
+                    <table class="full-width">
                         <tr>
-                            <td class="valign bottom text-right" style="padding-right: 0;">
+                            <td class="valign-bottom text-right" style="padding-right: 0;">
                                 <a href="{{ url('/account/character') }}" class="blue-button">
                                     <span>{{ trans('theme::account.overview.characters.create') }}</span>
                                 </a>

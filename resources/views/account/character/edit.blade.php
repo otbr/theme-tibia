@@ -18,9 +18,9 @@
             <div class="notification">
                 <div class="borders">
                     <span class="edges top"></span>
-                    <table class="full">
+                    <table class="full-width">
                         <tr>
-                            <td class="valign top text-center">
+                            <td class="valign-top text-center">
                                 <div class="padding">
                                     [<a href="#character-data">{!! trans('theme::account.character.edit.characterdata') !!}</a>]
                                     [<a href="#character-information">{!! trans('theme::account.character.edit.characterinfo') !!}</a>]
@@ -54,15 +54,10 @@
                     <div class="content">
                         <div class="box">
                             <div class="inner-box">
-                                <table class="paddingless full">
+                                <table class="paddingless full-width">
                                     <tr>
-                                        <th style="width: 10%;"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account.character.edit.name') !!}</strong></th>
-                                        <td style="width: 80%;">{{ $player->name() }}</td>
-                                        <td class="valign top text-right">
-                                            <a href="{{ url('/account/character', [$player->id(), 'name']) }}" class="blue-button">
-                                                <span>{{ trans('theme::account.character.edit.changename') }}</span>
-                                            </a>
-                                        </td>
+                                        <th style="width: 20%;"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account.character.edit.name') !!}</strong></th>
+                                        <td style="width: 70%;">{{ $player->name() }}</td>
                                     </tr>
                                     <tr>
                                         <td colspan="3" style="height: 8px;"></td>
@@ -71,11 +66,6 @@
                                         <tr>
                                             <th><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.edit.world') !!}</strong></th>
                                             <td>{{ $world->name() }}</td>
-                                            <td class="valign middle text-right">
-                                                <a href="{{ url('/account/character', [$player->id(), 'world']) }}" class="blue-button">
-                                                    <span>{{ trans('theme::account.character.edit.changeworld') }}</span>
-                                                </a>
-                                            </td>
                                         </tr>
                                         <tr>
                                             <td colspan="3" style="height: 8px;"></td>
@@ -84,11 +74,6 @@
                                     <tr>
                                         <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.edit.sex') !!}</strong></th>
                                         <td>{{ $player->gender()->name() }}</td>
-                                        <td class="valign bottom text-right">
-                                            <a href="{{ url('/account/character', [$player->id(), 'sex']) }}" class="blue-button">
-                                                <span>{{ trans('theme::account.character.edit.changesex') }}</span>
-                                            </a>
-                                        </td>
                                     </tr>
                                 </table>
                             </div>
@@ -110,7 +95,7 @@
                     <div class="content">
                         <div class="box">
                             <div class="inner-box">
-                                <table class="full">
+                                <table class="full-width">
                                     <tr>
                                         <th style="width: 22%;"><p><strong class="{{ $errors->has('hide') ? 'error' : null }}">{!! trans('theme::account.character.edit.hideaccount') !!}</strong></p></th>
                                         <td>
@@ -122,18 +107,18 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="valign top"><p><strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong></p></th>
+                                        <th class="valign-top"><p><strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong></p></th>
                                         <td><p><textarea cols="50" rows="10"></textarea></p></td>
                                     </tr>
                                     <tr>
-                                        <th class="valign top"><p><strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong></p></th>
+                                        <th class="valign-top"><p><strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong></p></th>
                                         <td><p><textarea cols="50" rows="4"></textarea></p></td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
 
-                        <table class="full">
+                        <table class="full-width">
                             <tr>
                                 <td style="width: 50%;" class="text-center">
                                     <button class="blue-button">

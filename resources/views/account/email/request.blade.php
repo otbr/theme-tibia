@@ -33,7 +33,7 @@
 
             <br>
 
-            <table class="full">
+            <table class="full-width">
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">

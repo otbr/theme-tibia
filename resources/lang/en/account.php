@@ -78,6 +78,22 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | resources/views/account/character/confirm.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'character.confirm.title' => 'Account Management',
+    'character.confirm.heading' => 'Confirm New Character',
+    'character.confirm.name' => 'Name:',
+    'character.confirm.sex' => 'Sex:',
+    'character.confirm.world' => 'Game World:',
+    'character.confirm.type' => 'Game World Type:',
+    'character.confirm.continue' => 'Continue',
+    'character.confirm.back' => 'Back',
+
+
+    /*
+    |--------------------------------------------------------------------------
     | resources/views/account/character/delete.blade.php
     |--------------------------------------------------------------------------
     */
@@ -102,11 +118,8 @@ return [
     'character.edit.characterinfo'  => 'Edit Character Information',
     'character.edit.preamble'       => '<p>Here you can see and edit the information about your character.<br>If you do not want to specify a certain field, just leave it blank.</p>',
     'character.edit.name'           => 'Name:',
-    'character.edit.changename'     => 'Change Name',
     'character.edit.world'          => 'World:',
-    'character.edit.changeworld'    => 'Change World',
     'character.edit.sex'            => 'Sex:',
-    'character.edit.changesex'      => 'Change Sex',
     'character.edit.hideaccount'    => 'Hide Account:',
     'character.edit.hide'           => 'check to hide your account information',
     'character.edit.comment'        => 'Comment:',
@@ -290,6 +303,9 @@ return [
     'overview.email.edit'              => 'Edit',
     'overview.email.heading'           => 'There is an email change request for the account!',
     'overview.email.content'           => 'A request has been submitted to change the email address of this account to <strong>:email</strong>. After a waiting period of <strong>:days days</strong> you can accept the new email address and finish the process. Please cancel the request if you do not want your email address to be changed! Also cancel the request if you have no access to the new email address!',
+    'overview.vouchers.vouchers'       => 'Vouchers',
+    'overview.vouchers.heading'        => 'Vouchers Available!',
+    'overview.vouchers.content'        => 'A voucher is available for your account! Click on the button for further information.',
     'overview.confirm.heading'         => 'Your account is not confirmed!',
     'overview.confirm.content'         => 'Please check your emails to confirm your account.',
     'overview.confirm.alert'           => '<h3>Confirm Account</h3><p>An email has been sent to the address you have entered while you have created your account. Please check your emails to confirm your account.</p><p>In case you have lost your confirmation email or did not receive it, you can request the email containing the confirmation link for your account again.</p><p>If you no longer have access to the email address the confirmation link was sent to, you can change the email address and the email will be sent again automatically.</p>',
@@ -339,6 +355,11 @@ return [
     'manage.lastlogin'                  => 'Last Login:',
     'manage.status'                     => 'Account Status:',
     'manage.free'                       => 'Free Account',
+    'manage.premiumpoints'              => 'Premium Points:',
+    'manage.transferable'               => '(Transferable: :points)',
+    'manage.transferpoints'             => 'Transferable Premium Points',
+    'manage.transferpointsalert'        => '<h3>Transferable Premium Points</h3>
+                                            <p>Transferable Premium Coins can be traded in the Market or gifted to other characters using the Store.</p>',
     'manage.changepassword'             => 'Change Password',
     'manage.changeemail'                => 'Change Email',
     'manage.renameaccount'              => 'Rename Account',

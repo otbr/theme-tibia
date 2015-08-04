@@ -18,7 +18,7 @@
             <div class="text-center">
                 <h3>Kha'zeel</h3>
 
-                <img border="2" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Kha'zeel">
+                <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Kha'zeel">
             </div>
 
             <p>

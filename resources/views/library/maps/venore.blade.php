@@ -18,7 +18,7 @@
             <div class="text-center">
                 <h3>Venore</h3>
 
-                <img border="2" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Venore">
+                <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Venore">
             </div>
 
             <p>In the swamps at the eastern coast of the continent lies the city of Venore. It is ruled by the money and the power of the local merchant houses. By monopolizing the trade with dwarfish and elfish goods as well as importing Edron wood and Darashian wasp-honey, the merchants of Venore used their fleets of trading ships to raise the wealth and influence of their town. The local shipyard and the harvest of the spice-weedgrass found in the nearby swamps made the city important to the kingdom. As a consequence, the merchant houses could claim a lot of privileges from the Thaian kings, such as the exclusive right to run gambling and betting businesses.</p>

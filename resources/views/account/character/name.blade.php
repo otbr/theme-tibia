@@ -51,7 +51,7 @@
 
                 <br>
 
-                <table class="full">
+                <table class="full-width">
                     <tr>
                         <td class="text-center">
                             <button class="green-button">

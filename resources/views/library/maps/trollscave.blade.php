@@ -18,7 +18,7 @@
             <div class="text-center">
                 <h3>The Trolls' Cave</h3>
 
-                <img border="2" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="The Trolls' Cave">
+                <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="The Trolls' Cave">
             </div>
 
             <p>

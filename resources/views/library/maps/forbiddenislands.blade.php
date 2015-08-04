@@ -18,7 +18,7 @@
             <div class="text-center">
                 <h3>Forbidden Islands</h3>
 
-                <img border="2" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Forbidden Islands">
+                <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Forbidden Islands">
             </div>
 
             <p>

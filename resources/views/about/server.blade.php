@@ -15,12 +15,12 @@
     <div class="inner-box-border">
         <div class="inner-box">
 
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table class="full-width">
                 <tr>
                     <td>
                         <img src="{{ asset('/pandaac/theme-tibia/img/what_is_tibia_intro.jpg') }}" alt="What is {{ server()->name() }}?">
                     </td>
-                    <td valign="middle" class="padding">
+                    <td class="padding valign-middle">
                         <p>{{ server()->name() }} is one of the oldest and most successful massively multiplayer online role-playing games (MMORPG) created in Europe. In an MMORPG people from all over the world meet on a virtual playground to explore areas, solve tricky riddles and undertake heroic exploits.</p>
 
                         <p>For more than 10 years now, players have been visiting the medieval world of {{ server()->name() }}. At present, more than 500,000 players from all over the world inhabit the {{ server()->name() }} continent enjoying the numerous <a href="{{ url('/about/features') }}">game features</a>.</p>

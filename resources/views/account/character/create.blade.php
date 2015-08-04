@@ -24,7 +24,7 @@
 
             @include('theme::modules.errors')
             
-            <form method="POST">
+            <form method="POST" action="{{ url('/account/character/confirm') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                 <div class="table">
@@ -66,9 +66,9 @@
                         @if (count($vocations = vocations(true)) > 1)
                             <div class="box">
                                 <div class="inner-box">
-                                    <table class="full">
+                                    <table class="full-width">
                                         <tr>
-                                            <th style="width: 20%;" class="valign top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account.character.create.vocation') !!}</strong></p></th>
+                                            <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account.character.create.vocation') !!}</strong></p></th>
                                             <td>
                                                 <?php $first = $vocations->first()->id(); ?>
                                                 @foreach ($vocations as $vocation)
@@ -88,9 +88,9 @@
                         @if ($worlds = worlds() and $worlds->count() > 1)
                             <div class="box">
                                 <div class="inner-box">
-                                    <table class="full">
+                                    <table class="full-width">
                                         <tr>
-                                            <th style="width: 20%;" class="valign top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.create.world') !!}</strong></p></th>
+                                            <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.create.world') !!}</strong></p></th>
                                             <td>
                                                 <?php $random = $worlds->random()->id(); ?>
                                                 @foreach ($worlds as $key => $world)
@@ -120,7 +120,7 @@
 
                 <br>
 
-                <table class="full">
+                <table class="full-width">
                     <tr>
                         <td style="width: 50%;" class="text-center">
                             <button class="blue-button">

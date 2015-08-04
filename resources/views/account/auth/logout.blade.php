@@ -25,7 +25,7 @@
                 </header>
 
                 <div class="content dark">
-                    <table class="full">
+                    <table class="full-width">
                         <tr>
                             <td>
                                 {!! trans('theme::account.logout.content', [

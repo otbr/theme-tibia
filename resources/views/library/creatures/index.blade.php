@@ -14,10 +14,10 @@
 
     <div class="inner-box-border">
         <div class="inner-box">
-            @foreach($creatures as $row)
+            @foreach ($creatures as $creature)
                 <div class="monster">
-                    <img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/{{ $row->image() }}">
-                    <div class="title">{{ $row->name() }}</div>
+                    <img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/{{ $creature->image() }}" alt="{{ $creature->name() }}">
+                    <div class="title">{{ $creature->name() }}</div>
                 </div>
             @endforeach
         </div>

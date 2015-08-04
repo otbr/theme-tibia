@@ -23,7 +23,7 @@
 
             <h3>Why Play {{ server()->name() }}?</h3>
 
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table class="full-width">
                 <tr>
                     <td>
                         <ul class="bullet">
@@ -131,9 +131,9 @@
             @if (! Auth::check())
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full-width">
                     <tr>
-                        <td align="center">
+                        <td class="text-center">
                             <a href="{{ url('/account/create') }}" class="blue-button">
                                 <span>Create Account</span>
                             </a>

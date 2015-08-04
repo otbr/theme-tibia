@@ -36,7 +36,7 @@
                                     <th class="text-center">{!! trans('theme::news.archive.category') !!}</th>
                                 </tr>
                                 <tr>
-                                    <td class="valign middle">
+                                    <td class="valign-middle">
                                         <table class="normalise">
                                             <tr>
                                                 <td colspan="4" style="height: 10px;"></td>
@@ -105,7 +105,7 @@
                                             </tr>
                                         </table>
                                     </td>
-                                    <td class="valign middle">
+                                    <td class="valign-middle">
                                         <label>
                                             <input type="checkbox" checked>
                                             {!! trans('theme::news.archive.newsticker') !!}
@@ -123,38 +123,38 @@
                                             {!! trans('theme::news.archive.news') !!}
                                         </label>
                                     </td>
-                                    <td class="valign middle">
+                                    <td class="valign-middle">
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_cipsoft_small.gif') }}" class="valign middle" alt="{!! trans('theme::news.archive.staff') !!}">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_cipsoft_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.staff') !!}">
                                             {!! trans('theme::news.archive.staff') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_community_small.gif') }}" class="valign middle" alt="{!! trans('theme::news.archive.community') !!}">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_community_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.community') !!}">
                                             {!! trans('theme::news.archive.community') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_development_small.gif') }}" class="valign middle" alt="{!! trans('theme::news.archive.development') !!}">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_development_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.development') !!}">
                                             {!! trans('theme::news.archive.development') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_support_small.gif') }}" class="valign middle" alt="{!! trans('theme::news.archive.support') !!}">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_support_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.support') !!}">
                                             {!! trans('theme::news.archive.support') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_technical_small.gif') }}" class="valign middle" alt="{!! trans('theme::news.archive.technical') !!}">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_technical_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.technical') !!}">
                                             {!! trans('theme::news.archive.technical') !!}
                                         </label>
                                     </td>

@@ -17,81 +17,81 @@
             <table class="table-striped">
 
                 <tr data-v-on="click: toggle('ticker-1')">
-                    <td class="valign top icon-wrapper">
+                    <td class="valign-top icon-wrapper">
                         <span class="icon technical"></span>
                     </td>
-                    <td class="valign top time-wrapper">
+                    <td class="valign-top time-wrapper">
                         <time datetime="2015-07-29 12:00:00">Jul 29 2015</time>
                     </td>
-                    <td class="valign top content-wrapper">
+                    <td class="valign-top content-wrapper">
                         <span data-v-show="isToggled('ticker-1')">With today's server save, unusable sudden death runes that were looted erroneously from several monsters after the update release have been removed from the game.</span>
                         <span data-v-show="! isToggled('ticker-1')">With today's server save, unusable sudden death runes that ...</span>
                     </td>
-                    <td class="valign top">
+                    <td class="valign-top">
                         <button class="plusminus active" data-v-class="active: isToggled('ticker-1')"></button>
                     </td>
                 </tr>
 
                 <tr data-v-on="click: toggle('ticker-2')">
-                    <td class="valign top icon-wrapper">
+                    <td class="valign-top icon-wrapper">
                         <span class="icon community"></span>
                     </td>
-                    <td class="valign top time-wrapper">
+                    <td class="valign-top time-wrapper">
                         <time datetime="2015-07-28 12:00:00">Jul 28 2015</time>
                     </td>
-                    <td class="valign top content-wrapper">
+                    <td class="valign-top content-wrapper">
                         <span data-v-show="isToggled('ticker-2')">Due to lack of entries, the event board will be deleted on August 5. While you can still view this board until that date, you can no longer post there. Please use your world board or the gameplay board to advertise your ingame events from now on.</span>
                         <span data-v-show="! isToggled('ticker-2')">Due to lack of entries, the event board will be deleted on ...</span>
                     </td>
-                    <td class="valign top">
+                    <td class="valign-top">
                         <button class="plusminus active" data-v-class="active: isToggled('ticker-2')"></button>
                     </td>
                 </tr>
 
                 <tr data-v-on="click: toggle('ticker-3')">
-                    <td class="valign top icon-wrapper">
+                    <td class="valign-top icon-wrapper">
                         <span class="icon support"></span>
                     </td>
-                    <td class="valign top time-wrapper">
+                    <td class="valign-top time-wrapper">
                         <time datetime="2015-07-28 12:00:00">Jul 28 2015</time>
                     </td>
-                    <td class="valign top content-wrapper">
+                    <td class="valign-top content-wrapper">
                         <span data-v-show="isToggled('ticker-3')">A thorough check of the compensation handed out on July 15 revealed that 0.3% of all 400,000 accounts that were compensated in any way have not yet received their full compensation. These 0.3% have received their missing compensation today.</span>
                         <span data-v-show="! isToggled('ticker-3')">A thorough check of the compensation handed out on July 15 ...</span>
                     </td>
-                    <td class="valign top">
+                    <td class="valign-top">
                         <button class="plusminus active" data-v-class="active: isToggled('ticker-3')"></button>
                     </td>
                 </tr>
 
                 <tr data-v-on="click: toggle('ticker-4')">
-                    <td class="valign top icon-wrapper">
+                    <td class="valign-top icon-wrapper">
                         <span class="icon community"></span>
                     </td>
-                    <td class="valign top time-wrapper">
+                    <td class="valign-top time-wrapper">
                         <time datetime="2015-07-28 12:00:00">Jul 28 2015</time>
                     </td>
-                    <td class="valign top content-wrapper">
+                    <td class="valign-top content-wrapper">
                         <span data-v-show="isToggled('ticker-4')">TibiaVenezuela.com has published a new article, yet again! This time, they take you on a journey back in time. Ready for some nostalgia? Head on over there to read the article which is available in Spanish!</span>
                         <span data-v-show="! isToggled('ticker-4')">TibiaVenezuela.com has published a new article, yet again! ...</span>
                     </td>
-                    <td class="valign top">
+                    <td class="valign-top">
                         <button class="plusminus active" data-v-class="active: isToggled('ticker-4')"></button>
                     </td>
                 </tr>
 
                 <tr data-v-on="click: toggle('ticker-5')">
-                    <td class="valign top icon-wrapper">
+                    <td class="valign-top icon-wrapper">
                         <span class="icon technical"></span>
                     </td>
-                    <td class="valign top time-wrapper">
+                    <td class="valign-top time-wrapper">
                         <time datetime="2015-07-27 12:00:00">Jul 27 2015</time>
                     </td>
-                    <td class="valign top content-wrapper">
+                    <td class="valign-top content-wrapper">
                         <span data-v-show="isToggled('ticker-5')">The server save on some game worlds took longer than usual today due to an unexpected technical issue. We are sorry for the inconvenience this may have caused you.</span>
                         <span data-v-show="! isToggled('ticker-5')">The server save on some game worlds took longer than usual ...</span>
                     </td>
-                    <td class="valign top">
+                    <td class="valign-top">
                         <button class="plusminus active" data-v-class="active: isToggled('ticker-5')"></button>
                     </td>
                 </tr>
@@ -114,20 +114,20 @@
         <div class="inner-box fluid">
             <table>
                 <tr>
-                    <td class="valign top">
+                    <td class="valign-top">
                         <p>
                             <strong>Tibia Coins and the Store</strong>
                             This month, we would like to share some information about an important new feature which will be released in July: Tibia Coins, a special new currency. Along with it, the ingame Store will open its doors. Read on to find out more!
                         </p>
                     </td>
-                    <td class="valign top text-right" rowspan="2">
+                    <td class="valign-top text-right" rowspan="2">
                         <a href="#" class="featured-image">
                             <img src="{{ asset('/pandaac/theme-tibia/img/featuredthumb_3238.jpg') }}" alt="Featured Image">
                         </a>
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-right valign bottom">
+                    <td class="text-right valign-bottom">
                         <a href="#" class="readmore">{!! trans('theme::news.latest.featured.readmore') !!}</a>
                     </td>
                 </tr>

@@ -55,10 +55,10 @@
                     <div class="borders">
                         <span class="edges top"></span>
                         Grade 1 Achievements
-                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign">
+                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle">
 
                         <a href="#top" class="pull-right">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign-middle">
                         </a>
                         <span class="edges bottom"></span>
                     </div>
@@ -96,10 +96,10 @@
                     <div class="borders">
                         <span class="edges top"></span>
                         Grade 2 Achievements
-                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign">
+                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle">
 
                         <a href="#top" class="pull-right">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign-middle">
                         </a>
                         <span class="edges bottom"></span>
                     </div>
@@ -137,10 +137,10 @@
                     <div class="borders">
                         <span class="edges top"></span>
                         Grade 3 Achievements 
-                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign">
+                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle">
 
                         <a href="#top" class="pull-right">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign-middle">
                         </a>
                         <span class="edges bottom"></span>
                     </div>
@@ -178,10 +178,10 @@
                     <div class="borders">
                         <span class="edges top"></span>
                         Grade 4 Achievements 
-                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign">
+                        <img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle"><img src="{{ asset('/pandaac/theme-tibia/img/achievement-grade-symbol.gif') }}" alt="Achievement" class="valign-middle">
 
                         <a href="#top" class="pull-right">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign-middle">
                         </a>
                         <span class="edges bottom"></span>
                     </div>
@@ -207,7 +207,7 @@
                         Secret Achievements
 
                         <a href="#top" class="pull-right">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign-middle">
                         </a>
                         <span class="edges bottom"></span>
                     </div>

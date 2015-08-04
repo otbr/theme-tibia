@@ -21,7 +21,7 @@
 
             <p>The following benefits are available to premium players:</p>
 
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table class="full-width">
                 <tr>
                     <td>
                         <ul class="bullet">
@@ -103,7 +103,7 @@
 
                 <div class="content">
                     <div class="box">
-                        <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
+                        <table class="table-striped">
                             <tr>
                                 <th>Duration</th>
                                 <th>Price <span>(including all taxes)</span></th>
@@ -147,7 +147,7 @@
 
                 <div class="content">
                     <div class="box">
-                        <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
+                        <table class="table-striped">
                             <tr>
                                 <th>Duration</th>
                                 <th>Price <span>(including all taxes)</span></th>
@@ -187,9 +187,9 @@
 
             <p>And that is not all! As Premium Scrolls are also available as ingame items that can be traded for other {{ server()->name() }} items, you can get Premium Time for your account even if you find yourself unable to pay for Premium Time right now. There really is no excuse not to make your account premium - buy Premium Time or get a Premium Scroll and enjoy the full {{ server()->name() }} experience today!</p>
 
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table class="full-width">
                 <tr>
-                    <td align="center">
+                    <td class="text-center">
                         <a href="#" class="green-button">
                             <span>Get Premium</span>
                         </a>

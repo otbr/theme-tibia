@@ -47,7 +47,7 @@
                         Running World Events
 
                         <a href="#top" class="pull-right">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign-middle">
                         </a>
                         <span class="edges bottom"></span>
                     </div>
@@ -67,7 +67,7 @@
                         Upcoming World Events
 
                         <a href="#top" class="pull-right">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign">
+                            <img src="{{ asset('/pandaac/theme-tibia/img/back-to-top.gif') }}" alt="Back to top!" class="valign-middle">
                         </a>
                         <span class="edges bottom"></span>
                     </div>

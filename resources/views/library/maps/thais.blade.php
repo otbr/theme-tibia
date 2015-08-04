@@ -18,7 +18,7 @@
             <div class="text-center">
                 <h3>Thais</h3>
 
-                <img border="2" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Thais">
+                <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Thais">
             </div>
 
             <p>
