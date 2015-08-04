@@ -2,11 +2,15 @@
     .green-button,
     .blue-button,
     .red-button {
-        &:hover > span {
+        &:hover {
+            & > span {
+                margin-top: 0;
+            }
         }
 
         & > span {
-            
+            margin-top: -1px;
+            display: block;
         }
     }
 }
