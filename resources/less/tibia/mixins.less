@@ -24,3 +24,21 @@
     -moz-user-select: none;
     -ms-user-select: none;
 }
+
+.font-size(@font, @lineheight: 0) {
+    & when (@lineheight > 0)  {
+        .line-height(@lineheight);
+    }
+
+    @fontPx: (@font * 10);
+
+    font-size: ~"@{fontPx}px";
+    font-size: ~"@{font}rem";
+}
+
+.line-height(@lineheight) {
+    @lineheightPx: (@lineheight * 10);
+
+    line-height: ~"@{lineheightPx}px";
+    line-height: ~"@{lineheight}rem";
+}

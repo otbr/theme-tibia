@@ -127,8 +127,8 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="text-right">
-                        <a href="#">{!! trans('theme::news.latest.featured.readmore') !!}</a>
+                    <td class="text-right valign bottom">
+                        <a href="#" class="readmore">{!! trans('theme::news.latest.featured.readmore') !!}</a>
                     </td>
                 </tr>
             </table>

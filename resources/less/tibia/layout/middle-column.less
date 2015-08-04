@@ -1,114 +1,110 @@
-#middle-column {
+& > .box {
+    background: url('@{image-path}/scroll.gif') repeat top left;
+    border-right: 2px solid #3a3738;
+    border-left: 2px solid #3a3738;
     position: relative;
-    padding-top: 4px;
+    margin: 0 0 18px;
+    padding: 6px 0;
 
-    & > .box {
-        background: url('@{image-path}/scroll.gif') repeat top left;
-        border-right: 2px solid #3a3738;
-        border-left: 2px solid #3a3738;
-        position: relative;
-        margin: 0 0 18px;
-        padding: 6px 0;
+    &:before {
+        background: url('@{image-path}/border-1.gif') repeat-x top left;
+        position: absolute;
+        height: 6px;
+        content: '';
+        right: -2px;
+        left: -2px;
+        top: 0;
+    }
 
-        &:before {
-            background: url('@{image-path}/border-1.gif') repeat-x top left;
-            position: absolute;
-            height: 6px;
-            content: '';
-            right: -2px;
-            left: -2px;
+    &:after {
+        background: url('@{image-path}/border-1.gif') repeat-x top left;
+        position: absolute;
+        height: 6px;
+        content: '';
+        right: -2px;
+        left: -2px;
+        bottom: 0;
+    }
+
+    & > .corners {
+        position: absolute;
+        z-index: 2;
+        right: 0;
+        left: 0;
+
+        &.top {
             top: 0;
+
+            &:before {
+                content: url('@{image-path}/corner-tl.gif');
+                position: absolute;
+                height: 17px;
+                width: 17px;
+                left: -5px;
+                top: -4px;
+            }
+
+            &:after {
+                content: url('@{image-path}/corner-tr.gif');
+                position: absolute;
+                height: 17px;
+                width: 17px;
+                right: -5px;
+                top: -4px;
+            }
         }
 
-        &:after {
-            background: url('@{image-path}/border-1.gif') repeat-x top left;
-            position: absolute;
-            height: 6px;
-            content: '';
-            right: -2px;
-            left: -2px;
+        &.bottom {
             bottom: 0;
-        }
 
-        & > .corners {
-            position: absolute;
-            z-index: 2;
-            right: 0;
-            left: 0;
-
-            &.top {
-                top: 0;
-
-                &:before {
-                    content: url('@{image-path}/corner-tl.gif');
-                    position: absolute;
-                    height: 17px;
-                    width: 17px;
-                    left: -5px;
-                    top: -4px;
-                }
-
-                &:after {
-                    content: url('@{image-path}/corner-tr.gif');
-                    position: absolute;
-                    height: 17px;
-                    width: 17px;
-                    right: -5px;
-                    top: -4px;
-                }
+            &:before {
+                content: url('@{image-path}/corner-bl.gif');
+                position: absolute;
+                bottom: -4px;
+                height: 17px;
+                width: 17px;
+                left: -5px;
             }
 
-            &.bottom {
-                bottom: 0;
-
-                &:before {
-                    content: url('@{image-path}/corner-bl.gif');
-                    position: absolute;
-                    bottom: -4px;
-                    height: 17px;
-                    width: 17px;
-                    left: -5px;
-                }
-
-                &:after {
-                    content: url('@{image-path}/corner-br.gif');
-                    position: absolute;
-                    bottom: -4px;
-                    height: 17px;
-                    width: 17px;
-                    right: -5px;
-                }
+            &:after {
+                content: url('@{image-path}/corner-br.gif');
+                position: absolute;
+                bottom: -4px;
+                height: 17px;
+                width: 17px;
+                right: -5px;
             }
         }
+    }
 
-        & > .header {
-            background: url('@{image-path}/title-background-green.gif') repeat-x top left;
+    & > .header {
+        background: url('@{image-path}/title-background-green.gif') repeat-x top left;
+        display: block;
+        height: 24px;
+
+        .headline {
+            margin-left: 5px;
             display: block;
-            height: 24px;
-
-            .headline {
-                margin-left: 5px;
-                display: block;
-            }
         }
+    }
 
-        & > .inner-box-border {
-            border: 4px solid #debb9d;
+    & > .inner-box-border {
+        border: 4px solid #debb9d;
 
-            & > .inner-box {
-                border: 1px solid #793d03;
-                min-height: 367px;
-                padding: 5px;
+        & > .inner-box {
+            border: 1px solid #793d03;
+            min-height: 367px;
+            padding: 5px;
 
-                &.fluid {
-                    min-height: 5px !important;
-                }
+            &.fluid {
+                min-height: 5px !important;
+            }
 
-                & > p {
-                    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
-                    margin: 5px 5px 15px;
-                    font-size: 12px;
-                }
+            & > p {
+                font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+                margin: 5px 5px 15px;
+
+                .font-size(1.2);
             }
         }
     }

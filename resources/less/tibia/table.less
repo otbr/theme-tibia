@@ -1,5 +1,5 @@
 table {
-    font-size: 13.3px;
+    .font-size(1.33);
 
     tr {
         td, th {
@@ -99,7 +99,7 @@ table.table-striped {
                 }
 
                 & > span {
-                    font-size: 17.3px;
+                    .font-size(1.73);
                 }
             }
         }
@@ -124,8 +124,9 @@ table.table-striped {
     border: 1px solid @table-border;
     color: @table-color;
     position: relative;
-    font-size: 13.3px;
     margin: 5px;
+
+    .font-size(1.33);
 
     &.top {
         margin-top: 15px;

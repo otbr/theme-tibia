@@ -77,10 +77,10 @@
     color: @first-letter-color;
     text-transform: uppercase;
     display: inline-block;
-    line-height: 30px;
-    font-size: 36px;
     padding: 0;
     margin: 0;
+
+    .font-size(3.6, 3);
 
     .martel-descent;
 }
@@ -140,10 +140,11 @@
                     position: absolute;
                     text-align: center;
                     display: block;
-                    font-size: 9px;
                     bottom: -12px;
                     right: -100%;
                     left: -100%;
+
+                    .font-size(0.9);
                 }
 
                 &.green {
@@ -224,10 +225,10 @@
     -webkit-font-smoothing: antialiased;
     text-transform: capitalize;
     font-weight: normal;
-    line-height: 24.3px;
-    font-size: 24.3px;
     display: block;
     color: #efcfa4;
+
+    .font-size(2.43, 2.43);
 
     &:not(img) {
         padding: 2px 0 0 4px;
@@ -262,9 +263,10 @@
         & > time {
             display: inline-block;
             margin: 10px 25px 0 0;
-            font-size: 9.3px;
             color: #fff;
             float: left;
+
+            .font-size(0.93);
 
             &:after {
                 content: '\002D';
@@ -274,11 +276,12 @@
 
         & > h2 {
             display: inline-block;
-            font-size: 13.3px;
             font-weight: bold;
             margin: 7px 0 0 0;
             color: #fff;
             float: left;
+
+            .font-size(1.33);
 
             &:before,
             &:after {
@@ -291,7 +294,8 @@
         font-family: Verdana, Arial, 'Times New Roman', sans-serif;
         line-height: normal;
         padding: 5px 10px 0;
-        font-size: 13.3px;
+
+        .font-size(1.33);
 
         p,
         p.first-letter {
@@ -388,8 +392,9 @@
         display: inline-block;
         letter-spacing: 0.5px;
         font-weight: 200;
-        font-size: 12px;
         color: #f1d4a5;
+
+        .font-size(1.2);
     }
 
     &.bottom {
@@ -449,13 +454,14 @@
         color: @heading-color;
         text-align: justify;
         position: absolute;
-        font-size: 12px;
         cursor: normal;
         display: none;
         width: 245px;
         z-index: 5;
         left: 27px;
         top: 4px;
+
+        .font-size(1.2);
 
         &:before {
             content: url('@{image-path}/alertcorner.gif');
@@ -471,8 +477,9 @@
             color: @heading-color;
             font-weight: bold;
             text-align: left;
-            font-size: 16px;
             margin: 0;
+
+            .font-size(1.6);
         }
 
         & > ul,
@@ -500,9 +507,10 @@
     background-color: @notification-bgcolor;
     margin: 6px 6px 16px;
     position: relative;
-    font-size: 13.3px;
     min-height: 24px;
     padding: 8px 5px;
+
+    .font-size(1.33);
 
     &.top {
         margin-top: 16px;
@@ -511,14 +519,16 @@
     &.errors {
         color: @error-color;
         padding-left: 42px;
-        font-size: 10.6px;
+
+        .font-size(1.06);
     }
 
     h5 {
         font-weight: bold;
-        font-size: 10.6px;
         padding: 0;
         margin: 0;
+
+        .font-size(1.06);
     }
 
     .sign {
