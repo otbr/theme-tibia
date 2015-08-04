@@ -39,9 +39,9 @@
 
             <br>
 
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table class="full">
                 <tr>
-                    <td align="center">
+                    <td class="text-center">
                         <a href="{{ url('/account') }}" class="blue-button">
                             <span>{{ trans('theme::account.register.key.back') }}</span>
                         </a>

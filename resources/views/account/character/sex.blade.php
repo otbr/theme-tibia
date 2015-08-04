@@ -37,14 +37,14 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full">
                     <tr>
-                        <td align="center">
+                        <td class="text-center">
                             <button class="green-button">
                                 <span>{{ trans('theme::account.character.sex.yes') }}</span>
                             </button>
                         </td>
-                        <td align="center">
+                        <td class="text-center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
                                 <span>{{ trans('theme::account.character.sex.back') }}</span>
                             </a>

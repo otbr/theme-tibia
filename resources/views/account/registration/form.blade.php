@@ -41,9 +41,9 @@
                     </header>
 
                     <div class="content dark">
-                        <table cellspacing="0" cellpadding="0" border="0">
+                        <table>
                             <tr>
-                                <th width="40%" class="{{ $errors->has('firstname') ? 'error' : null }}">{!! trans('theme::account.register.index.firstname') !!}</th>
+                                <th style="width: 40%;" class="{{ $errors->has('firstname') ? 'error' : null }}">{!! trans('theme::account.register.index.firstname') !!}</th>
                                 <td>
                                     <input type="text" name="firstname" size="30" maxlength="50" value="{{ old('firstname') }}">
                                 </td>
@@ -144,14 +144,14 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full">
                     <tr>
-                        <td align="center">
+                        <td class="text-center">
                             <button class="blue-button">
                                 <span>{{ trans('theme::account.register.index.continue') }}</span>
                             </button>
                         </td>
-                        <td align="center">
+                        <td class="text-center">
                             <a href="{{ url('/account') }}" class="blue-button">
                                 <span>{{ trans('theme::account.register.index.back') }}</span>
                             </a>

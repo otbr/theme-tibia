@@ -18,9 +18,9 @@
             <div class="notification">
                 <div class="borders">
                     <span class="edges top"></span>
-                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <table class="full">
                         <tr>
-                            <td align="center" valign="middle">
+                            <td class="valign middle text-center">
                                 <div class="padding">
                                     [<a href="#general-information">{!! trans('theme::account.manage.generalinfo') !!}</a>]
                                     [<a href="#products-available">{!! trans('theme::account.manage.availableproducts') !!}</a>]
@@ -29,18 +29,18 @@
                                     [<a href="#registration">{!! trans('theme::account.manage.registration.heading') !!}</a>]
                                 </div>
                             </td>
-                            <td align="center" valign="middle" width="5%">
+                            <td class="valign middle text-center" style="width: 5%;">
                                 <div class="buttons-right">
-                                    <table cellspacing="0" cellpadding="0" border="0">
+                                    <table>
                                         <tr>
-                                            <td valign="top">
+                                            <td class="valign top">
                                                 <a href="#" class="green-button">
                                                     <span>{{ trans('theme::account.manage.getpremium') }}</span>
                                                 </a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td valign="bottom">
+                                            <td class="valign bottom">
                                                 <a href="{{ url('/account') }}" class="blue-button">
                                                     <span>{{ trans('theme::account.manage.overview') }}</span>
                                                 </a>
@@ -66,10 +66,10 @@
 
                 <div class="content">
                     <div class="box">
-                        <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
+                        <table class="table-striped">
                             <tr>
-                                <th width="24%">{!! trans('theme::account.manage.account') !!}</th>
-                                <td valign="middle">
+                                <th style="width: 24%;">{!! trans('theme::account.manage.account') !!}</th>
+                                <td class="valign middle">
                                     <button class="showhide" data-v-on="click: toggle('account')" data-v-class="active: isToggled('account')"></button>
 
                                     <span data-v-show="isToggled('account')">{{ $account->name() }}</span>
@@ -78,7 +78,7 @@
                             </tr>
                             <tr>
                                 <th>{!! trans('theme::account.manage.email') !!}</th>
-                                <td valign="middle">
+                                <td class="valign middle">
                                     <button class="showhide" data-v-on="click: toggle('email')" data-v-class="active: isToggled('email')"></button>
 
                                     <span data-v-show="isToggled('email')">{{ $account->email() }}</span>
@@ -100,29 +100,29 @@
                         </table>
                     </div>
 
-                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <table style="width: 100%;">
                         <tr>
-                            <td align="left" style="padding-left: 0;">
+                            <td class="text-left" style="padding-left: 0;">
                                 <a href="{{ url('/account/password') }}" class="blue-button bottom">
                                     <span>{{ trans('theme::account.manage.changepassword') }}</span>
                                 </a>
                             </td>
                             @if ($account->isConfirmed())
-                                <td width="5%"></td>
-                                <td align="middle">
+                                <td style="width: 5%;"></td>
+                                <td class="text-center">
                                     <a href="{{ url('/account/email') }}" class="blue-button bottom">
                                         <span>{{ trans('theme::account.manage.changeemail') }}</span>
                                     </a>
                                 </td>
                             @endif
-                            <td width="5%"></td>
-                            <td align="middle">
+                            <td style="width: 5%;"></td>
+                            <td class="text-center">
                                 <a href="{{ url('/account/rename') }}" class="blue-button bottom">
                                     <span>{{ trans('theme::account.manage.renameaccount') }}</span>
                                 </a>
                             </td>
-                            <td width="5%"></td>
-                            <td align="right" style="padding-right: 0;">
+                            <td style="width: 5%;"></td>
+                            <td class="text-right" style="padding-right: 0;">
                                 <a href="{{ url('/account/terminate') }}" class="blue-button bottom">
                                     <span>{{ trans('theme::account.manage.terminateaccount') }}</span>
                                 </a>
@@ -144,13 +144,13 @@
                 <div class="content">
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <strong>{!! trans('theme::account.manage.premiumtime') !!}</strong><br>
                                         {!! trans('theme::account.manage.premiumtimedesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="green-button">
                                             <span>{{ trans('theme::account.manage.getpremiumtime') }}</span>
                                         </a>
@@ -162,24 +162,24 @@
 
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <div>
                                             <strong>{!! trans('theme::account.manage.points') !!}</strong>
                                             <div class="alert">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign" alt="{!! trans('theme::account.manage.points') !!}">
                                                 <div class="message">
                                                     {!! trans('theme::account.manage.pointsalert', [
                                                         'server' => server()->name(),
                                                     ]) !!}
-                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}">
+                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}" alt="{!! trans('theme::account.manage.points') !!}">
                                                 </div>
                                             </div>
                                         </div>
                                         {!! trans('theme::account.manage.pointsdesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="green-button">
                                             <span>{{ trans('theme::account.manage.getpoints') }}</span>
                                         </a>
@@ -191,22 +191,22 @@
 
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <div>
                                             <strong>{!! trans('theme::account.manage.extraservices') !!}</strong>
                                             <div class="alert">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign" alt="{!! trans('theme::account.manage.extraservices') !!}">
                                                 <div class="message">
                                                     {!! trans('theme::account.manage.extraservicesalert') !!}
-                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}">
+                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}" alt="{!! trans('theme::account.manage.extraservices') !!}">
                                                 </div>
                                             </div>
                                         </div>
                                         {!! trans('theme::account.manage.extraservicesdesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="green-button">
                                             <span>{{ trans('theme::account.manage.getextraservice') }}</span>
                                         </a>
@@ -218,13 +218,13 @@
 
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <strong>{!! trans('theme::account.manage.gamecodes') !!}</strong><br>
                                         {!! trans('theme::account.manage.gamecodesdesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
                                             <span>{{ trans('theme::account.manage.usegamecode') }}</span>
                                         </a>
@@ -251,7 +251,7 @@
                             {!! trans('theme::account.manage.noreadyproducts') !!}
                         </div>
                         {{--
-                        <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
+                        <table class="table-striped">
                             <tr>
                                 <th width="85">{!! trans('theme::account.manage.date') !!}</th>
                                 <th>{!! trans('theme::account.manage.voucher') !!}</th>
@@ -280,13 +280,13 @@
                 <div class="content">
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <strong>{!! trans('theme::account.manage.premiumhistory') !!}</strong><br>
                                         {!! trans('theme::account.manage.premiumhistorydesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
                                             <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
@@ -298,13 +298,13 @@
 
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <strong>{!! trans('theme::account.manage.paymenthistory') !!}</strong><br>
                                         {!! trans('theme::account.manage.paymenthistorydesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
                                             <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
@@ -316,13 +316,13 @@
 
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <strong>{!! trans('theme::account.manage.coinhistory') !!}</strong><br>
                                         {!! trans('theme::account.manage.coinhistorydesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
                                             <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
@@ -335,13 +335,13 @@
                     {{--
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <strong>{!! trans('theme::account.manage.extrahistory') !!}</strong><br>
                                         {!! trans('theme::account.manage.extrahistorydesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
                                             <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
@@ -353,13 +353,13 @@
 
                     <div class="box">
                         <div class="inner-box">
-                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="full">
                                 <tr>
                                     <td>
                                         <strong>{!! trans('theme::account.manage.extrahistory') !!}</strong><br>
                                         {!! trans('theme::account.manage.extrahistorydesc') !!}
                                     </td>
-                                    <td valign="top" align="right">
+                                    <td class="valign top text-right">
                                         <a href="{{ url('/account') }}" class="blue-button" style="float: right;">
                                             <span>{{ trans('theme::account.manage.viewhistory') }}</span>
                                         </a>
@@ -387,17 +387,17 @@
                             @if (! $account->isConfirmed())
                                 <strong class="error">{!! trans('theme::account.manage.registration.confirm', ['url' => url('/account')]) !!}</strong>
                             @elseif ($account->isRegistered())
-                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <table class="full">
                                     <tr>
-                                        <th width="20%" valign="top">{!! trans('theme::account.manage.registration.address') !!}</th>
+                                        <th style="width: 20%;" class="valign top">{!! trans('theme::account.manage.registration.address') !!}</th>
                                         <td>
-                                            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <table class="full">
                                                 <tr>
                                                     <td>
                                                         {{ $account->registration->firstname() }} {{ $account->registration->surname() }}<br>
                                                         {{ $account->registration->country() }}
                                                     </td>
-                                                    <td valign="top" align="right">
+                                                    <td class="valign top text-right">
                                                         <a href="{{ url('/account/register/edit') }}" class="blue-button">
                                                             <span>{{ trans('theme::account.manage.registration.edit') }}</span>
                                                         </a>
@@ -407,7 +407,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" height="5"></td>
+                                        <td colspan="2" style="height: 5px;"></td>
                                     </tr>
                                     <tr>
                                         <th>{!! trans('theme::account.manage.registration.birthday') !!}</th>
@@ -416,7 +416,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2" height="5"></td>
+                                        <td colspan="2" style="height: 5px;"></td>
                                     </tr>
                                     <tr>
                                         <th>{!! trans('theme::account.manage.registration.gender') !!}</th>
@@ -430,10 +430,10 @@
                                     </tr>
                                 </table>
                             @else
-                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <table class="full">
                                     <tr>
                                         <td>{!! trans('theme::account.manage.registration.unregistered') !!}</td>
-                                        <td valign="top" align="right">
+                                        <td class="valign top text-right">
                                             <a href="{{ url('/account/register') }}" class="blue-button">
                                                 <span>{{ trans('theme::account.manage.registration.register') }}</span>
                                             </a>

@@ -31,14 +31,14 @@
 
             <br>
 
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table class="full">
                 <tr>
-                    <td align="center">
+                    <td class="text-center">
                         <a href="{{ url('/account/download') }}" class="blue-button">
                             <span>{{ trans('theme::account.email.confirm.download') }}</span>
                         </a>
                     </td>
-                    <td align="center">
+                    <td class="text-center">
                         <a href="{{ url('/account/login') }}" class="blue-button">
                             <span>{{ trans('theme::account.email.confirm.login') }}</span>
                         </a>

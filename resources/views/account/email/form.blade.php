@@ -35,7 +35,7 @@
                     </header>
 
                     <div class="content dark">
-                        <table cellspacing="0" cellpadding="0" border="0">
+                        <table>
                             <tr>
                                 <th>{!! trans('theme::account.email.form.email') !!}</th>
                                 <td><input type="email" name="email" size="30" maxlength="50" value="{{ old('email') }}"></td>
@@ -50,14 +50,14 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full">
                     <tr>
-                        <td align="center">
+                        <td class="text-center">
                             <button class="blue-button">
                                 <span>{{ trans('theme::account.email.form.submit') }}</span>
                             </button>
                         </td>
-                        <td align="center">
+                        <td class="text-center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
                                 <span>{{ trans('theme::account.email.form.back') }}</span>
                             </a>

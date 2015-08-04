@@ -43,7 +43,7 @@
 
                     <div class="content">
                         <div class="box">
-                            <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
+                            <table class="table-striped">
                                 <tr>
                                     <th>{!! trans('theme::account.character.world.name') !!}</th>
                                     <th>{!! trans('theme::account.character.world.current') !!}</th>
@@ -70,14 +70,14 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full">
                     <tr>
-                        <td align="center">
+                        <td class="text-center">
                             <button class="green-button">
                                 <span>{{ trans('theme::account.character.world.continue') }}</span>
                             </button>
                         </td>
-                        <td align="center">
+                        <td class="text-center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
                                 <span>{{ trans('theme::account.character.world.back') }}</span>
                             </a>

@@ -44,9 +44,9 @@
 
             <br>
 
-            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <table class="full">
                 <tr>
-                    <td align="center">
+                    <td class="text-center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
                             <span>{{ trans('theme::account.email.update.back') }}</span>
                         </a>

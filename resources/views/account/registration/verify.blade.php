@@ -49,9 +49,9 @@
                     </header>
 
                     <div class="content dark">
-                        <table cellspacing="0" cellpadding="0" border="0">
+                        <table>
                             <tr>
-                                <th width="20%">{!! trans('theme::account.register.verify.firstname') !!}</th>
+                                <th style="width: 20%;">{!! trans('theme::account.register.verify.firstname') !!}</th>
                                 <td>{{ old('firstname') }}</td>
                             </tr>
                             <tr>
@@ -86,14 +86,14 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full">
                     <tr>
-                        <td align="center">
+                        <td class="text-center">
                             <button class="blue-button">
                                 <span>{{ trans('theme::account.register.verify.submit') }}</span>
                             </button>
                         </td>
-                        <td align="center">
+                        <td class="text-center">
                             <a href="{{ url('/account/register') }}" class="blue-button">
                                 <span>{{ trans('theme::account.register.verify.back') }}</span>
                             </a>

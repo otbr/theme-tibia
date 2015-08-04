@@ -18,9 +18,9 @@
             <div class="notification">
                 <div class="borders">
                     <span class="edges top"></span>
-                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <table class="full">
                         <tr>
-                            <td align="center" valign="middle">
+                            <td class="valign top text-center">
                                 <div class="padding">
                                     [<a href="#character-data">{!! trans('theme::account.character.edit.characterdata') !!}</a>]
                                     [<a href="#character-information">{!! trans('theme::account.character.edit.characterinfo') !!}</a>]
@@ -54,37 +54,37 @@
                     <div class="content">
                         <div class="box">
                             <div class="inner-box">
-                                <table class="paddingless" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <table class="paddingless full">
                                     <tr>
-                                        <th width="10%"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account.character.edit.name') !!}</strong></th>
-                                        <td width="80%">{{ $player->name() }}</td>
-                                        <td valign="top" align="right">
+                                        <th style="width: 10%;"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account.character.edit.name') !!}</strong></th>
+                                        <td style="width: 80%;">{{ $player->name() }}</td>
+                                        <td class="valign top text-right">
                                             <a href="{{ url('/account/character', [$player->id(), 'name']) }}" class="blue-button">
                                                 <span>{{ trans('theme::account.character.edit.changename') }}</span>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" height="8"></td>
+                                        <td colspan="3" style="height: 8px;"></td>
                                     </tr>
                                     @if ($world = $player->world())
                                         <tr>
                                             <th><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.edit.world') !!}</strong></th>
                                             <td>{{ $world->name() }}</td>
-                                            <td valign="middle" align="right">
+                                            <td class="valign middle text-right">
                                                 <a href="{{ url('/account/character', [$player->id(), 'world']) }}" class="blue-button">
                                                     <span>{{ trans('theme::account.character.edit.changeworld') }}</span>
                                                 </a>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="3" height="8"></td>
+                                            <td colspan="3" style="height: 8px;"></td>
                                         </tr>
                                     @endif
                                     <tr>
                                         <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.edit.sex') !!}</strong></th>
                                         <td>{{ $player->gender()->name() }}</td>
-                                        <td valign="bottom" align="right">
+                                        <td class="valign bottom text-right">
                                             <a href="{{ url('/account/character', [$player->id(), 'sex']) }}" class="blue-button">
                                                 <span>{{ trans('theme::account.character.edit.changesex') }}</span>
                                             </a>
@@ -110,9 +110,9 @@
                     <div class="content">
                         <div class="box">
                             <div class="inner-box">
-                                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                <table class="full">
                                     <tr>
-                                        <th width="22%"><p><strong class="{{ $errors->has('hide') ? 'error' : null }}">{!! trans('theme::account.character.edit.hideaccount') !!}</strong></p></th>
+                                        <th style="width: 22%;"><p><strong class="{{ $errors->has('hide') ? 'error' : null }}">{!! trans('theme::account.character.edit.hideaccount') !!}</strong></p></th>
                                         <td>
                                             <p>
                                                 <label>
@@ -122,25 +122,25 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th valign="top"><p><strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong></p></th>
+                                        <th class="valign top"><p><strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong></p></th>
                                         <td><p><textarea cols="50" rows="10"></textarea></p></td>
                                     </tr>
                                     <tr>
-                                        <th valign="top"><p><strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong></p></th>
+                                        <th class="valign top"><p><strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong></p></th>
                                         <td><p><textarea cols="50" rows="4"></textarea></p></td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
 
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <table class="full">
                             <tr>
-                                <td width="50%" align="center">
+                                <td style="width: 50%;" class="text-center">
                                     <button class="blue-button">
                                         <span>{{ trans('theme::account.character.edit.submit') }}</span>
                                     </button>
                                 </td>
-                                <td width="50%" align="center">
+                                <td style="widtH: 50%;" class="text-center">
                                     <a href="{{ url('/account') }}" class="blue-button">
                                         <span>{{ trans('theme::account.character.edit.back') }}</span>
                                     </a>

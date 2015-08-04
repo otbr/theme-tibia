@@ -38,13 +38,13 @@
 
                     <div class="content">
                         <div class="box">
-                            <table class="table-striped" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <table class="table-striped">
                                 <tr>
-                                    <th width="20%"><strong class="{{ $errors->has('player') ? 'error' : null }}">{!! trans('theme::account.character.create.name') !!}</strong></th>
+                                    <th style="width: 20%;"><strong class="{{ $errors->has('player') ? 'error' : null }}">{!! trans('theme::account.character.create.name') !!}</strong></th>
                                     <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.create.sex') !!}</strong></th>
                                 </tr>
                                 <tr>
-                                    <td width="50%">
+                                    <td style="width: 50%;">
                                         <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" data-v-model="name"><br>
                                         <small>[<a href="#" id="suggest-name" data-v-on="click: suggestName">{!! trans('theme::account.character.create.suggestname') !!}</a>]</small>
                                     </td>
@@ -66,9 +66,9 @@
                         @if (count($vocations = vocations(true)) > 1)
                             <div class="box">
                                 <div class="inner-box">
-                                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <table class="full">
                                         <tr>
-                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account.character.create.vocation') !!}</strong></p></th>
+                                            <th style="width: 20%;" class="valign top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account.character.create.vocation') !!}</strong></p></th>
                                             <td>
                                                 <?php $first = $vocations->first()->id(); ?>
                                                 @foreach ($vocations as $vocation)
@@ -88,9 +88,9 @@
                         @if ($worlds = worlds() and $worlds->count() > 1)
                             <div class="box">
                                 <div class="inner-box">
-                                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <table class="full">
                                         <tr>
-                                            <th width="20%" valign="top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.create.world') !!}</strong></p></th>
+                                            <th style="width: 20%;" class="valign top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.create.world') !!}</strong></p></th>
                                             <td>
                                                 <?php $random = $worlds->random()->id(); ?>
                                                 @foreach ($worlds as $key => $world)
@@ -120,14 +120,14 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full">
                     <tr>
-                        <td width="50%" align="center">
+                        <td style="width: 50%;" class="text-center">
                             <button class="blue-button">
                                 <span>{{ trans('theme::account.character.create.submit') }}</span>
                             </button>
                         </td>
-                        <td width="50%" align="center">
+                        <td style="width: 50%;" class="text-center">
                             <a href="{{ url('/account') }}" class="blue-button">
                                 <span>{{ trans('theme::account.character.create.back') }}</span>
                             </a>

@@ -33,9 +33,9 @@
                     </header>
 
                     <div class="content dark">
-                        <table cellspacing="0" cellpadding="0" border="0">
+                        <table>
                             <tr>
-                                <th width="40%" class="{{ $errors->has('firstname') ? 'error' : null }}">{!! trans('theme::account.register.edit.firstname') !!}</th>
+                                <th style="width: 40%;" class="{{ $errors->has('firstname') ? 'error' : null }}">{!! trans('theme::account.register.edit.firstname') !!}</th>
                                 <td>
                                     <input type="text" name="firstname" size="30" maxlength="50" value="{{ old('firstname', $account->registration->firstname()) }}">
                                 </td>
@@ -56,7 +56,7 @@
                                 <th class="{{ $errors->has('country') ? 'error' : null }}">{!! trans('theme::account.register.edit.country') !!}</th>
                                 <td>
                                     <select name="country">
-                                        <option disabled {{ empty(old('country')) ? 'selected' : null }}>---</option>
+                                        <option disabled {{ empty(old('country', $account->registration->countryCode())) ? 'selected' : null }}>---</option>
                                         @if (! empty($popular))
                                             @foreach ($popular as $country)
                                                 <option value="{{ $country['country'] }}">{{ country($country['country']) }}</option>
@@ -91,14 +91,14 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table class="full">
                     <tr>
-                        <td align="center">
+                        <td class="text-center">
                             <button class="blue-button">
                                 <span>{{ trans('theme::account.register.edit.continue') }}</span>
                             </button>
                         </td>
-                        <td align="center">
+                        <td class="text-center">
                             <a href="{{ url('/account') }}" class="blue-button">
                                 <span>{{ trans('theme::account.register.edit.back') }}</span>
                             </a>
