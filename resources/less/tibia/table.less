@@ -40,7 +40,10 @@ table.table-striped {
     margin: 0;
 
     &.table-hover {
-        & > tr:hover {
+        & > tr:hover,
+        & > thead > tr:hover,
+        & > tbody > tr:hover,
+        & > tfoot > tr:hover {
             & > td {
                 background-color: @table-light-hover;
             }

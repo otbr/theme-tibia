@@ -82,14 +82,51 @@ return [
     |--------------------------------------------------------------------------
     */
    
-    'character.confirm.title' => 'Account Management',
-    'character.confirm.heading' => 'Confirm New Character',
-    'character.confirm.name' => 'Name:',
-    'character.confirm.sex' => 'Sex:',
-    'character.confirm.world' => 'Game World:',
-    'character.confirm.type' => 'Game World Type:',
-    'character.confirm.continue' => 'Continue',
-    'character.confirm.back' => 'Back',
+    'character.confirm.title'       => 'Account Management',
+    'character.confirm.heading'     => 'Confirm New Character',
+    'character.confirm.name'        => 'Name:',
+    'character.confirm.sex'         => 'Sex:',
+    'character.confirm.vocation'    => 'Vocation:',
+    'character.confirm.world'       => 'Game World:',
+    'character.confirm.type'        => 'Game World Type:',
+    'character.confirm.continue'    => 'Continue',
+    'character.confirm.back'        => 'Back',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/character/created.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'character.created.title'   => 'Account Management',
+    'character.created.heading' => 'Character Created',
+    'character.created.content' => 'The character <strong>:name</strong> has been created.<br><br><strong>See you in :server!</strong>',
+    'character.created.back'    => 'Back',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/character/updated.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'character.updated.title'   => 'Account Management',
+    'character.updated.heading' => 'Character Information Changed',
+    'character.updated.content' => 'The character information has been changed.',
+    'character.updated.back'    => 'Back',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/character/deleted.blade.php
+    |--------------------------------------------------------------------------
+    */
+   
+    'character.deleted.title'   => 'Account Management',
+    'character.deleted.heading' => 'Character Deleted',
+    'character.deleted.content' => 'The character <strong>:name</strong> has been scheduled for deletion. It will be removed permanently from your account on <strong>:date</strong>.',
+    'character.deleted.back'    => 'Back',
 
 
     /*
@@ -105,6 +142,32 @@ return [
     'character.delete.password' => 'Password:',
     'character.delete.submit'   => 'Submit',
     'character.delete.back'     => 'Back',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/character/undelete.blade.php
+    |--------------------------------------------------------------------------
+    */
+
+    'character.undelete.title'    => 'Account Management',
+    'character.undelete.preamble' => '<p>To undelete this character click on "Submit".<br>Note that characters can only be restored within the first 2 months (60 days) after the deletion.</p>',
+    'character.undelete.heading'  => 'Undelete Character',
+    'character.undelete.name'     => 'Character Name:',
+    'character.undelete.submit'   => 'Submit',
+    'character.undelete.back'     => 'Back',
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | resources/views/account/character/restored.blade.php
+    |--------------------------------------------------------------------------
+    */
+
+    'character.restored.title'    => 'Account Management',
+    'character.restored.heading'  => 'Character Undeleted',
+    'character.restored.content'  => 'The character <strong>:name</strong> has been undeleted.',
+    'character.restored.back'     => 'Back',
 
 
     /*
@@ -291,38 +354,41 @@ return [
     |--------------------------------------------------------------------------
     */
    
-    'overview.title'                   => 'Account Management',
-    'overview.welcome'                 => 'Welcome to your account!',
-    'overview.welcomename'             => 'Welcome to your account, :name!',
-    'overview.heading'                 => 'Account Status',
-    'overview.manageaccount'           => 'Manage Account',
-    'overview.getpremium'              => 'Get Premium',
-    'overview.logout'                  => 'Logout',
-    'overview.free'                    => 'Free Account',
-    'overview.freedesc'                => 'To benefit from our great premium features, get Premium Time for your account.',
-    'overview.email.edit'              => 'Edit',
-    'overview.email.heading'           => 'There is an email change request for the account!',
-    'overview.email.content'           => 'A request has been submitted to change the email address of this account to <strong>:email</strong>. After a waiting period of <strong>:days days</strong> you can accept the new email address and finish the process. Please cancel the request if you do not want your email address to be changed! Also cancel the request if you have no access to the new email address!',
-    'overview.vouchers.vouchers'       => 'Vouchers',
-    'overview.vouchers.heading'        => 'Vouchers Available!',
-    'overview.vouchers.content'        => 'A voucher is available for your account! Click on the button for further information.',
-    'overview.confirm.heading'         => 'Your account is not confirmed!',
-    'overview.confirm.content'         => 'Please check your emails to confirm your account.',
-    'overview.confirm.alert'           => '<h3>Confirm Account</h3><p>An email has been sent to the address you have entered while you have created your account. Please check your emails to confirm your account.</p><p>In case you have lost your confirmation email or did not receive it, you can request the email containing the confirmation link for your account again.</p><p>If you no longer have access to the email address the confirmation link was sent to, you can change the email address and the email will be sent again automatically.</p>',
-    'overview.confirm.request'         => 'Re-request Email',
-    'overview.confirm.edit'            => 'Change Email',
-    'overview.unregistered.heading'    => 'Your account is not registered!',
-    'overview.unregistered.register'   => 'Register Account',
-    'overview.unregistered.content'    => 'You can register your account for increased protection. Click on "Register Account" and get your free recovery key today!',
-    'overview.characters.heading'      => 'Characters',
-    'overview.characters.name'         => 'Name',
-    'overview.characters.world'        => 'World',
-    'overview.characters.status'       => 'Status',
-    'overview.characters.hidden'       => 'hidden',
-    'overview.characters.edit'         => 'Edit',
-    'overview.characters.delete'       => 'Delete',
-    'overview.characters.empty'        => 'No characters yet.',
-    'overview.characters.create'       => 'Create Character',
+    'overview.title'                    => 'Account Management',
+    'overview.welcome'                  => 'Welcome to your account!',
+    'overview.welcomename'              => 'Welcome to your account, :name!',
+    'overview.heading'                  => 'Account Status',
+    'overview.manageaccount'            => 'Manage Account',
+    'overview.getpremium'               => 'Get Premium',
+    'overview.logout'                   => 'Logout',
+    'overview.free'                     => 'Free Account',
+    'overview.freedesc'                 => 'To benefit from our great premium features, get Premium Time for your account.',
+    'overview.email.edit'               => 'Edit',
+    'overview.email.heading'            => 'There is an email change request for the account!',
+    'overview.email.content'            => 'A request has been submitted to change the email address of this account to <strong>:email</strong>. After a waiting period of <strong>:days days</strong> you can accept the new email address and finish the process. Please cancel the request if you do not want your email address to be changed! Also cancel the request if you have no access to the new email address!',
+    'overview.vouchers.vouchers'        => 'Vouchers',
+    'overview.vouchers.heading'         => 'Vouchers Available!',
+    'overview.vouchers.content'         => 'A voucher is available for your account! Click on the button for further information.',
+    'overview.confirm.heading'          => 'Your account is not confirmed!',
+    'overview.confirm.content'          => 'Please check your emails to confirm your account.',
+    'overview.confirm.alert'            => '<h3>Confirm Account</h3><p>An email has been sent to the address you have entered while you have created your account. Please check your emails to confirm your account.</p><p>In case you have lost your confirmation email or did not receive it, you can request the email containing the confirmation link for your account again.</p><p>If you no longer have access to the email address the confirmation link was sent to, you can change the email address and the email will be sent again automatically.</p>',
+    'overview.confirm.request'          => 'Re-request Email',
+    'overview.confirm.edit'             => 'Change Email',
+    'overview.unregistered.heading'     => 'Your account is not registered!',
+    'overview.unregistered.register'    => 'Register Account',
+    'overview.unregistered.content'     => 'You can register your account for increased protection. Click on "Register Account" and get your free recovery key today!',
+    'overview.characters.heading'       => 'Characters',
+    'overview.characters.name'          => 'Name',
+    'overview.characters.world'         => 'World',
+    'overview.characters.status'        => 'Status',
+    'overview.characters.hiddendeleted' => 'hidden, deleted',
+    'overview.characters.hidden'        => 'hidden',
+    'overview.characters.deleted'       => 'deleted',
+    'overview.characters.edit'          => 'Edit',
+    'overview.characters.delete'        => 'Delete',
+    'overview.characters.undelete'      => 'Undelete',
+    'overview.characters.empty'         => 'No characters yet.',
+    'overview.characters.create'        => 'Create Character',
 
 
     /*

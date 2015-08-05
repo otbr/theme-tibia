@@ -60,7 +60,7 @@
                                         <td style="width: 70%;">{{ $player->name() }}</td>
                                     </tr>
                                     <tr>
-                                        <td colspan="3" style="height: 8px;"></td>
+                                        <td colspan="2" style="height: 8px;"></td>
                                     </tr>
                                     @if ($world = $player->world())
                                         <tr>
@@ -68,7 +68,7 @@
                                             <td>{{ $world->name() }}</td>
                                         </tr>
                                         <tr>
-                                            <td colspan="3" style="height: 8px;"></td>
+                                            <td colspan="2" style="height: 8px;"></td>
                                         </tr>
                                     @endif
                                     <tr>
@@ -101,18 +101,35 @@
                                         <td>
                                             <p>
                                                 <label>
-                                                    <input type="checkbox"> {!! trans('theme::account.character.edit.hide') !!}
+                                                    <input type="checkbox" name="hide" {{ old('hide', $player->properties->hidden()) ? 'checked' : null }}>
+                                                    {!! trans('theme::account.character.edit.hide') !!}
                                                 </label>
                                             </p>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <th class="valign-top"><p><strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong></p></th>
-                                        <td><p><textarea cols="50" rows="10"></textarea></p></td>
+                                        <th class="valign-top">
+                                            <p>
+                                                <strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong>
+                                            </p>
+                                        </th>
+                                        <td>
+                                            <p>
+                                                <textarea name="comment" cols="50" rows="10">{{ old('comment', $player->properties->comment()) }}</textarea>
+                                            </p>
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <th class="valign-top"><p><strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong></p></th>
-                                        <td><p><textarea cols="50" rows="4"></textarea></p></td>
+                                        <th class="valign-top">
+                                            <p>
+                                                <strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong>
+                                            </p>
+                                        </th>
+                                        <td>
+                                            <p>
+                                                <textarea name="signature" cols="50" rows="4">{{ old('signature', $player->properties->signature()) }}</textarea>
+                                            </p>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>

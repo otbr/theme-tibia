@@ -18,6 +18,11 @@
             <form method="POST" action="{{ url('/account/character') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                <input type="hidden" name="player" value="{{ old('player') }}">
+                <input type="hidden" name="sex" value="{{ old('sex') }}">
+                <input type="hidden" name="vocation" value="{{ old('vocation') }}">
+                <input type="hidden" name="world" value="{{ old('world') }}">
+
                 <div class="table">
                     <header class="header">
                         <div class="borders">
@@ -36,6 +41,10 @@
                             <tr>
                                 <th>{!! trans('theme::account.character.confirm.sex') !!}</th>
                                 <td>{{ gender(old('sex'))->name() }}</td>
+                            </tr>
+                            <tr>
+                                <th>{!! trans('theme::account.character.confirm.vocation') !!}</th>
+                                <td>{{ vocation(old('vocation'))->name() }}</td>
                             </tr>
                             @if (worlds()->count() > 1)
                                 <tr>

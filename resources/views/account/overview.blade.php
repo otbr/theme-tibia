@@ -231,7 +231,7 @@
                                 <th class="header" style="width: 40px;"></th>
                                 <th class="header">{!! trans('theme::account.overview.characters.name') !!}</th>
                                 <th class="header" style="width: 120px;">{!! trans('theme::account.overview.characters.world') !!}</th>
-                                <th class="header" style="width: 90px;">{!! trans('theme::account.overview.characters.status') !!}</th>
+                                <th class="header" style="width: 120px;">{!! trans('theme::account.overview.characters.status') !!}</th>
                                 <th class="header" style="width: 90px;"></th>
                             </tr>
 
@@ -239,18 +239,35 @@
                                 <tr class="character {{ $i === 0 ? 'active' : null }}" data-v-class="active: isActivated({{ $i }}, 'selectedPlayer')" data-v-on="click: activate({{ $i }}, 'selectedPlayer')">
                                     <td class="valign-middle text-center">
                                         <span class="play-integer">{{ ++$i }}.</span>
-                                        <a href="#" class="play-button"></a>
+                                        @if ($player->isDeleted())
+                                            <span class="play-button-red"></span>
+                                        @else
+                                            <a href="#" class="play-button"></a>
+                                        @endif
                                     </td>
                                     <td class="valign-middle">
                                         <span>{{ $player->name() }}</span>
                                         <small>{{ $player->vocation()->name() }} - Level {{ $player->level() }}</small>
                                     </td>
                                     <td>{{ $player->world()->name() }}</td>
-                                    <td>{!! trans('theme::account.overview.characters.hidden') !!}</td>
+                                    <td>
+                                        @if ($player->isHidden() and $player->isDeleted())
+                                            {!! trans('theme::account.overview.characters.hiddendeleted') !!}
+                                        @elseif ($player->isHidden())
+                                            {!! trans('theme::account.overview.characters.hidden') !!}
+                                        @elseif ($player->isDeleted())
+                                            {!! trans('theme::account.overview.characters.deleted') !!}
+                                        @endif
+                                    </td>
                                     <td class="text-center">
                                         <div class="character-buttons" style="font-weight: normal;">
                                             [<a href="{{ url('/account/character', $player->id()) }}">{!! trans('theme::account.overview.characters.edit') !!}</a>]
-                                            [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">{!! trans('theme::account.overview.characters.delete') !!}</a>]
+
+                                            @if ($player->isDeleted())
+                                                [<a href="{{ url('/account/character', [$player->id(), 'undelete']) }}">{!! trans('theme::account.overview.characters.undelete') !!}</a>]
+                                            @else
+                                                [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">{!! trans('theme::account.overview.characters.delete') !!}</a>]
+                                            @endif
                                         </div>
                                     </td>
                                 </tr>
