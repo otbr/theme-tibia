@@ -9,6 +9,8 @@ body {
     color: @heading-color;
     overflow-y: scroll;
     margin: 0;
+
+    .font-size(1.2);
 }
 
 a {
@@ -82,4 +84,11 @@ label {
 
 label, input[type="radio"], input[type="checkbox"] {
     cursor: pointer;
+}
+
+ul,
+ol {
+    & > li {
+        margin: 2px 0;
+    }
 }
