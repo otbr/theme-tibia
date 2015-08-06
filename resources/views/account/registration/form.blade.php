@@ -27,9 +27,8 @@
 
             {!! trans('theme::account.register.index.preamble', ['server' => $server, 'privacy' => url('/support/privacy')]) !!}
 
-            <form method="POST">
+            <form method="POST" action="{{ url('/account/register/confirm') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
 
                 <div class="table">
                     <header class="header">

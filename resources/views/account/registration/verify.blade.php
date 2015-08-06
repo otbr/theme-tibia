@@ -27,17 +27,16 @@
 
             {!! trans('theme::account.register.verify.preamble') !!}
 
-            <form method="POST">
+            <form method="POST" action="{{ url('/account/register') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
 
-                <input type="hidden" name="firstname" value="{{ old('firstname') }}">
-                <input type="hidden" name="surname" value="{{ old('surname') }}">
-                <input type="hidden" name="country" value="{{ old('country') }}">
-                <input type="hidden" name="day" value="{{ old('day') }}">
-                <input type="hidden" name="month" value="{{ old('month') }}">
-                <input type="hidden" name="year" value="{{ old('year') }}">
-                <input type="hidden" name="gender" value="{{ old('gender') }}">
+                <input type="hidden" name="firstname" value="{{ old('firstname', session('firstname')) }}">
+                <input type="hidden" name="surname" value="{{ old('surname', session('surname')) }}">
+                <input type="hidden" name="country" value="{{ old('country', session('country')) }}">
+                <input type="hidden" name="day" value="{{ old('day', session('day')) }}">
+                <input type="hidden" name="month" value="{{ old('month', session('month')) }}">
+                <input type="hidden" name="year" value="{{ old('year', session('year')) }}">
+                <input type="hidden" name="gender" value="{{ old('gender', session('gender')) }}">
 
                 <div class="table">
                     <header class="header">

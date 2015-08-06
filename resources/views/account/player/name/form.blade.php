@@ -18,7 +18,7 @@
             @include('theme::modules.errors')
 
             {!! trans('theme::account.character.name.preamble', [
-                'server'    => $server,
+                'server'    => server()->name(),
                 'rules'     => url('/support/rules'),
             ]) !!}
 

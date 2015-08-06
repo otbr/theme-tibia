@@ -16,7 +16,7 @@
         <div class="inner-box">
 
             {!! trans('theme::account.character.create.preamble', [
-                'server'    => $server,
+                'server'    => server()->name(),
                 'rules'     => url('/support/rules'),
             ]) !!}
             
