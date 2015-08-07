@@ -1,10 +1,10 @@
 /**
- * The following styles were written with the subsequent route in mind,
+ * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @route  /account/login
+ * @view  ./resources/views/account/auth/login.blade.php
  */
-.account-login #middle-column {
+.account-auth-login #middle-column {
     .buttons-right {
         float: right;
 
@@ -30,12 +30,12 @@
 
 
 /**
- * The following styles were written with the subsequent route in mind,
+ * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @route  /account/create
+ * @view  ./resources/views/account/auth/create.blade.php
  */
-.account-create #middle-column {
+.account-auth-create #middle-column {
     label[for="male"] {
         display: inline-block;
         margin-right: 60px;
@@ -53,19 +53,10 @@
 
 
 /**
- * The following styles were written with the subsequent route in mind,
+ * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @route  /account/logout
- */
-.account-logout #middle-column { }
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account
+ * @view  ./resources/views/account/overview.blade.php
  */
 .account-overview #middle-column {
     .buttons-right {
@@ -107,10 +98,10 @@
 
 
 /**
- * The following styles were written with the subsequent route in mind,
+ * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @route  /account/manage
+ * @view  ./resources/views/account/manage.blade.php
  */
 .account-manage #middle-column {
     .buttons-right {
@@ -126,12 +117,30 @@
 
 
 /**
- * The following styles were written with the subsequent route in mind,
+ * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @route  /account/password
+ * @view  ./resources/views/account/action/password/form.blade.php
+ * @view  ./resources/views/account/action/rename/form.blade.php
+ * @view  ./resources/views/account/action/terminate/form.blade.php
+ * 
+ * @view  ./resources/views/account/email/edit/awaiting.blade.php
+ * @view  ./resources/views/account/email/edit/cancelled.blade.php
+ * @view  ./resources/views/account/email/edit/edited.blade.php
+ * @view  ./resources/views/account/email/edit/form.blade.php
+ * 
+ * @view  ./resources/views/account/player/name/form.blade.php
+ * @view  ./resources/views/account/player/sex/form.blade.php
  */
-.account-password #middle-column {
+.account-action-password-form #middle-column, 
+.account-action-rename-form #middle-column, 
+.account-action-terminate-form #middle-column, 
+.account-email-edit-awaiting #middle-column, 
+.account-email-edit-cancelled #middle-column, 
+.account-email-edit-edited #middle-column, 
+.account-email-edit-form #middle-column, 
+.account-player-name-form #middle-column, 
+.account-player-sex-form #middle-column {
     .content.dark {
         padding: 7px 6px 5px;
     }
@@ -139,64 +148,31 @@
 
 
 /**
- * The following styles were written with the subsequent route in mind,
+ * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @route  /account/email
+ * @view  ./resources/views/account/player/create/confirm.blade.php
+ * @view  ./resources/views/account/player/create/created.blade.php
+ * @view  ./resources/views/account/player/create/form.blade.php
+ * 
+ * @view  ./resources/views/account/player/delete/confirm.blade.php
+ * @view  ./resources/views/account/player/delete/deleted.blade.php
+ * 
+ * @view  ./resources/views/account/player/edit/form.blade.php
+ * @view  ./resources/views/account/player/edit/edited.blade.php
+ * 
+ * @view  ./resources/views/account/player/undelete/confirm.blade.php
+ * @view  ./resources/views/account/player/undelete/undeleted.blade.php
  */
-.account-email #middle-column {
-    .content.dark {
-        padding: 7px 6px 5px;
-    }
-}
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account/rename
- */
-.account-rename #middle-column {
-    .content.dark {
-        padding: 7px 6px 5px;
-    }
-}
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account/terminate
- */
-.account-terminate #middle-column {
-    .content.dark {
-        padding: 7px 6px 5px;
-    }
-}
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account/character
- */
-.account-character #middle-column {
-    p {
-        margin: 5px 0;
-    }
-}
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account/character/{id}/edit
- */
-.account-character-edit #middle-column {
+.account-player-create-confirm #middle-column, 
+.account-player-create-created #middle-column, 
+.account-player-create-form #middle-column, 
+.account-player-delete-confirm #middle-column, 
+.account-player-delete-deleted #middle-column, 
+.account-player-edit-form #middle-column, 
+.account-player-edit-edited #middle-column, 
+.account-player-undelete-confirm #middle-column, 
+.account-player-undelete-undeleted #middle-column {
     .paddingless td {
         padding-bottom: 0;
         padding-top: 0;
@@ -209,42 +185,12 @@
 
 
 /**
- * The following styles were written with the subsequent route in mind,
+ * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @route  /account/character/{id}/delete
+ * @view  ./resources/views/account/player/world/form.blade.php
  */
-.account-character-delete #middle-column {
-    .content.dark {
-        padding: 7px 6px 5px;
-    }
-    
-    p {
-        margin: 5px 0;
-    }
-}
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account/character/{id}/name
- */
-.account-character-name #middle-column {
-    .content.dark {
-        padding: 7px 6px 5px;
-    }
-}
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account/character/{id}/world
- */
-.account-character-world #middle-column {
+.account-player-world-form #middle-column {
     ul > li {
         &.yes {
             list-style-image: url('@{image-path}/yes.gif');
@@ -253,18 +199,5 @@
         &.no {
             list-style-image: url('@{image-path}/no.gif');
         }
-    }
-}
-
-
-/**
- * The following styles were written with the subsequent route in mind,
- * although are not necessarily limited to it.
- *
- * @route  /account/character/{id}/sex
- */
-.account-character-sex #middle-column {
-    .content.dark {
-        padding: 7px 6px 5px;
     }
 }

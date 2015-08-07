@@ -1,7 +1,7 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/registration/create/confirm.title'))
-@section('body', 'account-registration-create-confirm')
+@section('body', 'account-registration account-registration-create-confirm')
 @section('navigation', '/account')
 
 @section('content')

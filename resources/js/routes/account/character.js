@@ -1,10 +1,10 @@
 (function (window, document, undefined) {
-    if (document.getElementsByTagName('body')[0].className.indexOf('account-character') !== -1) {
+    if (document.getElementsByTagName('body')[0].className.indexOf('account-player-create-form') !== -1) {
 
         var Vue = require('vue');
 
         new Vue({
-            el: 'body.account-character',
+            el: 'body.account-player-create-form',
 
             data: {
                 name : null

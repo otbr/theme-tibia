@@ -1,10 +1,10 @@
 (function (window, document, undefined) {
-    if (document.getElementsByTagName('body')[0].className.indexOf('account-create') !== -1) {
+    if (document.getElementsByTagName('body')[0].className.indexOf('account-auth-create') !== -1) {
 
         var Vue = require('vue');
 
         new Vue({
-            el: 'body.account-create',
+            el: 'body.account-auth-create',
 
             data: {
                 account         : null,
