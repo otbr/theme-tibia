@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.create.title'))
+@title(trans('theme::account/player/create/form.title'))
 @navigation('/account')
 @bodyclass('account-character')
 
@@ -9,13 +9,13 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.create.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/create/form.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
         <div class="inner-box">
 
-            {!! trans('theme::account.character.create.preamble', [
+            {!! trans('theme::account/player/create/form.preamble', [
                 'server'    => server()->name(),
                 'rules'     => url('/support/rules'),
             ]) !!}
@@ -31,7 +31,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.character.create.heading') !!}
+                            {!! trans('theme::account/player/create/form.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -40,13 +40,13 @@
                         <div class="box">
                             <table class="table-striped">
                                 <tr>
-                                    <th style="width: 20%;"><strong class="{{ $errors->has('player') ? 'error' : null }}">{!! trans('theme::account.character.create.name') !!}</strong></th>
-                                    <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.create.sex') !!}</strong></th>
+                                    <th style="width: 20%;"><strong class="{{ $errors->has('player') ? 'error' : null }}">{!! trans('theme::account/player/create/form.name') !!}</strong></th>
+                                    <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account/player/create/form.sex') !!}</strong></th>
                                 </tr>
                                 <tr>
                                     <td style="width: 50%;">
                                         <input type="text" name="player" size="35" maxlength="30" id="name-suggestion" value="{{ old('player') }}" data-v-model="name"><br>
-                                        <small>[<a href="#" id="suggest-name" data-v-on="click: suggestName">{!! trans('theme::account.character.create.suggestname') !!}</a>]</small>
+                                        <small>[<a href="#" id="suggest-name" data-v-on="click: suggestName">{!! trans('theme::account/player/create/form.suggestname') !!}</a>]</small>
                                     </td>
                                     @if (count($genders = genders()) > 1)
                                         <td>
@@ -68,7 +68,7 @@
                                 <div class="inner-box">
                                     <table class="full-width">
                                         <tr>
-                                            <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account.character.create.vocation') !!}</strong></p></th>
+                                            <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account/player/create/form.vocation') !!}</strong></p></th>
                                             <td>
                                                 <?php $first = $vocations->first()->id(); ?>
                                                 @foreach ($vocations as $vocation)
@@ -90,7 +90,7 @@
                                 <div class="inner-box">
                                     <table class="full-width">
                                         <tr>
-                                            <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.create.world') !!}</strong></p></th>
+                                            <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account/player/create/form.world') !!}</strong></p></th>
                                             <td>
                                                 <?php $random = $worlds->random()->id(); ?>
                                                 @foreach ($worlds as $key => $world)
@@ -108,7 +108,7 @@
                                                     </p>
                                                 @endforeach
                                                 
-                                                <p><small>[<a href="#" id="suggest-world" data-v-on="click: suggestWorld">{!! trans('theme::account.character.create.suggestworld') !!}</a>]</small></p>
+                                                <p><small>[<a href="#" id="suggest-world" data-v-on="click: suggestWorld">{!! trans('theme::account/player/create/form.suggestworld') !!}</a>]</small></p>
                                             </td>
                                         </tr>
                                     </table>
@@ -124,12 +124,12 @@
                     <tr>
                         <td style="width: 50%;" class="text-center">
                             <button class="blue-button">
-                                <span>{{ trans('theme::account.character.create.submit') }}</span>
+                                <span>{{ trans('theme::account/player/create/form.submit') }}</span>
                             </button>
                         </td>
                         <td style="width: 50%;" class="text-center">
                             <a href="{{ url('/account') }}" class="blue-button">
-                                <span>{{ trans('theme::account.character.create.back') }}</span>
+                                <span>{{ trans('theme::account/player/create/form.back') }}</span>
                             </a>
                         </td>
                     </tr>

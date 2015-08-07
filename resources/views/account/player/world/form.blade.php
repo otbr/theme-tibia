@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.world.title'))
+@title(trans('theme::account/player/world/form.title'))
 @navigation('/account')
 @bodyclass('account-character-world')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.world.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/world/form.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -17,15 +17,15 @@
 
             @include('theme::modules.errors')
 
-            {!! trans('theme::account.character.world.preamble') !!}
+            {!! trans('theme::account/player/world/form.preamble') !!}
 
             <ul>
-                <li class="yes">{!! trans('theme::account.character.world.transfered') !!}</li>
-                <li class="no">{!! trans('theme::account.character.world.level') !!}</li>
-                <li class="yes">{!! trans('theme::account.character.world.guild') !!}</li>
-                <li class="yes">{!! trans('theme::account.character.world.marriage') !!}</li>
-                <li class="no">{!! trans('theme::account.character.world.house') !!}</li>
-                <li class="no">{!! trans('theme::account.character.world.beginner') !!}</li>
+                <li class="yes">{!! trans('theme::account/player/world/form.transfered') !!}</li>
+                <li class="no">{!! trans('theme::account/player/world/form.level') !!}</li>
+                <li class="yes">{!! trans('theme::account/player/world/form.guild') !!}</li>
+                <li class="yes">{!! trans('theme::account/player/world/form.marriage') !!}</li>
+                <li class="no">{!! trans('theme::account/player/world/form.house') !!}</li>
+                <li class="no">{!! trans('theme::account/player/world/form.beginner') !!}</li>
             </ul>
 
             <form method="POST" action="{{ url('/account/character', [$player->id(), 'world']) }}">
@@ -36,7 +36,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.character.world.heading') !!}
+                            {!! trans('theme::account/player/world/form.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -45,10 +45,10 @@
                         <div class="box">
                             <table class="table-striped">
                                 <tr>
-                                    <th>{!! trans('theme::account.character.world.name') !!}</th>
-                                    <th>{!! trans('theme::account.character.world.current') !!}</th>
-                                    <th>{!! trans('theme::account.character.world.target') !!}</th>
-                                    <th>{!! trans('theme::account.character.world.requirement') !!}</th>
+                                    <th>{!! trans('theme::account/player/world/form.name') !!}</th>
+                                    <th>{!! trans('theme::account/player/world/form.current') !!}</th>
+                                    <th>{!! trans('theme::account/player/world/form.target') !!}</th>
+                                    <th>{!! trans('theme::account/player/world/form.requirement') !!}</th>
                                 </tr>
                                 <tr>
                                     <td>{{ $player->name() }}</td>
@@ -61,7 +61,7 @@
                                             @endforeach
                                         </select>
                                     </td>
-                                    <td><strong class="green">{!! trans('theme::account.character.world.available') !!}</strong></td>
+                                    <td><strong class="green">{!! trans('theme::account/player/world/form.available') !!}</strong></td>
                                 </tr>
                             </table>
                         </div>
@@ -74,12 +74,12 @@
                     <tr>
                         <td class="text-center">
                             <button class="green-button">
-                                <span>{{ trans('theme::account.character.world.continue') }}</span>
+                                <span>{{ trans('theme::account/player/world/form.continue') }}</span>
                             </button>
                         </td>
                         <td class="text-center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <span>{{ trans('theme::account.character.world.back') }}</span>
+                                <span>{{ trans('theme::account/player/world/form.back') }}</span>
                             </a>
                         </td>
                     </tr>

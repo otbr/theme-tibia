@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.restored.title'))
+@title(trans('theme::account/player/undelete/undeleted.title'))
 @navigation('/account')
 @bodyclass('account-character-deleted')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.restored.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/undelete/undeleted.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -19,14 +19,14 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.character.restored.heading') !!}
+                        {!! trans('theme::account/player/undelete/undeleted.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
                     <p>
-                        {!! trans('theme::account.character.restored.content', [
+                        {!! trans('theme::account/player/undelete/undeleted.content', [
                             'name' => $player->name(),
                         ]) !!}
                     </p>
@@ -39,7 +39,7 @@
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account') }}" class="blue-button">
-                            <span>{{ trans('theme::account.character.restored.back') }}</span>
+                            <span>{{ trans('theme::account/player/undelete/undeleted.back') }}</span>
                         </a>
                     </td>
                 </tr>

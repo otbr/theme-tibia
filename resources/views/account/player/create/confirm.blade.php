@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.confirm.title'))
+@title(trans('theme::account/player/create/confirm.title'))
 @navigation('/account')
 @bodyclass('account-character-confirm')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.confirm.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/create/confirm.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -27,7 +27,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.character.confirm.heading') !!}
+                            {!! trans('theme::account/player/create/confirm.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -35,24 +35,24 @@
                     <div class="content dark">
                         <table>
                             <tr>
-                                <th>{!! trans('theme::account.character.confirm.name') !!}</th>
+                                <th>{!! trans('theme::account/player/create/confirm.name') !!}</th>
                                 <td>{{ old('player') }}</td>
                             </tr>
                             <tr>
-                                <th>{!! trans('theme::account.character.confirm.sex') !!}</th>
+                                <th>{!! trans('theme::account/player/create/confirm.sex') !!}</th>
                                 <td>{{ gender(old('sex'))->name() }}</td>
                             </tr>
                             <tr>
-                                <th>{!! trans('theme::account.character.confirm.vocation') !!}</th>
+                                <th>{!! trans('theme::account/player/create/confirm.vocation') !!}</th>
                                 <td>{{ vocation(old('vocation'))->name() }}</td>
                             </tr>
                             @if (worlds()->count() > 1)
                                 <tr>
-                                    <th>{!! trans('theme::account.character.confirm.world') !!}</th>
+                                    <th>{!! trans('theme::account/player/create/confirm.world') !!}</th>
                                     <td>{{ world(old('world'))->name() }}</td>
                                 </tr>
                                 <tr>
-                                    <th>{!! trans('theme::account.character.confirm.type') !!}</th>
+                                    <th>{!! trans('theme::account/player/create/confirm.type') !!}</th>
                                     <td>{{ world(old('world'))->type() }}</td>
                                 </tr>
                             @endif
@@ -66,12 +66,12 @@
                     <tr>
                         <td class="text-center">
                             <button class="blue-button">
-                                <span>{{ trans('theme::account.character.confirm.continue') }}</span>
+                                <span>{{ trans('theme::account/player/create/confirm.continue') }}</span>
                             </button>
                         </td>
                         <td class="text-center">
                             <button name="back" class="blue-button">
-                                <span>{{ trans('theme::account.character.confirm.back') }}</span>
+                                <span>{{ trans('theme::account/player/create/confirm.back') }}</span>
                             </button>
                         </td>
                     </tr>

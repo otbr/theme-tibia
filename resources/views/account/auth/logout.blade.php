@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.logout.title'))
+@title(trans('theme::account/auth/logout.title'))
 @navigation('/account')
 @bodyclass('account-logout')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.logout.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/auth/logout.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -19,7 +19,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.logout.heading') !!}
+                        {!! trans('theme::account/auth/logout.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -28,7 +28,7 @@
                     <table class="full-width">
                         <tr>
                             <td>
-                                {!! trans('theme::account.logout.content', [
+                                {!! trans('theme::account/auth/logout.content', [
                                     'server'    => $server, 
                                     'url'       => url('/account/login'),
                                 ]) !!}

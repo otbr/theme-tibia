@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.download.title'))
+@title(trans('theme::account/download.title'))
 @navigation('/account/download')
 @bodyclass('account-download')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.download.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/download.title') !!}</div>
     </header>
 
     <div class="inner-box-border">

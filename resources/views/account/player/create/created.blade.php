@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.created.title'))
+@title(trans('theme::account/player/create/created.title'))
 @navigation('/account')
 @bodyclass('account-character-created')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.created.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/create/created.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -19,14 +19,14 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.character.created.heading') !!}
+                        {!! trans('theme::account/player/create/created.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
                     <p>
-                        {!! trans('theme::account.character.created.content', [
+                        {!! trans('theme::account/player/create/created.content', [
                             'name'      => $player->name(),
                             'server'    => server()->name(),
                         ]) !!}
@@ -40,7 +40,7 @@
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account') }}" class="blue-button">
-                            <span>{{ trans('theme::account.character.created.back') }}</span>
+                            <span>{{ trans('theme::account/player/create/created.back') }}</span>
                         </a>
                     </td>
                 </tr>

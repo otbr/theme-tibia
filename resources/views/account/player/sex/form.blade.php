@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.sex.title'))
+@title(trans('theme::account/player/sex/form.title'))
 @navigation('/account')
 @bodyclass('account-character-sex')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.sex.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/sex/form.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -25,13 +25,13 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.character.sex.heading') !!}
+                            {!! trans('theme::account/player/sex/form.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
 
                     <div class="content dark">
-                        {!! trans('theme::account.character.sex.content', ['name' => $player->name()]) !!}
+                        {!! trans('theme::account/player/sex/form.content', ['name' => $player->name()]) !!}
                     </div>
                 </div>
 
@@ -41,12 +41,12 @@
                     <tr>
                         <td class="text-center">
                             <button class="green-button">
-                                <span>{{ trans('theme::account.character.sex.yes') }}</span>
+                                <span>{{ trans('theme::account/player/sex/form.yes') }}</span>
                             </button>
                         </td>
                         <td class="text-center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <span>{{ trans('theme::account.character.sex.back') }}</span>
+                                <span>{{ trans('theme::account/player/sex/form.back') }}</span>
                             </a>
                         </td>
                     </tr>

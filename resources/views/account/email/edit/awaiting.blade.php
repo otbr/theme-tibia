@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.email.awaiting.title'))
+@title(trans('theme::account/email/edit/awaiting.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.email.awaiting.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/email/edit/awaiting.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -23,13 +23,13 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.email.awaiting.heading') !!}
+                            {!! trans('theme::account/email/edit/awaiting.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
 
                     <div class="content dark">
-                        {!! trans('theme::account.email.awaiting.content', [
+                        {!! trans('theme::account/email/edit/awaiting.content', [
                             'email' => $account->properties->email(),
                             'date'  => $account->properties->emailDate(),
                         ]) !!}
@@ -42,12 +42,12 @@
                     <tr>
                         <td class="text-center">
                             <button class="blue-button">
-                                <span>{{ trans('theme::account.email.awaiting.cancel') }}</span>
+                                <span>{{ trans('theme::account/email/edit/awaiting.cancel') }}</span>
                             </button>
                         </td>
                         <td class="text-center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <span>{{ trans('theme::account.email.awaiting.back') }}</span>
+                                <span>{{ trans('theme::account/email/edit/awaiting.back') }}</span>
                             </a>
                         </td>
                     </tr>

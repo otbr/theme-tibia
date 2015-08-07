@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.email.update.title'))
+@title(trans('theme::account/email/edit/edited.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.email.update.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/email/edit/edited.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -20,9 +20,9 @@
                     <div class="borders">
                         <span class="edges top"></span>
                         @if ($account->isConfirmed())
-                            {!! trans('theme::account.email.update.heading') !!}
+                            {!! trans('theme::account/email/edit/edited.heading') !!}
                         @else
-                            {!! trans('theme::account.email.update.changed') !!}
+                            {!! trans('theme::account/email/edit/edited.changed') !!}
                         @endif
                         <span class="edges bottom"></span>
                     </div>
@@ -30,12 +30,12 @@
 
                 <div class="content dark">
                     @if ($account->isConfirmed())
-                        {!! trans('theme::account.email.update.confirmed', [
+                        {!! trans('theme::account/email/edit/edited.confirmed', [
                             'email' => $account->properties->email(),
                             'days'  => config('pandaac.mail.timers.email-change'),
                         ]) !!}
                     @else
-                        {!! trans('theme::account.email.update.unconfirmed', [
+                        {!! trans('theme::account/email/edit/edited.unconfirmed', [
                             'email' => $account->email(),
                         ]) !!}
                     @endif
@@ -48,7 +48,7 @@
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
-                            <span>{{ trans('theme::account.email.update.back') }}</span>
+                            <span>{{ trans('theme::account/email/edit/edited.back') }}</span>
                         </a>
                     </td>
                 </tr>

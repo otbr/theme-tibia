@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.login.title'))
+@title(trans('theme::account/auth/login.title'))
 @navigation('/account')
 @bodyclass('account-login')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.login.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/auth/login.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -21,7 +21,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.login.heading') !!}
+                        {!! trans('theme::account/auth/login.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -34,20 +34,20 @@
 
                                 <div class="buttons-right">
                                     <button class="blue-button" style="margin-bottom: 2px;">
-                                        <span>{{ trans('theme::account.login.login') }}</span>
+                                        <span>{{ trans('theme::account/auth/login.login') }}</span>
                                     </button>
                                     <a href="{{ url('/account/recover') }}" class="blue-button">
-                                        <span>{{ trans('theme::account.login.lost') }}</span>
+                                        <span>{{ trans('theme::account/auth/login.lost') }}</span>
                                     </a>
                                 </div>
 
                                 <table>
                                     <tr>
-                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account.login.name') !!}</strong></th>
+                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account/auth/login.name') !!}</strong></th>
                                         <td><input type="password" name="name" size="35" maxlength="30"></td>
                                     </tr>
                                     <tr>
-                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account.login.password') !!}</strong></th>
+                                        <th><strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::account/auth/login.password') !!}</strong></th>
                                         <td><input type="password" name="password" size="35" maxlength="29"></td>
                                     </tr>
                                 </table>
@@ -59,13 +59,13 @@
 
             <br>
 
-            <h1>{!! trans('theme::account.login.new.heading', compact('server')) !!}</h1>
+            <h1>{!! trans('theme::account/auth/login.new.heading', compact('server')) !!}</h1>
             
             <div class="table">
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.login.new.player') !!}
+                        {!! trans('theme::account/auth/login.new.player') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -76,14 +76,14 @@
                             <div class="information">
                                 <div class="buttons-right">
                                     <a href="{{ url('/account/create') }}" class="medium-button">
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_createaccount.png') }}" alt="{{ trans('theme::account.login.new.create') }}">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_createaccount.png') }}" alt="{{ trans('theme::account/auth/login.new.create') }}">
                                     </a>
                                 </div>
 
-                                <strong>{!! trans('theme::account.login.new.server', compact('server')) !!}</strong>
-                                <p class="indent">{!! trans('theme::account.login.new.one') !!}</p>
-                                <p class="indent">{!! trans('theme::account.login.new.two') !!}</p>
-                                <p class="indent">{!! trans('theme::account.login.new.three') !!}</p>
+                                <strong>{!! trans('theme::account/auth/login.new.server', compact('server')) !!}</strong>
+                                <p class="indent">{!! trans('theme::account/auth/login.new.one') !!}</p>
+                                <p class="indent">{!! trans('theme::account/auth/login.new.two') !!}</p>
+                                <p class="indent">{!! trans('theme::account/auth/login.new.three') !!}</p>
                             </div>
                         </div>
                     </div>

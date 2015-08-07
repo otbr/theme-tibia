@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.name.title'))
+@title(trans('theme::account/player/name/form.title'))
 @navigation('/account')
 @bodyclass('account-character-name')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.name.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/name/form.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -17,7 +17,7 @@
 
             @include('theme::modules.errors')
 
-            {!! trans('theme::account.character.name.preamble', [
+            {!! trans('theme::account/player/name/form.preamble', [
                 'server'    => server()->name(),
                 'rules'     => url('/support/rules'),
             ]) !!}
@@ -30,7 +30,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.character.name.heading') !!}
+                            {!! trans('theme::account/player/name/form.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -38,11 +38,11 @@
                     <div class="content dark">
                         <table>
                             <tr>
-                                <th>{!! trans('theme::account.character.name.current') !!}</th>
+                                <th>{!! trans('theme::account/player/name/form.current') !!}</th>
                                 <td>{{ $player->name() }}</td>
                             </tr>
                             <tr>
-                                <th>{!! trans('theme::account.character.name.new') !!}</th>
+                                <th>{!! trans('theme::account/player/name/form.new') !!}</th>
                                 <td><input type="text" name="name" size="30" maxlength="29"></td>
                             </tr>
                         </table>
@@ -55,12 +55,12 @@
                     <tr>
                         <td class="text-center">
                             <button class="green-button">
-                                <span>{{ trans('theme::account.character.name.submit') }}</span>
+                                <span>{{ trans('theme::account/player/name/form.submit') }}</span>
                             </button>
                         </td>
                         <td class="text-center">
                             <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <span>{{ trans('theme::account.character.name.back') }}</span>
+                                <span>{{ trans('theme::account/player/name/form.back') }}</span>
                             </a>
                         </td>
                     </tr>

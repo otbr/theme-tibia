@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.register.key.title'))
+@title(trans('theme::account/registration/create/registered.title'))
 @navigation('/account')
 @bodyclass('account-register')
 
@@ -9,31 +9,31 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.register.key.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/registration/create/registered.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
         <div class="inner-box">
 
-            <h2 class="iconless">{!! trans('theme::account.register.key.preheading') !!}</h2>
+            <h2 class="iconless">{!! trans('theme::account/registration/create/registered.preheading') !!}</h2>
 
             <progressbar>
-                <step class="scroll" completed>{!! trans('theme::account.register.key.date') !!}</step>
-                <step class="questionmark" completed>{!! trans('theme::account.register.key.verification') !!}</step>
-                <step class="checkmark" completed>{!! trans('theme::account.register.key.recoverykey') !!}</step>
+                <step class="scroll" completed>{!! trans('theme::account/registration/create/registered.date') !!}</step>
+                <step class="questionmark" completed>{!! trans('theme::account/registration/create/registered.verification') !!}</step>
+                <step class="checkmark" completed>{!! trans('theme::account/registration/create/registered.recoverykey') !!}</step>
             </progressbar>
 
             <div class="table">
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.register.key.heading') !!}
+                        {!! trans('theme::account/registration/create/registered.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    {!! trans('theme::account.register.key.content', ['key' => $key]) !!}
+                    {!! trans('theme::account/registration/create/registered.content', ['key' => $key]) !!}
                 </div>
             </div>
 
@@ -43,7 +43,7 @@
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account') }}" class="blue-button">
-                            <span>{{ trans('theme::account.register.key.back') }}</span>
+                            <span>{{ trans('theme::account/registration/create/registered.back') }}</span>
                         </a>
                     </td>
                 </tr>

@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.overview.title'))
+@title(trans('theme::account/overview.title'))
 @navigation('/account')
 @bodyclass('account-overview')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.overview.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/overview.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -18,16 +18,16 @@
             @include('theme::modules.errors')
             
             @if ($account->isRegistered())
-                <h2>{!! trans('theme::account.overview.welcomename', ['name' => $account->registration->firstname()]) !!}</h2>
+                <h2>{!! trans('theme::account/overview.welcomename', ['name' => $account->registration->firstname()]) !!}</h2>
             @else
-                <h2>{!! trans('theme::account.overview.welcome') !!}</h2>
+                <h2>{!! trans('theme::account/overview.welcome') !!}</h2>
             @endif
 
             <div class="table">
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.overview.heading') !!}
+                        {!! trans('theme::account/overview.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -40,21 +40,21 @@
                                     <tr>
                                         <td class="valign-top" style="padding-right: 0;">
                                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                                <span>{{ trans('theme::account.overview.manageaccount') }}</span>
+                                                <span>{{ trans('theme::account/overview.manageaccount') }}</span>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="valign-middle" style="padding-right: 0;">
                                             <a href="#" class="green-button">
-                                                <span>{{ trans('theme::account.overview.getpremium') }}</span>
+                                                <span>{{ trans('theme::account/overview.getpremium') }}</span>
                                             </a>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td class="valign-bottom" style="padding-right: 0;">
                                             <a href="{{ url('/account/logout') }}" class="red-button">
-                                                <span>{{ trans('theme::account.overview.logout') }}</span>
+                                                <span>{{ trans('theme::account/overview.logout') }}</span>
                                             </a>
                                         </td>
                                     </tr>
@@ -68,8 +68,8 @@
                                     </td>
                                     <td style="width: 5px;"></td>
                                     <td class="valign-middle">
-                                        <h4 class="free">{!! trans('theme::account.overview.free') !!}</h4>
-                                        <small>{!! trans('theme::account.overview.freedesc') !!}</small>
+                                        <h4 class="free">{!! trans('theme::account/overview.free') !!}</h4>
+                                        <small>{!! trans('theme::account/overview.freedesc') !!}</small>
                                     </td>
                                 </tr>
                             </table>
@@ -91,7 +91,7 @@
                                                 <tr>
                                                     <td class="valign-top" style="padding-right: 0;">
                                                         <a href="{{ url('/account/email/request') }}" class="blue-button">
-                                                            <span>{{ trans('theme::account.overview.confirm.request') }}</span>
+                                                            <span>{{ trans('theme::account/overview.confirm.request') }}</span>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -99,7 +99,7 @@
                                             <tr>
                                                 <td class="valign-bottom" style="padding-right: 0;">
                                                     <a href="{{ url('/account/email') }}" class="blue-button">
-                                                        <span>{{ trans('theme::account.overview.confirm.edit') }}</span>
+                                                        <span>{{ trans('theme::account/overview.confirm.edit') }}</span>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -107,18 +107,18 @@
                                     </div>
 
                                     <div style="margin: 5px 0 13px;">
-                                        <strong>{!! trans('theme::account.overview.confirm.heading') !!}</strong>
+                                        <strong>{!! trans('theme::account/overview.confirm.heading') !!}</strong>
                                         <div class="alert">
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign-middle" alt="{!! trans('theme::account.overview.confirm.heading') !!}">
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign-middle" alt="{!! trans('theme::account/overview.confirm.heading') !!}">
                                             <div class="message">
-                                                {!! trans('theme::account.overview.confirm.alert') !!}
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}" alt="{!! trans('theme::account.overview.confirm.heading') !!}">
+                                                {!! trans('theme::account/overview.confirm.alert') !!}
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}" alt="{!! trans('theme::account/overview.confirm.heading') !!}">
                                             </div>
                                         </div>
                                     </div>
 
                                     <p style="margin-bottom: 5px;">
-                                        {!! trans('theme::account.overview.confirm.content') !!}
+                                        {!! trans('theme::account/overview.confirm.content') !!}
                                     </p>
                                 </td>
                             </tr>
@@ -138,7 +138,7 @@
                                             <tr>
                                                 <td class="valign-middle" style="padding-right: 0;">
                                                     <a href="{{ url('/account/register') }}" class="blue-button">
-                                                        <span>{{ trans('theme::account.overview.unregistered.register') }}</span>
+                                                        <span>{{ trans('theme::account/overview.unregistered.register') }}</span>
                                                     </a>
                                                 </td>
                                             </tr>
@@ -146,11 +146,11 @@
                                     </div>
 
                                     <div style="margin: 5px 0 13px;">
-                                        <strong>{!! trans('theme::account.overview.unregistered.heading') !!}</strong>
+                                        <strong>{!! trans('theme::account/overview.unregistered.heading') !!}</strong>
                                     </div>
 
                                     <p style="margin-bottom: 5px;">
-                                        {!! trans('theme::account.overview.unregistered.content') !!}
+                                        {!! trans('theme::account/overview.unregistered.content') !!}
                                     </p>
                                 </td>
                             </tr>
@@ -169,14 +169,14 @@
                                 <td>
                                     <div class="buttons-right">
                                         <a href="{{ url('/account/email') }}" class="blue-button">
-                                            <span>{{ trans('theme::account.overview.email.edit') }}</span>
+                                            <span>{{ trans('theme::account/overview.email.edit') }}</span>
                                         </a>
                                     </div>
 
-                                    <p style="margin-top: 5px;"><strong>{!! trans('theme::account.overview.email.heading') !!}</strong></p>
+                                    <p style="margin-top: 5px;"><strong>{!! trans('theme::account/overview.email.heading') !!}</strong></p>
 
                                     <p style="margin-bottom: 5px;">
-                                        {!! trans('theme::account.overview.email.content', [
+                                        {!! trans('theme::account/overview.email.content', [
                                             'email' => $account->properties->email(),
                                             'days'  => config('pandaac.mail.timers.email-change'),
                                         ]) !!}
@@ -198,14 +198,14 @@
                                 <td>
                                     <div class="buttons-right">
                                         <a href="{{ url('/account') }}" class="blue-button">
-                                            <span>{{ trans('theme::account.overview.vouchers.vouchers') }}</span>
+                                            <span>{{ trans('theme::account/overview.vouchers.vouchers') }}</span>
                                         </a>
                                     </div>
 
-                                    <p style="margin-top: 5px;"><strong>{!! trans('theme::account.overview.vouchers.heading') !!}</strong></p>
+                                    <p style="margin-top: 5px;"><strong>{!! trans('theme::account/overview.vouchers.heading') !!}</strong></p>
 
                                     <p style="margin-bottom: 5px;">
-                                        {!! trans('theme::account.overview.vouchers.content') !!}
+                                        {!! trans('theme::account/overview.vouchers.content') !!}
                                     </p>
                                 </td>
                             </tr>
@@ -219,7 +219,7 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.overview.characters.heading') !!}
+                        {!! trans('theme::account/overview.players.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
@@ -229,9 +229,9 @@
                         <table class="table-striped table-hover">
                             <tr>
                                 <th class="header" style="width: 40px;"></th>
-                                <th class="header">{!! trans('theme::account.overview.characters.name') !!}</th>
-                                <th class="header" style="width: 120px;">{!! trans('theme::account.overview.characters.world') !!}</th>
-                                <th class="header" style="width: 120px;">{!! trans('theme::account.overview.characters.status') !!}</th>
+                                <th class="header">{!! trans('theme::account/overview.players.name') !!}</th>
+                                <th class="header" style="width: 120px;">{!! trans('theme::account/overview.players.world') !!}</th>
+                                <th class="header" style="width: 120px;">{!! trans('theme::account/overview.players.status') !!}</th>
                                 <th class="header" style="width: 90px;"></th>
                             </tr>
 
@@ -247,26 +247,26 @@
                                     </td>
                                     <td class="valign-middle">
                                         <span>{{ $player->name() }}</span>
-                                        <small>{{ $player->vocation()->name() }} - Level {{ $player->level() }}</small>
+                                        <small>{{ $player->vocation()->name() }} {!! trans('theme::account/overview.players.level', ['level' => $player->level()]) !!}</small>
                                     </td>
                                     <td>{{ $player->world()->name() }}</td>
                                     <td>
                                         @if ($player->isHidden() and $player->isDeleted())
-                                            {!! trans('theme::account.overview.characters.hiddendeleted') !!}
+                                            {!! trans('theme::account/overview.players.hiddendeleted') !!}
                                         @elseif ($player->isHidden())
-                                            {!! trans('theme::account.overview.characters.hidden') !!}
+                                            {!! trans('theme::account/overview.players.hidden') !!}
                                         @elseif ($player->isDeleted())
-                                            {!! trans('theme::account.overview.characters.deleted') !!}
+                                            {!! trans('theme::account/overview.players.deleted') !!}
                                         @endif
                                     </td>
                                     <td class="text-center">
                                         <div class="character-buttons" style="font-weight: normal;">
-                                            [<a href="{{ url('/account/character', $player->id()) }}">{!! trans('theme::account.overview.characters.edit') !!}</a>]
+                                            [<a href="{{ url('/account/character', $player->id()) }}">{!! trans('theme::account/overview.players.edit') !!}</a>]
 
                                             @if ($player->isDeleted())
-                                                [<a href="{{ url('/account/character', [$player->id(), 'undelete']) }}">{!! trans('theme::account.overview.characters.undelete') !!}</a>]
+                                                [<a href="{{ url('/account/character', [$player->id(), 'undelete']) }}">{!! trans('theme::account/overview.players.undelete') !!}</a>]
                                             @else
-                                                [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">{!! trans('theme::account.overview.characters.delete') !!}</a>]
+                                                [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">{!! trans('theme::account/overview.players.delete') !!}</a>]
                                             @endif
                                         </div>
                                     </td>
@@ -274,7 +274,7 @@
                             @empty
                                 <tr>
                                     <td colspan="5">
-                                        {!! trans('theme::account.overview.characters.empty') !!}
+                                        {!! trans('theme::account/overview.players.empty') !!}
                                     </td>
                                 </tr>
                             @endforelse
@@ -285,7 +285,7 @@
                         <tr>
                             <td class="valign-bottom text-right" style="padding-right: 0;">
                                 <a href="{{ url('/account/character') }}" class="blue-button">
-                                    <span>{{ trans('theme::account.overview.characters.create') }}</span>
+                                    <span>{{ trans('theme::account/overview.players.create') }}</span>
                                 </a>
                             </td>
                         </tr>

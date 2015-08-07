@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.email.cancelled.title'))
+@title(trans('theme::account/email/edit/cancelled.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.email.cancelled.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/email/edit/cancelled.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -19,13 +19,13 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.email.cancelled.heading') !!}
+                        {!! trans('theme::account/email/edit/cancelled.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    {!! trans('theme::account.email.cancelled.content') !!}
+                    {!! trans('theme::account/email/edit/cancelled.content') !!}
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account/manage') }}" class="blue-button">
-                            <span>{{ trans('theme::account.email.cancelled.back') }}</span>
+                            <span>{{ trans('theme::account/email/edit/cancelled.back') }}</span>
                         </a>
                     </td>
                 </tr>

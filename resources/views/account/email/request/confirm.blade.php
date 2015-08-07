@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.email.confirm.title'))
+@title(trans('theme::account/email/request/confirm.title'))
 @navigation('/account')
 @bodyclass('account-email')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.email.confirm.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/email/request/confirm.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -19,13 +19,13 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.email.confirm.heading') !!}
+                        {!! trans('theme::account/email/request/confirm.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    {!! trans('theme::account.email.confirm.content', compact('server')) !!}
+                    {!! trans('theme::account/email/request/confirm.content', compact('server')) !!}
                 </div>
             </div>
 
@@ -35,12 +35,12 @@
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account/download') }}" class="blue-button">
-                            <span>{{ trans('theme::account.email.confirm.download') }}</span>
+                            <span>{{ trans('theme::account/email/request/confirm.download') }}</span>
                         </a>
                     </td>
                     <td class="text-center">
                         <a href="{{ url('/account/login') }}" class="blue-button">
-                            <span>{{ trans('theme::account.email.confirm.login') }}</span>
+                            <span>{{ trans('theme::account/email/request/confirm.login') }}</span>
                         </a>
                     </td>
                 </tr>

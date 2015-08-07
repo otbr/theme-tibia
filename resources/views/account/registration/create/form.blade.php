@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.register.index.title'))
+@title(trans('theme::account/registration/create/form.title'))
 @navigation('/account')
 @bodyclass('account-register')
 
@@ -9,32 +9,36 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.register.index.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/registration/create/form.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
         <div class="inner-box">
 
-            <h2 class="iconless">{!! trans('theme::account.register.index.preheading') !!}</h2>
+            <h2 class="iconless">{!! trans('theme::account/registration/create/form.preheading') !!}</h2>
 
             <progressbar>
-                <step class="scroll" completed>{!! trans('theme::account.register.index.date') !!}</step>
-                <step class="questionmark">{!! trans('theme::account.register.index.verification') !!}</step>
-                <step class="checkmark">{!! trans('theme::account.register.index.recoverykey') !!}</step>
+                <step class="scroll" completed>{!! trans('theme::account/registration/create/form.date') !!}</step>
+                <step class="questionmark">{!! trans('theme::account/registration/create/form.verification') !!}</step>
+                <step class="checkmark">{!! trans('theme::account/registration/create/form.recoverykey') !!}</step>
             </progressbar>
 
             @include('theme::modules.errors')
 
-            {!! trans('theme::account.register.index.preamble', ['server' => $server, 'privacy' => url('/support/privacy')]) !!}
+            {!! trans('theme::account/registration/create/form.preamble', [
+                'server'    => server()->name(),
+                'privacy'   => url('/support/privacy'),
+            ]) !!}
 
             <form method="POST" action="{{ url('/account/register/confirm') }}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="_method" value="POST">
 
                 <div class="table">
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.register.index.heading') !!}
+                            {!! trans('theme::account/registration/create/form.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -42,7 +46,7 @@
                     <div class="content dark">
                         <table>
                             <tr>
-                                <th style="width: 40%;" class="{{ $errors->has('firstname') ? 'error' : null }}">{!! trans('theme::account.register.index.firstname') !!}</th>
+                                <th style="width: 40%;" class="{{ $errors->has('firstname') ? 'error' : null }}">{!! trans('theme::account/registration/create/form.firstname') !!}</th>
                                 <td>
                                     <input type="text" name="firstname" size="30" maxlength="50" value="{{ old('firstname') }}">
                                 </td>
@@ -52,7 +56,7 @@
                                 <td class="error"><small>{{ $errors->first('firstname') }}</small></td>
                             @endif
                             <tr>
-                                <th class="{{ $errors->has('surname') ? 'error' : null }}">{!! trans('theme::account.register.index.surname') !!}</th>
+                                <th class="{{ $errors->has('surname') ? 'error' : null }}">{!! trans('theme::account/registration/create/form.surname') !!}</th>
                                 <td><input type="text" name="surname" size="30" maxlength="50" value="{{ old('surname') }}"></td>
                             </tr>
                             @if ($errors->has('surname'))
@@ -60,7 +64,7 @@
                                 <td class="error"><small>{{ $errors->first('surname') }}</small></td>
                             @endif
                             <tr>
-                                <th class="{{ $errors->has('country') ? 'error' : null }}">{!! trans('theme::account.register.index.country') !!}</th>
+                                <th class="{{ $errors->has('country') ? 'error' : null }}">{!! trans('theme::account/registration/create/form.country') !!}</th>
                                 <td>
                                     <select name="country">
                                         <option disabled {{ empty(old('country')) ? 'selected' : null }}>---</option>
@@ -83,7 +87,7 @@
                                 <td class="error"><small>{{ $errors->first('country') }}</small></td>
                             @endif
                             <tr>
-                                <th class="{{ ($errors->has('day') or $errors->has('month') or $errors->has('year')) ? 'error' : null }}">{!! trans('theme::account.register.index.birthday') !!}</th>
+                                <th class="{{ ($errors->has('day') or $errors->has('month') or $errors->has('year')) ? 'error' : null }}">{!! trans('theme::account/registration/create/form.birthday') !!}</th>
                                 <td>
                                     <select name="day">
                                         <option disabled {{ empty(old('day')) ? 'selected' : null }}>---</option>
@@ -95,7 +99,7 @@
                                     <select name="month">
                                         <option disabled {{ empty(old('month')) ? 'selected' : null }}>---</option>
                                         @foreach (range(1, 12) as $month)
-                                            <option value="{{ $month }}" {{ $month == old('month') ? 'selected' : null }}>{{ $format($month) }}</option>
+                                            <option value="{{ $month }}" {{ $month == old('month') ? 'selected' : null }}>{{ month($month) }}</option>
                                         @endforeach
                                     </select>
 
@@ -124,12 +128,12 @@
                                 </td>
                             @endif
                             <tr>
-                                <th class="{{ $errors->has('gender') ? 'error' : null }}">{!! trans('theme::account.register.index.gender') !!}</th>
+                                <th class="{{ $errors->has('gender') ? 'error' : null }}">{!! trans('theme::account/registration/create/form.gender') !!}</th>
                                 <td>
                                     <select name="gender">
                                         <option disabled {{ empty(old('gender')) ? 'selected' : null }}>---</option>
-                                        <option value="female" {{ old('gender') === 'female' ? 'selected' : null }}>{{ trans('theme::account.register.index.female') }}</option>
-                                        <option value="male" {{ old('gender') === 'male' ? 'selected' : null }}>{{ trans('theme::account.register.index.male') }}</option>
+                                        <option value="female" {{ old('gender') === 'female' ? 'selected' : null }}>{{ trans('theme::account/registration/create/form.female') }}</option>
+                                        <option value="male" {{ old('gender') === 'male' ? 'selected' : null }}>{{ trans('theme::account/registration/create/form.male') }}</option>
                                     </select>
                                 </td>
                             </tr>
@@ -147,12 +151,12 @@
                     <tr>
                         <td class="text-center">
                             <button class="blue-button">
-                                <span>{{ trans('theme::account.register.index.continue') }}</span>
+                                <span>{{ trans('theme::account/registration/create/form.continue') }}</span>
                             </button>
                         </td>
                         <td class="text-center">
                             <a href="{{ url('/account') }}" class="blue-button">
-                                <span>{{ trans('theme::account.register.index.back') }}</span>
+                                <span>{{ trans('theme::account/registration/create/form.back') }}</span>
                             </a>
                         </td>
                     </tr>

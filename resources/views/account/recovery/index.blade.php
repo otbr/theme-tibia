@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.recovery.index.title'))
+@title(trans('theme::account/recovery/index.title'))
 @navigation('/account/recover')
 @bodyclass('account-recover')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.recovery.index.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/recovery/index.title') !!}</div>
     </header>
 
     <div class="inner-box-border">

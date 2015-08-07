@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.edit.title'))
+@title(trans('theme::account/player/edit/form.title'))
 @navigation('/account')
 @bodyclass('account-character-edit')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.edit.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/edit/form.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -22,8 +22,8 @@
                         <tr>
                             <td class="valign-top text-center">
                                 <div class="padding">
-                                    [<a href="#character-data">{!! trans('theme::account.character.edit.characterdata') !!}</a>]
-                                    [<a href="#character-information">{!! trans('theme::account.character.edit.characterinfo') !!}</a>]
+                                    [<a href="#character-data">{!! trans('theme::account/player/edit/form.characterdata') !!}</a>]
+                                    [<a href="#character-information">{!! trans('theme::account/player/edit/form.characterinfo') !!}</a>]
                                 </div>
                             </td>
                         </tr>
@@ -34,7 +34,7 @@
 
             <br>
 
-            {!! trans('theme::account.character.edit.preamble') !!}
+            {!! trans('theme::account/player/edit/form.preamble') !!}
 
             @include('theme::modules.errors')
             
@@ -46,7 +46,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.character.edit.characterdata') !!}
+                            {!! trans('theme::account/player/edit/form.characterdata') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -56,7 +56,7 @@
                             <div class="inner-box">
                                 <table class="paddingless full-width">
                                     <tr>
-                                        <th style="width: 20%;"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account.character.edit.name') !!}</strong></th>
+                                        <th style="width: 20%;"><strong class="{{ $errors->has('name') ? 'error' : null }}">{!! trans('theme::account/player/edit/form.name') !!}</strong></th>
                                         <td style="width: 70%;">{{ $player->name() }}</td>
                                     </tr>
                                     <tr>
@@ -64,7 +64,7 @@
                                     </tr>
                                     @if ($world = $player->world())
                                         <tr>
-                                            <th><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account.character.edit.world') !!}</strong></th>
+                                            <th><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account/player/edit/form.world') !!}</strong></th>
                                             <td>{{ $world->name() }}</td>
                                         </tr>
                                         <tr>
@@ -72,7 +72,7 @@
                                         </tr>
                                     @endif
                                     <tr>
-                                        <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account.character.edit.sex') !!}</strong></th>
+                                        <th><strong class="{{ $errors->has('sex') ? 'error' : null }}">{!! trans('theme::account/player/edit/form.sex') !!}</strong></th>
                                         <td>{{ $player->gender()->name() }}</td>
                                     </tr>
                                 </table>
@@ -87,7 +87,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.character.edit.characterinfo') !!}
+                            {!! trans('theme::account/player/edit/form.characterinfo') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -97,12 +97,12 @@
                             <div class="inner-box">
                                 <table class="full-width">
                                     <tr>
-                                        <th style="width: 22%;"><p><strong class="{{ $errors->has('hide') ? 'error' : null }}">{!! trans('theme::account.character.edit.hideaccount') !!}</strong></p></th>
+                                        <th style="width: 22%;"><p><strong class="{{ $errors->has('hide') ? 'error' : null }}">{!! trans('theme::account/player/edit/form.hideaccount') !!}</strong></p></th>
                                         <td>
                                             <p>
                                                 <label>
                                                     <input type="checkbox" name="hide" {{ old('hide', $player->properties->hidden()) ? 'checked' : null }}>
-                                                    {!! trans('theme::account.character.edit.hide') !!}
+                                                    {!! trans('theme::account/player/edit/form.hide') !!}
                                                 </label>
                                             </p>
                                         </td>
@@ -110,7 +110,7 @@
                                     <tr>
                                         <th class="valign-top">
                                             <p>
-                                                <strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account.character.edit.comment') !!}</strong>
+                                                <strong class="{{ $errors->has('comment') ? 'error' : null }}">{!! trans('theme::account/player/edit/form.comment') !!}</strong>
                                             </p>
                                         </th>
                                         <td>
@@ -122,7 +122,7 @@
                                     <tr>
                                         <th class="valign-top">
                                             <p>
-                                                <strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account.character.edit.signature') !!}</strong>
+                                                <strong class="{{ $errors->has('signature') ? 'error' : null }}">{!! trans('theme::account/player/edit/form.signature') !!}</strong>
                                             </p>
                                         </th>
                                         <td>
@@ -139,12 +139,12 @@
                             <tr>
                                 <td style="width: 50%;" class="text-center">
                                     <button class="blue-button">
-                                        <span>{{ trans('theme::account.character.edit.submit') }}</span>
+                                        <span>{{ trans('theme::account/player/edit/form.submit') }}</span>
                                     </button>
                                 </td>
                                 <td style="widtH: 50%;" class="text-center">
                                     <a href="{{ url('/account') }}" class="blue-button">
-                                        <span>{{ trans('theme::account.character.edit.back') }}</span>
+                                        <span>{{ trans('theme::account/player/edit/form.back') }}</span>
                                     </a>
                                 </td>
                             </tr>

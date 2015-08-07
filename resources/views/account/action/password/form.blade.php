@@ -1,15 +1,15 @@
 @extends('theme::app')
 
-@title(trans('theme::account.rename.title'))
+@title(trans('theme::account/action/password/form.title'))
 @navigation('/account')
-@bodyclass('account-rename')
+@bodyclass('account-password')
 
 @section('content')
 <div class="box">
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.rename.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/action/password/form.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -17,7 +17,7 @@
 
             @include('theme::modules.errors')
 
-            {!! trans('theme::account.rename.preamble') !!}
+            {!! trans('theme::account/action/password/form.preamble') !!}
 
             <form method="POST">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -27,7 +27,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account.rename.heading') !!}
+                            {!! trans('theme::account/action/password/form.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -35,12 +35,16 @@
                     <div class="content dark">
                         <table>
                             <tr>
-                                <th>{!! trans('theme::account.rename.current') !!}</th>
-                                <td>{{ $account->name() }}</td>
+                                <th>{!! trans('theme::account/action/password/form.new') !!}</th>
+                                <td><input type="password" name="password" size="30" maxlength="29"></td>
                             </tr>
                             <tr>
-                                <th>{!! trans('theme::account.rename.new') !!}</th>
-                                <td><input type="text" name="name" size="30" maxlength="29"></td>
+                                <th>{!! trans('theme::account/action/password/form.confirmation') !!}</th>
+                                <td><input type="password" name="password_confirmation" size="30" maxlength="29"></td>
+                            </tr>
+                            <tr>
+                                <th>{!! trans('theme::account/action/password/form.current') !!}</th>
+                                <td><input type="password" name="current" size="30" maxlength="29"></td>
                             </tr>
                         </table>
                     </div>
@@ -52,12 +56,12 @@
                     <tr>
                         <td class="text-center">
                             <button class="blue-button">
-                                <span>{{ trans('theme::account.rename.submit') }}</span>
+                                <span>{{ trans('theme::account/action/password/form.submit') }}</span>
                             </button>
                         </td>
                         <td class="text-center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <span>{{ trans('theme::account.rename.back') }}</span>
+                                <span>{{ trans('theme::account/action/password/form.back') }}</span>
                             </a>
                         </td>
                     </tr>

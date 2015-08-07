@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::account.character.updated.title'))
+@title(trans('theme::account/player/edit/edited.title'))
 @navigation('/account')
 @bodyclass('account-character-updated')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::account.character.updated.title') !!}</div>
+        <div class="headline">{!! trans('theme::account/player/edit/edited.title') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -19,13 +19,13 @@
                 <header class="header">
                     <div class="borders">
                         <span class="edges top"></span>
-                        {!! trans('theme::account.character.updated.heading') !!}
+                        {!! trans('theme::account/player/edit/edited.heading') !!}
                         <span class="edges bottom"></span>
                     </div>
                 </header>
 
                 <div class="content dark">
-                    <p>{!! trans('theme::account.character.updated.content') !!}</p>
+                    <p>{!! trans('theme::account/player/edit/edited.content') !!}</p>
                 </div>
             </div>
 
@@ -35,7 +35,7 @@
                 <tr>
                     <td class="text-center">
                         <a href="{{ url('/account/character', $player->id()) }}" class="blue-button">
-                            <span>{{ trans('theme::account.character.updated.back') }}</span>
+                            <span>{{ trans('theme::account/player/edit/edited.back') }}</span>
                         </a>
                     </td>
                 </tr>
