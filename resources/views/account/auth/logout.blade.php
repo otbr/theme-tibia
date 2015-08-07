@@ -29,7 +29,7 @@
                         <tr>
                             <td>
                                 {!! trans('theme::account/auth/logout.content', [
-                                    'server'    => $server, 
+                                    'server'    => server()->name(), 
                                     'url'       => url('/account/login'),
                                 ]) !!}
                             </td>

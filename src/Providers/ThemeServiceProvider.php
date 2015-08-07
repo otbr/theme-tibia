@@ -21,7 +21,6 @@ class ThemeServiceProvider extends ServiceProvider
     protected $providers = [
         RouteServiceProvider::class,
         BladeServiceProvider::class,
-        ComposerServiceProvider::class,
     ];
 
     /**

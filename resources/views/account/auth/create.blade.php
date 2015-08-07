@@ -202,7 +202,7 @@
                                     <input type="checkbox" name="terms" value="1">
 
                                     {!! trans('theme::account/auth/create.accept', [
-                                        'server'    => $server, 
+                                        'server'    => server()->name(), 
                                         'terms'     => url('/support/terms'),
                                         'rules'     => url('/support/rules'),
                                         'privacy'   => url('/support/privacy'),
