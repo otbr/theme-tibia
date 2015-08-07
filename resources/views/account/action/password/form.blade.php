@@ -1,76 +1,78 @@
 @extends('theme::app')
 
-@title(trans('theme::account/action/password/form.title'))
-@navigation('/account')
-@bodyclass('account-password')
+@section('title', trans('theme::account/action/password/form.title'))
+@section('body', 'account-action-password-form')
+@section('navigation', '/account')
 
 @section('content')
-<div class="box">
-    <span class="corners top"></span>
 
-    <header class="header">
-        <div class="headline">{!! trans('theme::account/action/password/form.title') !!}</div>
-    </header>
+    <div class="box">
+        <span class="corners top"></span>
 
-    <div class="inner-box-border">
-        <div class="inner-box">
+        <header class="header">
+            <div class="headline">{!! trans('theme::account/action/password/form.title') !!}</div>
+        </header>
 
-            @include('theme::modules.errors')
+        <div class="inner-box-border">
+            <div class="inner-box">
 
-            {!! trans('theme::account/action/password/form.preamble') !!}
+                @include('theme::errors')
 
-            <form method="POST">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
+                {!! trans('theme::account/action/password/form.preamble') !!}
 
-                <div class="table">
-                    <header class="header">
-                        <div class="borders">
-                            <span class="edges top"></span>
-                            {!! trans('theme::account/action/password/form.heading') !!}
-                            <span class="edges bottom"></span>
+                <form method="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="PUT">
+
+                    <div class="table">
+                        <header class="header">
+                            <div class="borders">
+                                <span class="edges top"></span>
+                                {!! trans('theme::account/action/password/form.heading') !!}
+                                <span class="edges bottom"></span>
+                            </div>
+                        </header>
+
+                        <div class="content dark">
+                            <table>
+                                <tr>
+                                    <th>{!! trans('theme::account/action/password/form.new') !!}</th>
+                                    <td><input type="password" name="password" size="30" maxlength="29"></td>
+                                </tr>
+                                <tr>
+                                    <th>{!! trans('theme::account/action/password/form.confirmation') !!}</th>
+                                    <td><input type="password" name="password_confirmation" size="30" maxlength="29"></td>
+                                </tr>
+                                <tr>
+                                    <th>{!! trans('theme::account/action/password/form.current') !!}</th>
+                                    <td><input type="password" name="current" size="30" maxlength="29"></td>
+                                </tr>
+                            </table>
                         </div>
-                    </header>
-
-                    <div class="content dark">
-                        <table>
-                            <tr>
-                                <th>{!! trans('theme::account/action/password/form.new') !!}</th>
-                                <td><input type="password" name="password" size="30" maxlength="29"></td>
-                            </tr>
-                            <tr>
-                                <th>{!! trans('theme::account/action/password/form.confirmation') !!}</th>
-                                <td><input type="password" name="password_confirmation" size="30" maxlength="29"></td>
-                            </tr>
-                            <tr>
-                                <th>{!! trans('theme::account/action/password/form.current') !!}</th>
-                                <td><input type="password" name="current" size="30" maxlength="29"></td>
-                            </tr>
-                        </table>
                     </div>
-                </div>
 
-                <br>
+                    <br>
 
-                <table class="full-width">
-                    <tr>
-                        <td class="text-center">
-                            <button class="blue-button">
-                                <span>{{ trans('theme::account/action/password/form.submit') }}</span>
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <span>{{ trans('theme::account/action/password/form.back') }}</span>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                    <table class="full-width">
+                        <tr>
+                            <td class="text-center">
+                                <button class="blue-button">
+                                    <span>{{ trans('theme::account/action/password/form.submit') }}</span>
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <a href="{{ url('/account/manage') }}" class="blue-button">
+                                    <span>{{ trans('theme::account/action/password/form.back') }}</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
 
+            </div>
         </div>
-    </div>
 
-    <span class="corners bottom"></span>
-</div>
+        <span class="corners bottom"></span>
+    </div>
+    
 @stop

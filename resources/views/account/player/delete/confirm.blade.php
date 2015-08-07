@@ -1,73 +1,75 @@
 
 @extends('theme::app')
 
-@title(trans('theme::account/player/delete/confirm.title'))
-@navigation('/account')
-@bodyclass('account-character-delete')
+@section('title', trans('theme::account/player/delete/confirm.title'))
+@section('body', 'account-player-delete-confirm')
+@section('navigation', '/account')
 
 @section('content')
-<div class="box">
-    <span class="corners top"></span>
 
-    <header class="header">
-        <div class="headline">{!! trans('theme::account/player/delete/confirm.title') !!}</div>
-    </header>
+    <div class="box">
+        <span class="corners top"></span>
 
-    <div class="inner-box-border">
-        <div class="inner-box">
+        <header class="header">
+            <div class="headline">{!! trans('theme::account/player/delete/confirm.title') !!}</div>
+        </header>
 
-            @include('theme::modules.errors')
+        <div class="inner-box-border">
+            <div class="inner-box">
 
-            {!! trans('theme::account/player/delete/confirm.preamble') !!}
+                @include('theme::errors')
 
-            <form method="POST" action="{{ url('/account/character', $player->id()) }}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="DELETE">
+                {!! trans('theme::account/player/delete/confirm.preamble') !!}
 
-                <div class="table">
-                    <header class="header">
-                        <div class="borders">
-                            <span class="edges top"></span>
-                            {!! trans('theme::account/player/delete/confirm.heading') !!}
-                            <span class="edges bottom"></span>
+                <form method="POST" action="{{ url('/account/character', $player->id()) }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="DELETE">
+
+                    <div class="table">
+                        <header class="header">
+                            <div class="borders">
+                                <span class="edges top"></span>
+                                {!! trans('theme::account/player/delete/confirm.heading') !!}
+                                <span class="edges bottom"></span>
+                            </div>
+                        </header>
+
+                        <div class="content dark">
+                            <table>
+                                <tr>
+                                    <th>{!! trans('theme::account/player/delete/confirm.player') !!}</th>
+                                    <td>{{ $player->name() }}</td>
+                                </tr>
+                                <tr>
+                                    <th>{!! trans('theme::account/player/delete/confirm.password') !!}</th>
+                                    <td><input type="password" name="password" size="30" maxlength="29"></td>
+                                </tr>
+                            </table>
                         </div>
-                    </header>
-
-                    <div class="content dark">
-                        <table>
-                            <tr>
-                                <th>{!! trans('theme::account/player/delete/confirm.player') !!}</th>
-                                <td>{{ $player->name() }}</td>
-                            </tr>
-                            <tr>
-                                <th>{!! trans('theme::account/player/delete/confirm.password') !!}</th>
-                                <td><input type="password" name="password" size="30" maxlength="29"></td>
-                            </tr>
-                        </table>
                     </div>
-                </div>
 
-                <br>
+                    <br>
 
-                <table class="full-width">
-                    <tr>
-                        <td class="text-center">
-                            <button class="blue-button">
-                                <span>{{ trans('theme::account/player/delete/confirm.submit') }}</span>
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <a href="{{ url('/account') }}" class="blue-button">
-                                <span>{{ trans('theme::account/player/delete/confirm.back') }}</span>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                    <table class="full-width">
+                        <tr>
+                            <td class="text-center">
+                                <button class="blue-button">
+                                    <span>{{ trans('theme::account/player/delete/confirm.submit') }}</span>
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <a href="{{ url('/account') }}" class="blue-button">
+                                    <span>{{ trans('theme::account/player/delete/confirm.back') }}</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
 
+            </div>
         </div>
-    </div>
 
-    <span class="corners bottom"></span>
-</div>
+        <span class="corners bottom"></span>
+    </div>
+    
 @stop

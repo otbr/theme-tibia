@@ -1,25 +1,27 @@
 @extends('theme::app')
 
-@title('Legal Documents')
-@navigation('/support/legal')
-@bodyclass('support-legal')
+@section('title', 'Legal Documents')
+@section('body', 'support-legal')
+@section('navigation', '/support/legal')
 
 @section('content')
-<div class="box">
-    <span class="corners top"></span>
 
-    <header class="header">
-        <div class="headline">Legal Documents</div>
-    </header>
+    <div class="box">
+        <span class="corners top"></span>
 
-    <div class="inner-box-border">
-        <div class="inner-box">
+        <header class="header">
+            <div class="headline">Legal Documents</div>
+        </header>
 
-            <p>...</p>
+        <div class="inner-box-border">
+            <div class="inner-box">
 
+                <p>...</p>
+
+            </div>
         </div>
+
+        <span class="corners bottom"></span>
     </div>
 
-    <span class="corners bottom"></span>
-</div>
-@endsection
+@stop

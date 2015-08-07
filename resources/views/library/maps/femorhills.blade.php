@@ -1,33 +1,35 @@
 @extends('theme::app')
 
-@title('Maps')
-@navigation('/library/maps')
-@bodyclass('library-maps')
+@section('title', 'Maps')
+@section('body', 'library-maps')
+@section('navigation', '/library/maps')
 
 @section('content')
-<div class="box">
-    <span class="corners top"></span>
 
-    <header class="header">
-        <div class="headline">Maps</div>
-    </header>
+    <div class="box">
+        <span class="corners top"></span>
 
-    <div class="inner-box-border">
-        <div class="inner-box">
+        <header class="header">
+            <div class="headline">Maps</div>
+        </header>
 
-            <div class="text-center">
-                <h3>Femor Hills</h3>
+        <div class="inner-box-border">
+            <div class="inner-box">
 
-                <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Femor Hills">
+                <div class="text-center">
+                    <h3>Femor Hills</h3>
+
+                    <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Femor Hills">
+                </div>
+
+                <p>
+                    Femor Hills are located in north-central {{ server()->name() }}. As they are a difficult terrain with many small hills, even the road from Thais to Carlin gives them a wide berth. Only some tribes of wild goblins live in this inhospitable area and ambush travellers that try to find a shortcut on their way to Carlin. In former days, the inhabitants of Carlin prospected for mineral resources in the hills, and the old tunnels are still worth an investigation.
+                </p>
+
             </div>
-
-            <p>
-                Femor Hills are located in north-central {{ server()->name() }}. As they are a difficult terrain with many small hills, even the road from Thais to Carlin gives them a wide berth. Only some tribes of wild goblins live in this inhospitable area and ambush travellers that try to find a shortcut on their way to Carlin. In former days, the inhabitants of Carlin prospected for mineral resources in the hills, and the old tunnels are still worth an investigation.
-            </p>
-
         </div>
+        
+        <span class="corners bottom"></span>
     </div>
-    
-    <span class="corners bottom"></span>
-</div>
-@endsection
+
+@stop

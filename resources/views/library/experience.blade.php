@@ -1,60 +1,62 @@
 @extends('theme::app')
 
-@title('Experience Table')
-@navigation('/library/experience')
-@bodyclass('library-experience')
+@section('title', 'Experience Table')
+@section('body', 'library-experience')
+@section('navigation', '/library/experience')
 
 @section('content')
-<div class="box">
-    <span class="corners top"></span>
 
-    <header class="header">
-        <div class="headline">Experience Table</div>
-    </header>
+    <div class="box">
+        <span class="corners top"></span>
 
-    <div class="inner-box-border">
-        <div class="inner-box">
+        <header class="header">
+            <div class="headline">Experience Table</div>
+        </header>
 
-            <p>This is a list of the experience points that are required to advance to the various levels. Remember you can also check the respective skill bar in your skill window of the client to check your progress towards the next level.</p>
+        <div class="inner-box-border">
+            <div class="inner-box">
 
-            <div class="table">
-                <header class="header">
-                    <div class="borders">
-                        <span class="edges top"></span>
-                        Experience Table
-                        <span class="edges bottom"></span>
-                    </div>
-                </header>
+                <p>This is a list of the experience points that are required to advance to the various levels. Remember you can also check the respective skill bar in your skill window of the client to check your progress towards the next level.</p>
 
-                <div class="content dark">
-                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                        <tr>
-                            <?php $levels = collect(range(1, 1000))->chunk(1000 / 4); ?>
-                            @foreach ($levels as $column)
-                                <td>
-                                    <table class="table-striped inverse" cellspacing="0" cellpadding="0" border="0">
-                                        <tr>
-                                            <th>Level</th>
-                                            <th>Experience</th>
-                                        </tr>
+                <div class="table">
+                    <header class="header">
+                        <div class="borders">
+                            <span class="edges top"></span>
+                            Experience Table
+                            <span class="edges bottom"></span>
+                        </div>
+                    </header>
 
-                                        @foreach ($column as $level)
+                    <div class="content dark">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <?php $levels = collect(range(1, 1000))->chunk(1000 / 4); ?>
+                                @foreach ($levels as $column)
+                                    <td>
+                                        <table class="table-striped inverse" cellspacing="0" cellpadding="0" border="0">
                                             <tr>
-                                                <td>{{ $level }}</td>
-                                                <td>{{ experience($level) }}</td>
+                                                <th>Level</th>
+                                                <th>Experience</th>
                                             </tr>
-                                        @endforeach
-                                    </table>
-                                </td>
-                            @endforeach
-                        </tr>
-                    </table>
+
+                                            @foreach ($column as $level)
+                                                <tr>
+                                                    <td>{{ $level }}</td>
+                                                    <td>{{ experience($level) }}</td>
+                                                </tr>
+                                            @endforeach
+                                        </table>
+                                    </td>
+                                @endforeach
+                            </tr>
+                        </table>
+                    </div>
                 </div>
+
             </div>
-
         </div>
-    </div>
 
-    <span class="corners bottom"></span>
-</div>
-@endsection
+        <span class="corners bottom"></span>
+    </div>
+    
+@stop

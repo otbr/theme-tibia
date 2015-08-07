@@ -1,33 +1,35 @@
 @extends('theme::app')
 
-@title('Maps')
-@navigation('/library/maps')
-@bodyclass('library-maps')
+@section('title', 'Maps')
+@section('body', 'library-maps')
+@section('navigation', '/library/maps')
 
 @section('content')
-<div class="box">
-    <span class="corners top"></span>
 
-    <header class="header">
-        <div class="headline">Maps</div>
-    </header>
+    <div class="box">
+        <span class="corners top"></span>
 
-    <div class="inner-box-border">
-        <div class="inner-box">
+        <header class="header">
+            <div class="headline">Maps</div>
+        </header>
 
-            <div class="text-center">
-                <h3>Fenrock</h3>
+        <div class="inner-box-border">
+            <div class="inner-box">
 
-                <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Fenrock">
+                <div class="text-center">
+                    <h3>Fenrock</h3>
+
+                    <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Fenrock">
+                </div>
+
+                <p>
+                    Fenrock, one of {{ server()->name() }}'s smallest islands, is situated right in the middle between Yalahar and the Ice Islands. The island's green and smooth surface is partly covered with snow, but hot geysers create an almost sub-tropical climate beneath the surface. For this reason, also creatures that are rather exotic in cold areas have found a living environment in Fenrock's dungeons. Fenrock can be reached from Yalahar and the nearby island Mistrock.
+                </p>
+
             </div>
-
-            <p>
-                Fenrock, one of {{ server()->name() }}'s smallest islands, is situated right in the middle between Yalahar and the Ice Islands. The island's green and smooth surface is partly covered with snow, but hot geysers create an almost sub-tropical climate beneath the surface. For this reason, also creatures that are rather exotic in cold areas have found a living environment in Fenrock's dungeons. Fenrock can be reached from Yalahar and the nearby island Mistrock.
-            </p>
-
         </div>
+        
+        <span class="corners bottom"></span>
     </div>
-    
-    <span class="corners bottom"></span>
-</div>
-@endsection
+
+@stop

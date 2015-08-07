@@ -1,61 +1,63 @@
 @extends('theme::app')
 
-@title(trans('theme::account/player/sex/form.title'))
-@navigation('/account')
-@bodyclass('account-character-sex')
+@section('title', trans('theme::account/player/sex/form.title'))
+@section('body', 'account-player-sex-form')
+@section('navigation', '/account')
 
 @section('content')
-<div class="box">
-    <span class="corners top"></span>
 
-    <header class="header">
-        <div class="headline">{!! trans('theme::account/player/sex/form.title') !!}</div>
-    </header>
+    <div class="box">
+        <span class="corners top"></span>
 
-    <div class="inner-box-border">
-        <div class="inner-box">
+        <header class="header">
+            <div class="headline">{!! trans('theme::account/player/sex/form.title') !!}</div>
+        </header>
 
-            @include('theme::modules.errors')
+        <div class="inner-box-border">
+            <div class="inner-box">
 
-            <form method="POST" action="{{ url('/account/character', [$player->id(), 'sex']) }}">
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="hidden" name="_method" value="PUT">
+                @include('theme::errors')
 
-                <div class="table">
-                    <header class="header">
-                        <div class="borders">
-                            <span class="edges top"></span>
-                            {!! trans('theme::account/player/sex/form.heading') !!}
-                            <span class="edges bottom"></span>
+                <form method="POST" action="{{ url('/account/character', [$player->id(), 'sex']) }}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <input type="hidden" name="_method" value="PUT">
+
+                    <div class="table">
+                        <header class="header">
+                            <div class="borders">
+                                <span class="edges top"></span>
+                                {!! trans('theme::account/player/sex/form.heading') !!}
+                                <span class="edges bottom"></span>
+                            </div>
+                        </header>
+
+                        <div class="content dark">
+                            {!! trans('theme::account/player/sex/form.content', ['name' => $player->name()]) !!}
                         </div>
-                    </header>
-
-                    <div class="content dark">
-                        {!! trans('theme::account/player/sex/form.content', ['name' => $player->name()]) !!}
                     </div>
-                </div>
 
-                <br>
+                    <br>
 
-                <table class="full-width">
-                    <tr>
-                        <td class="text-center">
-                            <button class="green-button">
-                                <span>{{ trans('theme::account/player/sex/form.yes') }}</span>
-                            </button>
-                        </td>
-                        <td class="text-center">
-                            <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                <span>{{ trans('theme::account/player/sex/form.back') }}</span>
-                            </a>
-                        </td>
-                    </tr>
-                </table>
-            </form>
+                    <table class="full-width">
+                        <tr>
+                            <td class="text-center">
+                                <button class="green-button">
+                                    <span>{{ trans('theme::account/player/sex/form.yes') }}</span>
+                                </button>
+                            </td>
+                            <td class="text-center">
+                                <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
+                                    <span>{{ trans('theme::account/player/sex/form.back') }}</span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
 
+            </div>
         </div>
-    </div>
 
-    <span class="corners bottom"></span>
-</div>
+        <span class="corners bottom"></span>
+    </div>
+    
 @stop
