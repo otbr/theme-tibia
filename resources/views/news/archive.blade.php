@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::news.archive.title'))
+@title(trans('theme::news/archive.title'))
 @navigation('/archive')
 @bodyclass('news-archive')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::news.archive.heading') !!}</div>
+        <div class="headline">{!! trans('theme::news/archive.heading') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -22,7 +22,7 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::news.archive.search') !!}
+                            {!! trans('theme::news/archive.search') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -31,9 +31,9 @@
                         <div class="box">
                             <table class="table-striped inverse dark">
                                 <tr>
-                                    <th class="text-center">{!! trans('theme::news.archive.period') !!}</th>
-                                    <th class="text-center">{!! trans('theme::news.archive.type') !!}</th>
-                                    <th class="text-center">{!! trans('theme::news.archive.category') !!}</th>
+                                    <th class="text-center">{!! trans('theme::news/archive.period') !!}</th>
+                                    <th class="text-center">{!! trans('theme::news/archive.type') !!}</th>
+                                    <th class="text-center">{!! trans('theme::news/archive.category') !!}</th>
                                 </tr>
                                 <tr>
                                     <td class="valign-middle">
@@ -43,12 +43,12 @@
                                             </tr>
                                             <tr>
                                                 <td></td>
-                                                <td>{!! trans('theme::news.archive.day') !!}</td>
-                                                <td>{!! trans('theme::news.archive.month') !!}</td>
-                                                <td>{!! trans('theme::news.archive.year') !!}</td>
+                                                <td>{!! trans('theme::news/archive.day') !!}</td>
+                                                <td>{!! trans('theme::news/archive.month') !!}</td>
+                                                <td>{!! trans('theme::news/archive.year') !!}</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-right">{!! trans('theme::news.archive.from') !!}</td>
+                                                <td class="text-right">{!! trans('theme::news/archive.from') !!}</td>
                                                 <td>
                                                     <select>
                                                         @foreach (range(1, 31) as $day)
@@ -74,12 +74,12 @@
                                             </tr>
                                             <tr>
                                                 <td></td>
-                                                <td>{!! trans('theme::news.archive.day') !!}</td>
-                                                <td>{!! trans('theme::news.archive.month') !!}</td>
-                                                <td>{!! trans('theme::news.archive.year') !!}</td>
+                                                <td>{!! trans('theme::news/archive.day') !!}</td>
+                                                <td>{!! trans('theme::news/archive.month') !!}</td>
+                                                <td>{!! trans('theme::news/archive.year') !!}</td>
                                             </tr>
                                             <tr>
-                                                <td class="text-right">{!! trans('theme::news.archive.to') !!}</td>
+                                                <td class="text-right">{!! trans('theme::news/archive.to') !!}</td>
                                                 <td>
                                                     <select>
                                                         @foreach (range(1, 31) as $day)
@@ -108,54 +108,54 @@
                                     <td class="valign-middle">
                                         <label>
                                             <input type="checkbox" checked>
-                                            {!! trans('theme::news.archive.newsticker') !!}
+                                            {!! trans('theme::news/archive.newsticker') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            {!! trans('theme::news.archive.featured') !!}
+                                            {!! trans('theme::news/archive.featured') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            {!! trans('theme::news.archive.news') !!}
+                                            {!! trans('theme::news/archive.news') !!}
                                         </label>
                                     </td>
                                     <td class="valign-middle">
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_cipsoft_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.staff') !!}">
-                                            {!! trans('theme::news.archive.staff') !!}
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_cipsoft_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.staff') !!}">
+                                            {!! trans('theme::news/archive.staff') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_community_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.community') !!}">
-                                            {!! trans('theme::news.archive.community') !!}
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_community_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.community') !!}">
+                                            {!! trans('theme::news/archive.community') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_development_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.development') !!}">
-                                            {!! trans('theme::news.archive.development') !!}
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_development_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.development') !!}">
+                                            {!! trans('theme::news/archive.development') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_support_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.support') !!}">
-                                            {!! trans('theme::news.archive.support') !!}
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_support_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.support') !!}">
+                                            {!! trans('theme::news/archive.support') !!}
                                         </label>
                                         <br>
 
                                         <label>
                                             <input type="checkbox" checked>
-                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_technical_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news.archive.technical') !!}">
-                                            {!! trans('theme::news.archive.technical') !!}
+                                            <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_technical_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.technical') !!}">
+                                            {!! trans('theme::news/archive.technical') !!}
                                         </label>
                                     </td>
                                 </tr>

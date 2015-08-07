@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@title(trans('theme::news.latest.title'))
+@title(trans('theme::news/latest.title'))
 @navigation('/')
 @bodyclass('news-latest')
 
@@ -9,7 +9,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::news.latest.newsticker.heading') !!}</div>
+        <div class="headline">{!! trans('theme::news/latest.newsticker.heading') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -107,7 +107,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::news.latest.featured.heading') !!}</div>
+        <div class="headline">{!! trans('theme::news/latest.featured.heading') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -128,7 +128,7 @@
                 </tr>
                 <tr>
                     <td class="text-right valign-bottom">
-                        <a href="#" class="readmore">{!! trans('theme::news.latest.featured.readmore') !!}</a>
+                        <a href="#" class="readmore">{!! trans('theme::news/latest.featured.readmore') !!}</a>
                     </td>
                 </tr>
             </table>
@@ -142,7 +142,7 @@
     <span class="corners top"></span>
 
     <header class="header">
-        <div class="headline">{!! trans('theme::news.latest.news.heading') !!}</div>
+        <div class="headline">{!! trans('theme::news/latest.news.heading') !!}</div>
     </header>
 
     <div class="inner-box-border">
@@ -173,7 +173,7 @@
                         To a bright future together!
                     </p>
                     <p class="text-right">
-                        <a href="#">{!! trans('theme::news.latest.news.comment') !!}</a>
+                        <a href="#">{!! trans('theme::news/latest.news.comment') !!}</a>
                     </p>
                 </div>
             </article>
