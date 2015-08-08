@@ -18,7 +18,7 @@
 
                 @include('theme::errors')
 
-                {!! trans('theme::account/action/terminate/form.preamble', compact('server')) !!}
+                {!! trans('theme::account/action/terminate/form.preamble', ['server' => server()->name()]) !!}
 
                 <form method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

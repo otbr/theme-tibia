@@ -26,7 +26,7 @@
                     </header>
 
                     <div class="content dark">
-                        {!! trans('theme::account/email/request/confirm.content', compact('server')) !!}
+                        {!! trans('theme::account/email/request/confirm.content', ['server' => server()->name()]) !!}
                     </div>
                 </div>
 

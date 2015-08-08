@@ -60,7 +60,7 @@
 
                 <br>
 
-                <h1>{!! trans('theme::account/auth/login.new.heading', compact('server')) !!}</h1>
+                <h1>{!! trans('theme::account/auth/login.new.heading', ['server' => server()->name()]) !!}</h1>
                 
                 <div class="table">
                     <header class="header">
@@ -81,7 +81,7 @@
                                         </a>
                                     </div>
 
-                                    <strong>{!! trans('theme::account/auth/login.new.server', compact('server')) !!}</strong>
+                                    <strong>{!! trans('theme::account/auth/login.new.server', ['server' => server()->name()]) !!}</strong>
                                     <p class="indent">{!! trans('theme::account/auth/login.new.one') !!}</p>
                                     <p class="indent">{!! trans('theme::account/auth/login.new.two') !!}</p>
                                     <p class="indent">{!! trans('theme::account/auth/login.new.three') !!}</p>
