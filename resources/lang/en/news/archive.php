@@ -27,5 +27,6 @@ return [
     'development'   => 'Development',
     'support'       => 'Support',
     'technical'     => 'Technical Issues',
+    'submit'        => 'Submit',
 
 ];

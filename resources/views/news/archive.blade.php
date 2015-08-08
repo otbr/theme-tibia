@@ -168,7 +168,7 @@
                     <br>
 
                     <button class="blue-button">
-                        <span>{{ trans('theme::account.create.submit') }}</span>
+                        <span>{{ trans('theme::news/archive.submit') }}</span>
                     </button>
                 </form>
 
