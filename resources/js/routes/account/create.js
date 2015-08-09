@@ -116,6 +116,11 @@
             },
 
             ready: function () {
+                var smallErrors = document.querySelectorAll('small.error');
+                [].forEach.call(smallErrors, function (smallError) {
+                    smallError.style.display = 'block';
+                });
+
                 if (this.account == "") {
                     document.querySelector('input[name="name"]').focus();
                 }
