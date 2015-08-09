@@ -71,7 +71,7 @@
                                 <tr>
                                     <th style="width: 24%;">{!! trans('theme::account/manage.account') !!}</th>
                                     <td class="valign-middle">
-                                        <button class="showhide" data-v-on="click: toggle('account')" data-v-class="active: isToggled('account')"></button>
+                                        <button class="showhide repeater" data-v-on="click: toggle('account')" data-v-class="active: isToggled('account')"></button>
 
                                         <span data-v-show="isToggled('account')">{{ $account->name() }}</span>
                                         <span data-v-show="! isToggled('account')" class="repeater">{{ str_repeat('*', strlen($account->name())) }}</span>
@@ -80,7 +80,7 @@
                                 <tr>
                                     <th>{!! trans('theme::account/manage.email') !!}</th>
                                     <td class="valign-middle">
-                                        <button class="showhide" data-v-on="click: toggle('email')" data-v-class="active: isToggled('email')"></button>
+                                        <button class="showhide repeater" data-v-on="click: toggle('email')" data-v-class="active: isToggled('email')"></button>
 
                                         <span data-v-show="isToggled('email')">{{ $account->email() }}</span>
                                         <span data-v-show="! isToggled('email')" class="repeater">{{ str_repeat('*', strlen($account->email())) }}</span>
