@@ -13,6 +13,14 @@
             methods: {
                 activate    : require('../../methods/activate'),
                 isActivated : require('../../methods/is-activated')
+            },
+
+            ready: function () {
+                var elements = document.querySelectorAll('.play-integer, .play-button, .play-button-red, .character-buttons');
+
+                [].forEach.call(elements, function (element) {
+                    element.classList.toggle('hidden');
+                });
             }
         });
 

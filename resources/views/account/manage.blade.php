@@ -74,7 +74,7 @@
                                         <button class="showhide" data-v-on="click: toggle('account')" data-v-class="active: isToggled('account')"></button>
 
                                         <span data-v-show="isToggled('account')">{{ $account->name() }}</span>
-                                        <span data-v-show="! isToggled('account')">{{ str_repeat('*', strlen($account->name())) }}</span>
+                                        <span data-v-show="! isToggled('account')" class="repeater">{{ str_repeat('*', strlen($account->name())) }}</span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -83,7 +83,7 @@
                                         <button class="showhide" data-v-on="click: toggle('email')" data-v-class="active: isToggled('email')"></button>
 
                                         <span data-v-show="isToggled('email')">{{ $account->email() }}</span>
-                                        <span data-v-show="! isToggled('email')">{{ str_repeat('*', strlen($account->email())) }}</span>
+                                        <span data-v-show="! isToggled('email')" class="repeater">{{ str_repeat('*', strlen($account->email())) }}</span>
                                     </td>
                                 </tr>
                                 <tr>

@@ -78,13 +78,19 @@
 
     tr.character {
         .play-integer {
-            display: block;
+            display: none;
+
+            &.hidden {
+                display: block;
+            }
         }
 
         .play-button,
         .play-button-red,
         .character-buttons {
-            display: none;
+            &.hidden {
+                display: none;
+            }
         }
 
         &.active {
@@ -117,6 +123,10 @@
         .blue-button, .green-button {
             margin-bottom: 0;
         }
+    }
+
+    .repeater {
+        display: none;
     }
 }
 

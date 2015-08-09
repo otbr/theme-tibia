@@ -13,6 +13,14 @@
             methods: {
                 toggle      : require('../../methods/toggle'),
                 isToggled   : require('../../methods/is-toggled')
+            },
+
+            ready: function () {
+                var elements = document.querySelectorAll('.repeater');
+
+                [].forEach.call(elements, function (element) {
+                    element.classList.toggle('repeater');
+                });
             }
         });
 
