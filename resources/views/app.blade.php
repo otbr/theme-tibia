@@ -191,11 +191,13 @@
                 </div>
             </div>
 
-            <div class="box networks">
-                <div class="inner-box">
-                    
+            @if (config('pandaac.theme-tibia.layout.social'))
+                <div class="box networks">
+                    <div class="inner-box">
+                        
+                    </div>
                 </div>
-            </div>
+            @endif
 
             <div class="box screenshots">
                 <div class="inner-box">
