@@ -39,21 +39,21 @@
                                         <tr>
                                             <td class="valign-top" style="padding-right: 0;">
                                                 <a href="{{ url('/account/manage') }}" class="blue-button">
-                                                    <span>{{ trans('theme::account/overview.manageaccount') }}</span>
+                                                    <span>{!! trans('theme::account/overview.manageaccount') !!}</span>
                                                 </a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="valign-middle" style="padding-right: 0;">
                                                 <a href="#" class="green-button">
-                                                    <span>{{ trans('theme::account/overview.getpremium') }}</span>
+                                                    <span>{!! trans('theme::account/overview.getpremium') !!}</span>
                                                 </a>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td class="valign-bottom" style="padding-right: 0;">
                                                 <a href="{{ url('/account/logout') }}" class="red-button">
-                                                    <span>{{ trans('theme::account/overview.logout') }}</span>
+                                                    <span>{!! trans('theme::account/overview.logout') !!}</span>
                                                 </a>
                                             </td>
                                         </tr>
@@ -90,7 +90,7 @@
                                                     <tr>
                                                         <td class="valign-top" style="padding-right: 0;">
                                                             <a href="{{ url('/account/email/request') }}" class="blue-button">
-                                                                <span>{{ trans('theme::account/overview.confirm.request') }}</span>
+                                                                <span>{!! trans('theme::account/overview.confirm.request') !!}</span>
                                                             </a>
                                                         </td>
                                                     </tr>
@@ -98,7 +98,7 @@
                                                 <tr>
                                                     <td class="valign-bottom" style="padding-right: 0;">
                                                         <a href="{{ url('/account/email') }}" class="blue-button">
-                                                            <span>{{ trans('theme::account/overview.confirm.edit') }}</span>
+                                                            <span>{!! trans('theme::account/overview.confirm.edit') !!}</span>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -108,10 +108,10 @@
                                         <div style="margin: 5px 0 13px;">
                                             <strong>{!! trans('theme::account/overview.confirm.heading') !!}</strong>
                                             <div class="alert">
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign-middle" alt="{!! trans('theme::account/overview.confirm.heading') !!}">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/info.gif') }}" class="valign-middle" alt="{{ trans('theme::account/overview.confirm.heading') }}">
                                                 <div class="message">
                                                     {!! trans('theme::account/overview.confirm.alert') !!}
-                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}" alt="{!! trans('theme::account/overview.confirm.heading') !!}">
+                                                    <img src="{{ asset('/pandaac/theme-tibia/img/ornament.gif') }}" alt="{{ trans('theme::account/overview.confirm.heading') }}">
                                                 </div>
                                             </div>
                                         </div>
@@ -137,7 +137,7 @@
                                                 <tr>
                                                     <td class="valign-middle" style="padding-right: 0;">
                                                         <a href="{{ url('/account/register') }}" class="blue-button">
-                                                            <span>{{ trans('theme::account/overview.unregistered.register') }}</span>
+                                                            <span>{!! trans('theme::account/overview.unregistered.register') !!}</span>
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -168,7 +168,7 @@
                                     <td>
                                         <div class="buttons-right">
                                             <a href="{{ url('/account/email') }}" class="blue-button">
-                                                <span>{{ trans('theme::account/overview.email.edit') }}</span>
+                                                <span>{!! trans('theme::account/overview.email.edit') !!}</span>
                                             </a>
                                         </div>
 
@@ -197,7 +197,7 @@
                                     <td>
                                         <div class="buttons-right">
                                             <a href="{{ url('/account') }}" class="blue-button">
-                                                <span>{{ trans('theme::account/overview.vouchers.vouchers') }}</span>
+                                                <span>{!! trans('theme::account/overview.vouchers.vouchers') !!}</span>
                                             </a>
                                         </div>
 
@@ -284,7 +284,7 @@
                             <tr>
                                 <td class="valign-bottom text-right" style="padding-right: 0;">
                                     <a href="{{ url('/account/character') }}" class="blue-button">
-                                        <span>{{ trans('theme::account/overview.players.create') }}</span>
+                                        <span>{!! trans('theme::account/overview.players.create') !!}</span>
                                     </a>
                                 </td>
                             </tr>

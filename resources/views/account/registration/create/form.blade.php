@@ -133,8 +133,8 @@
                                     <td>
                                         <select name="gender">
                                             <option disabled {{ empty(old('gender')) ? 'selected' : null }}>---</option>
-                                            <option value="female" {{ old('gender') === 'female' ? 'selected' : null }}>{{ trans('theme::account/registration/create/form.female') }}</option>
-                                            <option value="male" {{ old('gender') === 'male' ? 'selected' : null }}>{{ trans('theme::account/registration/create/form.male') }}</option>
+                                            <option value="female" {{ old('gender') === 'female' ? 'selected' : null }}>{!! trans('theme::account/registration/create/form.female') !!}</option>
+                                            <option value="male" {{ old('gender') === 'male' ? 'selected' : null }}>{!! trans('theme::account/registration/create/form.male') !!}</option>
                                         </select>
                                     </td>
                                 </tr>
@@ -152,12 +152,12 @@
                         <tr>
                             <td class="text-center">
                                 <button class="blue-button">
-                                    <span>{{ trans('theme::account/registration/create/form.continue') }}</span>
+                                    <span>{!! trans('theme::account/registration/create/form.continue') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
                                 <a href="{{ url('/account') }}" class="blue-button">
-                                    <span>{{ trans('theme::account/registration/create/form.back') }}</span>
+                                    <span>{!! trans('theme::account/registration/create/form.back') !!}</span>
                                 </a>
                             </td>
                         </tr>

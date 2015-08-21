@@ -140,12 +140,12 @@
                                 <tr>
                                     <td style="width: 50%;" class="text-center">
                                         <button class="blue-button">
-                                            <span>{{ trans('theme::account/player/edit/form.submit') }}</span>
+                                            <span>{!! trans('theme::account/player/edit/form.submit') !!}</span>
                                         </button>
                                     </td>
                                     <td style="widtH: 50%;" class="text-center">
                                         <a href="{{ url('/account') }}" class="blue-button">
-                                            <span>{{ trans('theme::account/player/edit/form.back') }}</span>
+                                            <span>{!! trans('theme::account/player/edit/form.back') !!}</span>
                                         </a>
                                     </td>
                                 </tr>

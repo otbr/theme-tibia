@@ -96,12 +96,12 @@
                         <tr>
                             <td class="text-center">
                                 <button class="blue-button">
-                                    <span>{{ trans('theme::account/registration/edit/form.continue') }}</span>
+                                    <span>{!! trans('theme::account/registration/edit/form.continue') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
                                 <a href="{{ url('/account') }}" class="blue-button">
-                                    <span>{{ trans('theme::account/registration/edit/form.back') }}</span>
+                                    <span>{!! trans('theme::account/registration/edit/form.back') !!}</span>
                                 </a>
                             </td>
                         </tr>

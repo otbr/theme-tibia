@@ -49,7 +49,7 @@
                     <tr>
                         <td class="text-center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <span>{{ trans('theme::account/email/edit/edited.back') }}</span>
+                                <span>{!! trans('theme::account/email/edit/edited.back') !!}</span>
                             </a>
                         </td>
                     </tr>

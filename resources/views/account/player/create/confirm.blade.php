@@ -67,12 +67,12 @@
                         <tr>
                             <td class="text-center">
                                 <button class="blue-button">
-                                    <span>{{ trans('theme::account/player/create/confirm.continue') }}</span>
+                                    <span>{!! trans('theme::account/player/create/confirm.continue') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
                                 <button name="back" class="blue-button">
-                                    <span>{{ trans('theme::account/player/create/confirm.back') }}</span>
+                                    <span>{!! trans('theme::account/player/create/confirm.back') !!}</span>
                                 </button>
                             </td>
                         </tr>

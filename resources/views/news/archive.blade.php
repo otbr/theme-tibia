@@ -127,35 +127,35 @@
                                         <td class="valign-middle">
                                             <label>
                                                 <input type="checkbox" checked>
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_cipsoft_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.staff') !!}">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_cipsoft_small.gif') }}" class="valign-middle" alt="{{ trans('theme::news/archive.staff') }}">
                                                 {!! trans('theme::news/archive.staff') !!}
                                             </label>
                                             <br>
 
                                             <label>
                                                 <input type="checkbox" checked>
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_community_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.community') !!}">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_community_small.gif') }}" class="valign-middle" alt="{{ trans('theme::news/archive.community') }}">
                                                 {!! trans('theme::news/archive.community') !!}
                                             </label>
                                             <br>
 
                                             <label>
                                                 <input type="checkbox" checked>
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_development_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.development') !!}">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_development_small.gif') }}" class="valign-middle" alt="{{ trans('theme::news/archive.development') }}">
                                                 {!! trans('theme::news/archive.development') !!}
                                             </label>
                                             <br>
 
                                             <label>
                                                 <input type="checkbox" checked>
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_support_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.support') !!}">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_support_small.gif') }}" class="valign-middle" alt="{{ trans('theme::news/archive.support') }}">
                                                 {!! trans('theme::news/archive.support') !!}
                                             </label>
                                             <br>
 
                                             <label>
                                                 <input type="checkbox" checked>
-                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_technical_small.gif') }}" class="valign-middle" alt="{!! trans('theme::news/archive.technical') !!}">
+                                                <img src="{{ asset('/pandaac/theme-tibia/img/newsicon_technical_small.gif') }}" class="valign-middle" alt="{{ trans('theme::news/archive.technical') }}">
                                                 {!! trans('theme::news/archive.technical') !!}
                                             </label>
                                         </td>
@@ -168,7 +168,7 @@
                     <br>
 
                     <button class="blue-button">
-                        <span>{{ trans('theme::news/archive.submit') }}</span>
+                        <span>{!! trans('theme::news/archive.submit') !!}</span>
                     </button>
                 </form>
 

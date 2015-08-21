@@ -49,12 +49,12 @@
                         <tr>
                             <td class="text-center">
                                 <button class="blue-button">
-                                    <span>{{ trans('theme::account/action/terminate/form.submit') }}</span>
+                                    <span>{!! trans('theme::account/action/terminate/form.submit') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
                                 <a href="{{ url('/account/manage') }}" class="blue-button">
-                                    <span>{{ trans('theme::account/action/terminate/form.back') }}</span>
+                                    <span>{!! trans('theme::account/action/terminate/form.back') !!}</span>
                                 </a>
                             </td>
                         </tr>

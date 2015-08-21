@@ -75,12 +75,12 @@
                         <tr>
                             <td class="text-center">
                                 <button class="green-button">
-                                    <span>{{ trans('theme::account/player/world/form.continue') }}</span>
+                                    <span>{!! trans('theme::account/player/world/form.continue') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
                                 <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
-                                    <span>{{ trans('theme::account/player/world/form.back') }}</span>
+                                    <span>{!! trans('theme::account/player/world/form.back') !!}</span>
                                 </a>
                             </td>
                         </tr>

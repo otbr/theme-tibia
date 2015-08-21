@@ -36,7 +36,7 @@
                     <tr>
                         <td class="text-center">
                             <a href="{{ url('/account/manage') }}" class="blue-button">
-                                <span>{{ trans('theme::account/registration/edit/requested.back') }}</span>
+                                <span>{!! trans('theme::account/registration/edit/requested.back') !!}</span>
                             </a>
                         </td>
                     </tr>

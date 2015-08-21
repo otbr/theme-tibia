@@ -40,7 +40,7 @@
                     <tr>
                         <td class="text-center">
                             <a href="{{ url('/account') }}" class="blue-button">
-                                <span>{{ trans('theme::account/player/undelete/undeleted.back') }}</span>
+                                <span>{!! trans('theme::account/player/undelete/undeleted.back') !!}</span>
                             </a>
                         </td>
                     </tr>

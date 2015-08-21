@@ -36,12 +36,12 @@
                     <tr>
                         <td class="text-center">
                             <a href="{{ url('/account/download') }}" class="blue-button">
-                                <span>{{ trans('theme::account/email/request/confirm.download') }}</span>
+                                <span>{!! trans('theme::account/email/request/confirm.download') !!}</span>
                             </a>
                         </td>
                         <td class="text-center">
                             <a href="{{ url('/account/login') }}" class="blue-button">
-                                <span>{{ trans('theme::account/email/request/confirm.login') }}</span>
+                                <span>{!! trans('theme::account/email/request/confirm.login') !!}</span>
                             </a>
                         </td>
                     </tr>

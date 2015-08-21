@@ -35,10 +35,10 @@
 
                                     <div class="buttons-right">
                                         <button class="blue-button" style="margin-bottom: 2px;">
-                                            <span>{{ trans('theme::account/auth/login.login') }}</span>
+                                            <span>{!! trans('theme::account/auth/login.login') !!}</span>
                                         </button>
                                         <a href="{{ url('/account/recover') }}" class="blue-button">
-                                            <span>{{ trans('theme::account/auth/login.lost') }}</span>
+                                            <span>{!! trans('theme::account/auth/login.lost') !!}</span>
                                         </a>
                                     </div>
 

@@ -217,7 +217,7 @@
                     <br>
 
                     <button class="blue-button">
-                        <span>{{ trans('theme::account/auth/create.submit') }}</span>
+                        <span>{!! trans('theme::account/auth/create.submit') !!}</span>
                     </button>
                 </form>
 

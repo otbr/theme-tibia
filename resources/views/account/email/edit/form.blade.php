@@ -55,12 +55,12 @@
                         <tr>
                             <td class="text-center">
                                 <button class="blue-button">
-                                    <span>{{ trans('theme::account/email/edit/form.submit') }}</span>
+                                    <span>{!! trans('theme::account/email/edit/form.submit') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
                                 <a href="{{ url('/account/manage') }}" class="blue-button">
-                                    <span>{{ trans('theme::account/email/edit/form.back') }}</span>
+                                    <span>{!! trans('theme::account/email/edit/form.back') !!}</span>
                                 </a>
                             </td>
                         </tr>

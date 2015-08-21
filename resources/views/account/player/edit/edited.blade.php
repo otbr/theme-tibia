@@ -36,7 +36,7 @@
                     <tr>
                         <td class="text-center">
                             <a href="{{ url('/account/character', $player->id()) }}" class="blue-button">
-                                <span>{{ trans('theme::account/player/edit/edited.back') }}</span>
+                                <span>{!! trans('theme::account/player/edit/edited.back') !!}</span>
                             </a>
                         </td>
                     </tr>
