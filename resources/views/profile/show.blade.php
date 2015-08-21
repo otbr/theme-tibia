@@ -177,7 +177,7 @@
                                         <tr>
                                             <th>
                                                 <label for="name">
-                                                    <strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::profile/show.form.name') !!}</strong>
+                                                    <strong>{!! trans('theme::profile/show.form.name') !!}</strong>
                                                 </label>
                                             </th>
                                             <td>

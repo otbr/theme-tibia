@@ -41,7 +41,7 @@
                                                 </label>
                                             </th>
                                             <td>
-                                                <input type="text" name="name" id="name" size="35" maxlength="30" value="{{ old('name', session()->get('name')) }}">
+                                                <input type="text" name="name" id="name" size="35" maxlength="30" value="{{ old('name') }}">
 
                                                 <button class="blue-button">
                                                     <span>{!! trans('theme::profile/search/form.submit') !!}</span>
