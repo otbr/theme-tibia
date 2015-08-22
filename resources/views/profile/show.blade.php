@@ -116,7 +116,7 @@
                     </div>
                 </div>
 
-                @if ($player->account->players->count())
+                @if (! $player->isHidden() and $player->account->players->count())
                     <div class="table top">
                         <header class="header">
                             <div class="borders">

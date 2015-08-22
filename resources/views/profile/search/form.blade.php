@@ -37,7 +37,7 @@
                                         <tr>
                                             <th>
                                                 <label for="name">
-                                                    <strong class="{{ $errors->has() ? 'error' : null }}">{!! trans('theme::profile/search/form.name') !!}</strong>
+                                                    <strong>{!! trans('theme::profile/search/form.name') !!}</strong>
                                                 </label>
                                             </th>
                                             <td>
