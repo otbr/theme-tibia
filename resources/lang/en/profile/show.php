@@ -34,7 +34,7 @@ return [
     'players.world'         => 'World',
     'players.status'        => 'Status',
     'players.view'          => 'View',
-    'players.online'        => 'Online',
+    'players.online'        => 'online',
 
     'form.heading'          => 'Search Character',
     'form.name'             => 'Name:',

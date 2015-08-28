@@ -27,7 +27,7 @@
                         </header>
 
                         <div class="content dark">
-                            <form method="POST">
+                            <form method="POST" action="{{ url('/worlds') }}">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                                 <table class="full-width">
