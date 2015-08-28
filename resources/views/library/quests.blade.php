@@ -19,7 +19,7 @@
                 <div class="notification">
                     <div class="borders">
                         <span class="edges top"></span>
-                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                        <table style="width: 100%;">
                             <tr>
                                 <td align="center" valign="middle">
                                     <div class="padding">

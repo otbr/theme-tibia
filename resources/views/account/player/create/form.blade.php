@@ -64,14 +64,15 @@
                                 </table>
                             </div>
 
-                            @if (count($vocations = vocations(true)) > 1)
+                            @if ($vocations = vocations(true) and $vocations->count() > 1)
+                                <?php $first = $vocations->first()->id(); ?>
+
                                 <div class="box">
                                     <div class="inner-box">
                                         <table class="full-width">
                                             <tr>
                                                 <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('vocation') ? 'error' : null }}">{!! trans('theme::account/player/create/form.vocation') !!}</strong></p></th>
                                                 <td>
-                                                    <?php $first = $vocations->first()->id(); ?>
                                                     @foreach ($vocations as $vocation)
                                                         <label>
                                                             <input type="radio" name="vocation" value="{{ $vocation->id() }}" {{ old('vocation', $first) == $vocation->id() ? 'checked' : null }}> 
@@ -85,15 +86,39 @@
                                     </div>
                                 </div>
                             @endif
+
+                            @if ($towns = towns(true) and $towns->count() > 1)
+                                <?php $first = $towns->first()->id(); ?>
+
+                                <div class="box">
+                                    <div class="inner-box">
+                                        <table class="full-width">
+                                            <tr>
+                                                <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('town') ? 'error' : null }}">{!! trans('theme::account/player/create/form.town') !!}</strong></p></th>
+                                                <td>
+                                                    @foreach ($towns as $town)
+                                                        <label>
+                                                            <input type="radio" name="town" value="{{ $town->id() }}" {{ old('town', $first) == $town->id() ? 'checked' : null }}> 
+                                                            {{ $town->name() }}
+                                                        </label>
+                                                        &nbsp;
+                                                    @endforeach
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            @endif
                             
                             @if ($worlds = worlds() and $worlds->count() > 1)
+                                <?php $random = $worlds->random()->id(); ?>
+
                                 <div class="box">
                                     <div class="inner-box">
                                         <table class="full-width">
                                             <tr>
                                                 <th style="width: 20%;" class="valign-top"><p><strong class="{{ $errors->has('world') ? 'error' : null }}">{!! trans('theme::account/player/create/form.world') !!}</strong></p></th>
                                                 <td>
-                                                    <?php $random = $worlds->random()->id(); ?>
                                                     @foreach ($worlds as $key => $world)
                                                         <p>
                                                             <label>

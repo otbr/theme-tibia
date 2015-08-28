@@ -22,6 +22,7 @@
                     <input type="hidden" name="player" value="{{ old('player') }}">
                     <input type="hidden" name="sex" value="{{ old('sex') }}">
                     <input type="hidden" name="vocation" value="{{ old('vocation') }}">
+                    <input type="hidden" name="town" value="{{ old('town') }}">
                     <input type="hidden" name="world" value="{{ old('world') }}">
 
                     <div class="table">
@@ -47,6 +48,12 @@
                                     <th>{!! trans('theme::account/player/create/confirm.vocation') !!}</th>
                                     <td>{{ vocation(old('vocation'))->name() }}</td>
                                 </tr>
+                                @if (towns(true)->count() > 1)
+                                    <tr>
+                                        <th>{!! trans('theme::account/player/create/confirm.town') !!}</th>
+                                        <td>{{ town(old('town'))->name() }}</td>
+                                    </tr>
+                                @endif
                                 @if (worlds()->count() > 1)
                                     <tr>
                                         <th>{!! trans('theme::account/player/create/confirm.world') !!}</th>

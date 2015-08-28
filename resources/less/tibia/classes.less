@@ -20,7 +20,27 @@
 
 .flag {
     vertical-align: middle;
+    margin-top: -1px;
     cursor: help;
+}
+
+.caret {
+    border-top: 5px solid @heading-color;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    display: inline-block !important;
+    vertical-align: middle;
+    height: 0;
+    width: 0;
+
+    &.up {
+        border-bottom: 5px solid @heading-color;
+        border-top: none;
+    }
+}
+
+.nowrap {
+    white-space: nowrap;
 }
 
 .text-left {

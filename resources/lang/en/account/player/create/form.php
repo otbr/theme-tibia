@@ -19,6 +19,7 @@ return [
     'sex'           => 'Sex',
     'suggestname'   => 'suggest name',
     'vocation'      => 'Vocation:',
+    'town'          => 'Town:',
     'world'         => 'World:',
     'suggestworld'  => 'suggest game world',
     'submit'        => 'Submit',

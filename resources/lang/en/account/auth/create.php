@@ -18,6 +18,7 @@ return [
     'suggestname'   => 'suggest name',
     'sex'           => 'Sex:',
     'vocation'      => 'Vocation:',
+    'town'          => 'Town:',
     'world'         => 'World:',
     'suggestworld'  => 'suggest game world',
     'terms'         => 'Please select the following check box:',

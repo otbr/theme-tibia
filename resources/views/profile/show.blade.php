@@ -29,7 +29,7 @@
                         <div class="box">
                             <table class="table-striped">
                                 <tr>
-                                    <th width="25%">{!! trans('theme::profile/show.name') !!}</th>
+                                    <th style="width: 25%;">{!! trans('theme::profile/show.name') !!}</th>
                                     <td>{{ $player->name() }}</td>
                                 </tr>
                                 <tr>
@@ -56,7 +56,7 @@
                                 @endif
                                 <tr>
                                     <th>{!! trans('theme::profile/show.residence') !!}</th>
-                                    <td>{{ $player->town() }}</td>
+                                    <td>{{ town($player->town())->name() }}</td>
                                 </tr>
                                 <tr>
                                     <th>{!! trans('theme::profile/show.lastlogin') !!}</th>
@@ -70,7 +70,7 @@
                                 </tr>
                                 <tr>
                                     <th>{!! trans('theme::profile/show.status') !!}</th>
-                                    <td>{{ $player->town() }}</td>
+                                    <td>{!! trans('theme::profile/show.free') !!}</td>
                                 </tr>
                             </table>
                         </div>
@@ -108,7 +108,7 @@
                         <div class="box">
                             <table class="table-striped">
                                 <tr>
-                                    <th width="25%">{!! trans('theme::profile/show.account.created') !!}</th>
+                                    <th style="width: 25%;">{!! trans('theme::profile/show.account.created') !!}</th>
                                     <td>{{ $player->account->creation()->format('M d Y, H:i:s e') }}</td>
                                 </tr>
                             </table>
@@ -140,11 +140,15 @@
 
                                     @foreach ($player->account->players as $key => $character)
                                         <tr>
-                                            <td class="valign-middle" style="white-space: nowrap;">{{ ++$key }}. {{ $character->name() }}&nbsp;</td>
+                                            <td class="valign-middle nowrap">{{ ++$key }}. {{ $character->name() }}&nbsp;</td>
                                             @if (worlds()->count() > 1)
                                                 <td class="valign-middle">{{ $character->world()->name() }}</td>
                                             @endif
-                                            <td class="valign-middle"></td>
+                                            <td class="valign-middle">
+                                                @if ($character->isOnline)
+                                                    <strong class="online">{!! trans('theme::profile/show.players.online') !!}</strong>
+                                                @endif
+                                            </td>
                                             <td>
                                                 <a href="{{ url('/characters', $character->slug()) }}" class="blue-button">
                                                     <span>{!! trans('theme::profile/show.players.view') !!}</span>

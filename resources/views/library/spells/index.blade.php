@@ -31,7 +31,7 @@
                         <div class="box">
                             <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
                                 <tr>
-                                    <th class="header" width="45%">Name</th>
+                                    <th class="header" style="width: 45%;">Name</th>
                                     <th class="header">Group</th>
                                     <th class="header">Type</th>
                                     <th class="header">Exp Lvl</th>
@@ -86,10 +86,10 @@
                         <div class="box">
                             <table class="table-striped inverse dark" cellspacing="0" cellpadding="0" border="0">
                                 <tr>
-                                    <th class="header" width="25%">Vocation</th>
-                                    <th class="header" width="25%">Group</th>
-                                    <th class="header" width="25%">Type</th>
-                                    <th class="header" width="25%">Premium</th>
+                                    <th class="header" style="width: 25%;">Vocation</th>
+                                    <th class="header" style="width: 25%;">Group</th>
+                                    <th class="header" style="width: 25%;">Type</th>
+                                    <th class="header" style="width: 25%;">Premium</th>
                                 </tr>
                                 <tr>
                                     <td valign="top">
@@ -137,7 +137,7 @@
 
                 <br>
 
-                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                <table style="width: 100%;">
                     <tr>
                         <td align="center">
                             <a href="#" class="blue-button">

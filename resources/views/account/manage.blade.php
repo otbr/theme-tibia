@@ -267,9 +267,9 @@
                             {{--
                             <table class="table-striped">
                                 <tr>
-                                    <th width="85">{!! trans('theme::account/manage.date') !!}</th>
+                                    <th style="width: 85px;">{!! trans('theme::account/manage.date') !!}</th>
                                     <th>{!! trans('theme::account/manage.voucher') !!}</th>
-                                    <th width="50"></th>
+                                    <th style="width: 50px;"></th>
                                 </tr>
                                 <tr>
                                     <td>Jan 27 2015</td>

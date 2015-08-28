@@ -28,7 +28,7 @@
                     </header>
 
                     <div class="content dark">
-                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <table style="width: 100%;">
                             <tr>
                                 <?php $levels = collect(range(1, 1000))->chunk(1000 / 4); ?>
                                 @foreach ($levels as $column)

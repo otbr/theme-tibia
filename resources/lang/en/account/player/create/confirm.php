@@ -13,6 +13,7 @@ return [
     'name'      => 'Name:',
     'sex'       => 'Sex:',
     'vocation'  => 'Vocation:',
+    'town'      => 'Town:',
     'world'     => 'Game World:',
     'type'      => 'Game World Type:',
     'continue'  => 'Continue',
