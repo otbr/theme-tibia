@@ -180,7 +180,7 @@
                 @else
                     <a href="{{ url('/library/creatures') }}" class="monster"><img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/header/fire-elemental.gif" alt="Fire Elemental"></a>
                 @endif
-                <a href="{{ url('/whosonline') }}" class="online">{{ rand(0, 15000) }}<br>Players Online</a>
+                <a href="{{ url('/worlds') }}" class="online">{{ app('player.online')->count() }}<br>Players Online</a>
             </div>
 
             <div class="box premium">
@@ -211,7 +211,7 @@
         </main>
     </div>
 
-    <script>var baseurl = '{{ url("/") }}';</script>
+    <script>var baseurl = "{{ url('/') }}";</script>
     <script src="{{ theme_elixir('/pandaac/theme-tibia/js/app.js') }}"></script>
 
     @yield('footer')
