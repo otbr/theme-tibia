@@ -105,7 +105,7 @@
                             <ul>
                                 <li class="{{ activate_menu('/characters') }}"><a href="{{ url('/characters') }}">Characters</a></li>
                                 <li class="{{ activate_menu('/worlds') }}"><a href="{{ url('/worlds') }}">Worlds</a></li>
-                                <li class="{{ activate_menu('/highscores') }}"><a href="{{ url('/highscores') }}">Highscores</a></li>
+                                <li class="{{ activate_menu('/highscore') }}"><a href="{{ url('/highscore') }}">Highscores</a></li>
                                 <li class="{{ activate_menu('/statistics') }}"><a href="{{ url('/statistics') }}">Kill Statistics</a></li>
                                 <li class="{{ activate_menu('/houses') }}"><a href="{{ url('/houses') }}">Houses</a></li>
                                 <li class="{{ activate_menu('/guilds') }}"><a href="{{ url('/guilds') }}">Guilds</a></li>

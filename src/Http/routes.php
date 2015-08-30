@@ -2,10 +2,11 @@
 
 require_once apolune_path('About/Http/routes.php');
 require_once apolune_path('Account/Http/routes.php');
-require_once apolune_path('Support/Http/routes.php');
+require_once apolune_path('Highscore/Http/routes.php');
 require_once apolune_path('Library/Http/routes.php');
 require_once apolune_path('News/Http/routes.php');
 require_once apolune_path('Profile/Http/routes.php');
+require_once apolune_path('Support/Http/routes.php');
 require_once apolune_path('Worlds/Http/routes.php');
 
 $router->group(['namespace' => 'pandaac\ThemeTibia\Http\Controllers'], function ($router) {
