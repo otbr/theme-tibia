@@ -19,6 +19,7 @@ return [
     'residence'             => 'Residence:',
     'lastlogin'             => 'Last login:',
     'never'                 => 'never logged in',
+    'comment'               => 'Comment:',
     'status'                => 'Account Status:',
     'free'                  => 'Free Account',
     'premium'               => 'Premium Account',

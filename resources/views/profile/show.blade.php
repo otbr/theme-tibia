@@ -68,6 +68,12 @@
                                         @endif
                                     </td>
                                 </tr>
+                                @if ($comment = $player->properties->comment())
+                                    <tr>
+                                        <th class="valign-top">{!! trans('theme::profile/show.comment') !!}</th>
+                                        <td>{!! nl2br(e($comment)) !!}</td>
+                                    </tr>
+                                @endif
                                 <tr>
                                     <th>{!! trans('theme::profile/show.status') !!}</th>
                                     <td>{!! trans('theme::profile/show.free') !!}</td>
