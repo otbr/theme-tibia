@@ -1,0 +1,17 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/worlds/show.blade.php
+ */
+.worlds-show #middle-column {
+    .world-image {
+        position: relative;
+
+        & > img {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}

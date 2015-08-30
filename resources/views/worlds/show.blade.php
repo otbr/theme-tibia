@@ -1,7 +1,7 @@
 @extends('theme::app')
 
 @section('title', trans('theme::worlds/show.title'))
-@section('body', 'worlds')
+@section('body', 'worlds-show')
 @section('navigation', '/worlds')
 
 @section('content')
@@ -64,7 +64,17 @@
                         <table class="full-width">
                             <tr>
                                 <th style="width: 25%;">{!! trans('theme::worlds/show.status') !!}</th>
-                                <td>{!! trans('theme::worlds/show.online') !!}</td>
+                                <td class="world-image">
+                                    {!! trans('theme::worlds/show.online') !!}
+
+                                    @if ($world->typeId() === 2)
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_hardcore.gif') }}">
+                                    @elseif ($world->typeId() === 0)
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_optional.gif') }}">
+                                    @else
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_open.gif') }}">
+                                    @endif
+                                </td>
                             </tr>
                             <tr>
                                 <th>{!! trans('theme::worlds/show.playersonline') !!}</th>
