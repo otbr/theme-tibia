@@ -160,15 +160,13 @@
                                 </tr>
 
                                 @forelse ($groups as $group => $players)
-                                    <tbody id="{{ $group }}">
-                                        @foreach ($players as $player)
-                                            <tr>
-                                                <td><a href="{{ url('characters', $player->slug()) }}">{{ $player->name() }}</a></td>
-                                                <td class="text-right">{{ $player->level() }}</td>
-                                                <td class="text-right">{{ $player->vocation()->name() }}</td>
-                                            </tr>
-                                        @endforeach
-                                    </tbody>
+                                    @foreach ($players as $index => $player)
+                                        <tr id="{{ $index === 0 ? $group : null }}">
+                                            <td><a href="{{ url('characters', $player->slug()) }}">{{ $player->name() }}</a></td>
+                                            <td class="text-right">{{ $player->level() }}</td>
+                                            <td class="text-right">{{ $player->vocation()->name() }}</td>
+                                        </tr>
+                                    @endforeach
                                 @empty
                                     <tr>
                                         <td colspan="3">{!! trans('theme::worlds/show.players.empty') !!}</td>
