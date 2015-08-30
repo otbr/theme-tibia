@@ -29,6 +29,7 @@ return [
     'players.level'     => 'Level',
     'players.vocation'  => 'Vocation',
     'players.sort'      => 'sort',
+    'players.empty'     => 'There are currently no players online.',
 
     'form.heading'      => 'Search Character',
     'form.name'         => 'Character Name:',

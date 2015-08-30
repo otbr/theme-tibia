@@ -54,7 +54,7 @@
                                 @foreach ($worlds as $world)
                                     <tr>
                                         <td><a href="{{ url('/worlds', $world->slug()) }}">{{ $world->name() }}</a></td>
-                                        <td>{{ rand(0, 1000) }}</td>
+                                        <td>{{ $world->players()->count() }}</td>
                                         <td>
                                             @if ($country = country($flag = $world->flag()))
                                                 <img src="{{ config('pandaac.theme-tibia.paths.flags') }}/{{ $flag }}.gif" alt="{{ strtoupper($flag) }}" title="{{ $country }}" class="flag">

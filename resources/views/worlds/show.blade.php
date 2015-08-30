@@ -68,17 +68,17 @@
                                     {!! trans('theme::worlds/show.online') !!}
 
                                     @if ($world->typeId() === 2)
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_hardcore.gif') }}">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_hardcore.gif') }}" alt="{{ $world->type() }}">
                                     @elseif ($world->typeId() === 0)
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_optional.gif') }}">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_optional.gif') }}" alt="{{ $world->type() }}">
                                     @else
-                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_open.gif') }}">
+                                        <img src="{{ asset('/pandaac/theme-tibia/img/option_server_pvp_type_open.gif') }}" alt="{{ $world->type() }}">
                                     @endif
                                 </td>
                             </tr>
                             <tr>
                                 <th>{!! trans('theme::worlds/show.playersonline') !!}</th>
-                                <td>{{ rand(0, 1000) }}</td>
+                                <td>{{ $world->players()->count() }}</td>
                             </tr>
                             <tr>
                                 <th>{!! trans('theme::worlds/show.onlinerecord') !!}</th>
@@ -158,7 +158,9 @@
                                         <td class="text-right">{{ $player->vocation()->name() }}</td>
                                     </tr>
                                 @empty
-
+                                    <tr>
+                                        <td colspan="3">{!! trans('theme::worlds/show.players.empty') !!}</td>
+                                    </tr>
                                 @endforelse
                             </table>
                         </div>
