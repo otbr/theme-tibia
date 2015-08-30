@@ -117,6 +117,14 @@
                         <div class="borders">
                             <span class="edges top"></span>
                             {!! trans('theme::worlds/show.players.heading') !!}
+
+                            <small class="alphabet">
+                                [
+                                @foreach (range('A', 'Z') as $letter)
+                                    <a href="#{{ $letter }}">{{ $letter }}</a>
+                                @endforeach
+                                ]
+                            </small>
                             <span class="edges bottom"></span>
                         </div>
                     </header>
@@ -151,12 +159,16 @@
                                     </th>
                                 </tr>
 
-                                @forelse ($players as $player)
-                                    <tr>
-                                        <td><a href="{{ url('characters', $player->slug()) }}">{{ $player->name() }}</a></td>
-                                        <td class="text-right">{{ $player->level() }}</td>
-                                        <td class="text-right">{{ $player->vocation()->name() }}</td>
-                                    </tr>
+                                @forelse ($groups as $group => $players)
+                                    <tbody id="{{ $group }}">
+                                        @foreach ($players as $player)
+                                            <tr>
+                                                <td><a href="{{ url('characters', $player->slug()) }}">{{ $player->name() }}</a></td>
+                                                <td class="text-right">{{ $player->level() }}</td>
+                                                <td class="text-right">{{ $player->vocation()->name() }}</td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
                                 @empty
                                     <tr>
                                         <td colspan="3">{!! trans('theme::worlds/show.players.empty') !!}</td>
