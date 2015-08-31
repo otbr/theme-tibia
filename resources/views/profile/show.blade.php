@@ -30,7 +30,16 @@
                             <table class="table-striped">
                                 <tr>
                                     <th style="width: 25%;">{!! trans('theme::profile/show.name') !!}</th>
-                                    <td>{{ $player->name() }}</td>
+                                    <td>
+                                        @if ($player->isDeleted())
+                                            {!! trans('theme::profile/show.deleted', [
+                                                'name' => $player->name(),
+                                                'date' => $player->properties->deletedAt()->format('M d Y, H:i:s e'),
+                                            ]) !!}
+                                        @else
+                                            {{ $player->name() }}
+                                        @endif
+                                    </td>
                                 </tr>
                                 <tr>
                                     <th>{!! trans('theme::profile/show.sex') !!}</th>

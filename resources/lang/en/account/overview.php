@@ -18,6 +18,11 @@ return [
     'free'                  => 'Free Account',
     'freedesc'              => 'To benefit from our great premium features, get Premium Time for your account.',
 
+    'registration.edit'     => 'Edit',
+    'registration.heading'  => 'A request has been submitted to change your registration.',
+    'registration.content'  => 'You must wait until <strong>:date</strong> in order to confirm the new registration 
+                                data. Please cancel the request if you do not want your registration to be changed!',
+
     'email.edit'            => 'Edit',
     'email.heading'         => 'There is an email change request for the account!',
     'email.content'         => 'A request has been submitted to change the email address of this account to 

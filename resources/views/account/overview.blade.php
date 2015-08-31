@@ -159,6 +159,34 @@
                     </div>
                 @endif
 
+                @if ($account->hasPendingRegistration())
+                    <div class="notification top">
+                        <div class="borders">
+                            <span class="edges top"></span>
+                            <table class="full-width">
+                                <tr>
+                                    <td>
+                                        <div class="buttons-right">
+                                            <a href="{{ url('/account/register/edit') }}" class="blue-button">
+                                                <span>{!! trans('theme::account/overview.registration.edit') !!}</span>
+                                            </a>
+                                        </div>
+
+                                        <p style="margin-top: 5px;"><strong>{!! trans('theme::account/overview.registration.heading') !!}</strong></p>
+
+                                        <p style="margin-bottom: 5px;">
+                                            {!! trans('theme::account/overview.registration.content', [
+                                                'date' => $account->registration->requestDate()->format('M d Y, H:i:s e'),
+                                            ]) !!}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <span class="edges bottom"></span>
+                        </div>
+                    </div>
+                @endif
+
                 @if ($account->hasPendingEmail())
                     <div class="notification top">
                         <div class="borders">
@@ -177,7 +205,7 @@
                                         <p style="margin-bottom: 5px;">
                                             {!! trans('theme::account/overview.email.content', [
                                                 'email' => $account->properties->email(),
-                                                'days'  => config('pandaac.mail.timers.email-change'),
+                                                'days'  => $account->properties->emailDate()->addDays(1)->diffInDays(),
                                             ]) !!}
                                         </p>
                                     </td>

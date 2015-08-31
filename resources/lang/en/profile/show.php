@@ -11,6 +11,7 @@ return [
     'title'                 => 'Characters',
     'heading'               => 'Character Information',
     'name'                  => 'Name:',
+    'deleted'               => ':name, will be deleted at :date',
     'sex'                   => 'Sex:',
     'vocation'              => 'Vocation:',
     'level'                 => 'Level:',
