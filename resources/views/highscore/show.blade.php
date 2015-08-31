@@ -196,7 +196,7 @@
                                 </div>
                             </header>
 
-                            <div class="content">
+                            <div class="content dark">
                                 <a href="{{ url('/highscore', $world ? $world->slug() : null) }}">{!! trans('theme::highscore/show.skills.experience') !!}</a><br>
                                 <a href="{{ url('/highscore', $world ? [$world->slug(), 'magic'] : 'magic') }}">{!! trans('theme::highscore/show.skills.magic') !!}</a><br>
                                 <a href="{{ url('/highscore', $world ? [$world->slug(), 'shielding'] : 'shielding') }}">{!! trans('theme::highscore/show.skills.shielding') !!}</a><br>

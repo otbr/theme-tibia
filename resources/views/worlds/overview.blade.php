@@ -54,7 +54,13 @@
                                 @foreach ($worlds as $world)
                                     <tr>
                                         <td><a href="{{ url('/worlds', $world->slug()) }}">{{ $world->name() }}</a></td>
-                                        <td>{{ $world->players()->count() }}</td>
+                                        <td>
+                                            @if ($world->isOnline())
+                                                {{ $world->players()->count() }}
+                                            @else
+                                                {!! trans('theme::worlds/overview.offline') !!}
+                                            @endif
+                                        </td>
                                         <td>
                                             @if ($country = country($flag = $world->flag()))
                                                 <img src="{{ config('pandaac.theme-tibia.paths.flags') }}/{{ $flag }}.gif" alt="{{ strtoupper($flag) }}" title="{{ $country }}" class="flag">

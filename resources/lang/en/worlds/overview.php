@@ -12,6 +12,7 @@ return [
     'heading'           => 'Game World Overview',
     'world'             => 'World',
     'players'           => 'Players Online',
+    'offline'           => 'off',
     'location'          => 'Location',
     'type'              => 'PvP Type',
     'notapplicable'     => 'N/A',
