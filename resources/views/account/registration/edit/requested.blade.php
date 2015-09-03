@@ -26,7 +26,9 @@
                     </header>
 
                     <div class="content dark">
-                        <p>{!! trans('theme::account/registration/edit/requested.content') !!}</p>
+                        {!! trans('theme::account/registration/edit/requested.content', [
+                            'days' => config('pandaac.apolune.account.registration-days'),
+                        ]) !!}
                     </div>
                 </div>
 

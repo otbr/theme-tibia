@@ -32,7 +32,7 @@
                         </header>
 
                         <div class="content dark">
-                            {!! trans('theme::account/player/sex/form.content', ['name' => $player->name()]) !!}
+                            {!! trans('theme::account/player/sex/form.content', ['name' => e($player->name())]) !!}
                         </div>
                     </div>
 

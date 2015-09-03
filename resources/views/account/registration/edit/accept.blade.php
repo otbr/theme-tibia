@@ -1,8 +1,7 @@
-
 @extends('theme::app')
 
-@section('title', trans('theme::account/player/delete/confirm.title'))
-@section('body', 'account-player-delete-confirm')
+@section('title', trans('theme::account/registration/edit/accept.title'))
+@section('body', 'account-registration account-registration-accept')
 @section('navigation', '/account')
 
 @section('content')
@@ -11,7 +10,7 @@
         <span class="corners top"></span>
 
         <header class="header">
-            <div class="headline">{!! trans('theme::account/player/delete/confirm.title') !!}</div>
+            <div class="headline">{!! trans('theme::account/registration/edit/accept.title') !!}</div>
         </header>
 
         <div class="inner-box-border">
@@ -19,19 +18,16 @@
 
                 @include('theme::errors')
 
-                {!! trans('theme::account/player/delete/confirm.preamble', [
-                    'days' => config('pandaac.apolune.account.deletion-days'),
-                ]) !!}
+                {!! trans('theme::account/registration/edit/accept.preamble') !!}
 
-                <form method="POST" action="{{ url('/account/character', $player->id()) }}">
+                <form method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <input type="hidden" name="_method" value="DELETE">
 
                     <div class="table">
                         <header class="header">
                             <div class="borders">
                                 <span class="edges top"></span>
-                                {!! trans('theme::account/player/delete/confirm.heading') !!}
+                                {!! trans('theme::account/registration/edit/accept.heading') !!}
                                 <span class="edges bottom"></span>
                             </div>
                         </header>
@@ -39,12 +35,16 @@
                         <div class="content dark">
                             <table>
                                 <tr>
-                                    <th>{!! trans('theme::account/player/delete/confirm.player') !!}</th>
-                                    <td>{{ $player->name() }}</td>
+                                    <th style="width: 40%;">{!! trans('theme::account/registration/edit/accept.firstname') !!}</th>
+                                    <td>{{ $account->registration->requestFirstname() }}</td>
                                 </tr>
                                 <tr>
-                                    <th>{!! trans('theme::account/player/delete/confirm.password') !!}</th>
-                                    <td><input type="password" name="password" size="30" maxlength="29"></td>
+                                    <th>{!! trans('theme::account/registration/edit/accept.surname') !!}</th>
+                                    <td>{{ $account->registration->requestSurname() }}</td>
+                                </tr>
+                                <tr>
+                                    <th>{!! trans('theme::account/registration/edit/accept.country') !!}</th>
+                                    <td>{{ $account->registration->requestCountry() }}</td>
                                 </tr>
                             </table>
                         </div>
@@ -55,13 +55,18 @@
                     <table class="full-width">
                         <tr>
                             <td class="text-center">
+                                <a href="{{ url('/account/register/cancel') }}" class="blue-button">
+                                    <span>{!! trans('theme::account/registration/edit/accept.cancel') !!}</span>
+                                </a>
+                            </td>
+                            <td class="text-center">
                                 <button class="blue-button">
-                                    <span>{!! trans('theme::account/player/delete/confirm.submit') !!}</span>
+                                    <span>{!! trans('theme::account/registration/edit/accept.accept') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
                                 <a href="{{ url('/account') }}" class="blue-button">
-                                    <span>{!! trans('theme::account/player/delete/confirm.back') !!}</span>
+                                    <span>{!! trans('theme::account/registration/edit/accept.back') !!}</span>
                                 </a>
                             </td>
                         </tr>

@@ -28,7 +28,7 @@
                     <div class="content dark">
                         <p>
                             {!! trans('theme::account/player/undelete/undeleted.content', [
-                                'name' => $player->name(),
+                                'name' => e($player->name()),
                             ]) !!}
                         </p>
                     </div>

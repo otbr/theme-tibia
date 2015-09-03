@@ -28,7 +28,7 @@
                     <div class="content dark">
                         <p>
                             {!! trans('theme::account/player/create/created.content', [
-                                'name'      => $player->name(),
+                                'name'      => e($player->name()),
                                 'server'    => server()->name(),
                             ]) !!}
                         </p>

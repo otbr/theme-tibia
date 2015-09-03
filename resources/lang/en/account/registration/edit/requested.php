@@ -10,9 +10,9 @@ return [
     
     'title'     => 'Account Management',
     'heading'   => 'Change of Registration Requested',
-    'content'   => 'Your request to change the data of your registration has been filed. Please note that the change 
+    'content'   => '<p>Your request to change the data of your registration has been filed. Please note that the change 
                     must be confirmed after a period of :days days. The existing registration data will remain as it is 
-                    until the new data is confirmed.',
+                    until the new data is confirmed.</p>',
     'back'      => 'Back',
 
 ];

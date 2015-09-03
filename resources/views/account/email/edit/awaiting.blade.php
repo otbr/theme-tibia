@@ -31,7 +31,7 @@
 
                         <div class="content dark">
                             {!! trans('theme::account/email/edit/awaiting.content', [
-                                'email' => $account->properties->email(),
+                                'email' => e($account->properties->email()),
                                 'date'  => $account->properties->emailDate(),
                             ]) !!}
                         </div>
@@ -42,9 +42,9 @@
                     <table class="full-width">
                         <tr>
                             <td class="text-center">
-                                <button class="blue-button">
+                                <a href="{{ url('/account/email/cancel') }}" class="blue-button">
                                     <span>{!! trans('theme::account/email/edit/awaiting.cancel') !!}</span>
-                                </button>
+                                </a>
                             </td>
                             <td class="text-center">
                                 <a href="{{ url('/account/manage') }}" class="blue-button">

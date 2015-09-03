@@ -19,7 +19,7 @@
                 @include('theme::errors')
 
                 @if ($account->isConfirmed())
-                    {!! trans('theme::account/email/edit/form.preamble', ['days' => config('pandaac.mail.timers.email-change')]) !!}
+                    {!! trans('theme::account/email/edit/form.preamble', ['days' => config('pandaac.apolune.account.emailchange-days')]) !!}
                 @endif
 
                 <form method="POST">

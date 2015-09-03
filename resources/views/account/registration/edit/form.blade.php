@@ -18,7 +18,9 @@
 
                 @include('theme::errors')
 
-                {!! trans('theme::account/registration/edit/form.preamble') !!}
+                {!! trans('theme::account/registration/edit/form.preamble', [
+                    'days' => config('pandaac.apolune.account.registration-days'),
+                ]) !!}
 
                 <form method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">

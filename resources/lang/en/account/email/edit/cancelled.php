@@ -10,8 +10,8 @@ return [
 
     'title'     => 'Account Management',
     'heading'   => 'Email Address Change Cancelled',
-    'content'   => 'Your request to change the email address of your account has been cancelled. The email address will 
-                    not be changed.',
+    'content'   => '<p>Your request to change the email address of your account has been cancelled. The email
+                    address will not be changed.</p>',
     'back'      => 'Back',
 
 ];

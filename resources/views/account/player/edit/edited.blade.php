@@ -26,7 +26,7 @@
                     </header>
 
                     <div class="content dark">
-                        <p>{!! trans('theme::account/player/edit/edited.content') !!}</p>
+                        {!! trans('theme::account/player/edit/edited.content') !!}
                     </div>
                 </div>
 

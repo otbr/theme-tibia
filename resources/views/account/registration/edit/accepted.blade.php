@@ -1,7 +1,7 @@
 @extends('theme::app')
 
-@section('title', trans('theme::account/player/delete/deleted.title'))
-@section('body', 'account-player-delete-deleted')
+@section('title', trans('theme::account/registration/edit/accepted.title'))
+@section('body', 'account-registration account-registration-accepted')
 @section('navigation', '/account')
 
 @section('content')
@@ -10,7 +10,7 @@
         <span class="corners top"></span>
 
         <header class="header">
-            <div class="headline">{!! trans('theme::account/player/delete/deleted.title') !!}</div>
+            <div class="headline">{!! trans('theme::account/registration/edit/accepted.title') !!}</div>
         </header>
 
         <div class="inner-box-border">
@@ -20,18 +20,13 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account/player/delete/deleted.heading') !!}
+                            {!! trans('theme::account/registration/edit/accepted.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
 
                     <div class="content dark">
-                        <p>
-                            {!! trans('theme::account/player/delete/deleted.content', [
-                                'name' => e($player->name()),
-                                'date' => $player->properties->deletedAt(),
-                            ]) !!}
-                        </p>
+                        {!! trans('theme::account/registration/edit/accepted.content') !!}
                     </div>
                 </div>
 
@@ -41,7 +36,7 @@
                     <tr>
                         <td class="text-center">
                             <a href="{{ url('/account') }}" class="blue-button">
-                                <span>{!! trans('theme::account/player/delete/deleted.back') !!}</span>
+                                <span>{!! trans('theme::account/registration/edit/accepted.back') !!}</span>
                             </a>
                         </td>
                     </tr>

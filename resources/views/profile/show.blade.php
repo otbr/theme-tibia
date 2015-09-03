@@ -33,7 +33,7 @@
                                     <td>
                                         @if ($player->isDeleted())
                                             {!! trans('theme::profile/show.deleted', [
-                                                'name' => $player->name(),
+                                                'name' => e($player->name()),
                                                 'date' => $player->properties->deletedAt()->format('M d Y, H:i:s e'),
                                             ]) !!}
                                         @else

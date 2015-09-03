@@ -17,7 +17,7 @@
             <div class="inner-box">
 
                 @if ($account->isRegistered())
-                    <h2>{!! trans('theme::account/overview.welcomename', ['name' => $account->registration->firstname()]) !!}</h2>
+                    <h2>{!! trans('theme::account/overview.welcomename', ['name' => e($account->registration->firstname())]) !!}</h2>
                 @else
                     <h2>{!! trans('theme::account/overview.welcome') !!}</h2>
                 @endif
@@ -159,7 +159,31 @@
                     </div>
                 @endif
 
-                @if ($account->hasPendingRegistration())
+                @if ($account->canAcceptPendingRegistration())
+                    <div class="notification top">
+                        <div class="borders">
+                            <span class="edges top"></span>
+                            <table class="full-width">
+                                <tr>
+                                    <td>
+                                        <div class="buttons-right">
+                                            <a href="{{ url('/account/register/edit') }}" class="blue-button">
+                                                <span>{!! trans('theme::account/overview.registration.accept.edit') !!}</span>
+                                            </a>
+                                        </div>
+
+                                        <p style="margin-top: 5px;"><strong>{!! trans('theme::account/overview.registration.accept.heading') !!}</strong></p>
+
+                                        <p style="margin-bottom: 5px;">
+                                            {!! trans('theme::account/overview.registration.accept.content') !!}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <span class="edges bottom"></span>
+                        </div>
+                    </div>
+                @elseif ($account->hasPendingRegistration())
                     <div class="notification top">
                         <div class="borders">
                             <span class="edges top"></span>
@@ -187,7 +211,33 @@
                     </div>
                 @endif
 
-                @if ($account->hasPendingEmail())
+                @if ($account->canAcceptPendingEmail())
+                    <div class="notification top">
+                        <div class="borders">
+                            <span class="edges top"></span>
+                            <table class="full-width">
+                                <tr>
+                                    <td>
+                                        <div class="buttons-right">
+                                            <a href="{{ url('/account/email') }}" class="blue-button">
+                                                <span>{!! trans('theme::account/overview.email.accept.edit') !!}</span>
+                                            </a>
+                                        </div>
+
+                                        <p style="margin-top: 5px;"><strong>{!! trans('theme::account/overview.email.accept.heading') !!}</strong></p>
+
+                                        <p style="margin-bottom: 5px;">
+                                            {!! trans('theme::account/overview.email.accept.content', [
+                                                'email' => e($account->properties->email()),
+                                            ]) !!}
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <span class="edges bottom"></span>
+                        </div>
+                    </div>
+                @elseif ($account->hasPendingEmail())
                     <div class="notification top">
                         <div class="borders">
                             <span class="edges top"></span>
@@ -204,7 +254,7 @@
 
                                         <p style="margin-bottom: 5px;">
                                             {!! trans('theme::account/overview.email.content', [
-                                                'email' => $account->properties->email(),
+                                                'email' => e($account->properties->email()),
                                                 'days'  => $account->properties->emailDate()->addDays(1)->diffInDays(),
                                             ]) !!}
                                         </p>
@@ -274,7 +324,7 @@
                                         </td>
                                         <td class="valign-middle">
                                             <span>{{ $player->name() }}</span>
-                                            <small>{{ $player->vocation()->name() }} {!! trans('theme::account/overview.players.level', ['level' => $player->level()]) !!}</small>
+                                            <small>{{ $player->vocation()->name() }} {!! trans('theme::account/overview.players.level', ['level' => e($player->level())]) !!}</small>
                                         </td>
                                         <td>{{ $player->world()->name() }}</td>
                                         <td>

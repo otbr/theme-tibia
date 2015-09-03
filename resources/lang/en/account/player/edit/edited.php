@@ -10,7 +10,7 @@ return [
 
     'title'     => 'Account Management',
     'heading'   => 'Character Information Changed',
-    'content'   => 'The character information has been changed.',
+    'content'   => '<p>The character information has been changed.</p>',
     'back'      => 'Back',
 
 ];

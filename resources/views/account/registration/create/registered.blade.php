@@ -34,7 +34,7 @@
                     </header>
 
                     <div class="content dark">
-                        {!! trans('theme::account/registration/create/registered.content', ['key' => $key]) !!}
+                        {!! trans('theme::account/registration/create/registered.content', ['key' => e($key)]) !!}
                     </div>
                 </div>
 

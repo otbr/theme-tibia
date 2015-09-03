@@ -32,12 +32,12 @@
                     <div class="content dark">
                         @if ($account->isConfirmed())
                             {!! trans('theme::account/email/edit/edited.confirmed', [
-                                'email' => $account->properties->email(),
-                                'days'  => config('pandaac.mail.timers.email-change'),
+                                'email' => e($account->properties->email()),
+                                'days'  => config('pandaac.apolune.account.emailchange-days'),
                             ]) !!}
                         @else
                             {!! trans('theme::account/email/edit/edited.unconfirmed', [
-                                'email' => $account->email(),
+                                'email' => e($account->email()),
                             ]) !!}
                         @endif
                     </div>

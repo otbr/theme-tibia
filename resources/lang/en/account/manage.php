@@ -34,6 +34,11 @@ return [
     'lastlogin'                 => 'Last Login:',
     'status'                    => 'Account Status:',
     'free'                      => 'Free Account',
+    'termination'               => 'Account Termination:',
+    'terminated'                => 'You have terminated your account on :date. Note that it takes :days days until the account
+                                    is deleted for good. Until the deletion is final, you can still reverse the termination by
+                                    undeleting one of your characters on this account. To do so, click on "Undelete Character"
+                                    in the Characters section on the <a href=":overview">overview</a> page of your account.',
     'premiumpoints'             => 'Premium Points:',
     'transferable'              => '(Transferable: :points)',
     'transferpoints'            => 'Transferable Premium Points',

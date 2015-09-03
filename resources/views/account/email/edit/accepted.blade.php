@@ -1,7 +1,7 @@
 @extends('theme::app')
 
-@section('title', trans('theme::account/player/delete/deleted.title'))
-@section('body', 'account-player-delete-deleted')
+@section('title', trans('theme::account/email/edit/accepted.title'))
+@section('body', 'account-email-edit-accepted')
 @section('navigation', '/account')
 
 @section('content')
@@ -10,7 +10,7 @@
         <span class="corners top"></span>
 
         <header class="header">
-            <div class="headline">{!! trans('theme::account/player/delete/deleted.title') !!}</div>
+            <div class="headline">{!! trans('theme::account/email/edit/accepted.title') !!}</div>
         </header>
 
         <div class="inner-box-border">
@@ -20,18 +20,13 @@
                     <header class="header">
                         <div class="borders">
                             <span class="edges top"></span>
-                            {!! trans('theme::account/player/delete/deleted.heading') !!}
+                            {!! trans('theme::account/email/edit/accepted.heading') !!}
                             <span class="edges bottom"></span>
                         </div>
                     </header>
 
                     <div class="content dark">
-                        <p>
-                            {!! trans('theme::account/player/delete/deleted.content', [
-                                'name' => e($player->name()),
-                                'date' => $player->properties->deletedAt(),
-                            ]) !!}
-                        </p>
+                        {!! trans('theme::account/email/edit/accepted.content') !!}
                     </div>
                 </div>
 
@@ -40,8 +35,8 @@
                 <table class="full-width">
                     <tr>
                         <td class="text-center">
-                            <a href="{{ url('/account') }}" class="blue-button">
-                                <span>{!! trans('theme::account/player/delete/deleted.back') !!}</span>
+                            <a href="{{ url('/account/manage') }}" class="blue-button">
+                                <span>{!! trans('theme::account/email/edit/accepted.back') !!}</span>
                             </a>
                         </td>
                     </tr>

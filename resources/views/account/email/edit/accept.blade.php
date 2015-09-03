@@ -1,7 +1,7 @@
 @extends('theme::app')
 
-@section('title', trans('theme::account/player/undelete/confirm.title'))
-@section('body', 'account-player-undelete-confirm')
+@section('title', trans('theme::account/email/edit/accept.title'))
+@section('body', 'account-email-edit-accept')
 @section('navigation', '/account')
 
 @section('content')
@@ -10,15 +10,11 @@
         <span class="corners top"></span>
 
         <header class="header">
-            <div class="headline">{!! trans('theme::account/player/undelete/confirm.title') !!}</div>
+            <div class="headline">{!! trans('theme::account/email/edit/accept.title') !!}</div>
         </header>
 
         <div class="inner-box-border">
             <div class="inner-box">
-
-                {!! trans('theme::account/player/undelete/confirm.preamble', [
-                    'days' => config('pandaac.apolune.account.deletion-days'),
-                ]) !!}
 
                 <form method="POST">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -27,18 +23,15 @@
                         <header class="header">
                             <div class="borders">
                                 <span class="edges top"></span>
-                                {!! trans('theme::account/player/undelete/confirm.heading') !!}
+                                {!! trans('theme::account/email/edit/accept.heading') !!}
                                 <span class="edges bottom"></span>
                             </div>
                         </header>
 
                         <div class="content dark">
-                            <table>
-                                <tr>
-                                    <th>{!! trans('theme::account/player/undelete/confirm.name') !!}</th>
-                                    <td>{{ $player->name() }}</td>
-                                </tr>
-                            </table>
+                            {!! trans('theme::account/email/edit/accept.content', [
+                                'email' => e($account->properties->email()),
+                            ]) !!}
                         </div>
                     </div>
 
@@ -48,12 +41,17 @@
                         <tr>
                             <td class="text-center">
                                 <button class="blue-button">
-                                    <span>{!! trans('theme::account/player/undelete/confirm.submit') !!}</span>
+                                    <span>{!! trans('theme::account/email/edit/accept.accept') !!}</span>
                                 </button>
                             </td>
                             <td class="text-center">
-                                <a href="{{ url('/account') }}" class="blue-button">
-                                    <span>{!! trans('theme::account/player/undelete/confirm.back') !!}</span>
+                                <a href="{{ url('/account/email/cancel') }}" class="blue-button">
+                                    <span>{!! trans('theme::account/email/edit/accept.cancel') !!}</span>
+                                </a>
+                            </td>
+                            <td class="text-center">
+                                <a href="{{ url('/account/manage') }}" class="blue-button">
+                                    <span>{!! trans('theme::account/email/edit/accept.back') !!}</span>
                                 </a>
                             </td>
                         </tr>

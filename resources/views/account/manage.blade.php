@@ -69,7 +69,7 @@
                         <div class="box">
                             <table class="table-striped">
                                 <tr>
-                                    <th style="width: 24%;">{!! trans('theme::account/manage.account') !!}</th>
+                                    <th style="width: 25%;">{!! trans('theme::account/manage.account') !!}</th>
                                     <td class="valign-middle">
                                         <button class="showhide repeater" data-v-on="click: toggle('account')" data-v-class="active: isToggled('account')"></button>
 
@@ -111,6 +111,20 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @if ($account->isDeleted())
+                                    <tr>
+                                        <th class="valign-top">{!! trans('theme::account/manage.termination') !!}</th>
+                                        <td>
+                                            <strong class="error">
+                                                {!! trans('theme::account/manage.terminated', [
+                                                    'date'      => $account->properties->deletion()->format('M d Y'),
+                                                    'days'      => config('pandaac.apolune.account.deletion-days'),
+                                                    'overview'  => url('/account'),
+                                                ]) !!}
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                @endif
                             </table>
                         </div>
 
@@ -130,17 +144,19 @@
                                     </td>
                                 @endif
                                 <td style="width: 5%;"></td>
-                                <td class="text-center">
+                                <td class="{{ $account->isDeleted() ? 'text-right' : 'text-center' }}">
                                     <a href="{{ url('/account/rename') }}" class="blue-button bottom">
                                         <span>{!! trans('theme::account/manage.renameaccount') !!}</span>
                                     </a>
                                 </td>
-                                <td style="width: 5%;"></td>
-                                <td class="text-right" style="padding-right: 0;">
-                                    <a href="{{ url('/account/terminate') }}" class="blue-button bottom">
-                                        <span>{!! trans('theme::account/manage.terminateaccount') !!}</span>
-                                    </a>
-                                </td>
+                                @if (! $account->isDeleted())
+                                    <td style="width: 5%;"></td>
+                                    <td class="text-right" style="padding-right: 0;">
+                                        <a href="{{ url('/account/terminate') }}" class="blue-button bottom">
+                                            <span>{!! trans('theme::account/manage.terminateaccount') !!}</span>
+                                        </a>
+                                    </td>
+                                @endif
                             </tr>
                         </table>
                     </div>
