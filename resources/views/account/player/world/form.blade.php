@@ -29,7 +29,7 @@
                     <li class="no">{!! trans('theme::account/player/world/form.beginner') !!}</li>
                 </ul>
 
-                <form method="POST" action="{{ url('/account/character', [$player->id(), 'world']) }}">
+                <form method="POST" action="{{ url('/account/character', [$player->slug(), 'world']) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="PUT">
 
@@ -79,7 +79,7 @@
                                 </button>
                             </td>
                             <td class="text-center">
-                                <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
+                                <a href="{{ url('/account/character', [$player->slug()]) }}" class="blue-button">
                                     <span>{!! trans('theme::account/player/world/form.back') !!}</span>
                                 </a>
                             </td>

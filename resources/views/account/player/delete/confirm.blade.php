@@ -23,7 +23,7 @@
                     'days' => config('pandaac.apolune.account.deletion-days'),
                 ]) !!}
 
-                <form method="POST" action="{{ url('/account/character', $player->id()) }}">
+                <form method="POST" action="{{ url('/account/character', $player->slug()) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="DELETE">
 

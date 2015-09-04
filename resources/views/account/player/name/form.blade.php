@@ -23,7 +23,7 @@
                     'rules'     => url('/support/rules'),
                 ]) !!}
 
-                <form method="POST" action="{{ url('/account/character', [$player->id(), 'name']) }}">
+                <form method="POST" action="{{ url('/account/character', [$player->slug(), 'name']) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="PUT">
 
@@ -60,7 +60,7 @@
                                 </button>
                             </td>
                             <td class="text-center">
-                                <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
+                                <a href="{{ url('/account/character', [$player->slug()]) }}" class="blue-button">
                                     <span>{!! trans('theme::account/player/name/form.back') !!}</span>
                                 </a>
                             </td>

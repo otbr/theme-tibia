@@ -338,12 +338,12 @@
                                         </td>
                                         <td class="text-center">
                                             <div class="character-buttons" style="font-weight: normal;">
-                                                [<a href="{{ url('/account/character', $player->id()) }}">{!! trans('theme::account/overview.players.edit') !!}</a>]
+                                                [<a href="{{ url('/account/character', $player->slug()) }}">{!! trans('theme::account/overview.players.edit') !!}</a>]
 
                                                 @if ($player->isDeleted())
-                                                    [<a href="{{ url('/account/character', [$player->id(), 'undelete']) }}">{!! trans('theme::account/overview.players.undelete') !!}</a>]
+                                                    [<a href="{{ url('/account/character', [$player->slug(), 'undelete']) }}">{!! trans('theme::account/overview.players.undelete') !!}</a>]
                                                 @else
-                                                    [<a href="{{ url('/account/character', [$player->id(), 'delete']) }}">{!! trans('theme::account/overview.players.delete') !!}</a>]
+                                                    [<a href="{{ url('/account/character', [$player->slug(), 'delete']) }}">{!! trans('theme::account/overview.players.delete') !!}</a>]
                                                 @endif
                                             </div>
                                         </td>

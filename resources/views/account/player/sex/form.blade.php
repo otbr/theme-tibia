@@ -18,7 +18,7 @@
 
                 @include('theme::errors')
 
-                <form method="POST" action="{{ url('/account/character', [$player->id(), 'sex']) }}">
+                <form method="POST" action="{{ url('/account/character', [$player->slug(), 'sex']) }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <input type="hidden" name="_method" value="PUT">
 
@@ -46,7 +46,7 @@
                                 </button>
                             </td>
                             <td class="text-center">
-                                <a href="{{ url('/account/character', [$player->id()]) }}" class="blue-button">
+                                <a href="{{ url('/account/character', [$player->slug()]) }}" class="blue-button">
                                     <span>{!! trans('theme::account/player/sex/form.back') !!}</span>
                                 </a>
                             </td>
