@@ -37,6 +37,7 @@ return [
     'players.status'        => 'Status',
     'players.view'          => 'View',
     'players.online'        => 'online',
+    'players.deleted'       => 'deleted',
 
     'form.heading'          => 'Search Character',
     'form.name'             => 'Name:',

@@ -160,7 +160,9 @@
                                                 <td class="valign-middle">{{ $character->world()->name() }}</td>
                                             @endif
                                             <td class="valign-middle">
-                                                @if ($character->isOnline())
+                                                @if ($character->isDeleted())
+                                                    {!! trans('theme::profile/show.players.deleted') !!}
+                                                @elseif ($character->isOnline())
                                                     <strong class="online">{!! trans('theme::profile/show.players.online') !!}</strong>
                                                 @endif
                                             </td>
