@@ -2,15 +2,14 @@
 
 /*
 |--------------------------------------------------------------------------
-| ./resources/views/news/archive.blade.php
+| ./resources/views/news/archive/form.blade.php
 |--------------------------------------------------------------------------
 */
 
 return [
 
     'title'         => 'News Archive',
-    'heading'       => 'News Archive',
-    'search'        => 'News Archive Search',
+    'heading'       => 'News Archive Search',
     'period'        => 'Time Period',
     'type'          => 'Type',
     'category'      => 'Category',

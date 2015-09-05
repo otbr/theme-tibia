@@ -68,7 +68,7 @@ table.table-striped {
             border: 1px solid @table-medium-bgcolor !important;
             background-color: @table-light-bgcolor;
 
-            & > span {
+            & > span:not(.hidden) {
                 display: block;
             }
         }
@@ -88,7 +88,7 @@ table.table-striped {
             border: 1px solid @table-light-bgcolor !important;
             background-color: @table-medium-bgcolor;
 
-            & > span {
+            & > span:not(.hidden) {
                 display: block;
             }
         }
@@ -130,7 +130,7 @@ table.table-striped {
                 background-color: @table-medium-bgcolor;
             }
 
-            & > span {
+            & > span:not(.hidden) {
                 display: block;
             }
         }

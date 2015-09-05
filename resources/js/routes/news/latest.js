@@ -17,9 +17,14 @@
 
             created: function () {
                 var toggleables = document.querySelectorAll('.box.ticker .plusminus.active');
+                var newstickers = document.querySelectorAll('.box.ticker .hidden');
 
                 [].forEach.call(toggleables, function (toggleable) {
                     toggleable.classList.toggle('active');
+                });
+
+                [].forEach.call(newstickers, function (newsticker) {
+                    newsticker.classList.remove('hidden');
                 });
             }
         });

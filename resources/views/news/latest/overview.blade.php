@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@section('title', trans('theme::news/latest.title'))
+@section('title', trans('theme::news/latest/overview.title'))
 @section('body', 'news-latest')
 @section('navigation', '/')
 
@@ -11,7 +11,7 @@
             <span class="corners top"></span>
 
             <header class="header">
-                <div class="headline">{!! trans('theme::news/latest.newsticker.heading') !!}</div>
+                <div class="headline">{!! trans('theme::news/latest/overview.newsticker.heading') !!}</div>
             </header>
 
             <div class="inner-box-border">
@@ -28,7 +28,7 @@
                                 </td>
                                 <td class="valign-top content-wrapper">
                                     <span data-v-show="isToggled('ticker-{{ $ticker->id() }}')">{{ $ticker->content() }}</span>
-                                    <span data-v-show="! isToggled('ticker-{{ $ticker->id() }}')">{{ $ticker->excerpt() }}</span>
+                                    <span class="hidden" data-v-show="! isToggled('ticker-{{ $ticker->id() }}')">{{ $ticker->excerpt() }}</span>
                                 </td>
                                 <td class="valign-top">
                                     <button class="plusminus active" data-v-class="active: isToggled('ticker-{{ $ticker->id() }}')"></button>
@@ -49,7 +49,7 @@
             <span class="corners top"></span>
 
             <header class="header">
-                <div class="headline">{!! trans('theme::news/latest.featured.heading') !!}</div>
+                <div class="headline">{!! trans('theme::news/latest/overview.featured.heading') !!}</div>
             </header>
 
             <div class="inner-box-border">
@@ -72,7 +72,7 @@
                         </tr>
                         <tr>
                             <td class="text-right valign-bottom">
-                                <a href="#" class="readmore">{!! trans('theme::news/latest.featured.readmore') !!}</a>
+                                <a href="{{ url('/featured', $article->slug()) }}" class="readmore">{!! trans('theme::news/latest/overview.featured.readmore') !!}</a>
                             </td>
                         </tr>
                     </table>
@@ -87,7 +87,7 @@
         <span class="corners top"></span>
 
         <header class="header">
-            <div class="headline">{!! trans('theme::news/latest.news.heading') !!}</div>
+            <div class="headline">{!! trans('theme::news/latest/overview.news.heading') !!}</div>
         </header>
 
         <div class="inner-box-border">
@@ -106,12 +106,12 @@
                             {!! $newsitem->content() !!}
 
                             <p class="text-right">
-                                <a href="#">{!! trans('theme::news/latest.news.comment') !!}</a>
+                                <a href="#">{!! trans('theme::news/latest/overview.news.comment') !!}</a>
                             </p>
                         </div>
                     </article>
                 @empty
-                     {!! trans('theme::news/latest.news.empty') !!}
+                     {!! trans('theme::news/latest/overview.news.empty') !!}
                 @endforelse
 
             </div>

@@ -2,7 +2,7 @@
  * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @view  ./resources/views/news/latest.blade.php
+ * @view  ./resources/views/news/latest/overview.blade.php
  */
 .news-latest #middle-column {
     .ticker {
@@ -35,7 +35,7 @@
 
                 &.community { background-image: url('@{image-path}/newsicon_community_small.gif'); }
                 &.development { background-image: url('@{image-path}/newsicon_development_small.gif'); }
-                &.staff { background-image: url('@{image-path}/newsicon_cipsoft_small.gif'); }
+                &.staff { background-image: url('@{image-path}/newsicon_staff_small.gif'); }
                 &.support { background-image: url('@{image-path}/newsicon_support_small.gif'); }
                 &.technical { background-image: url('@{image-path}/newsicon_technical_small.gif'); }
             }
@@ -107,7 +107,7 @@
  * The following styles were written with the subsequent view(s) in mind,
  * although are not necessarily limited to it.
  *
- * @view  ./resources/views/news/archive.blade.php
+ * @view  ./resources/views/news/archive/form.blade.php
  */
 .news-archive #middle-column {
     .table-striped > tbody > tr > th {
@@ -122,5 +122,21 @@
         margin-right: auto;
         margin-left: auto;
         display: block;
+    }
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/news/latest/show.blade.php
+ * @view  ./resources/views/news/archive/show.blade.php
+ */
+.news-latest-show #middle-column,
+.news-archive-show #middle-column {
+    .box {
+        .inner-box {
+            padding: 10px !important;
+        }
     }
 }
