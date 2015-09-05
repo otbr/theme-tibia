@@ -53,14 +53,14 @@
                                                     <td>
                                                         <select>
                                                             @foreach (range(1, 31) as $day)
-                                                                <option>{{ $day }}</option>
+                                                                <option {{ $day == Carbon\Carbon::now()->subDays(30)->format('j') ? 'selected' : null }}>{{ $day }}</option>
                                                             @endforeach
                                                         </select>
                                                     </td>
                                                     <td>
                                                         <select>
                                                             @foreach (range(1, 12) as $month)
-                                                                <option>{{ $month }}</option>
+                                                                <option {{ $month == Carbon\Carbon::now()->subMonth(1)->format('n') ? 'selected' : null }}>{{ $month }}</option>
                                                             @endforeach
                                                         </select>
                                                     </td>
@@ -84,14 +84,14 @@
                                                     <td>
                                                         <select>
                                                             @foreach (range(1, 31) as $day)
-                                                                <option>{{ $day }}</option>
+                                                                <option {{ $day == Carbon\Carbon::now()->format('j') ? 'selected' : null }}>{{ $day }}</option>
                                                             @endforeach
                                                         </select>
                                                     </td>
                                                     <td>
                                                         <select>
                                                             @foreach (range(1, 12) as $month)
-                                                                <option>{{ $month }}</option>
+                                                                <option {{ $month == Carbon\Carbon::now()->format('n') ? 'selected' : null }}>{{ $month }}</option>
                                                             @endforeach
                                                         </select>
                                                     </td>

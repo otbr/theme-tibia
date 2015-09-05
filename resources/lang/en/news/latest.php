@@ -17,5 +17,6 @@ return [
 
     'news.heading'          => 'News',
     'news.comment'          => '&raquo; Comment on this news',
+    'news.empty'            => 'There are no news yet.',
 
 ];
