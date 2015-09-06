@@ -79,6 +79,25 @@
     vertical-align: baseline;
 }
 
+button.anchor,
+button.link {
+    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+    background-color: transparent;
+    text-decoration: none;
+    color: @link-color;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    .font-size(1.33);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .martel {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

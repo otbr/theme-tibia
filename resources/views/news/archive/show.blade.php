@@ -48,9 +48,35 @@
                 <table class="full-width">
                     <tr>
                         <td class="text-center">
-                            <a href="{{ url('/archive') }}" class="blue-button">
-                                <span>{!! trans('theme::news/archive/show.back') !!}</span>
-                            </a>
+                            @if (app('request')->isMethod('post') and old('from_day'))
+                                <form method="POST" action="{{ url('/archive') }}">
+                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    
+                                    <input type="hidden" name="from_day" value="{{ old('from_day') }}">
+                                    <input type="hidden" name="from_month" value="{{ old('from_month') }}">
+                                    <input type="hidden" name="from_year" value="{{ old('from_year') }}">
+
+                                    <input type="hidden" name="to_day" value="{{ old('to_day') }}">
+                                    <input type="hidden" name="to_month" value="{{ old('to_month') }}">
+                                    <input type="hidden" name="to_year" value="{{ old('to_year') }}">
+
+                                    @foreach (old('type') as $type)
+                                        <input type="hidden" name="type[]" value="{{ $type }}">
+                                    @endforeach
+
+                                    @foreach (old('icon') as $icon)
+                                        <input type="hidden" name="icon[]" value="{{ $icon }}">
+                                    @endforeach
+
+                                    <button class="blue-button">
+                                        <span>{!! trans('theme::news/archive/show.back') !!}</span>
+                                    </button>
+                                </form>
+                            @else
+                                <a href="{{ url('/archive') }}" class="blue-button">
+                                    <span>{!! trans('theme::news/archive/show.back') !!}</span>
+                                </a>
+                            @endif
                         </td>
                     </tr>
                 </table>

@@ -39,11 +39,31 @@
                                                 <small>{!! trans(sprintf('theme::/news/archive/results.%s', $result->type())) !!}</small>
                                             </td>
                                             <td>
-                                                @if ($result->type() === 'ticker')
-                                                    <a href="{{ url('/archive', $result->slug()) }}">{{ limit($result->content(), 70) }}</a>
-                                                @else
-                                                    <a href="{{ url('/archive', $result->slug()) }}">{{ limit($result->title(), 70) }}</a>
-                                                @endif
+                                                <form method="POST" action="{{ url('/archive', $result->slug()) }}">
+                                                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                                    
+                                                    <input type="hidden" name="from_day" value="{{ old('from_day', Carbon\Carbon::now()->subDays(30)->format('j')) }}">
+                                                    <input type="hidden" name="from_month" value="{{ old('from_month', Carbon\Carbon::now()->subMonth(1)->format('j')) }}">
+                                                    <input type="hidden" name="from_year" value="{{ old('from_year', date('Y')) }}">
+
+                                                    <input type="hidden" name="to_day" value="{{ old('to_day', Carbon\Carbon::now()->format('j')) }}">
+                                                    <input type="hidden" name="to_month" value="{{ old('to_month', Carbon\Carbon::now()->format('j')) }}">
+                                                    <input type="hidden" name="to_year" value="{{ old('to_year', date('Y')) }}">
+
+                                                    @foreach (old('type', ['ticker', 'article', 'news']) as $type)
+                                                        <input type="hidden" name="type[]" value="{{ $type }}">
+                                                    @endforeach
+
+                                                    @foreach (old('icon', ['staff', 'community', 'development', 'support', 'technical']) as $icon)
+                                                        <input type="hidden" name="icon[]" value="{{ $icon }}">
+                                                    @endforeach
+
+                                                    @if ($result->type() === 'ticker')
+                                                        <button class="anchor">{{ limit($result->content(), 70) }}</button>
+                                                    @else
+                                                        <button class="anchor">{{ limit($result->title(), 70) }}</button>
+                                                    @endif
+                                                </form>
                                             </td>
                                         </tr>
                                     @endforeach
