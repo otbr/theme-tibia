@@ -2,12 +2,13 @@
     if (document.getElementsByTagName('body')[0].className.indexOf('account-overview') !== -1) {
     
         var Vue = require('vue');
+        var Cookies = require('cookies-js');
 
         new Vue({
             el: 'body.account-overview',
 
             data: {
-                selectedPlayer : 0
+                selectedPlayer : parseInt(Cookies.get('selectedPlayer')) || 0
             },
 
             methods: {

@@ -313,7 +313,7 @@
                                 </tr>
 
                                 @forelse ($account->players as $i => $player)
-                                    <tr class="character {{ $i === 0 ? 'active' : null }}" data-v-class="active: isActivated({{ $i }}, 'selectedPlayer')" data-v-on="click: activate({{ $i }}, 'selectedPlayer')">
+                                    <tr class="character {{ $i === 0 ? 'active' : null }}" data-v-class="active: isActivated({{ $i }}, 'selectedPlayer')" data-v-on="click: activate({{ $i }}, 'selectedPlayer', true)">
                                         <td class="valign-middle text-center">
                                             <span class="play-integer">{{ ++$i }}.</span>
                                             @if ($player->isDeleted())
