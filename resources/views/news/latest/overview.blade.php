@@ -6,7 +6,7 @@
 
 @section('content')
 
-    @if ($tickers->count() > 1)
+    @if ($tickers and $tickers->count() >= 1)
         <div class="box ticker">
             <span class="corners top"></span>
 
@@ -44,7 +44,7 @@
         </div>
     @endif
 
-    @if ($article->count() === 1)
+    @if ($article and $article->count() >= 1)
         <div class="box featured">
             <span class="corners top"></span>
 

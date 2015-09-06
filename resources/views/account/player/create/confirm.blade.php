@@ -38,7 +38,7 @@
                             <table>
                                 <tr>
                                     <th>{!! trans('theme::account/player/create/confirm.name') !!}</th>
-                                    <td>{{ old('player') }}</td>
+                                    <td>{{ ucwords(strtolower(old('player'))) }}</td>
                                 </tr>
                                 <tr>
                                     <th>{!! trans('theme::account/player/create/confirm.sex') !!}</th>
