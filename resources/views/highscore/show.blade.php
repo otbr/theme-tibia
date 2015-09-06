@@ -71,29 +71,31 @@
                             <br>
                         @endif
 
-                        <div class="pagination">
-                            @if ($players->currentPage() > 1)
-                                <a href="{{ $players->url(1) }}">Top</a> &#124;
-                            @endif
-
-                            @if ($previous = $players->previousPageUrl())
-                                <a href="{{ $previous }}">{!! trans('theme::highscore/show.players.page', [
-                                    'from'  => $from = $players->firstItem() - $players->perPage(),
-                                    'to'    => $from + ($players->perPage() - 1),
-                                ]) !!}</a>
-                            @endif
-
-                            @if ($players->hasMorePages())
+                        @if ($players->hasPages())
+                            <div class="pagination">
                                 @if ($players->currentPage() > 1)
-                                    &#124;
+                                    <a href="{{ $players->url(1) }}">Top</a> &#124;
                                 @endif
 
-                                <a href="{{ $players->nextPageUrl() }}">{!! trans('theme::highscore/show.players.page', [
-                                    'from'  => $from = $players->lastItem() + 1,
-                                    'to'    => $from + ($players->perPage() - 1),
-                                ]) !!}</a>
-                            @endif
-                        </div>
+                                @if ($previous = $players->previousPageUrl())
+                                    <a href="{{ $previous }}">{!! trans('theme::highscore/show.players.page', [
+                                        'from'  => $from = $players->firstItem() - $players->perPage(),
+                                        'to'    => $from + ($players->perPage() - 1),
+                                    ]) !!}</a>
+                                @endif
+
+                                @if ($players->hasMorePages())
+                                    @if ($players->currentPage() > 1)
+                                        &#124;
+                                    @endif
+
+                                    <a href="{{ $players->nextPageUrl() }}">{!! trans('theme::highscore/show.players.page', [
+                                        'from'  => $from = $players->lastItem() + 1,
+                                        'to'    => $from + ($players->perPage() - 1),
+                                    ]) !!}</a>
+                                @endif
+                            </div>
+                        @endif
 
                         <div class="table">
                             <header class="header">
@@ -156,29 +158,31 @@
                             </div>
                         </div>
 
-                        <div class="pagination">
-                            @if ($players->currentPage() > 1)
-                                <a href="{{ $players->url(1) }}">Top</a> &#124;
-                            @endif
-
-                            @if ($previous = $players->previousPageUrl())
-                                <a href="{{ $previous }}">{!! trans('theme::highscore/show.players.page', [
-                                    'from'  => $from = $players->firstItem() - $players->perPage(),
-                                    'to'    => $from + ($players->perPage() - 1),
-                                ]) !!}</a>
-                            @endif
-
-                            @if ($players->hasMorePages())
+                        @if ($players->hasPages())
+                            <div class="pagination">
                                 @if ($players->currentPage() > 1)
-                                    &#124;
+                                    <a href="{{ $players->url(1) }}">Top</a> &#124;
                                 @endif
-                                
-                                <a href="{{ $players->nextPageUrl() }}">{!! trans('theme::highscore/show.players.page', [
-                                    'from'  => $from = $players->lastItem() + 1,
-                                    'to'    => $from + ($players->perPage() - 1),
-                                ]) !!}</a>
-                            @endif
-                        </div>
+
+                                @if ($previous = $players->previousPageUrl())
+                                    <a href="{{ $previous }}">{!! trans('theme::highscore/show.players.page', [
+                                        'from'  => $from = $players->firstItem() - $players->perPage(),
+                                        'to'    => $from + ($players->perPage() - 1),
+                                    ]) !!}</a>
+                                @endif
+
+                                @if ($players->hasMorePages())
+                                    @if ($players->currentPage() > 1)
+                                        &#124;
+                                    @endif
+                                    
+                                    <a href="{{ $players->nextPageUrl() }}">{!! trans('theme::highscore/show.players.page', [
+                                        'from'  => $from = $players->lastItem() + 1,
+                                        'to'    => $from + ($players->perPage() - 1),
+                                    ]) !!}</a>
+                                @endif
+                            </div>
+                        @endif
                     </div>
                     <div class="pull-right" style="width: 21%;">
                         @if ($worlds->count() > 1)
