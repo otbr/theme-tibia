@@ -64,7 +64,7 @@
                             </td>
                             @if ($image = $article->image())
                                 <td style="width: 1%;" class="valign-top text-right" rowspan="2">
-                                    <a href="#" class="featured-image">
+                                    <a href="{{ url('/featured', $article->slug()) }}" class="featured-image">
                                         <img src="{{ $image }}" alt="{{ $article->title() }}">
                                     </a>
                                 </td>
