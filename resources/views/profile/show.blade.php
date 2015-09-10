@@ -80,7 +80,7 @@
                                 @if ($comment = $player->properties->comment())
                                     <tr>
                                         <th class="valign-top">{!! trans('theme::profile/show.comment') !!}</th>
-                                        <td>{!! nl2br(e($comment)) !!}</td>
+                                        <td class="breakwords">{!! nl2br(e($comment)) !!}</td>
                                     </tr>
                                 @endif
                                 <tr>
