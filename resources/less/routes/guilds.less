@@ -1,0 +1,58 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/guilds/guild/show.blade.php
+ */
+.guilds-show #middle-column {
+    .logo {
+        width: 64px;
+    }
+
+    .informations-table {
+        height: 100%;
+
+        & > tbody {
+            height: 100%;
+
+            & > tr {
+                height: 100%;
+
+                & > td {
+                    height: 100%;
+                    padding: 5px;
+
+                    & > .table {
+                        box-sizing: border-box;
+                        margin: 0 0 2px;
+                        height: 100%;
+
+                        & > .content {
+                            box-sizing: border-box;
+                            padding-bottom: 6px;
+                            padding-top: 34px;
+                            margin-top: -29px;
+                            height: 100%;
+                        }
+                    }
+
+                    &.navigation {
+                        width: 1%;
+
+                        & > .table {
+                            width: 154px;
+
+                            & > .content {
+                                padding-bottom: 4px;
+
+                                table tr td {
+                                    padding: 2px 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
