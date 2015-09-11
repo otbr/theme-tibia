@@ -44,7 +44,7 @@
         </div>
     @endif
 
-    @if ($article and $article->count() >= 1)
+    @if ($articles and $articles->count() >= 1)
         <div class="box featured">
             <span class="corners top"></span>
 
@@ -54,28 +54,30 @@
 
             <div class="inner-box-border">
                 <div class="inner-box fluid">
-                    <table class="full-width">
-                        <tr>
-                            <td class="valign-top">
-                                <p>
-                                    <strong>{{ $article->title() }}</strong>
-                                    {{ $article->excerpt() }}
-                                </p>
-                            </td>
-                            @if ($image = $article->image())
-                                <td style="width: 1%;" class="valign-top text-right" rowspan="2">
-                                    <a href="{{ url('/featured', $article->slug()) }}" class="featured-image">
-                                        <img src="{{ $image }}" alt="{{ $article->title() }}">
-                                    </a>
+                    @foreach ($articles as $article)
+                        <table class="full-width">
+                            <tr>
+                                <td class="valign-top">
+                                    <p>
+                                        <strong>{{ $article->title() }}</strong>
+                                        {{ $article->excerpt() }}
+                                    </p>
                                 </td>
-                            @endif
-                        </tr>
-                        <tr>
-                            <td class="text-right valign-bottom">
-                                <a href="{{ url('/featured', $article->slug()) }}" class="readmore">{!! trans('theme::news/latest/overview.featured.readmore') !!}</a>
-                            </td>
-                        </tr>
-                    </table>
+                                @if ($image = $article->image())
+                                    <td style="width: 1%;" class="valign-top text-right" rowspan="2">
+                                        <a href="{{ url('/featured', $article->slug()) }}" class="featured-image">
+                                            <img src="{{ $image }}" alt="{{ $article->title() }}">
+                                        </a>
+                                    </td>
+                                @endif
+                            </tr>
+                            <tr>
+                                <td class="text-right valign-bottom">
+                                    <a href="{{ url('/featured', $article->slug()) }}" class="readmore">{!! trans('theme::news/latest/overview.featured.readmore') !!}</a>
+                                </td>
+                            </tr>
+                        </table>
+                    @endforeach
                 </div>
             </div>
 

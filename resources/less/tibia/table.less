@@ -44,10 +44,12 @@ table.table-striped {
         & > thead > tr:hover,
         & > tbody > tr:hover,
         & > tfoot > tr:hover {
+            &.even > td,
             & > td {
                 background-color: @table-light-hover;
             }
 
+            &.odd > td,
             &:nth-child(odd) > td {
                 background-color: @table-medium-hover;
             }
@@ -58,12 +60,14 @@ table.table-striped {
     &.inverse > thead > tr,
     &.inverse > tbody > tr,
     &.inverse > tfoot > tr {
+        .odd,
         &:nth-child(odd) {
             & > td, & > th {
                 background-color: @table-light-bgcolor;
             }
         }
 
+        &.even > td, &.even > th,
         & > td, & > th {
             border: 1px solid @table-light-border !important;
             background-color: @table-light-bgcolor;
@@ -78,12 +82,14 @@ table.table-striped {
     &.inverse.dark > thead > tr,
     &.inverse.dark > tbody > tr,
     &.inverse.dark > tfoot > tr {
+        &.odd,
         &:nth-child(odd) {
             & > td, & > th {
                 background-color: @table-medium-bgcolor;
             }
         }
 
+        &.even > td, &.even > th,
         & > td, & > th {
             border: 1px solid @table-light-bgcolor !important;
             background-color: @table-medium-bgcolor;
@@ -98,6 +104,7 @@ table.table-striped {
     & > thead > tr,
     & > tbody > tr,
     & > tfoot > tr {
+        &.odd,
         &:nth-child(odd) {
             & > td, & > th {
                 background-color: @table-medium-bgcolor;
@@ -122,6 +129,7 @@ table.table-striped {
             font-weight: normal;
         }
 
+        &.even > td, &.even > th,
         & > td, & > th {
             border: 1px solid @table-light-border !important;
             background-color: @table-light-bgcolor;
@@ -281,7 +289,7 @@ table.table-striped {
                 padding: 2px 4px;
                 width: 100%;
 
-                .clearfix;
+                .clearfix(inline-block);
 
                 & > table:not(.table) {
                     tr td, tr th {

@@ -109,6 +109,98 @@
                     </tr>
                 </table>
 
+                <div class="table top">
+                    <header class="header">
+                        <div class="borders">
+                            <span class="edges top"></span>
+                            {!! trans('theme::guilds/guild/show.members.heading') !!}
+                            <span class="edges bottom"></span>
+                        </div>
+                    </header>
+
+                    <div class="content table-striped">
+                        <div class="box">
+                            <table class="table-striped">
+                                <tr>
+                                    <th>
+                                        {!! trans('theme::guilds/guild/show.members.rank') !!}&nbsp;
+                                        <small>[<a href="?sort=rank&amp;order={{ $order === 'ASC' ? 'desc' : 'asc' }}">{!! trans('theme::guilds/guild/show.members.sort') !!}</a>]</small>
+
+                                        @if ($sort === 'rank')
+                                            <span class="caret {{ $order === 'DESC' ? 'up' : null }}"></span>
+                                        @endif
+                                    </th>
+                                    <th>
+                                        {!! trans('theme::guilds/guild/show.members.name') !!}
+                                    </th>
+                                    <th>
+                                        {!! trans('theme::guilds/guild/show.members.vocation') !!}&nbsp;
+                                        <small>[<a href="?sort=vocation&amp;order={{ $order === 'ASC' ? 'desc' : 'asc' }}">{!! trans('theme::guilds/guild/show.members.sort') !!}</a>]</small>
+
+                                        @if ($sort === 'vocation')
+                                            <span class="caret {{ $order === 'DESC' ? 'up' : null }}"></span>
+                                        @endif
+                                    </th>
+                                    <th>
+                                        {!! trans('theme::guilds/guild/show.members.level') !!}&nbsp;
+                                        <small>[<a href="?sort=level&amp;order={{ $order === 'ASC' ? 'desc' : 'asc' }}">{!! trans('theme::guilds/guild/show.members.sort') !!}</a>]</small>
+
+                                        @if ($sort === 'level')
+                                            <span class="caret {{ $order === 'DESC' ? 'up' : null }}"></span>
+                                        @endif
+                                    </th>
+                                    <th>
+                                        {!! trans('theme::guilds/guild/show.members.joining') !!}
+                                    </th>
+                                    <th>
+                                        {!! trans('theme::guilds/guild/show.members.status') !!}
+                                    </th>
+                                </tr>
+
+                                <?php $odd = false; ?>
+                                @foreach ($guild->ranks as $rank)
+                                    @if ($rank->members->count() >= 1)
+                                        <?php $first = false; ?>
+                                        @foreach ($rank->members as $member)
+                                            <tr class="{{ $odd ? 'odd' : 'even' }}">
+                                                <td>
+                                                    @if (! $first and $first = true)
+                                                        {{ $rank->name() }}
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{ url('/characters', $member->slug()) }}">{{ $member->name() }}</a>
+                                                </td>
+                                                <td>
+                                                    {{ $member->vocation()->name() }}
+                                                </td>
+                                                <td>
+                                                    {{ $member->level() }}
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    @if ($member->isOnline())
+                                                        <strong class="online">{!! trans('theme::guilds/guild/show.members.online') !!}</strong>
+                                                    @else
+                                                        <span class="offline">{!! trans('theme::guilds/guild/show.members.offline') !!}</span>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        <?php $odd = ! $odd; ?>
+                                    @endif
+                                @endforeach
+                            </table>
+                        </div>
+
+                        <div class="clearfix">
+                            <a href="#" class="blue-button pull-right">
+                                <span>{!! trans('theme::guilds/guild/show.members.showonline') !!}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 

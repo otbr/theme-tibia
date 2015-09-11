@@ -1,6 +1,6 @@
-.clearfix() {
+.clearfix(@display: block) {
     vertical-align: bottom;
-    display: inline-block;
+    display: @display;
 
     &:after {
         visibility: hidden;
