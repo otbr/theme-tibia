@@ -143,9 +143,15 @@
                                                 @endif
                                             </td>
                                             <td>
-                                                <a href="{{ url('/guilds') }}" class="blue-button">
-                                                    <span>{!! trans('theme::guilds/overview/show.forming.view') !!}</span>
-                                                </a>
+                                                @if ($world and $worlds->count() > 1)
+                                                    <a href="{{ url('/guilds', [$world->slug(), $guild->slug()]) }}" class="blue-button">
+                                                        <span>{!! trans('theme::guilds/overview/show.guilds.view') !!}</span>
+                                                    </a>
+                                                @else
+                                                    <a href="{{ url('/guilds', $guild->slug()) }}" class="blue-button">
+                                                        <span>{!! trans('theme::guilds/overview/show.guilds.view') !!}</span>
+                                                    </a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

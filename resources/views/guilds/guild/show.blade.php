@@ -159,8 +159,36 @@
 
                                 <?php $odd = false; ?>
                                 @foreach ($guild->ranks as $rank)
-                                    @if ($rank->members->count() >= 1)
+                                    @if ($rank->members->count() >= 1 or $rank->level() === 3)
                                         <?php $first = false; ?>
+
+                                        @if ($rank->level() === 3)
+                                            <tr class="{{ $odd ? 'odd' : 'even' }}">
+                                                <td>
+                                                    @if (! $first and $first = true)
+                                                        {{ $rank->name() }}
+                                                    @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{ url('/characters', $guild->owner->slug()) }}">{{ $guild->owner->name() }}</a>
+                                                </td>
+                                                <td>
+                                                    {{ $guild->owner->vocation()->name() }}
+                                                </td>
+                                                <td>
+                                                    {{ $guild->owner->level() }}
+                                                </td>
+                                                <td></td>
+                                                <td>
+                                                    @if ($guild->owner->isOnline())
+                                                        <strong class="online">{!! trans('theme::guilds/guild/show.members.online') !!}</strong>
+                                                    @else
+                                                        <span class="offline">{!! trans('theme::guilds/guild/show.members.offline') !!}</span>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endif
+
                                         @foreach ($rank->members as $member)
                                             <tr class="{{ $odd ? 'odd' : 'even' }}">
                                                 <td>
