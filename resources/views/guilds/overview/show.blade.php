@@ -169,9 +169,16 @@
                     <tr>
                         <td>
                             {!! trans('theme::guilds/overview/show.postamble') !!}
-                            <a href="{{ url('/guilds/create') }}" class="blue-button">
-                                <span>{!! trans('theme::guilds/overview/show.found') !!}</span>
-                            </a>
+
+                            @if ($world and $worlds->count() > 1)
+                                <a href="{{ url('/guilds', [$world->slug(), 'create']) }}" class="blue-button">
+                                    <span>{!! trans('theme::guilds/overview/show.found') !!}</span>
+                                </a>
+                            @else
+                                <a href="{{ url('/guilds/create') }}" class="blue-button">
+                                    <span>{!! trans('theme::guilds/overview/show.found') !!}</span>
+                                </a>
+                            @endif
                         </td>
                     </tr>
                 </table>
