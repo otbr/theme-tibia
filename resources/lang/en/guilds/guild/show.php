@@ -18,6 +18,9 @@ return [
     'information.forming'   => 'It is still in course of formation.',
     'information.opened'    => 'Guild is opened for applications.',
     'information.closed'    => 'Guild is closed for applications.',
+    'information.disband'   => '<strong>It will be disbanded on :date if there are still less than four vice 
+                                leaders or an insufficient amount of premium accounts in the leading ranks 
+                                by then.</strong>',
 
     'navigation.heading'    => 'Navigation',
     'navigation.wars'       => 'Guild Wars',

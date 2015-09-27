@@ -66,6 +66,12 @@
                                     @else
                                         {!! trans('theme::guilds/guild/show.information.closed') !!}<br>
                                     @endif
+
+                                    @if ($guild->isForming())
+                                        {!! trans('theme::guilds/guild/show.information.disband', [
+                                            'date' => (new Carbon\Carbon)->addDays(10)->format('M d Y'),
+                                        ]) !!}<br>
+                                    @endif
                                 </div>
                             </div>
                         </td>
@@ -159,12 +165,10 @@
 
                                 <?php $odd = false; ?>
                                 @foreach ($guild->ranks as $rank)
-                                    <?php #$rank->members->load('guildrank'); ?>
-
-                                    @if ($rank->members->count() >= 1 /*or $rank->level() === 3*/)
+                                    @if ($rank->players->count() >= 1 /*or $rank->level() === 3*/)
                                         <?php $first = false; ?>
 
-                                        @foreach ($rank->members as $member)
+                                        @foreach ($rank->players as $player)
                                             <tr class="{{ $odd ? 'odd' : 'even' }}">
                                                 <td>
                                                     @if (! $first and $first = true)
@@ -172,17 +176,17 @@
                                                     @endif
                                                 </td>
                                                 <td>
-                                                    <a href="{{ url('/characters', $member->slug()) }}">{{ $member->name() }}</a>
+                                                    <a href="{{ url('/characters', $player->slug()) }}">{{ $player->name() }}</a>
                                                 </td>
                                                 <td>
-                                                    {{ $member->vocation()->name() }}
+                                                    {{ $player->vocation()->name() }}
                                                 </td>
                                                 <td>
-                                                    {{ $member->level() }}
+                                                    {{ $player->level() }}
                                                 </td>
                                                 <td></td>
                                                 <td>
-                                                    @if ($member->isOnline())
+                                                    @if ($player->isOnline())
                                                         <strong class="online">{!! trans('theme::guilds/guild/show.members.online') !!}</strong>
                                                     @else
                                                         <span class="offline">{!! trans('theme::guilds/guild/show.members.offline') !!}</span>

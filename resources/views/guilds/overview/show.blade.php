@@ -136,11 +136,6 @@
                                             </td>
                                             <td class="breakwords">
                                                 <strong>{{ $guild->name() }}</strong>
-
-                                                @if ($description = $guild->properties->description())
-                                                    <br>
-                                                    {{ $description }}
-                                                @endif
                                             </td>
                                             <td>
                                                 @if ($world and $worlds->count() > 1)
