@@ -20,15 +20,15 @@
                     <tr>
                         <td class="previous">
                             @if ($previous)
-                                <a href="{{ url('/library/creatures', $previous->slug()) }}">previous</a>
+                                <a href="{{ url('/library/creatures', $previous->slug()) }}">{!! trans('theme::library/creatures.previous') !!}</a>
                             @endif
                         </td>
                         <td class="back">
-                            <a href="{{ url('/library/creatures') }}">back</a>
+                            <a href="{{ url('/library/creatures') }}">{!! trans('theme::library/creatures.back') !!}</a>
                         </td>
                         <td class="next">
                             @if ($next)
-                                <a href="{{ url('/library/creatures', $next->slug()) }}">next</a>
+                                <a href="{{ url('/library/creatures', $next->slug()) }}">{!! trans('theme::library/creatures.next') !!}</a>
                             @endif
                         </td>
                     </tr>
@@ -50,7 +50,7 @@
                 @if ($description = $creature->description())
                     {!! $description !!}
                 @else
-                    <p><em>This creature has no description yet.</em></p>
+                    <p><em>{!! trans('theme::library/creatures.empty') !!}</em></p>
                 @endif
             </div>
         </div>
