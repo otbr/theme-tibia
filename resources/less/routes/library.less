@@ -33,6 +33,66 @@
 
 
 /**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/library/creatures/single.blade.php
+ */
+.library-creatures-single #middle-column {
+	.pagination {
+		width: 100%;
+
+		td {
+			width: 33.3%;
+
+			&.previous,
+			&.back,
+			&.next {
+				a {
+					font-size: 90%;
+
+					&:before {
+						padding-right: 4px;
+					}
+				}
+			}
+
+			&.previous {
+				a:before {
+					content: url('@{image-path}/arrow-left.gif');
+				}
+			}
+
+			&.back {
+				text-align: center;
+
+				a:before {
+					content: url('@{image-path}/arrow-up.gif');
+				}
+			}
+
+			&.next {
+				text-align: right;
+
+				a:before {
+					content: url('@{image-path}/arrow-right.gif');
+				}
+			}
+		}
+	}
+
+	.creature {
+		width: 100%;
+
+		h2 {
+			margin-right: 15px;
+			text-align: right;
+		}
+	}
+}
+
+
+/**
  * The following styles were written with the subsequent route in mind,
  * although are not necessarily limited to it.
  *

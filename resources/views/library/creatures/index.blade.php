@@ -17,7 +17,10 @@
             <div class="inner-box">
                 @foreach ($creatures as $creature)
                     <div class="monster">
-                        <img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/{{ $creature->image() }}" alt="{{ $creature->name() }}">
+                        <a href="{{ url('/library/creatures', $creature->slug()) }}">
+                            <img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/{{ $creature->slug() }}.gif" alt="{{ $creature->name() }}">
+                        </a>
+
                         <div class="title">{{ $creature->name() }}</div>
                     </div>
                 @endforeach
