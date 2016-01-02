@@ -8,6 +8,8 @@
 
 return [
 
+    'title'     => 'Creatures',
+    'headline'  => 'Creatures',
     'previous'  => 'previous',
     'back'      => 'back',
     'next'      => 'next',

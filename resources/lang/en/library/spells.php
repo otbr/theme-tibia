@@ -40,4 +40,18 @@ return [
     'form.sort.mana'    => 'Mana',
     'form.sort.premium' => 'Premium',
 
+    'show.headline'         => 'Spells',
+    'show.empty'            => 'This spell has no description yet.',
+    'show.info.heading'     => 'Spell Information',
+    'show.info.name'        => 'Name:',
+    'show.info.formula'     => 'Formula:',
+    'show.info.vocation'    => 'Vocation:',
+    'show.info.group'       => 'Group:',
+    'show.info.type'        => 'Type:',
+    'show.info.level'       => 'Exp Lvl:',
+    'show.info.mana'        => 'Mana:',
+    'show.info.premium'     => 'Premium:',
+    'show.info.yes'         => 'yes',
+    'show.info.no'          => 'no',
+
 ];

@@ -1,6 +1,6 @@
 @extends('theme::app')
 
-@section('title', 'Creatures')
+@section('title', trans('theme::library/creatures.title'))
 @section('body', 'library-creatures')
 @section('navigation', '/library/creatures')
 
@@ -10,7 +10,7 @@
         <span class="corners top"></span>
 
         <header class="header">
-            <div class="headline">Creatures</div>
+            <div class="headline">{!! trans('theme::library/creatures.headline') !!}</div>
         </header>
 
         <div class="inner-box-border">

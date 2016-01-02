@@ -34,6 +34,21 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Spells Path
+    |--------------------------------------------------------------------------
+    |
+    | Enter the path to where you want to load your spells images from. May
+    | be a relative link (from the public/ folder) or an absolute link
+    | (e.g. a CDN).
+    |
+    | The default is https://cdn.pandaac.io/spells
+    |
+    */
+   
+    'spells' => 'https://cdn.pandaac.io/spells',
+
+    /*
+    |--------------------------------------------------------------------------
     | Maps Path
     |--------------------------------------------------------------------------
     |

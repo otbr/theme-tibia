@@ -10,7 +10,7 @@
         <span class="corners top"></span>
 
         <header class="header">
-            <div class="headline">Creatures</div>
+            <div class="headline">{{ $creature->name() }}</div>
         </header>
 
         <div class="inner-box-border">

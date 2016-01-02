@@ -8,6 +8,13 @@ use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvi
 class RouteServiceProvider extends ServiceProvider
 {
     /**
+     * This namespace is applied to the controller routes in your routes file.
+     *
+     * @var string
+     */
+    protected $namespace = 'pandaac\ThemeTibia\Http\Controllers';
+
+    /**
      * Define your route model bindings, pattern filters, etc.
      *
      * @param  \Illuminate\Routing\Router  $router
@@ -15,6 +22,8 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot(Router $router)
     {
+        //
+
         parent::boot($router);
     }
 
@@ -26,6 +35,10 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function map(Router $router)
     {
-        require realpath(__DIR__.'/../Http/routes.php');
+        $namespace = $this->namespace;
+
+        $router->group([], function ($router) use ($namespace) {
+            require realpath(__DIR__.'/../Http/routes.php');
+        });
     }
 }

@@ -18,59 +18,59 @@
 
                 {!! trans('theme::library/spells.preamble') !!}
 
-                <div class="table">
-                    <header class="header">
-                        <div class="borders">
-                            <span class="edges top"></span>
-                            {!! trans('theme::library/spells.heading') !!}
-                            <span class="edges bottom"></span>
-                        </div>
-                    </header>
-
-                    <div class="content">
-                        <div class="box">
-                            <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
-                                <tr>
-                                    <th class="header" style="width: 45%;">{!! trans('theme::library/spells.name') !!}</th>
-                                    <th class="header">{!! trans('theme::library/spells.group') !!}</th>
-                                    <th class="header">{!! trans('theme::library/spells.type') !!}</th>
-                                    <th class="header">{!! trans('theme::library/spells.level') !!}</th>
-                                    <th class="header">{!! trans('theme::library/spells.mana') !!}</th>
-                                    <th class="header">{!! trans('theme::library/spells.premium') !!}</th>
-                                </tr>
-
-                                @forelse ($spells as $spell)
-                                    <tr>
-                                        <td>
-                                            <a href="#">{{ $spell->name() }}</a> 
-                                            ({{ $spell->words() }})
-                                        </td>
-                                        <td>{{ $spell->group() }}</td>
-                                        <td>{{ $spell->type() }}</td>
-                                        <td>{{ $spell->level() }}</td>
-                                        <td>{{ $spell->mana() }}</td>
-                                        <td>
-                                            @if ($spell->premium())
-                                                {!! trans('theme::library/spells.yes') !!}
-                                            @else
-                                                {!! trans('theme::library/spells.no') !!}
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @empty
-                                    <tr>
-                                        <td colspan="6">{!! trans('theme::library/spells.empty') !!}</td>
-                                    </tr>
-                                @endforelse
-                            </table>
-                        </div>
-                    </div>
-                </div>
-
-                <br>
-
                 <form method="POST" action="{{ url('/library/spells') }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                    <div class="table">
+                        <header class="header">
+                            <div class="borders">
+                                <span class="edges top"></span>
+                                {!! trans('theme::library/spells.heading') !!}
+                                <span class="edges bottom"></span>
+                            </div>
+                        </header>
+
+                        <div class="content">
+                            <div class="box">
+                                <table class="table-striped" cellspacing="0" cellpadding="0" border="0">
+                                    <tr>
+                                        <th class="header" style="width: 45%;">{!! trans('theme::library/spells.name') !!}</th>
+                                        <th class="header">{!! trans('theme::library/spells.group') !!}</th>
+                                        <th class="header">{!! trans('theme::library/spells.type') !!}</th>
+                                        <th class="header">{!! trans('theme::library/spells.level') !!}</th>
+                                        <th class="header">{!! trans('theme::library/spells.mana') !!}</th>
+                                        <th class="header">{!! trans('theme::library/spells.premium') !!}</th>
+                                    </tr>
+
+                                    @forelse ($spells as $spell)
+                                        <tr>
+                                            <td>
+                                                <button class="anchor" name="spell" value="{{ $spell->slug() }}">{{ $spell->name() }}</button>
+                                                ({{ $spell->words() }})
+                                            </td>
+                                            <td>{{ $spell->group() }}</td>
+                                            <td>{{ $spell->type() }}</td>
+                                            <td>{{ $spell->level() }}</td>
+                                            <td>{{ $spell->mana() }}</td>
+                                            <td>
+                                                @if ($spell->premium())
+                                                    {!! trans('theme::library/spells.yes') !!}
+                                                @else
+                                                    {!! trans('theme::library/spells.no') !!}
+                                                @endif
+                                            </td>
+                                        </tr>
+                                    @empty
+                                        <tr>
+                                            <td colspan="6">{!! trans('theme::library/spells.empty') !!}</td>
+                                        </tr>
+                                    @endforelse
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <br>
 
                     <div class="table">
                         <header class="header">
@@ -85,13 +85,13 @@
                             <div class="box">
                                 <table class="table-striped inverse dark" cellspacing="0" cellpadding="0" border="0">
                                     <tr>
-                                        <th class="header" style="width: 25%;">{!! trans('theme::library/spells.form.vocation') !!}</th>
-                                        <th class="header" style="width: 25%;">{!! trans('theme::library/spells.form.group') !!}</th>
-                                        <th class="header" style="width: 25%;">{!! trans('theme::library/spells.form.type') !!}</th>
-                                        <th class="header" style="width: 25%;">{!! trans('theme::library/spells.form.premium') !!}</th>
+                                        <th class="header {{ $errors->has('vocation') ? 'error' : null }}" style="width: 25%;">{!! trans('theme::library/spells.form.vocation') !!}</th>
+                                        <th class="header {{ $errors->has('group') ? 'error' : null }}" style="width: 25%;">{!! trans('theme::library/spells.form.group') !!}</th>
+                                        <th class="header {{ $errors->has('type') ? 'error' : null }}" style="width: 25%;">{!! trans('theme::library/spells.form.type') !!}</th>
+                                        <th class="header {{ $errors->has('premium') ? 'error' : null }}" style="width: 25%;">{!! trans('theme::library/spells.form.premium') !!}</th>
                                     </tr>
                                     <tr>
-                                        <td valign="top">
+                                        <td valign="top" class="{{ $errors->has('vocation') ? 'error' : null }}">
                                             <label>
                                                 <input type="radio" name="vocation" value="all" {{ in_array(old('vocation'), ['', 'all']) ? 'checked' : null }}> 
                                                 {!! trans('theme::library/spells.form.all') !!}
@@ -106,7 +106,7 @@
                                                 <br>
                                             @endforeach
                                         </td>
-                                        <td valign="top">
+                                        <td valign="top" class="{{ $errors->has('group') ? 'error' : null }}">
                                             <label>
                                                 <input type="radio" name="group" value="all" {{ in_array(old('group'), ['', 'all']) ? 'checked' : null }}> 
                                                 {!! trans('theme::library/spells.form.all') !!}
@@ -127,7 +127,7 @@
                                                 {!! trans('theme::library/spells.form.support') !!}
                                             </label>
                                         </td>
-                                        <td valign="top">
+                                        <td valign="top" class="{{ $errors->has('type') ? 'error' : null }}">
                                             <label>
                                                 <input type="radio" name="type" value="all" {{ in_array(old('type'), ['', 'all']) ? 'checked' : null }}> 
                                                 {!! trans('theme::library/spells.form.all') !!}
@@ -148,7 +148,7 @@
                                                 {!! trans('theme::library/spells.form.rune') !!}
                                             </label>
                                         </td>
-                                        <td valign="top">
+                                        <td valign="top" class="{{ $errors->has('premium') ? 'error' : null }}">
                                             <label>
                                                 <input type="radio" name="premium" value="all" {{ in_array(old('premium'), ['', 'all']) ? 'checked' : null }}> 
                                                 {!! trans('theme::library/spells.form.all') !!}
@@ -166,7 +166,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="4">
+                                        <td colspan="4" class="{{ $errors->has('sort') ? 'error' : null }}">
                                             {!! trans('theme::library/spells.form.sortby') !!} 
                                             <select name="sort">
                                                 <option value="name" {{ old('sort') == 'name' ? 'selected' : null }}>

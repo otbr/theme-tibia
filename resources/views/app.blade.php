@@ -208,6 +208,13 @@
 
         <main id="middle-column" class="column">
             @yield('content')
+
+            <div class="footer">
+                The majority of images on this site are property of CipSoft GmbH.<br>
+                <a href="https://pandaac.io" target="_blank">pandaac.io</a> |
+                <a href="https://credits.pandaac.io" target="_blank">credits</a> |
+                <a href="https://otland.net" target="_blank">otland.net</a>
+            </div>
         </main>
     </div>
 
