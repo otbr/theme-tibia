@@ -131,8 +131,8 @@
                                                     </td>
                                                     <td>
                                                         <select name="from_year">
-                                                            @foreach (range($year, date('Y')) as $year)
-                                                                <option {{ $year == old('from_year', date('Y')) }}>{{ $year }}</option>
+                                                            @foreach (range($initialYear, date('Y')) as $year)
+                                                                <option {{ $year == old('from_year', $fromYear) ? 'selected' : null }}>{{ $year }}</option>
                                                             @endforeach
                                                         </select>
                                                     </td>
@@ -170,8 +170,8 @@
                                                     </td>
                                                     <td>
                                                         <select name="to_year">
-                                                            @foreach (range($year, date('Y')) as $year)
-                                                                <option {{ $year == old('to_year', date('Y')) }}>{{ $year }}</option>
+                                                            @foreach (range($initialYear, date('Y')) as $year)
+                                                                <option {{ $year == old('to_year', date('Y')) ? 'selected' : null }}>{{ $year }}</option>
                                                             @endforeach
                                                         </select>
                                                     </td>
