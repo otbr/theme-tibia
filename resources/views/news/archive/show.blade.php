@@ -60,13 +60,17 @@
                                     <input type="hidden" name="to_month" value="{{ old('to_month') }}">
                                     <input type="hidden" name="to_year" value="{{ old('to_year') }}">
 
-                                    @foreach (old('type') as $type)
-                                        <input type="hidden" name="type[]" value="{{ $type }}">
-                                    @endforeach
+                                    @if (! empty(old('type')))
+                                        @foreach (old('type') as $type)
+                                            <input type="hidden" name="type[{{ $type }}]" value="{{ $type }}">
+                                        @endforeach
+                                    @endif
 
-                                    @foreach (old('icon') as $icon)
-                                        <input type="hidden" name="icon[]" value="{{ $icon }}">
-                                    @endforeach
+                                    @if (! empty(old('type')))
+                                        @foreach (old('category') as $category)
+                                            <input type="hidden" name="category[{{ $category }}]" value="{{ $category }}">
+                                        @endforeach
+                                    @endif
 
                                     <button class="blue-button">
                                         <span>{!! trans('theme::news/archive/show.back') !!}</span>

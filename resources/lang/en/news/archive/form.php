@@ -8,7 +8,6 @@
 
 return [
 
-    'title'         => 'News Archive',
     'heading'       => 'News Archive Search',
     'period'        => 'Time Period',
     'type'          => 'Type',
