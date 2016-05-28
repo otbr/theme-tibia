@@ -103,7 +103,7 @@
                                 <th>{!! trans('theme::worlds/show.location') !!}</th>
                                 <td>
                                     @if ($country = country($flag = $world->flag()))
-                                        <img src="{{ config('pandaac.theme-tibia.paths.flags') }}/{{ $flag }}.gif" alt="{{ strtoupper($flag) }}" title="{{ $country }}" class="flag">
+                                        <img src="{{ cdn('flags', ['flag' => $flag]) }}" alt="{{ strtoupper($flag) }}" title="{{ $country }}" class="flag">
                                         {{ $country }}
                                     @else
                                         {!! trans('theme::worlds/overview.notapplicable') !!}

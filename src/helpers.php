@@ -18,6 +18,32 @@ if (! function_exists('activate_menu')) {
     }
 }
 
+if (! function_exists('cdn')) {
+    /**
+     * Create a link to a predefined CDN.
+     *
+     * @param  string  $type
+     * @param  array  $variables  []
+     * @return string
+     */
+    function cdn($type, array $variables = [])
+    {
+        $variables = array_merge($variables, [
+            'client' => config('pandaac.theme-tibia.paths.client'),
+        ]);
+
+        if (! ($path = config(sprintf('pandaac.theme-tibia.paths.%s', $type)))) {
+            return null;
+        }
+
+        foreach ($variables as $variable => $value) {
+            $path = preg_replace('/\{'.preg_quote($variable, '/').'\}/i', $value, $path);
+        }
+
+        return $path;
+    }
+}
+
 if (! function_exists('theme_elixir')) {
     /**
      * Get the path to a versioned Elixir file.

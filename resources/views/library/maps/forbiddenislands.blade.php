@@ -19,7 +19,7 @@
                 <div class="text-center">
                     <h3>Forbidden Islands</h3>
 
-                    <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Forbidden Islands">
+                    <img class="border" src="{{ cdn('maps', ['map' => $area]) }}" alt="Forbidden Islands">
                 </div>
 
                 <p>

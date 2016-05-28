@@ -39,7 +39,7 @@
                 <table class="creature">
                     <tr>
                         <td>
-                            <img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/{{ $creature->slug() }}.gif" alt="{{ $creature->name() }}">
+                            <img src="{{ cdn('creatures', ['creature' => $creature->slug()]) }}" alt="{{ $creature->name() }}">
                         </td>
                         <td>
                             <h2 class="iconless">{{ $creature->name() }}</h2>

@@ -18,7 +18,7 @@
                 @foreach ($creatures as $creature)
                     <div class="monster">
                         <a href="{{ url('/library/creatures', $creature->slug()) }}">
-                            <img src="{{ config('pandaac.theme-tibia.paths.creatures') }}/{{ $creature->slug() }}.gif" alt="{{ $creature->name() }}">
+                            <img src="{{ cdn('creatures', ['creature' => $creature->slug()]) }}" alt="{{ $creature->name() }}">
                         </a>
 
                         <div class="title">{{ $creature->name() }}</div>

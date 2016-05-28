@@ -19,7 +19,7 @@
                 <div class="text-center">
                     <h3>Farmine</h3>
 
-                    <img class="border" src="{{ config('pandaac.theme-tibia.paths.maps') }}/{{ $area }}.jpg" alt="Farmine">
+                    <img class="border" src="{{ cdn('maps', ['map' => $area]) }}" alt="Farmine">
                 </div>
 
                 <p>

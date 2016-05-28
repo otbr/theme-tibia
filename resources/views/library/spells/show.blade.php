@@ -19,13 +19,13 @@
                 <table class="full-width">
                     <tr>
                         <td>
-                            <img src="{{ config('pandaac.theme-tibia.paths.spells') }}/{{ $spell->slug() }}.gif" alt="{{ $spell->name() }}" class="tibia-sprite">
+                            <img src="{{ cdn('spells', ['spell' => $spell->slug()]) }}" alt="{{ $spell->name() }}" class="tibia-sprite">
                         </td>
                         <td>
                             <h2 class="iconless">{{ $spell->name() }}</h2>
                         </td>
                         <td class="text-right">
-                            <img src="{{ config('pandaac.theme-tibia.paths.spells') }}/{{ $spell->slug() }}.gif" alt="{{ $spell->name() }}" class="tibia-sprite">
+                            <img src="{{ cdn('spells', ['spell' => $spell->slug()]) }}" alt="{{ $spell->name() }}" class="tibia-sprite">
                         </td>
                     </tr>
                 </table>
