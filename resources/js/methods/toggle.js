@@ -5,6 +5,11 @@ module.exports = function (identifier, list, cookie) {
         index = this.isToggled(identifier, list, true);
 
     if (index > -1) {
+        var selection = getSelection().toString();
+        if (selection && this.$event.target.contains(getSelection().anchorNode)) {
+            return false;
+        }
+        
         array.splice(index, 1);
     } else {
         array.push(identifier);
