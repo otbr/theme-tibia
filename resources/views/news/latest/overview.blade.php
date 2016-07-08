@@ -24,7 +24,7 @@
                                     <span class="icon {{ $ticker->icon() }}"></span>
                                 </td>
                                 <td class="valign-top time-wrapper">
-                                    <time datetime="{{ $ticker->creation()->format('Y-m-d H:i:s e') }}">{{ $ticker->creation()->format('M j Y') }}</time>
+                                    <time datetime="{{ $ticker->creation()->format('Y-m-d H:i:s e') }}">{{ $ticker->creation()->format('M d Y') }}</time>
                                 </td>
                                 <td class="valign-top content-wrapper">
                                     <span data-v-show="isToggled('ticker-{{ $ticker->id() }}')">{{ $ticker->content() }}</span>
