@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/registration/edit/cancelled.title'))
-@section('body', 'account-registration account-registration-cancelled')
 @section('navigation', '/account')
 
 @section('content')

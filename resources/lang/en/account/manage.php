@@ -26,6 +26,17 @@ return [
     'registration.female'       => 'Female',
     'registration.edit'         => 'Edit',
 
+    'authenticator.heading'     => 'Authenticator',
+    'authenticator.request'     => 'Request',
+    'authenticator.getstarted'  => '<p><strong>Connect your Tibia account to an authenticator!</strong></p>
+
+                                    <p>An authenticator offers you an additional layer of security to help prevent 
+                                    unauthorised access to your Tibia account.</p>
+
+                                    <p>As a first step to connect an authenticator to your account, click on "Request"! 
+                                    An email with a confirmation key will be sent to the email address assigned to your 
+                                    account.</p>',
+
     'getpremium'                => 'Get Premium',
     'overview'                  => 'Overview',
     'account'                   => 'Account Name:',

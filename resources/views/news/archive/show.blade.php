@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::news/archive/show.title'))
-@section('body', 'news-archive-show')
 @section('navigation', '/archive')
 
 @section('content')

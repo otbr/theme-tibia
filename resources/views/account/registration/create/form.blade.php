@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/registration/create/form.title'))
-@section('body', 'account-registration account-registration-create-form')
 @section('navigation', '/account')
 
 @section('content')

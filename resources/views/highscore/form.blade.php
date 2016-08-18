@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::highscore/form.title'))
-@section('body', 'highscore-form')
 @section('navigation', '/highscore')
 
 @section('content')

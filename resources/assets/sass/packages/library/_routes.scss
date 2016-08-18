@@ -1,0 +1,59 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/library/creatures/index.blade.php
+ */
+body[data-view="library.creatures.index"] #middle-column {
+    @import 'creatures';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/library/creatures/show.blade.php
+ */
+body[data-view="library.creatures.show"] #middle-column {
+    @import 'creature';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/library/quests.blade.php
+ */
+body[data-view="library.quests"] #middle-column {
+    @import 'quests';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/library/experience.blade.php
+ */
+body[data-view="library.experience"] #middle-column {
+    @import 'experience';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/library/maps/index.blade.php
+ */
+body[data-view="library.maps.index"] #middle-column {
+    @import 'maps';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/library/genesis/*.blade.php
+ */
+body[data-view^="library.genesis"] #middle-column {
+    @import 'genesis';
+}

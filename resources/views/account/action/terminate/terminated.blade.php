@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/action/terminate/terminated.title'))
-@section('body', 'account-action-terminate-terminated')
 @section('navigation', '/account')
 
 @section('content')

@@ -1,0 +1,74 @@
+$paths: (
+    images      : '../../img',
+    fonts       : '../../fonts',
+);
+
+$colours: (
+    // Heading colours...
+    heading: (
+        colour                  : #5a2800,
+    ),
+
+    // Link colours...
+    link: (
+        colour                  : #004294,
+    ),
+
+    // Form colours...
+    form: (
+        error                   : #ef0000,
+    ),
+
+    // Status colours...
+    status: (
+        online                  : #00bf00,
+        offline                 : #ef0000,
+    ),
+
+    // First letter colours...
+    first-letter: (
+        colour                  : #690000,
+    ),
+
+    // Notification colours...
+    notification: (
+        background-colour       : #d4c0a1,
+    ),
+
+    // Table colours...
+    table: (
+        colour                  : #5a2800,
+        background-colours: (
+            default             : #f1e0c5,
+            alternative         : #d4c0a1,
+        ),
+        borders: (
+            default             : #000,
+            inner               : #55636c,
+        ),
+        headers: (
+            colour              : #fff,
+            background-colour   : #5f4d41,
+        ),
+        light: (
+            background-colour   : #f1e0c6,
+            border              : #faf0d7,
+            hover               : #ffedd1,
+        ),
+        medium: (
+            background-colour   : #d5c0a1,
+            hover               : #e7d1af,
+        ),
+    ),
+
+    // Navigation colours...
+    navigation: (
+        colour                  : #fff,
+        background-colour       : #0d2e2b,
+        sub: (
+            colour              : #d7d7d7,
+            background-colour   : #14433f,
+            hover               : #fff,
+        ),
+    ),
+);

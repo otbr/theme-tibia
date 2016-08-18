@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'Legal Documents')
-@section('body', 'support-terms')
 @section('navigation', '/support/legal')
 
 @section('content')

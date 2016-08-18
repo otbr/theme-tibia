@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/player/create/confirm.title'))
-@section('body', 'account-player-create-confirm')
 @section('navigation', '/account')
 
 @section('content')

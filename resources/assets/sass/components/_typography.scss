@@ -1,0 +1,49 @@
+@mixin martel() {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: 'Martel', serif;
+    font-weight: normal;
+}
+
+@mixin martel-descent() {
+    -webkit-font-smoothing: antialiased;
+    font-family: 'MartelDescent', serif;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: normal;
+}
+
+.martel {
+    @include martel;
+}
+
+.martel-descent {
+    @include martel-descent;
+}
+
+.first-letter {
+    color: config($colours, first-letter, colour);
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+
+    @include font-size(3.6, 3);
+    @include martel-descent;
+}
+
+.headline {
+    text-shadow: -0.5px -0.5px 0 #000, 0.5px -0.5px 0 #000, -0.5px 0.5px 0 #000, 0.5px 0.5px 0 #000;
+    -webkit-font-smoothing: antialiased;
+    text-transform: capitalize;
+    font-weight: normal;
+    display: block;
+    color: #efcfa4;
+
+    @include font-size(2.43, 2.43);
+
+    &:not(img) {
+        padding: 2px 0 0 4px;
+    }
+
+    @include martel;
+}

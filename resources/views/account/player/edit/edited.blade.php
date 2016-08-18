@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/player/edit/edited.title'))
-@section('body', 'account-player-edit-edited')
 @section('navigation', '/account')
 
 @section('content')

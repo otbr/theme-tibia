@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'F.A.Q.')
-@section('body', 'support-faq')
 @section('navigation', '/support/faq')
 
 @section('content')

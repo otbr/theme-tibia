@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/player/undelete/confirm.title'))
-@section('body', 'account-player-undelete-confirm')
 @section('navigation', '/account')
 
 @section('content')

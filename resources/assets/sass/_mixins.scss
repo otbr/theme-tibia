@@ -1,0 +1,90 @@
+@function config($map, $keys...) {
+    $value: $map;
+
+    @each $key in $keys {
+        $value: map-get($value, $key);
+    }
+
+    @return $value;
+}
+
+@mixin clearfix($display: block) {
+    vertical-align: bottom;
+    display: $display;
+
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: '';
+        clear: both;
+        height: 0;
+    }
+}
+
+@mixin img-responsive($display: block) {
+    display: $display;
+    max-width: 100%;
+    height: auto;
+}
+
+@mixin no-selection() {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+@mixin font-size($font, $lineHeight: 0) {
+    @if ($lineHeight > 0) {
+        @include line-height($lineHeight);
+    }
+
+    $fontPx: ($font * 10);
+
+    font-size: #{$fontPx}px;
+    font-size: #{$font}rem;
+}
+
+@mixin line-height($lineHeight) {
+    $lineHeightPx: ($lineHeight * 10);
+
+    line-height: #{$lineHeightPx}px;
+    line-height: #{$lineHeight}rem;
+}
+
+@mixin text-left() {
+    text-align: left;
+}
+
+@mixin text-center() {
+    text-align: center;
+}
+
+@mixin text-right() {
+    text-align: right;
+}
+
+@mixin pull-left() {
+    float: left;
+}
+
+@mixin pull-right() {
+    float: right;
+}
+
+@mixin valign-top() {
+    vertical-align: top;
+}
+
+@mixin valign-middle() {
+    vertical-align: middle;
+}
+
+@mixin valign-bottom() {
+    vertical-align: bottom;
+}
+
+@mixin valign-baseline() {
+    vertical-align: baseline;
+}

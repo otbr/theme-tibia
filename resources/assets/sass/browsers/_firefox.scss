@@ -1,0 +1,28 @@
+@-moz-document url-prefix() {
+    .box > .header > .headline {
+        @include line-height(2);
+    }
+
+    .green-button,
+    .blue-button,
+    .red-button {
+        &:hover {
+            & > span {
+                margin-top: 0;
+            }
+        }
+
+        & > span {
+            margin-top: -1px;
+            display: block;
+        }
+    }
+
+    .guilds-show #middle-column .informations-table > tbody > tr > td > .table {
+        // height: auto !important;
+
+        & > .content {
+            margin-top: -30px !important;
+        }
+    }
+}

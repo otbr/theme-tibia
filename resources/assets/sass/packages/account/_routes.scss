@@ -1,0 +1,93 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/account/auth/login.blade.php
+ */
+body[data-view="account.auth.login"] #middle-column {
+    @import 'login';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/account/auth/create.blade.php
+ */
+body[data-view="account.auth.create"] #middle-column {
+    @import 'register';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/account/overview.blade.php
+ */
+body[data-view="account.overview"] #middle-column {
+    @import 'overview';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/account/manage.blade.php
+ */
+body[data-view="account.manage"] #middle-column {
+    @import 'manage';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/account/action/password/form.blade.php
+ * @view  ./resources/views/account/action/rename/form.blade.php
+ * @view  ./resources/views/account/action/terminate/form.blade.php
+ * @view  ./resources/views/account/email/edit/awaiting.blade.php
+ * @view  ./resources/views/account/email/edit/cancelled.blade.php
+ * @view  ./resources/views/account/email/edit/edited.blade.php
+ * @view  ./resources/views/account/email/edit/form.blade.php
+ * @view  ./resources/views/account/player/name/form.blade.php
+ * @view  ./resources/views/account/player/sex/form.blade.php
+ * @view  ./resources/views/account/player/create/confirm.blade.php
+ * @view  ./resources/views/account/player/create/created.blade.php
+ * @view  ./resources/views/account/player/create/form.blade.php
+ * @view  ./resources/views/account/player/delete/confirm.blade.php
+ * @view  ./resources/views/account/player/delete/deleted.blade.php
+ * @view  ./resources/views/account/player/edit/form.blade.php
+ * @view  ./resources/views/account/player/edit/edited.blade.php
+ * @view  ./resources/views/account/player/undelete/confirm.blade.php
+ * @view  ./resources/views/account/player/undelete/undeleted.blade.php
+ */
+body[data-view="account.action.password.form"] #middle-column, 
+body[data-view="account.action.rename.form"] #middle-column, 
+body[data-view="account.action.terminate.form"] #middle-column, 
+body[data-view="account.email.edit.awaiting"] #middle-column, 
+body[data-view="account.email.edit.cancelled"] #middle-column, 
+body[data-view="account.email.edit.edited"] #middle-column, 
+body[data-view="account.email.edit.form"] #middle-column, 
+body[data-view="account.player.name.form"] #middle-column, 
+body[data-view="account.player.sex.form"] #middle-column,
+body[data-view="account.player.create.confirm"] #middle-column, 
+body[data-view="account.player.create.created"] #middle-column, 
+body[data-view="account.player.create.form"] #middle-column, 
+body[data-view="account.player.delete.confirm"] #middle-column, 
+body[data-view="account.player.delete.deleted"] #middle-column, 
+body[data-view="account.player.edit.form"] #middle-column, 
+body[data-view="account.player.edit.edited"] #middle-column, 
+body[data-view="account.player.undelete.confirm"] #middle-column, 
+body[data-view="account.player.undelete.undeleted"] #middle-column {
+    @import 'form';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/account/player/world/form.blade.php
+ */
+body[data-view="account.player.world.form"] #middle-column {
+    @import 'world';
+}

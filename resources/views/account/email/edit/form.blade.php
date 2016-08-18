@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/email/edit/form.title'))
-@section('body', 'account-email-edit-form')
 @section('navigation', '/account')
 
 @section('content')

@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::profile/show.title'))
-@section('body', 'characters')
 @section('navigation', '/characters')
 
 @section('content')

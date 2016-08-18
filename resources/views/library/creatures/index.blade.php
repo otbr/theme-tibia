@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::library/creatures.title'))
-@section('body', 'library-creatures')
 @section('navigation', '/library/creatures')
 
 @section('content')

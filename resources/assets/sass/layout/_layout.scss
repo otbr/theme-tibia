@@ -1,0 +1,57 @@
+#skeleton {
+    margin: 156px auto 20px;
+    max-width: 1200px;
+    min-width: 1080px;
+    display: block;
+    clear: both;
+
+    .column {
+        position: relative;
+        display: block;
+
+        &#left-column {
+            position: relative;
+            margin: 0 15px;
+            width: 180px;
+            float: left;
+
+            @import 'columns/left';
+        }
+
+        &#middle-column {
+            position: relative;
+            padding-top: 4px;
+            margin: 0 210px;
+
+            @import 'columns/middle';
+
+            .footer {
+                text-align: center;
+                line-height: 12px;
+                font-size: 9.3px;
+                color: #fff;
+
+                a {
+                    border-bottom: 1px solid transparent;
+                    transition: border .15s ease-in-out;
+                    text-decoration: none;
+                    font-weight: bold;
+                    color: #fff;
+
+                    &:hover {
+                        border-bottom-color: #fff;
+                    }
+                }
+            }
+        }
+
+        &#right-column {
+            position: relative;
+            margin: 0 15px;
+            width: 180px;
+            float: right;
+
+            @import 'columns/right';
+        }
+    }
+}

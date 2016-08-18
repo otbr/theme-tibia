@@ -2,7 +2,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/player/delete/confirm.title'))
-@section('body', 'account-player-delete-confirm')
 @section('navigation', '/account')
 
 @section('content')

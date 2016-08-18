@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/recovery/index.title'))
-@section('body', 'account-recovery-index')
 @section('navigation', '/account/recover')
 
 @section('content')

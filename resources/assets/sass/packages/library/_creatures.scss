@@ -1,0 +1,24 @@
+.inner-box {
+    display: inline-block;
+}
+
+.monster {
+    margin-left: 5px;
+    margin-top: 5px;
+    height: 100px;
+    width: 100px;
+    float: left;
+
+    @include font-size(1.2);
+
+    .title {
+        text-align: center;
+        word-break: normal;
+        margin: 0px;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+}

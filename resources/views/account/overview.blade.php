@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/overview.title'))
-@section('body', 'account-overview')
 @section('navigation', '/account')
 
 @section('content')

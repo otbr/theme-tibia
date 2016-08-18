@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::guilds/overview/create.title'))
-@section('body', 'guilds-form')
 @section('navigation', '/guilds')
 
 @section('content')

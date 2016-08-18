@@ -1,0 +1,19 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/about/features.blade.php
+ */
+body[data-view="about.features"] #middle-column {
+    @import 'features';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/about/premium.blade.php
+ */
+body[data-view="about.premium"] #middle-column {
+    @import 'premium';
+}

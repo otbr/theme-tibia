@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'Maps')
-@section('body', 'library-maps')
 @section('navigation', '/library/maps')
 
 @section('content')

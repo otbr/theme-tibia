@@ -1,0 +1,11 @@
+$images: config($paths, 'images');
+
+ul > li {
+    &.yes {
+        list-style-image: url('#{$images}/yes.gif');
+    }
+
+    &.no {
+        list-style-image: url('#{$images}/no.gif');
+    }
+}

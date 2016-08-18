@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/download.title'))
-@section('body', 'account-download')
 @section('navigation', '/account/download')
 
 @section('content')

@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/player/create/form.title'))
-@section('body', 'account-player-create-form')
 @section('navigation', '/account')
 
 @section('content')

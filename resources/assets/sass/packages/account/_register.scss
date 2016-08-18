@@ -1,0 +1,18 @@
+label[for="male"] {
+    display: inline-block;
+    margin-right: 60px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+button.blue-button {
+    margin: 0 auto;
+    display: block;
+}
+
+small.error,
+img.valign-middle[data-v-show] {
+    display: none;
+}

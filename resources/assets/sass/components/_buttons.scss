@@ -1,0 +1,157 @@
+$images: config($paths, 'images');
+
+button.anchor,
+button.link {
+    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+    color: config($colours, link, colour);
+    background-color: transparent;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    @include font-size(1.33);
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.plusminus {
+    background: url('#{$images}/plus.gif') no-repeat center center;
+    margin: 2px 2px 0 0;
+    cursor: pointer;
+    display: block;
+    outline: none;
+    border: none;
+    height: 12px;
+    width: 12px;
+
+    @include pull-right;
+
+    &.active {
+        background-image: url('#{$images}/minus.gif');
+    }
+}
+
+.showhide {
+    background: url('#{$images}/showhide.gif');
+    margin: 2px 0 0;
+    cursor: pointer;
+    display: block;
+    outline: none;
+    border: none;
+    height: 12px;
+    width: 32px;
+
+    @include pull-right;
+
+    &.active {
+        background-position: 0 -12px;
+    }
+}
+
+.medium-button {
+    background: url('#{$images}/medium-button.gif') no-repeat top left;
+    text-align: center;
+    line-height: 37px;
+    overflow: hidden;
+    margin: 0 0 2px;
+    cursor: pointer;
+    display: block;
+    height: 37px;
+    width: 150px;
+    border: none;
+    padding: 0;
+
+    &:hover {
+        background-position: 0 -37px;
+    }
+}
+
+.green-button,
+.blue-button,
+.red-button {
+    background: url('#{$images}/sbutton_green.gif') no-repeat top left;
+    vertical-align: middle;
+    display: inline-block;
+    text-align: center;
+    line-height: 25px;
+    overflow: hidden;
+    cursor: pointer;
+    height: 25px;
+    width: 135px;
+    border: none;
+    padding: 0;
+    margin: 0;
+
+    &.blue-button {
+        background-image: url('#{$images}/sbutton_blue.gif');
+    }
+
+    &.red-button {
+        background-image: url('#{$images}/sbutton_red.gif');
+    }
+
+    &:hover {
+        background-position: 0 -25px;
+
+        & > img {
+            margin-left: 1px;
+            margin-top: 1px;
+        }
+
+        & > span {
+            margin-left: 2px;
+            margin-top: 1px;
+        }
+    }
+
+    & > span {
+        text-shadow: 0 0 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+        font-family: Verdana, sans-serif;
+        display: inline-block;
+        text-decoration: none;
+        font-weight: normal;
+        color: #f1d4a5;
+
+        @include font-size(1.2);
+    }
+
+    &.bottom {
+        margin-bottom: 2px;
+    }
+}
+
+.play-button-red {
+    background: url('#{$images}/play-not-button.gif') no-repeat top left;
+    text-align: center;
+    line-height: 46px;
+    display: block;
+    border: none;
+    height: 46px;
+    width: 46px;
+    padding: 0;
+    margin: 0;
+}
+
+.play-button {
+    background: url('#{$images}/play-button.gif') no-repeat top left;
+    text-align: center;
+    line-height: 46px;
+    cursor: pointer;
+    display: block;
+    border: none;
+    height: 46px;
+    width: 46px;
+    padding: 0;
+    margin: 0;
+
+    &:hover {
+        background-position-y: -46px;
+    }
+}

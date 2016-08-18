@@ -1,0 +1,15 @@
+$path: config($paths, 'fonts');
+
+@font-face {
+    font-family: 'Martel';
+    src: url('#{$path}/Martel/martel.eot');
+    src: local('☺︎'),
+         url('#{$path}/Martel/martel.eot?#iefix') format('embedded-opentype'),
+         url('#{$path}/Martel/martel.woff2') format('woff2'),
+         url('#{$path}/Martel/martel.woff') format('woff'),
+         url('#{$path}/Martel/martel.ttf') format('truetype'),
+         url('#{$path}/Martel/martel.svg#martel') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+}

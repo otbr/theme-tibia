@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::worlds/show.title'))
-@section('body', 'worlds-show')
 @section('navigation', '/worlds')
 
 @section('content')

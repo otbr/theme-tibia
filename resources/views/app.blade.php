@@ -8,8 +8,8 @@
 
     <title>@yield('title') &mdash; pandaac</title>
 
-    <link href="{{ asset('/pandaac/theme-tibia/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
-    <link href="{{ theme_elixir('/pandaac/theme-tibia/css/app.css') }}" rel="stylesheet" media="all">
+    <link href="{{ asset('/packages/pandaac/theme-tibia/img/favicon.ico') }}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ theme_elixir('/packages/pandaac/theme-tibia/css/app.css') }}" rel="stylesheet" media="all">
 
     @yield('head')
 
@@ -18,7 +18,7 @@
         <script src="//oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="@yield('body')">
+<body data-route="{{ route_path() }}" data-route-blueprint="{{ route_blueprint() }}" data-view="{{ view_path() }}">
     <a id="top"></a>
 
     <div id="skeleton">
@@ -29,13 +29,13 @@
                 <div class="inner-box">
                     @if (Auth::check())
                         <a href="{{ url('/account') }}" class="medium-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_myaccount.png') }}" alt="My Account">
+                            <img src="{{ asset('/packages/pandaac/theme-tibia/img/mediumbutton_myaccount.png') }}" alt="My Account">
                         </a>
 
                         <a href="{{ url('/account/logout') }}" class="logout"></a>
                     @else
                         <a href="{{ url('/account/login') }}" class="medium-button">
-                            <img src="{{ asset('/pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
+                            <img src="{{ asset('/packages/pandaac/theme-tibia/img/mediumbutton_playnow.png') }}" alt="Play Now">
                         </a>
 
                         <a href="{{ url('/account/create') }}" class="create-account"></a>
@@ -48,8 +48,8 @@
                     <li class="navigation-item open" data-v-class="open: isNavToggled('news')">
                         <div class="navigation-button" data-v-on="click: toggleNav('news')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-news.gif') }}" alt="Icon">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-news.gif') }}" alt="News">
+                            <img class="icon" src="{{ asset('/packages/pandaac/theme-tibia/img/icon-news.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/packages/pandaac/theme-tibia/img/label-news.gif') }}" alt="News">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -62,8 +62,8 @@
                     <li class="navigation-item open" data-v-class="open: isNavToggled('about')">
                         <div class="navigation-button" data-v-on="click: toggleNav('about')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-abouttibia.gif') }}" alt="Icon">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-abouttibia.gif') }}" alt="About {{ server()->name() }}">
+                            <img class="icon" src="{{ asset('/packages/pandaac/theme-tibia/img/icon-abouttibia.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/packages/pandaac/theme-tibia/img/label-abouttibia.gif') }}" alt="About {{ server()->name() }}">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -78,8 +78,8 @@
                     <li class="navigation-item open" data-v-class="open: isNavToggled('library')">
                         <div class="navigation-button" data-v-on="click: toggleNav('library')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-library.gif') }}" alt="Icon">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-library.gif') }}" alt="Library">
+                            <img class="icon" src="{{ asset('/packages/pandaac/theme-tibia/img/icon-library.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/packages/pandaac/theme-tibia/img/label-library.gif') }}" alt="Library">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -97,8 +97,8 @@
                     <li class="navigation-item open" data-v-class="open: isNavToggled('community')">
                         <div class="navigation-button" data-v-on="click: toggleNav('community')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-community.gif') }}" alt="Icon">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-community.gif') }}" alt="Community">
+                            <img class="icon" src="{{ asset('/packages/pandaac/theme-tibia/img/icon-community.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/packages/pandaac/theme-tibia/img/label-community.gif') }}" alt="Community">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -116,8 +116,8 @@
                     <li class="navigation-item open" data-v-class="open: isNavToggled('forum')">
                         <div class="navigation-button" data-v-on="click: toggleNav('forum')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-forum.gif') }}" alt="Icon">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-forum.gif') }}" alt="Forum">
+                            <img class="icon" src="{{ asset('/packages/pandaac/theme-tibia/img/icon-forum.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/packages/pandaac/theme-tibia/img/label-forum.gif') }}" alt="Forum">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -134,8 +134,8 @@
                     <li class="navigation-item open" data-v-class="open: isNavToggled('account')">
                         <div class="navigation-button" data-v-on="click: toggleNav('account')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-account.gif') }}" alt="Icon">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-account.gif') }}" alt="Account">
+                            <img class="icon" src="{{ asset('/packages/pandaac/theme-tibia/img/icon-account.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/packages/pandaac/theme-tibia/img/label-account.gif') }}" alt="Account">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -154,8 +154,8 @@
                     <li class="navigation-item open" data-v-class="open: isNavToggled('support')">
                         <div class="navigation-button" data-v-on="click: toggleNav('support')">
                             <span class="crystals top"></span>
-                            <img class="icon" src="{{ asset('/pandaac/theme-tibia/img/icon-support.gif') }}" alt="Icon">
-                            <img class="label" src="{{ asset('/pandaac/theme-tibia/img/label-support.gif') }}" alt="Support">
+                            <img class="icon" src="{{ asset('/packages/pandaac/theme-tibia/img/icon-support.gif') }}" alt="Icon">
+                            <img class="label" src="{{ asset('/packages/pandaac/theme-tibia/img/label-support.gif') }}" alt="Support">
                             <span class="crystals bottom"></span>
                         </div>
                         <div class="navigation-content">
@@ -201,7 +201,7 @@
 
             <div class="box screenshots">
                 <div class="inner-box">
-                    <a href="{{ url('/about/screenshots') }}"><img src="{{ asset('/pandaac/theme-tibia/img/screenshot.png') }}" alt="Screenshot"></a>
+                    <a href="{{ url('/about/screenshots') }}"><img src="{{ asset('/packages/pandaac/theme-tibia/img/screenshot.png') }}" alt="Screenshot"></a>
                 </div>
             </div>
         </aside>
@@ -219,7 +219,7 @@
     </div>
 
     <script>var baseurl = "{{ url('/') }}";</script>
-    <script src="{{ theme_elixir('/pandaac/theme-tibia/js/app.js') }}"></script>
+    <script src="{{ theme_elixir('/packages/pandaac/theme-tibia/js/app.js') }}"></script>
 
     @yield('footer')
 

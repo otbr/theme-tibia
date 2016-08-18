@@ -1,0 +1,68 @@
+$images: config($paths, 'images');
+
+.article {
+    & > .header {
+        background-image: url('#{$images}/newsheadline_background.gif');
+        height: 28px;
+        width: 100%;
+
+        @include clearfix(inline-block);
+
+        & > .icon {
+            background: no-repeat center center;
+            margin: -2px 18px 0 5px;
+            display: inline-block;
+            height: 32px;
+            width: 32px;
+            float: left;
+
+            &.community { background-image: url('#{$images}/newsicon_community_big.gif'); }
+            &.development { background-image: url('#{$images}/newsicon_development_big.gif'); }
+            &.staff { background-image: url('#{$images}/newsicon_staff_big.gif'); margin-top: -1px; }
+            &.support { background-image: url('#{$images}/newsicon_support_big.gif'); }
+            &.technical { background-image: url('#{$images}/newsicon_technical_big.gif'); }
+        }
+
+        & > time {
+            display: inline-block;
+            margin: 10px 25px 0 0;
+            color: #fff;
+            float: left;
+
+            @include font-size(0.93);
+
+            &:after {
+                content: '\002D';
+                margin-left: 2px;
+            }
+        }
+
+        & > h2 {
+            display: inline-block;
+            font-weight: bold;
+            margin: 7px 0 0 0;
+            color: #fff;
+            float: left;
+
+            @include font-size(1.33);
+
+            &:before,
+            &:after {
+                content: none;
+            }
+        }
+    }
+
+    & > .body {
+        font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+        line-height: normal;
+        padding: 5px 10px 0;
+
+        @include font-size(1.33);
+
+        p,
+        p.first-letter {
+            margin: 0 0 15px !important;
+        }
+    }
+}

@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', $spell->name())
-@section('body', 'library-spells-single')
 @section('navigation', '/library/spells')
 
 @section('content')

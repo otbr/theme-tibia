@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::highscore/show.title'))
-@section('body', 'highscore-show')
 @section('navigation', '/highscore')
 
 @section('content')

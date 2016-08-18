@@ -1,0 +1,41 @@
+.buttons-right {
+    float: right;
+
+    a, button {
+        display: block;
+    }
+
+    .blue-button, .green-button {
+        margin-bottom: 0;
+    }
+}
+
+tr.character {
+    .play-integer {
+        display: none;
+
+        &.hidden {
+            display: block;
+        }
+    }
+
+    .play-button,
+    .play-button-red,
+    .character-buttons {
+        &.hidden {
+            display: none;
+        }
+    }
+
+    &.active {
+        .play-integer {
+            display: none;
+        }
+
+        .play-button,
+        .play-button-red,
+        .character-buttons {
+            display: block;
+        }
+    }
+}

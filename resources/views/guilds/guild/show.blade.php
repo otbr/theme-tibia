@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::guilds/guild/show.title'))
-@section('body', 'guilds-show')
 @section('navigation', '/guilds')
 
 @section('content')

@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/action/rename/form.title'))
-@section('body', 'account-action-rename-form')
 @section('navigation', '/account')
 
 @section('content')

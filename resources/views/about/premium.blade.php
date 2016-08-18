@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'Premium Features')
-@section('body', 'about-premium')
 @section('navigation', '/about/premium')
 
 @section('content')

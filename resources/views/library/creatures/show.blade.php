@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', $creature->name())
-@section('body', 'library-creatures-single')
 @section('navigation', '/library/creatures')
 
 @section('content')

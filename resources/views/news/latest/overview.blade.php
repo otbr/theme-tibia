@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::news/latest/overview.title'))
-@section('body', 'news-latest')
 @section('navigation', '/')
 
 @section('content')

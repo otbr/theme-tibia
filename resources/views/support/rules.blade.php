@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', server()->name().' Rules')
-@section('body', 'support-rules')
 @section('navigation', '/support/rules')
 
 @section('content')

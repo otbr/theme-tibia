@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/player/delete/deleted.title'))
-@section('body', 'account-player-delete-deleted')
 @section('navigation', '/account')
 
 @section('content')

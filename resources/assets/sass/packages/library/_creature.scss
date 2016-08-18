@@ -1,0 +1,52 @@
+$images: config($paths, 'images');
+
+.pagination {
+    width: 100%;
+
+    td {
+        width: 33.3%;
+
+        &.previous,
+        &.back,
+        &.next {
+            a {
+                font-size: 90%;
+
+                &:before {
+                    padding-right: 4px;
+                }
+            }
+        }
+
+        &.previous {
+            a:before {
+                content: url('#{$images}/arrow-left.gif');
+            }
+        }
+
+        &.back {
+            text-align: center;
+
+            a:before {
+                content: url('#{$images}/arrow-up.gif');
+            }
+        }
+
+        &.next {
+            text-align: right;
+
+            a:before {
+                content: url('#{$images}/arrow-right.gif');
+            }
+        }
+    }
+}
+
+.creature {
+    width: 100%;
+
+    h2 {
+        margin-right: 15px;
+        text-align: right;
+    }
+}

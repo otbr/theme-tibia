@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'Experience Table')
-@section('body', 'library-experience')
 @section('navigation', '/library/experience')
 
 @section('content')

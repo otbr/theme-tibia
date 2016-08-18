@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/auth/logout.title'))
-@section('body', 'account-auth-logout')
 @section('navigation', '/account')
 
 @section('content')

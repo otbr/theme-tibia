@@ -1,0 +1,21 @@
+.buttons-right {
+    float: right;
+
+    a, button {
+        display: block;
+    }
+}
+
+.information {
+    padding-bottom: 4px;
+    
+    @include font-size(1.6);
+
+    .buttons-right {
+        margin-top: 19px;
+    }
+
+    .indent {
+        margin: 0 0 0 10px;
+    }
+}

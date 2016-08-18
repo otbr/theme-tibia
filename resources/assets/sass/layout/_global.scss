@@ -1,0 +1,206 @@
+$images: config($paths, 'images');
+
+html {
+    min-width: 1000px;
+    min-height: 100%;
+    font-size: 62.5%;
+}
+
+body {
+    background: url('#{$images}/background-artwork.jpg') no-repeat top center #051122;
+    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+    color: config($colours, heading, colour);
+    // overflow-y: scroll;
+    height: 100%;
+    margin: 0;
+
+    @include font-size(1.2);
+}
+
+a {
+    color: config($colours, link, colour);
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    img {
+        border: none;
+    }
+}
+
+h1 {
+    color: config($colours, heading, colour);
+    text-align: center;
+    font-weight: bold;
+    margin: 16px 0;
+
+    @include font-size(2.4);
+}
+
+h2 {
+    color: config($colours, heading, colour);
+    margin: -6px 0 28px;
+    text-align: center;
+    font-weight: bold;
+
+    @include font-size(1.7);
+
+    &.iconless {
+        margin: 0 0 5px;
+    }
+
+    &:not(.iconless):before {
+        content: url('#{$images}/headline-bracer-left.gif');
+        position: relative;
+        height: 41px;
+        width: 46px;
+        left: -4px;
+        top: 14px;
+    }
+
+    &:not(.iconless):after {
+        content: url('#{$images}/headline-bracer-right.gif');
+        position: relative;
+        height: 41px;
+        width: 46px;
+        right: -4px;
+        top: 14px;
+    }
+}
+
+h3 {
+    margin: 14px 5px;
+}
+
+h4 {
+    font-weight: bold;
+    margin: 0;
+
+    @include font-size(1.86);
+}
+
+label {
+    display: inline-block;
+}
+
+label, input[type="radio"], input[type="checkbox"] {
+    cursor: pointer;
+}
+
+ul,
+ol {
+    & > li {
+        margin: 2px 0;
+    }
+}
+
+.offline,
+.red,
+.free {
+    color: config($colours, status, offline);
+}
+
+.online,
+.green,
+.premium {
+    color: config($colours, status, online);
+}
+
+.clearfix {
+    @include clearfix;
+}
+
+.hidden {
+    display: none;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.tibia-sprite {
+    height: 32px;
+    width: 32px;
+}
+
+.flag {
+    vertical-align: middle;
+    margin-top: -1px;
+    cursor: help;
+}
+
+.caret {
+    border-top: 5px solid config($colours, heading, colour);
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    display: inline-block !important;
+    vertical-align: middle;
+    height: 0;
+    width: 0;
+
+    &.up {
+        border-bottom: 5px solid config($colours, heading, colour);
+        border-top: none;
+    }
+}
+
+.breakwords {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.text-left {
+    @include text-left;
+}
+
+.text-center {
+    @include text-center;
+}
+
+.text-right {
+    @include text-right;
+}
+
+.pull-left {
+    @include pull-left;
+}
+
+.pull-right {
+    @include pull-right;
+}
+
+.valign-top {
+    @include valign-top;
+}
+
+.valign-middle {
+    @include valign-middle;
+}
+
+.valign-bottom {
+    @include valign-bottom;
+}
+
+.valign-baseline {
+    @include valign-baseline;
+}
+
+.padding {
+    padding: 10px;
+}
+
+.error {
+    color: config($colours, form, error);
+}

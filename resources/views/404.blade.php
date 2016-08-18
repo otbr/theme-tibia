@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::404.title'))
-@section('body', 'page-not-found 404')
 
 @section('content')
 

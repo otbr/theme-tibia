@@ -1,0 +1,35 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/news/latest/overview.blade.php
+ */
+body[data-view="news.latest.overview"] #middle-column {
+    @import 'overview';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/news/archive/form.blade.php
+ * @view  ./resources/views/news/archive/search.blade.php
+ * @view  ./resources/views/news/archive/results.blade.php
+ */
+body[data-view="news.archive.form"] #middle-column,
+body[data-view="news.archive.search"] #middle-column,
+body[data-view="news.archive.results"] #middle-column {
+    @import 'archive';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/news/latest/show.blade.php
+ * @view  ./resources/views/news/archive/show.blade.php
+ */
+body[data-view="news.latest.show"] #middle-column,
+body[data-view="news.archive.show"] #middle-column {
+    @import 'show';
+}

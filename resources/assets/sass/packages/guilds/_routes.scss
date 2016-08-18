@@ -1,0 +1,9 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/guilds/guild/show.blade.php
+ */
+body[data-view="guilds.guild.show"] #middle-column {
+    @import 'single';
+}

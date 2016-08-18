@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/manage.title'))
-@section('body', 'account-manage')
 @section('navigation', '/account')
 
 @section('content')
@@ -469,6 +468,28 @@
                                         </tr>
                                     </table>
                                 @endif
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="authenticator" class="table top">
+                    <header class="header">
+                        <div class="borders">
+                            <span class="edges top"></span>
+                            {!! trans('theme::account/manage.authenticator.heading') !!}
+                            <span class="edges bottom"></span>
+                        </div>
+                    </header>
+
+                    <div class="content">
+                        <div class="box">
+                            <div class="inner-box">
+                                <a href="{{ url('/account/authenticator/request') }}" class="blue-button" style="float: right;">
+                                    <span>{!! trans('theme::account/manage.authenticator.request') !!}</span>
+                                </a>
+
+                                {!! trans('theme::account/manage.authenticator.getstarted') !!}
                             </div>
                         </div>
                     </div>

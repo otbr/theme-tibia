@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'Tutor Guide')
-@section('body', 'support-tutor')
 @section('navigation', '/support/tutor')
 
 @section('content')

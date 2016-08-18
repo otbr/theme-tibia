@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'Game Features')
-@section('body', 'about-features')
 @section('navigation', '/about/features')
 
 @section('content')

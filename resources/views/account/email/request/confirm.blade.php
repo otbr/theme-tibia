@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/email/request/confirm.title'))
-@section('body', 'account-email-request-confirm')
 @section('navigation', '/account')
 
 @section('content')

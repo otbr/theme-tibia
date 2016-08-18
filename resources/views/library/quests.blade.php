@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'World Quests')
-@section('body', 'library-quests')
 @section('navigation', '/library/quests')
 
 @section('content')

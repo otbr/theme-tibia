@@ -1,0 +1,195 @@
+$images: config($paths, 'images');
+
+.alert {
+    display: inline-block;
+    position: relative;
+
+    & > img {
+        cursor: help;
+    }
+
+    &:hover > .message {
+        display: block;
+    }
+
+    & > .message {
+        background: url('#{$images}/scroll.gif') repeat top left;
+        border: 1px solid config($colours, heading, colour);
+        color: config($colours, heading, colour);
+        padding: 10px 10px 20px;
+        text-align: justify;
+        position: absolute;
+        cursor: normal;
+        display: none;
+        width: 245px;
+        z-index: 5;
+        left: 27px;
+        top: 4px;
+
+        @include font-size(1.2);
+
+        &:before {
+            content: url('#{$images}/alertcorner.gif');
+            position: absolute;
+            height: 13px;
+            left: -8px;
+            width: 8px;
+            z-index: 6;
+            top: -1px;
+        }
+
+        & > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
+            color: config($colours, heading, colour);
+            font-weight: bold;
+            text-align: left;
+            margin: 0;
+
+            @include font-size(1.6);
+        }
+
+        & > ul,
+        & > ol {
+            margin-left: 0;
+
+            & > li {
+                margin-left: -18px;
+            }
+        }
+
+        & > p {
+            margin: 12px 0;
+        }
+
+        & > img {
+            @include img-responsive;
+        }
+    }
+}
+
+.errors,
+.notification {
+    background-color: config($colours, notification, background-colour);
+    font-family: Verdana, Arial, 'Times New Roman', sans-serif;
+    margin: 6px 6px 16px;
+    position: relative;
+    min-height: 24px;
+    padding: 8px 5px;
+
+    @include font-size(1.33);
+
+    &.top {
+        margin-top: 16px;
+    }
+
+    &.errors {
+        color: config($colours, form, error);
+        padding-left: 42px;
+
+        @include font-size(1.06);
+    }
+
+    h5 {
+        font-weight: bold;
+        padding: 0;
+        margin: 0;
+
+        @include font-size(1.06);
+    }
+
+    .sign {
+        background: url('#{$images}/attentionsign.gif');
+        position: absolute;
+        height: 26px;
+        width: 30px;
+        left: 7px;
+        top: 6px;
+    }
+
+    &:before {
+        background: url('#{$images}/box-frame-vertical.gif');
+        position: absolute;
+        content: '';
+        width: 3px;
+        left: -1px;
+        bottom: 0;
+        top: 0;
+    }
+
+    &:after {
+        background: url('#{$images}/box-frame-vertical.gif');
+        position: absolute;
+        content: '';
+        right: -1px;
+        width: 3px;
+        bottom: 0;
+        top: 0;
+    }
+
+    & > .borders {
+        &:before {
+            background: url('#{$images}/table-headline-border.gif');
+            position: absolute;
+            content: '';
+            height: 4px;
+            top: -1px;
+            right: 0;
+            left: 0;
+        }
+
+        &:after {
+            background: url('#{$images}/table-headline-border.gif');
+            position: absolute;
+            bottom: -1px;
+            content: '';
+            height: 4px;
+            right: 0;
+            left: 0;
+        }
+
+        & > .edges {
+            &.top {
+                &:before {
+                    background: url('#{$images}/box-frame-edge.gif');
+                    position: absolute;
+                    content: '';
+                    height: 5px;
+                    width: 5px;
+                    left: -2px;
+                    top: -2px;
+                }
+
+                &:after {
+                    background: url('#{$images}/box-frame-edge.gif');
+                    position: absolute;
+                    content: '';
+                    height: 5px;
+                    right: -2px;
+                    width: 5px;
+                    top: -2px;
+                }
+            }
+
+            &.bottom {
+                &:before {
+                    background: url('#{$images}/box-frame-edge.gif');
+                    position: absolute;
+                    bottom: -2px;
+                    content: '';
+                    height: 5px;
+                    width: 5px;
+                    left: -2px;
+                }
+
+                &:after {
+                    background: url('#{$images}/box-frame-edge.gif');
+                    position: absolute;
+                    bottom: -2px;
+                    content: '';
+                    height: 5px;
+                    right: -2px;
+                    width: 5px;
+                }
+            }
+        }
+    }
+}

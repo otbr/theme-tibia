@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/auth/login.title'))
-@section('body', 'account-auth-login')
 @section('navigation', '/account')
 
 @section('content')

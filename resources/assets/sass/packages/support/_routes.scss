@@ -1,0 +1,21 @@
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/support/rules.blade.php
+ */
+body[data-view="support.rules"] #middle-column {
+    @import 'rules';
+}
+
+/**
+ * The following styles were written with the subsequent view(s) in mind,
+ * although are not necessarily limited to it.
+ *
+ * @view  ./resources/views/support/terms.blade.php
+ * @view  ./resources/views/support/privacy.blade.php
+ */
+body[data-view="support.terms"] #middle-column,
+body[data-view="support.privacy"] #middle-column {
+    @import 'terms';
+}

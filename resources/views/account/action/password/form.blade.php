@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/action/password/form.title'))
-@section('body', 'account-action-password-form')
 @section('navigation', '/account')
 
 @section('content')

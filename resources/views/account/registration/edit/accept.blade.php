@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/registration/edit/accept.title'))
-@section('body', 'account-registration account-registration-accept')
 @section('navigation', '/account')
 
 @section('content')

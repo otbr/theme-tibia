@@ -1,0 +1,15 @@
+$path: config($paths, 'fonts');
+
+@font-face {
+    font-family: 'MartelDescent';
+    src: url('#{$path}/MartelDescent/marteldescent.eot');
+    src: local('☺︎'),
+         url('#{$path}/MartelDescent/marteldescent.eot?#iefix') format('embedded-opentype'),
+         url('#{$path}/MartelDescent/marteldescent.woff2') format('woff2'),
+         url('#{$path}/MartelDescent/marteldescent.woff') format('woff'),
+         url('#{$path}/MartelDescent/marteldescent.ttf') format('truetype'),
+         url('#{$path}/MartelDescent/marteldescent.svg#marteldescent') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-variant: normal;
+}

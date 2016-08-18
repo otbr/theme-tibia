@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', 'Achievements')
-@section('body', 'library-achievements')
 @section('navigation', '/library/achievements')
 
 @section('content')

@@ -1,7 +1,6 @@
 @extends('theme::app')
 
 @section('title', trans('theme::account/player/create/created.title'))
-@section('body', 'account-player-create-created')
 @section('navigation', '/account')
 
 @section('content')
